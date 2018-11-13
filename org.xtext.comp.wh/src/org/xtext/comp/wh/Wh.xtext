@@ -1,0 +1,165 @@
+grammar org.xtext.comp.wh.Wh with org.eclipse.xtext.common.Terminals
+
+generate wh "http://www.xtext.org/comp/wh/Wh"
+
+/*Model:
+	program += Program;	
+	
+Program:
+	(Function)+;
+
+Function:
+	'function' SYMBOL ':' Definition;
+	
+Definition:
+	'read' Input '%' Commands '%' 'write' Output;
+	
+Input:
+	VARIABLE (',' VARIABLE)*;
+	
+Output:
+	VARIABLE (',' VARIABLE)*;
+		
+Commands :
+	Command (';' Command)*;
+	
+Command:
+	'nop' |
+	Vars ':=' Exprs |
+	'while' CommandBody |
+	'for' CommandBody |
+	'if' Expr 'then' Commands ('else' Commands)? 'fi' |
+	'foreach' Expr 'in' CommandBody;
+
+CommandBody :
+	Expr 'do' Commands 'od';
+	
+Vars:
+	VARIABLE (',' VARIABLE)*;
+	
+Exprs:
+	Expr (',' Expr)*;
+	
+Expr:
+	ExprAnd;
+	
+LExpr:
+	(Expr)+;
+	
+ExprSimple:
+	'nil' | VARIABLE | SYMBOL | 
+	'(' 'cons' LExpr ')' | '(' 'list' LExpr ')' |
+	'(' 'hd' Expr ')' | '(' 'tl' Expr ')' |
+	(=> '(' SYMBOL LExpr ')');
+	
+ExprAnd:
+	ExprOr ('and' ExprOr)*;
+	
+ExprOr:
+	ExprNot ('or' ExprNot)*;
+	
+ExprNot:
+	'not'? ExprEq;
+	
+ExprEq:
+	ExprSimple ('=?' ExprSimple)? | '(' Expr ')';
+	
+terminal SYMBOL: ('a'..'z') ('0'..'9'|'a'..'z'|'A'..'Z')* ((('-'|'+'|'.'|'/'|'_'|'&') | '->') ('0'..'9'|'a'..'z'|'A'..'Z')+)* ('?'|'!')?;
+terminal VARIABLE : ('A'..'Z') ('0'..'9'|'a'..'z'|'A'..'Z')* ((('-'|'+'|'.'|'/'|'_'|'&') | '->') ('0'..'9'|'a'..'z'|'A'..'Z')+)* ('?'|'!')?;
+
+*/
+
+Model:
+	text = Program;
+	
+	
+Program:
+	(f+=Function)* (CR (p=Program))?
+;
+
+Function:
+	'function' function_name=SYMBOL ':' d=Definition
+;
+
+Definition:
+	'read'  i=Input
+	'%' c=Commands
+	'%' 'write'  o=Output
+;
+
+Input:
+	v=VARIABLE (',' v2+=VARIABLE)*
+;
+
+Output:
+	v=VARIABLE (',' v2+=VARIABLE)*
+;
+
+Commands:
+	c+=Command (';'  c2+=Command)*
+;
+
+Command:
+	(nop='nop' | assign=Assign | while=While | for=For | if=If | foreach=Foreach)
+;
+
+Assign:
+	(v=Vars ':=' e=Exprs)
+;
+
+While:
+	('while'  e=Expr  'do'  c=Commands  'od')
+;
+
+For:
+	('for'  e=Expr  'do'  c=Commands  'od')
+;
+
+If:
+	('if'  e=Expr  'then'  c=Commands  ('else'  c2=Commands )? 'fi')
+;
+
+Foreach:
+	('foreach'  e=Expr  'in'  e2=Expr  'do'  c=Commands  'od')
+;
+
+Vars:
+	v=VARIABLE (',' v2+=VARIABLE)*
+;
+Exprs:
+	e=Expr (',' e2+=Expr)*
+;
+
+Expr:
+	ea=ExprAnd
+;
+
+ExprSimple:
+	(nil='nil' | var=VARIABLE | sym=SYMBOL | '(' 'cons' e3=LExpr ')' | '(' 'list' e4=LExpr ')' | '(' 'hd'  e5=Expr ')' | '(' 'tl'  e6=Expr ')' 
+	)
+;
+
+ExprAnd:
+	eo=ExprOr ( 'and'  eo2+=ExprOr)*
+;
+
+ExprOr:
+	en=ExprNot ( 'or'  en2+=ExprNot)*
+;
+
+ExprNot:
+	('not'  e=ExprEq) | e2=ExprEq
+;
+
+ExprEq:
+	e=ExprSimple ('=?' e2=ExprSimple)? | (=> '(' SYMBOL? LExpr ')')
+;
+
+LExpr:
+	( e1+=Expr)+
+;
+
+
+terminal VARIABLE: ('A'..'Z')('A'..'Z' | 'a'..'z' | '0'..'9')*;
+terminal SYMBOL: ('a'..'z')('A'..'Z' | 'a'..'z' | '0'..'9')*;
+terminal CR: '\r';

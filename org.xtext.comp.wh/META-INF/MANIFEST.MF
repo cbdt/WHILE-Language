@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.comp.wh
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.comp.wh
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.comp.wh; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.comp.wh.serializer,
+ org.xtext.comp.wh.wh.impl,
+ org.xtext.comp.wh.services,
+ org.xtext.comp.wh,
+ org.xtext.comp.wh.scoping,
+ org.xtext.comp.wh.validation,
+ org.xtext.comp.wh.generator,
+ org.xtext.comp.wh.wh,
+ org.xtext.comp.wh.parser.antlr.internal,
+ org.xtext.comp.wh.parser.antlr,
+ org.xtext.comp.wh.wh.util
+Import-Package: org.apache.log4j
