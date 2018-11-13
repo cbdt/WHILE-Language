@@ -1,0 +1,16 @@
+function p: read C,
+
+
+
+
+Y % while X do
+while X do nop; nop
+   od
+                               od
+while X do nop od
+
+
+
+%
+write
+ Y,         C
