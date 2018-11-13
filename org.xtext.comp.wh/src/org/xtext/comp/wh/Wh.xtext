@@ -74,7 +74,7 @@ Model:
 	
 	
 Program:
-	(f+=Function)* (CR (p=Program))?
+	(functions+=Function)+
 ;
 
 Function:
