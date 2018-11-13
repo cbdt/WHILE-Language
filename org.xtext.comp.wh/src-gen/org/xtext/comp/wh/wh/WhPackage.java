@@ -96,22 +96,13 @@ public interface WhPackage extends EPackage
   int PROGRAM = 1;
 
   /**
-   * The feature id for the '<em><b>F</b></em>' containment reference list.
+   * The feature id for the '<em><b>Functions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM__F = 0;
-
-  /**
-   * The feature id for the '<em><b>P</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__P = 1;
+  int PROGRAM__FUNCTIONS = 0;
 
   /**
    * The number of structural features of the '<em>Program</em>' class.
@@ -120,7 +111,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = 2;
+  int PROGRAM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.FunctionImpl <em>Function</em>}' class.
@@ -1003,26 +994,15 @@ public interface WhPackage extends EPackage
   EClass getProgram();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Program#getF <em>F</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Program#getFunctions <em>Functions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>F</em>'.
-   * @see org.xtext.comp.wh.wh.Program#getF()
+   * @return the meta object for the containment reference list '<em>Functions</em>'.
+   * @see org.xtext.comp.wh.wh.Program#getFunctions()
    * @see #getProgram()
    * @generated
    */
-  EReference getProgram_F();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Program#getP <em>P</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>P</em>'.
-   * @see org.xtext.comp.wh.wh.Program#getP()
-   * @see #getProgram()
-   * @generated
-   */
-  EReference getProgram_P();
+  EReference getProgram_Functions();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Function <em>Function</em>}'.
@@ -1826,20 +1806,12 @@ public interface WhPackage extends EPackage
     EClass PROGRAM = eINSTANCE.getProgram();
 
     /**
-     * The meta object literal for the '<em><b>F</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROGRAM__F = eINSTANCE.getProgram_F();
-
-    /**
-     * The meta object literal for the '<em><b>P</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__P = eINSTANCE.getProgram_P();
+    EReference PROGRAM__FUNCTIONS = eINSTANCE.getProgram_Functions();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.FunctionImpl <em>Function</em>}' class.

@@ -104,38 +104,18 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ProgramElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Program");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cFFunctionParserRuleCall_0_0 = (RuleCall)cFAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cCRTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cPAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cPProgramParserRuleCall_1_1_0 = (RuleCall)cPAssignment_1_1.eContents().get(0);
+		private final Assignment cFunctionsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFunctionsFunctionParserRuleCall_0 = (RuleCall)cFunctionsAssignment.eContents().get(0);
 		
 		//Program:
-		//	f+=Function* (CR p=Program)?;
+		//	functions+=Function+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//f+=Function* (CR p=Program)?
-		public Group getGroup() { return cGroup; }
-		
-		//f+=Function*
-		public Assignment getFAssignment_0() { return cFAssignment_0; }
+		//functions+=Function+
+		public Assignment getFunctionsAssignment() { return cFunctionsAssignment; }
 		
 		//Function
-		public RuleCall getFFunctionParserRuleCall_0_0() { return cFFunctionParserRuleCall_0_0; }
-		
-		//(CR p=Program)?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//CR
-		public RuleCall getCRTerminalRuleCall_1_0() { return cCRTerminalRuleCall_1_0; }
-		
-		//p=Program
-		public Assignment getPAssignment_1_1() { return cPAssignment_1_1; }
-		
-		//Program
-		public RuleCall getPProgramParserRuleCall_1_1_0() { return cPProgramParserRuleCall_1_1_0; }
+		public RuleCall getFunctionsFunctionParserRuleCall_0() { return cFunctionsFunctionParserRuleCall_0; }
 	}
 	public class FunctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Function");
@@ -1168,7 +1148,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Program:
-	//	f+=Function* (CR p=Program)?;
+	//	functions+=Function+;
 	public ProgramElements getProgramAccess() {
 		return pProgram;
 	}

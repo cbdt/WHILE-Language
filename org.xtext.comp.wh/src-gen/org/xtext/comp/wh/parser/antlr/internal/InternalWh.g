@@ -113,50 +113,23 @@ ruleProgram returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProgramAccess().getFFunctionParserRuleCall_0_0());
-				}
-				lv_f_0_0=ruleFunction
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProgramRule());
-					}
-					add(
-						$current,
-						"f",
-						lv_f_0_0,
-						"org.xtext.comp.wh.Wh.Function");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			this_CR_1=RULE_CR
 			{
-				newLeafNode(this_CR_1, grammarAccess.getProgramAccess().getCRTerminalRuleCall_1_0());
+				newCompositeNode(grammarAccess.getProgramAccess().getFunctionsFunctionParserRuleCall_0());
 			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getProgramAccess().getPProgramParserRuleCall_1_1_0());
-					}
-					lv_p_2_0=ruleProgram
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getProgramRule());
-						}
-						set(
-							$current,
-							"p",
-							lv_p_2_0,
-							"org.xtext.comp.wh.Wh.Program");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-	)
+			lv_functions_0_0=ruleFunction
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getProgramRule());
+				}
+				add(
+					$current,
+					"functions",
+					lv_functions_0_0,
+					"org.xtext.comp.wh.Wh.Function");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)+
 ;
 
 // Entry rule entryRuleFunction

@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Program#getF <em>F</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Program#getP <em>P</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Program#getFunctions <em>Functions</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getProgram()
@@ -27,45 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Program extends EObject
 {
   /**
-   * Returns the value of the '<em><b>F</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.Function}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>F</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>F</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getProgram_F()
+   * @return the value of the '<em>Functions</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getProgram_Functions()
    * @model containment="true"
    * @generated
    */
-  EList<Function> getF();
-
-  /**
-   * Returns the value of the '<em><b>P</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>P</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>P</em>' containment reference.
-   * @see #setP(Program)
-   * @see org.xtext.comp.wh.wh.WhPackage#getProgram_P()
-   * @model containment="true"
-   * @generated
-   */
-  Program getP();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Program#getP <em>P</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>P</em>' containment reference.
-   * @see #getP()
-   * @generated
-   */
-  void setP(Program value);
+  EList<Function> getFunctions();
 
 } // Program

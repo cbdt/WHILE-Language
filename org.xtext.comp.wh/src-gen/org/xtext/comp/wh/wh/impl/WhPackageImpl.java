@@ -295,19 +295,9 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProgram_F()
+  public EReference getProgram_Functions()
   {
     return (EReference)programEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getProgram_P()
-  {
-    return (EReference)programEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1044,8 +1034,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     createEReference(modelEClass, MODEL__TEXT);
 
     programEClass = createEClass(PROGRAM);
-    createEReference(programEClass, PROGRAM__F);
-    createEReference(programEClass, PROGRAM__P);
+    createEReference(programEClass, PROGRAM__FUNCTIONS);
 
     functionEClass = createEClass(FUNCTION);
     createEAttribute(functionEClass, FUNCTION__FUNCTION_NAME);
@@ -1174,8 +1163,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEReference(getModel_Text(), this.getProgram(), null, "text", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProgram_F(), this.getFunction(), null, "f", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProgram_P(), this.getProgram(), null, "p", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProgram_Functions(), this.getFunction(), null, "functions", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunction_Function_name(), ecorePackage.getEString(), "function_name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

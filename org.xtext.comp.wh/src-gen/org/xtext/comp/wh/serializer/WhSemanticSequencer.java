@@ -436,7 +436,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Program returns Program
 	 *
 	 * Constraint:
-	 *     ((f+=Function+ p=Program) | p=Program)?
+	 *     functions+=Function+
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

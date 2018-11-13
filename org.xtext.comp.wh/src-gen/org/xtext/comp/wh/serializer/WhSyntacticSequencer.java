@@ -30,20 +30,9 @@ public class WhSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCRRule())
-			return getCRToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getSYMBOLRule())
+		if (ruleCall.getRule() == grammarAccess.getSYMBOLRule())
 			return getSYMBOLToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * terminal CR: '\r';
-	 */
-	protected String getCRToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\r";
 	}
 	
 	/**

@@ -10,8 +10,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Model/text"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Program">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Program/f"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Program/p"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Program/functions"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Function/function_name"/>

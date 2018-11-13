@@ -5,7 +5,6 @@ package org.xtext.comp.wh.wh.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,8 +29,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ProgramImpl#getF <em>F</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ProgramImpl#getP <em>P</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ProgramImpl#getFunctions <em>Functions</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 {
   /**
-   * The cached value of the '{@link #getF() <em>F</em>}' containment reference list.
+   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getF()
+   * @see #getFunctions()
    * @generated
    * @ordered
    */
-  protected EList<Function> f;
-
-  /**
-   * The cached value of the '{@link #getP() <em>P</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getP()
-   * @generated
-   * @ordered
-   */
-  protected Program p;
+  protected EList<Function> functions;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,61 +72,13 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Function> getF()
+  public EList<Function> getFunctions()
   {
-    if (f == null)
+    if (functions == null)
     {
-      f = new EObjectContainmentEList<Function>(Function.class, this, WhPackage.PROGRAM__F);
+      functions = new EObjectContainmentEList<Function>(Function.class, this, WhPackage.PROGRAM__FUNCTIONS);
     }
-    return f;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Program getP()
-  {
-    return p;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetP(Program newP, NotificationChain msgs)
-  {
-    Program oldP = p;
-    p = newP;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.PROGRAM__P, oldP, newP);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setP(Program newP)
-  {
-    if (newP != p)
-    {
-      NotificationChain msgs = null;
-      if (p != null)
-        msgs = ((InternalEObject)p).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.PROGRAM__P, null, msgs);
-      if (newP != null)
-        msgs = ((InternalEObject)newP).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.PROGRAM__P, null, msgs);
-      msgs = basicSetP(newP, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.PROGRAM__P, newP, newP));
+    return functions;
   }
 
   /**
@@ -152,10 +91,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case WhPackage.PROGRAM__F:
-        return ((InternalEList<?>)getF()).basicRemove(otherEnd, msgs);
-      case WhPackage.PROGRAM__P:
-        return basicSetP(null, msgs);
+      case WhPackage.PROGRAM__FUNCTIONS:
+        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -170,10 +107,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case WhPackage.PROGRAM__F:
-        return getF();
-      case WhPackage.PROGRAM__P:
-        return getP();
+      case WhPackage.PROGRAM__FUNCTIONS:
+        return getFunctions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -189,12 +124,9 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case WhPackage.PROGRAM__F:
-        getF().clear();
-        getF().addAll((Collection<? extends Function>)newValue);
-        return;
-      case WhPackage.PROGRAM__P:
-        setP((Program)newValue);
+      case WhPackage.PROGRAM__FUNCTIONS:
+        getFunctions().clear();
+        getFunctions().addAll((Collection<? extends Function>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -210,11 +142,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case WhPackage.PROGRAM__F:
-        getF().clear();
-        return;
-      case WhPackage.PROGRAM__P:
-        setP((Program)null);
+      case WhPackage.PROGRAM__FUNCTIONS:
+        getFunctions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -230,10 +159,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case WhPackage.PROGRAM__F:
-        return f != null && !f.isEmpty();
-      case WhPackage.PROGRAM__P:
-        return p != null;
+      case WhPackage.PROGRAM__FUNCTIONS:
+        return functions != null && !functions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
