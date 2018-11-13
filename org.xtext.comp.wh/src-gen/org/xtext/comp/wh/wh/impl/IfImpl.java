@@ -25,9 +25,9 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getC2 <em>C2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getIf_commands <em>If commands</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.IfImpl#getElse_commands <em>Else commands</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,34 +35,34 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class IfImpl extends MinimalEObjectImpl.Container implements If
 {
   /**
-   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE()
+   * @see #getCond()
    * @generated
    * @ordered
    */
-  protected Expr e;
+  protected Expr cond;
 
   /**
-   * The cached value of the '{@link #getC() <em>C</em>}' containment reference.
+   * The cached value of the '{@link #getIf_commands() <em>If commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getIf_commands()
    * @generated
    * @ordered
    */
-  protected Commands c;
+  protected Commands if_commands;
 
   /**
-   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference.
+   * The cached value of the '{@link #getElse_commands() <em>Else commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC2()
+   * @see #getElse_commands()
    * @generated
    * @ordered
    */
-  protected Commands c2;
+  protected Commands else_commands;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +90,9 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE()
+  public Expr getCond()
   {
-    return e;
+    return cond;
   }
 
   /**
@@ -100,13 +100,13 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(Expr newE, NotificationChain msgs)
+  public NotificationChain basicSetCond(Expr newCond, NotificationChain msgs)
   {
-    Expr oldE = e;
-    e = newE;
+    Expr oldCond = cond;
+    cond = newCond;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__E, oldE, newE);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__COND, oldCond, newCond);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +117,20 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(Expr newE)
+  public void setCond(Expr newCond)
   {
-    if (newE != e)
+    if (newCond != cond)
     {
       NotificationChain msgs = null;
-      if (e != null)
-        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__E, null, msgs);
-      if (newE != null)
-        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__E, null, msgs);
-      msgs = basicSetE(newE, msgs);
+      if (cond != null)
+        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__COND, null, msgs);
+      if (newCond != null)
+        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__COND, null, msgs);
+      msgs = basicSetCond(newCond, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__E, newE, newE));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__COND, newCond, newCond));
   }
 
   /**
@@ -138,9 +138,9 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Commands getC()
+  public Commands getIf_commands()
   {
-    return c;
+    return if_commands;
   }
 
   /**
@@ -148,13 +148,13 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetC(Commands newC, NotificationChain msgs)
+  public NotificationChain basicSetIf_commands(Commands newIf_commands, NotificationChain msgs)
   {
-    Commands oldC = c;
-    c = newC;
+    Commands oldIf_commands = if_commands;
+    if_commands = newIf_commands;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__C, oldC, newC);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__IF_COMMANDS, oldIf_commands, newIf_commands);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -165,20 +165,20 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setC(Commands newC)
+  public void setIf_commands(Commands newIf_commands)
   {
-    if (newC != c)
+    if (newIf_commands != if_commands)
     {
       NotificationChain msgs = null;
-      if (c != null)
-        msgs = ((InternalEObject)c).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__C, null, msgs);
-      if (newC != null)
-        msgs = ((InternalEObject)newC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__C, null, msgs);
-      msgs = basicSetC(newC, msgs);
+      if (if_commands != null)
+        msgs = ((InternalEObject)if_commands).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__IF_COMMANDS, null, msgs);
+      if (newIf_commands != null)
+        msgs = ((InternalEObject)newIf_commands).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__IF_COMMANDS, null, msgs);
+      msgs = basicSetIf_commands(newIf_commands, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__C, newC, newC));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__IF_COMMANDS, newIf_commands, newIf_commands));
   }
 
   /**
@@ -186,9 +186,9 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Commands getC2()
+  public Commands getElse_commands()
   {
-    return c2;
+    return else_commands;
   }
 
   /**
@@ -196,13 +196,13 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetC2(Commands newC2, NotificationChain msgs)
+  public NotificationChain basicSetElse_commands(Commands newElse_commands, NotificationChain msgs)
   {
-    Commands oldC2 = c2;
-    c2 = newC2;
+    Commands oldElse_commands = else_commands;
+    else_commands = newElse_commands;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__C2, oldC2, newC2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.IF__ELSE_COMMANDS, oldElse_commands, newElse_commands);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -213,20 +213,20 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setC2(Commands newC2)
+  public void setElse_commands(Commands newElse_commands)
   {
-    if (newC2 != c2)
+    if (newElse_commands != else_commands)
     {
       NotificationChain msgs = null;
-      if (c2 != null)
-        msgs = ((InternalEObject)c2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__C2, null, msgs);
-      if (newC2 != null)
-        msgs = ((InternalEObject)newC2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__C2, null, msgs);
-      msgs = basicSetC2(newC2, msgs);
+      if (else_commands != null)
+        msgs = ((InternalEObject)else_commands).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__ELSE_COMMANDS, null, msgs);
+      if (newElse_commands != null)
+        msgs = ((InternalEObject)newElse_commands).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.IF__ELSE_COMMANDS, null, msgs);
+      msgs = basicSetElse_commands(newElse_commands, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__C2, newC2, newC2));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.IF__ELSE_COMMANDS, newElse_commands, newElse_commands));
   }
 
   /**
@@ -239,12 +239,12 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
-      case WhPackage.IF__E:
-        return basicSetE(null, msgs);
-      case WhPackage.IF__C:
-        return basicSetC(null, msgs);
-      case WhPackage.IF__C2:
-        return basicSetC2(null, msgs);
+      case WhPackage.IF__COND:
+        return basicSetCond(null, msgs);
+      case WhPackage.IF__IF_COMMANDS:
+        return basicSetIf_commands(null, msgs);
+      case WhPackage.IF__ELSE_COMMANDS:
+        return basicSetElse_commands(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -259,12 +259,12 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
-      case WhPackage.IF__E:
-        return getE();
-      case WhPackage.IF__C:
-        return getC();
-      case WhPackage.IF__C2:
-        return getC2();
+      case WhPackage.IF__COND:
+        return getCond();
+      case WhPackage.IF__IF_COMMANDS:
+        return getIf_commands();
+      case WhPackage.IF__ELSE_COMMANDS:
+        return getElse_commands();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -279,14 +279,14 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
-      case WhPackage.IF__E:
-        setE((Expr)newValue);
+      case WhPackage.IF__COND:
+        setCond((Expr)newValue);
         return;
-      case WhPackage.IF__C:
-        setC((Commands)newValue);
+      case WhPackage.IF__IF_COMMANDS:
+        setIf_commands((Commands)newValue);
         return;
-      case WhPackage.IF__C2:
-        setC2((Commands)newValue);
+      case WhPackage.IF__ELSE_COMMANDS:
+        setElse_commands((Commands)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,14 +302,14 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
-      case WhPackage.IF__E:
-        setE((Expr)null);
+      case WhPackage.IF__COND:
+        setCond((Expr)null);
         return;
-      case WhPackage.IF__C:
-        setC((Commands)null);
+      case WhPackage.IF__IF_COMMANDS:
+        setIf_commands((Commands)null);
         return;
-      case WhPackage.IF__C2:
-        setC2((Commands)null);
+      case WhPackage.IF__ELSE_COMMANDS:
+        setElse_commands((Commands)null);
         return;
     }
     super.eUnset(featureID);
@@ -325,12 +325,12 @@ public class IfImpl extends MinimalEObjectImpl.Container implements If
   {
     switch (featureID)
     {
-      case WhPackage.IF__E:
-        return e != null;
-      case WhPackage.IF__C:
-        return c != null;
-      case WhPackage.IF__C2:
-        return c2 != null;
+      case WhPackage.IF__COND:
+        return cond != null;
+      case WhPackage.IF__IF_COMMANDS:
+        return if_commands != null;
+      case WhPackage.IF__ELSE_COMMANDS:
+        return else_commands != null;
     }
     return super.eIsSet(featureID);
   }

@@ -25,8 +25,8 @@ import org.xtext.comp.wh.wh.While;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.WhileImpl#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.WhileImpl#getC <em>C</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.WhileImpl#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.WhileImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +34,24 @@ import org.xtext.comp.wh.wh.While;
 public class WhileImpl extends MinimalEObjectImpl.Container implements While
 {
   /**
-   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE()
+   * @see #getCond()
    * @generated
    * @ordered
    */
-  protected Expr e;
+  protected Expr cond;
 
   /**
-   * The cached value of the '{@link #getC() <em>C</em>}' containment reference.
+   * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getCommands()
    * @generated
    * @ordered
    */
-  protected Commands c;
+  protected Commands commands;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +79,9 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE()
+  public Expr getCond()
   {
-    return e;
+    return cond;
   }
 
   /**
@@ -89,13 +89,13 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(Expr newE, NotificationChain msgs)
+  public NotificationChain basicSetCond(Expr newCond, NotificationChain msgs)
   {
-    Expr oldE = e;
-    e = newE;
+    Expr oldCond = cond;
+    cond = newCond;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__E, oldE, newE);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__COND, oldCond, newCond);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(Expr newE)
+  public void setCond(Expr newCond)
   {
-    if (newE != e)
+    if (newCond != cond)
     {
       NotificationChain msgs = null;
-      if (e != null)
-        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__E, null, msgs);
-      if (newE != null)
-        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__E, null, msgs);
-      msgs = basicSetE(newE, msgs);
+      if (cond != null)
+        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__COND, null, msgs);
+      if (newCond != null)
+        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__COND, null, msgs);
+      msgs = basicSetCond(newCond, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__E, newE, newE));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__COND, newCond, newCond));
   }
 
   /**
@@ -127,9 +127,9 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Commands getC()
+  public Commands getCommands()
   {
-    return c;
+    return commands;
   }
 
   /**
@@ -137,13 +137,13 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetC(Commands newC, NotificationChain msgs)
+  public NotificationChain basicSetCommands(Commands newCommands, NotificationChain msgs)
   {
-    Commands oldC = c;
-    c = newC;
+    Commands oldCommands = commands;
+    commands = newCommands;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__C, oldC, newC);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__COMMANDS, oldCommands, newCommands);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setC(Commands newC)
+  public void setCommands(Commands newCommands)
   {
-    if (newC != c)
+    if (newCommands != commands)
     {
       NotificationChain msgs = null;
-      if (c != null)
-        msgs = ((InternalEObject)c).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__C, null, msgs);
-      if (newC != null)
-        msgs = ((InternalEObject)newC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__C, null, msgs);
-      msgs = basicSetC(newC, msgs);
+      if (commands != null)
+        msgs = ((InternalEObject)commands).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__COMMANDS, null, msgs);
+      if (newCommands != null)
+        msgs = ((InternalEObject)newCommands).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.WHILE__COMMANDS, null, msgs);
+      msgs = basicSetCommands(newCommands, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__C, newC, newC));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.WHILE__COMMANDS, newCommands, newCommands));
   }
 
   /**
@@ -180,10 +180,10 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
   {
     switch (featureID)
     {
-      case WhPackage.WHILE__E:
-        return basicSetE(null, msgs);
-      case WhPackage.WHILE__C:
-        return basicSetC(null, msgs);
+      case WhPackage.WHILE__COND:
+        return basicSetCond(null, msgs);
+      case WhPackage.WHILE__COMMANDS:
+        return basicSetCommands(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +198,10 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
   {
     switch (featureID)
     {
-      case WhPackage.WHILE__E:
-        return getE();
-      case WhPackage.WHILE__C:
-        return getC();
+      case WhPackage.WHILE__COND:
+        return getCond();
+      case WhPackage.WHILE__COMMANDS:
+        return getCommands();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +216,11 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
   {
     switch (featureID)
     {
-      case WhPackage.WHILE__E:
-        setE((Expr)newValue);
+      case WhPackage.WHILE__COND:
+        setCond((Expr)newValue);
         return;
-      case WhPackage.WHILE__C:
-        setC((Commands)newValue);
+      case WhPackage.WHILE__COMMANDS:
+        setCommands((Commands)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +236,11 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
   {
     switch (featureID)
     {
-      case WhPackage.WHILE__E:
-        setE((Expr)null);
+      case WhPackage.WHILE__COND:
+        setCond((Expr)null);
         return;
-      case WhPackage.WHILE__C:
-        setC((Commands)null);
+      case WhPackage.WHILE__COMMANDS:
+        setCommands((Commands)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +256,10 @@ public class WhileImpl extends MinimalEObjectImpl.Container implements While
   {
     switch (featureID)
     {
-      case WhPackage.WHILE__E:
-        return e != null;
-      case WhPackage.WHILE__C:
-        return c != null;
+      case WhPackage.WHILE__COND:
+        return cond != null;
+      case WhPackage.WHILE__COMMANDS:
+        return commands != null;
     }
     return super.eIsSet(featureID);
   }

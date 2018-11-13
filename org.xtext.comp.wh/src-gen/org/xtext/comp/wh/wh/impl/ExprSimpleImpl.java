@@ -28,10 +28,10 @@ import org.xtext.comp.wh.wh.WhPackage;
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getNil <em>Nil</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getVar <em>Var</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getSym <em>Sym</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getE3 <em>E3</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getE4 <em>E4</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getE5 <em>E5</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getE6 <em>E6</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getCons_exp <em>Cons exp</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getList_exp <em>List exp</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getHd_expr <em>Hd expr</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getTl_expr <em>Tl expr</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,44 +99,44 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
   protected String sym = SYM_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getE3() <em>E3</em>}' containment reference.
+   * The cached value of the '{@link #getCons_exp() <em>Cons exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE3()
+   * @see #getCons_exp()
    * @generated
    * @ordered
    */
-  protected LExpr e3;
+  protected LExpr cons_exp;
 
   /**
-   * The cached value of the '{@link #getE4() <em>E4</em>}' containment reference.
+   * The cached value of the '{@link #getList_exp() <em>List exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE4()
+   * @see #getList_exp()
    * @generated
    * @ordered
    */
-  protected LExpr e4;
+  protected LExpr list_exp;
 
   /**
-   * The cached value of the '{@link #getE5() <em>E5</em>}' containment reference.
+   * The cached value of the '{@link #getHd_expr() <em>Hd expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE5()
+   * @see #getHd_expr()
    * @generated
    * @ordered
    */
-  protected Expr e5;
+  protected Expr hd_expr;
 
   /**
-   * The cached value of the '{@link #getE6() <em>E6</em>}' containment reference.
+   * The cached value of the '{@link #getTl_expr() <em>Tl expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE6()
+   * @see #getTl_expr()
    * @generated
    * @ordered
    */
-  protected Expr e6;
+  protected Expr tl_expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,9 +233,9 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public LExpr getE3()
+  public LExpr getCons_exp()
   {
-    return e3;
+    return cons_exp;
   }
 
   /**
@@ -243,13 +243,13 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE3(LExpr newE3, NotificationChain msgs)
+  public NotificationChain basicSetCons_exp(LExpr newCons_exp, NotificationChain msgs)
   {
-    LExpr oldE3 = e3;
-    e3 = newE3;
+    LExpr oldCons_exp = cons_exp;
+    cons_exp = newCons_exp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E3, oldE3, newE3);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__CONS_EXP, oldCons_exp, newCons_exp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -260,20 +260,20 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE3(LExpr newE3)
+  public void setCons_exp(LExpr newCons_exp)
   {
-    if (newE3 != e3)
+    if (newCons_exp != cons_exp)
     {
       NotificationChain msgs = null;
-      if (e3 != null)
-        msgs = ((InternalEObject)e3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E3, null, msgs);
-      if (newE3 != null)
-        msgs = ((InternalEObject)newE3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E3, null, msgs);
-      msgs = basicSetE3(newE3, msgs);
+      if (cons_exp != null)
+        msgs = ((InternalEObject)cons_exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__CONS_EXP, null, msgs);
+      if (newCons_exp != null)
+        msgs = ((InternalEObject)newCons_exp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__CONS_EXP, null, msgs);
+      msgs = basicSetCons_exp(newCons_exp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E3, newE3, newE3));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__CONS_EXP, newCons_exp, newCons_exp));
   }
 
   /**
@@ -281,9 +281,9 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public LExpr getE4()
+  public LExpr getList_exp()
   {
-    return e4;
+    return list_exp;
   }
 
   /**
@@ -291,13 +291,13 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE4(LExpr newE4, NotificationChain msgs)
+  public NotificationChain basicSetList_exp(LExpr newList_exp, NotificationChain msgs)
   {
-    LExpr oldE4 = e4;
-    e4 = newE4;
+    LExpr oldList_exp = list_exp;
+    list_exp = newList_exp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E4, oldE4, newE4);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__LIST_EXP, oldList_exp, newList_exp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -308,20 +308,20 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE4(LExpr newE4)
+  public void setList_exp(LExpr newList_exp)
   {
-    if (newE4 != e4)
+    if (newList_exp != list_exp)
     {
       NotificationChain msgs = null;
-      if (e4 != null)
-        msgs = ((InternalEObject)e4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E4, null, msgs);
-      if (newE4 != null)
-        msgs = ((InternalEObject)newE4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E4, null, msgs);
-      msgs = basicSetE4(newE4, msgs);
+      if (list_exp != null)
+        msgs = ((InternalEObject)list_exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__LIST_EXP, null, msgs);
+      if (newList_exp != null)
+        msgs = ((InternalEObject)newList_exp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__LIST_EXP, null, msgs);
+      msgs = basicSetList_exp(newList_exp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E4, newE4, newE4));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__LIST_EXP, newList_exp, newList_exp));
   }
 
   /**
@@ -329,9 +329,9 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE5()
+  public Expr getHd_expr()
   {
-    return e5;
+    return hd_expr;
   }
 
   /**
@@ -339,13 +339,13 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE5(Expr newE5, NotificationChain msgs)
+  public NotificationChain basicSetHd_expr(Expr newHd_expr, NotificationChain msgs)
   {
-    Expr oldE5 = e5;
-    e5 = newE5;
+    Expr oldHd_expr = hd_expr;
+    hd_expr = newHd_expr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E5, oldE5, newE5);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__HD_EXPR, oldHd_expr, newHd_expr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -356,20 +356,20 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE5(Expr newE5)
+  public void setHd_expr(Expr newHd_expr)
   {
-    if (newE5 != e5)
+    if (newHd_expr != hd_expr)
     {
       NotificationChain msgs = null;
-      if (e5 != null)
-        msgs = ((InternalEObject)e5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E5, null, msgs);
-      if (newE5 != null)
-        msgs = ((InternalEObject)newE5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E5, null, msgs);
-      msgs = basicSetE5(newE5, msgs);
+      if (hd_expr != null)
+        msgs = ((InternalEObject)hd_expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__HD_EXPR, null, msgs);
+      if (newHd_expr != null)
+        msgs = ((InternalEObject)newHd_expr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__HD_EXPR, null, msgs);
+      msgs = basicSetHd_expr(newHd_expr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E5, newE5, newE5));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__HD_EXPR, newHd_expr, newHd_expr));
   }
 
   /**
@@ -377,9 +377,9 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE6()
+  public Expr getTl_expr()
   {
-    return e6;
+    return tl_expr;
   }
 
   /**
@@ -387,13 +387,13 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE6(Expr newE6, NotificationChain msgs)
+  public NotificationChain basicSetTl_expr(Expr newTl_expr, NotificationChain msgs)
   {
-    Expr oldE6 = e6;
-    e6 = newE6;
+    Expr oldTl_expr = tl_expr;
+    tl_expr = newTl_expr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E6, oldE6, newE6);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__TL_EXPR, oldTl_expr, newTl_expr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -404,20 +404,20 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE6(Expr newE6)
+  public void setTl_expr(Expr newTl_expr)
   {
-    if (newE6 != e6)
+    if (newTl_expr != tl_expr)
     {
       NotificationChain msgs = null;
-      if (e6 != null)
-        msgs = ((InternalEObject)e6).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E6, null, msgs);
-      if (newE6 != null)
-        msgs = ((InternalEObject)newE6).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__E6, null, msgs);
-      msgs = basicSetE6(newE6, msgs);
+      if (tl_expr != null)
+        msgs = ((InternalEObject)tl_expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__TL_EXPR, null, msgs);
+      if (newTl_expr != null)
+        msgs = ((InternalEObject)newTl_expr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_SIMPLE__TL_EXPR, null, msgs);
+      msgs = basicSetTl_expr(newTl_expr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__E6, newE6, newE6));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__TL_EXPR, newTl_expr, newTl_expr));
   }
 
   /**
@@ -430,14 +430,14 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_SIMPLE__E3:
-        return basicSetE3(null, msgs);
-      case WhPackage.EXPR_SIMPLE__E4:
-        return basicSetE4(null, msgs);
-      case WhPackage.EXPR_SIMPLE__E5:
-        return basicSetE5(null, msgs);
-      case WhPackage.EXPR_SIMPLE__E6:
-        return basicSetE6(null, msgs);
+      case WhPackage.EXPR_SIMPLE__CONS_EXP:
+        return basicSetCons_exp(null, msgs);
+      case WhPackage.EXPR_SIMPLE__LIST_EXP:
+        return basicSetList_exp(null, msgs);
+      case WhPackage.EXPR_SIMPLE__HD_EXPR:
+        return basicSetHd_expr(null, msgs);
+      case WhPackage.EXPR_SIMPLE__TL_EXPR:
+        return basicSetTl_expr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -458,14 +458,14 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
         return getVar();
       case WhPackage.EXPR_SIMPLE__SYM:
         return getSym();
-      case WhPackage.EXPR_SIMPLE__E3:
-        return getE3();
-      case WhPackage.EXPR_SIMPLE__E4:
-        return getE4();
-      case WhPackage.EXPR_SIMPLE__E5:
-        return getE5();
-      case WhPackage.EXPR_SIMPLE__E6:
-        return getE6();
+      case WhPackage.EXPR_SIMPLE__CONS_EXP:
+        return getCons_exp();
+      case WhPackage.EXPR_SIMPLE__LIST_EXP:
+        return getList_exp();
+      case WhPackage.EXPR_SIMPLE__HD_EXPR:
+        return getHd_expr();
+      case WhPackage.EXPR_SIMPLE__TL_EXPR:
+        return getTl_expr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -489,17 +489,17 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
       case WhPackage.EXPR_SIMPLE__SYM:
         setSym((String)newValue);
         return;
-      case WhPackage.EXPR_SIMPLE__E3:
-        setE3((LExpr)newValue);
+      case WhPackage.EXPR_SIMPLE__CONS_EXP:
+        setCons_exp((LExpr)newValue);
         return;
-      case WhPackage.EXPR_SIMPLE__E4:
-        setE4((LExpr)newValue);
+      case WhPackage.EXPR_SIMPLE__LIST_EXP:
+        setList_exp((LExpr)newValue);
         return;
-      case WhPackage.EXPR_SIMPLE__E5:
-        setE5((Expr)newValue);
+      case WhPackage.EXPR_SIMPLE__HD_EXPR:
+        setHd_expr((Expr)newValue);
         return;
-      case WhPackage.EXPR_SIMPLE__E6:
-        setE6((Expr)newValue);
+      case WhPackage.EXPR_SIMPLE__TL_EXPR:
+        setTl_expr((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -524,17 +524,17 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
       case WhPackage.EXPR_SIMPLE__SYM:
         setSym(SYM_EDEFAULT);
         return;
-      case WhPackage.EXPR_SIMPLE__E3:
-        setE3((LExpr)null);
+      case WhPackage.EXPR_SIMPLE__CONS_EXP:
+        setCons_exp((LExpr)null);
         return;
-      case WhPackage.EXPR_SIMPLE__E4:
-        setE4((LExpr)null);
+      case WhPackage.EXPR_SIMPLE__LIST_EXP:
+        setList_exp((LExpr)null);
         return;
-      case WhPackage.EXPR_SIMPLE__E5:
-        setE5((Expr)null);
+      case WhPackage.EXPR_SIMPLE__HD_EXPR:
+        setHd_expr((Expr)null);
         return;
-      case WhPackage.EXPR_SIMPLE__E6:
-        setE6((Expr)null);
+      case WhPackage.EXPR_SIMPLE__TL_EXPR:
+        setTl_expr((Expr)null);
         return;
     }
     super.eUnset(featureID);
@@ -556,14 +556,14 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
         return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
       case WhPackage.EXPR_SIMPLE__SYM:
         return SYM_EDEFAULT == null ? sym != null : !SYM_EDEFAULT.equals(sym);
-      case WhPackage.EXPR_SIMPLE__E3:
-        return e3 != null;
-      case WhPackage.EXPR_SIMPLE__E4:
-        return e4 != null;
-      case WhPackage.EXPR_SIMPLE__E5:
-        return e5 != null;
-      case WhPackage.EXPR_SIMPLE__E6:
-        return e6 != null;
+      case WhPackage.EXPR_SIMPLE__CONS_EXP:
+        return cons_exp != null;
+      case WhPackage.EXPR_SIMPLE__LIST_EXP:
+        return list_exp != null;
+      case WhPackage.EXPR_SIMPLE__HD_EXPR:
+        return hd_expr != null;
+      case WhPackage.EXPR_SIMPLE__TL_EXPR:
+        return tl_expr != null;
     }
     return super.eIsSet(featureID);
   }

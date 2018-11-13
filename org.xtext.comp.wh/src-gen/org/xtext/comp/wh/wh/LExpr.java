@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.LExpr#getE1 <em>E1</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.LExpr#getLe <em>Le</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getLExpr()
@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface LExpr extends ExprEq
 {
   /**
-   * Returns the value of the '<em><b>E1</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Le</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.Expr}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E1</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Le</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E1</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getLExpr_E1()
+   * @return the value of the '<em>Le</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getLExpr_Le()
    * @model containment="true"
    * @generated
    */
-  EList<Expr> getE1();
+  EList<Expr> getLe();
 
 } // LExpr

@@ -129,18 +129,18 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Assign returns Assign
 	 *
 	 * Constraint:
-	 *     (v=Vars e=Exprs)
+	 *     (vars=Vars exprs=Exprs)
 	 */
 	protected void sequence_Assign(ISerializationContext context, Assign semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.ASSIGN__V) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.ASSIGN__V));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.ASSIGN__E) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.ASSIGN__E));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.ASSIGN__VARS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.ASSIGN__VARS));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.ASSIGN__EXPRS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.ASSIGN__EXPRS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssignAccess().getVVarsParserRuleCall_0_0(), semanticObject.getV());
-		feeder.accept(grammarAccess.getAssignAccess().getEExprsParserRuleCall_2_0(), semanticObject.getE());
+		feeder.accept(grammarAccess.getAssignAccess().getVarsVarsParserRuleCall_0_0(), semanticObject.getVars());
+		feeder.accept(grammarAccess.getAssignAccess().getExprsExprsParserRuleCall_2_0(), semanticObject.getExprs());
 		feeder.finish();
 	}
 	
@@ -169,7 +169,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Commands returns Commands
 	 *
 	 * Constraint:
-	 *     (c+=Command c2+=Command*)
+	 *     command+=Command+
 	 */
 	protected void sequence_Commands(ISerializationContext context, Commands semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -181,21 +181,21 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Definition returns Definition
 	 *
 	 * Constraint:
-	 *     (i=Input c=Commands o=Output)
+	 *     (inputs=Input commands=Commands outputs=Output)
 	 */
 	protected void sequence_Definition(ISerializationContext context, Definition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__I) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__I));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__C));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__O) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__O));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__INPUTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__INPUTS));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__COMMANDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__COMMANDS));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.DEFINITION__OUTPUTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.DEFINITION__OUTPUTS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDefinitionAccess().getIInputParserRuleCall_1_0(), semanticObject.getI());
-		feeder.accept(grammarAccess.getDefinitionAccess().getCCommandsParserRuleCall_3_0(), semanticObject.getC());
-		feeder.accept(grammarAccess.getDefinitionAccess().getOOutputParserRuleCall_6_0(), semanticObject.getO());
+		feeder.accept(grammarAccess.getDefinitionAccess().getInputsInputParserRuleCall_1_0(), semanticObject.getInputs());
+		feeder.accept(grammarAccess.getDefinitionAccess().getCommandsCommandsParserRuleCall_3_0(), semanticObject.getCommands());
+		feeder.accept(grammarAccess.getDefinitionAccess().getOutputsOutputParserRuleCall_6_0(), semanticObject.getOutputs());
 		feeder.finish();
 	}
 	
@@ -205,7 +205,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprAnd returns ExprAnd
 	 *
 	 * Constraint:
-	 *     (eo=ExprOr eo2+=ExprOr*)
+	 *     (eo+=ExprOr eo+=ExprOr*)
 	 */
 	protected void sequence_ExprAnd(ISerializationContext context, ExprAnd semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -241,7 +241,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprOr returns ExprOr
 	 *
 	 * Constraint:
-	 *     (en=ExprNot en2+=ExprNot*)
+	 *     (en+=ExprNot en+=ExprNot*)
 	 */
 	protected void sequence_ExprOr(ISerializationContext context, ExprOr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -257,10 +257,10 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         nil='nil' | 
 	 *         var=VARIABLE | 
 	 *         sym=SYMBOL | 
-	 *         e3=LExpr | 
-	 *         e4=LExpr | 
-	 *         e5=Expr | 
-	 *         e6=Expr
+	 *         cons_exp=LExpr | 
+	 *         list_exp=LExpr | 
+	 *         hd_expr=Expr | 
+	 *         tl_expr=Expr
 	 *     )
 	 */
 	protected void sequence_ExprSimple(ISerializationContext context, ExprSimple semanticObject) {
@@ -291,7 +291,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Exprs returns Exprs
 	 *
 	 * Constraint:
-	 *     (e=Expr e2+=Expr*)
+	 *     (e+=Expr e+=Expr*)
 	 */
 	protected void sequence_Exprs(ISerializationContext context, Exprs semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -303,18 +303,18 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     For returns For
 	 *
 	 * Constraint:
-	 *     (e=Expr c=Commands)
+	 *     (cond=Expr commands=Commands)
 	 */
 	protected void sequence_For(ISerializationContext context, For semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOR__E) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOR__E));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOR__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOR__C));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOR__COND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOR__COND));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOR__COMMANDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOR__COMMANDS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForAccess().getEExprParserRuleCall_1_0(), semanticObject.getE());
-		feeder.accept(grammarAccess.getForAccess().getCCommandsParserRuleCall_3_0(), semanticObject.getC());
+		feeder.accept(grammarAccess.getForAccess().getCondExprParserRuleCall_1_0(), semanticObject.getCond());
+		feeder.accept(grammarAccess.getForAccess().getCommandsCommandsParserRuleCall_3_0(), semanticObject.getCommands());
 		feeder.finish();
 	}
 	
@@ -324,21 +324,21 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Foreach returns Foreach
 	 *
 	 * Constraint:
-	 *     (e=Expr e2=Expr c=Commands)
+	 *     (expr=Expr e2=Expr commands=Commands)
 	 */
 	protected void sequence_Foreach(ISerializationContext context, Foreach semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__E) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__E));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__EXPR));
 			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__E2) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__E2));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__C));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__COMMANDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__COMMANDS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForeachAccess().getEExprParserRuleCall_1_0(), semanticObject.getE());
+		feeder.accept(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0(), semanticObject.getExpr());
 		feeder.accept(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0(), semanticObject.getE2());
-		feeder.accept(grammarAccess.getForeachAccess().getCCommandsParserRuleCall_5_0(), semanticObject.getC());
+		feeder.accept(grammarAccess.getForeachAccess().getCommandsCommandsParserRuleCall_5_0(), semanticObject.getCommands());
 		feeder.finish();
 	}
 	
@@ -348,18 +348,18 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Function returns Function
 	 *
 	 * Constraint:
-	 *     (function_name=SYMBOL d=Definition)
+	 *     (fname=SYMBOL definition=Definition)
 	 */
 	protected void sequence_Function(ISerializationContext context, Function semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FUNCTION__FUNCTION_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FUNCTION__FUNCTION_NAME));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FUNCTION__D) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FUNCTION__D));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FUNCTION__FNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FUNCTION__FNAME));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FUNCTION__DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FUNCTION__DEFINITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFunctionAccess().getFunction_nameSYMBOLTerminalRuleCall_1_0(), semanticObject.getFunction_name());
-		feeder.accept(grammarAccess.getFunctionAccess().getDDefinitionParserRuleCall_3_0(), semanticObject.getD());
+		feeder.accept(grammarAccess.getFunctionAccess().getFnameSYMBOLTerminalRuleCall_1_0(), semanticObject.getFname());
+		feeder.accept(grammarAccess.getFunctionAccess().getDefinitionDefinitionParserRuleCall_3_0(), semanticObject.getDefinition());
 		feeder.finish();
 	}
 	
@@ -369,7 +369,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     If returns If
 	 *
 	 * Constraint:
-	 *     (e=Expr c=Commands c2=Commands?)
+	 *     (cond=Expr if_commands=Commands else_commands=Commands?)
 	 */
 	protected void sequence_If(ISerializationContext context, If semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -381,7 +381,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Input returns Input
 	 *
 	 * Constraint:
-	 *     (v=VARIABLE v2+=VARIABLE*)
+	 *     (params+=VARIABLE params+=VARIABLE*)
 	 */
 	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -394,7 +394,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LExpr returns LExpr
 	 *
 	 * Constraint:
-	 *     e1+=Expr+
+	 *     le+=Expr+
 	 */
 	protected void sequence_LExpr(ISerializationContext context, LExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -424,7 +424,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Output returns Output
 	 *
 	 * Constraint:
-	 *     (v=VARIABLE v2+=VARIABLE*)
+	 *     (r_values+=VARIABLE r_values+=VARIABLE*)
 	 */
 	protected void sequence_Output(ISerializationContext context, Output semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -448,7 +448,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Vars returns Vars
 	 *
 	 * Constraint:
-	 *     (v=VARIABLE v2+=VARIABLE*)
+	 *     (var+=VARIABLE var+=VARIABLE*)
 	 */
 	protected void sequence_Vars(ISerializationContext context, Vars semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -460,18 +460,18 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     While returns While
 	 *
 	 * Constraint:
-	 *     (e=Expr c=Commands)
+	 *     (cond=Expr commands=Commands)
 	 */
 	protected void sequence_While(ISerializationContext context, While semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.WHILE__E) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.WHILE__E));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.WHILE__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.WHILE__C));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.WHILE__COND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.WHILE__COND));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.WHILE__COMMANDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.WHILE__COMMANDS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWhileAccess().getEExprParserRuleCall_1_0(), semanticObject.getE());
-		feeder.accept(grammarAccess.getWhileAccess().getCCommandsParserRuleCall_3_0(), semanticObject.getC());
+		feeder.accept(grammarAccess.getWhileAccess().getCondExprParserRuleCall_1_0(), semanticObject.getCond());
+		feeder.accept(grammarAccess.getWhileAccess().getCommandsCommandsParserRuleCall_3_0(), semanticObject.getCommands());
 		feeder.finish();
 	}
 	

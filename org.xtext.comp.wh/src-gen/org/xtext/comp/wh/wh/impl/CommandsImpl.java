@@ -29,8 +29,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandsImpl#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandsImpl#getC2 <em>C2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.CommandsImpl#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,24 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class CommandsImpl extends MinimalEObjectImpl.Container implements Commands
 {
   /**
-   * The cached value of the '{@link #getC() <em>C</em>}' containment reference list.
+   * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getCommand()
    * @generated
    * @ordered
    */
-  protected EList<Command> c;
-
-  /**
-   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getC2()
-   * @generated
-   * @ordered
-   */
-  protected EList<Command> c2;
+  protected EList<Command> command;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,27 +72,13 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Command> getC()
+  public EList<Command> getCommand()
   {
-    if (c == null)
+    if (command == null)
     {
-      c = new EObjectContainmentEList<Command>(Command.class, this, WhPackage.COMMANDS__C);
+      command = new EObjectContainmentEList<Command>(Command.class, this, WhPackage.COMMANDS__COMMAND);
     }
-    return c;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Command> getC2()
-  {
-    if (c2 == null)
-    {
-      c2 = new EObjectContainmentEList<Command>(Command.class, this, WhPackage.COMMANDS__C2);
-    }
-    return c2;
+    return command;
   }
 
   /**
@@ -116,10 +91,8 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
   {
     switch (featureID)
     {
-      case WhPackage.COMMANDS__C:
-        return ((InternalEList<?>)getC()).basicRemove(otherEnd, msgs);
-      case WhPackage.COMMANDS__C2:
-        return ((InternalEList<?>)getC2()).basicRemove(otherEnd, msgs);
+      case WhPackage.COMMANDS__COMMAND:
+        return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,10 +107,8 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
   {
     switch (featureID)
     {
-      case WhPackage.COMMANDS__C:
-        return getC();
-      case WhPackage.COMMANDS__C2:
-        return getC2();
+      case WhPackage.COMMANDS__COMMAND:
+        return getCommand();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,13 +124,9 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
   {
     switch (featureID)
     {
-      case WhPackage.COMMANDS__C:
-        getC().clear();
-        getC().addAll((Collection<? extends Command>)newValue);
-        return;
-      case WhPackage.COMMANDS__C2:
-        getC2().clear();
-        getC2().addAll((Collection<? extends Command>)newValue);
+      case WhPackage.COMMANDS__COMMAND:
+        getCommand().clear();
+        getCommand().addAll((Collection<? extends Command>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +142,8 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
   {
     switch (featureID)
     {
-      case WhPackage.COMMANDS__C:
-        getC().clear();
-        return;
-      case WhPackage.COMMANDS__C2:
-        getC2().clear();
+      case WhPackage.COMMANDS__COMMAND:
+        getCommand().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,10 +159,8 @@ public class CommandsImpl extends MinimalEObjectImpl.Container implements Comman
   {
     switch (featureID)
     {
-      case WhPackage.COMMANDS__C:
-        return c != null && !c.isEmpty();
-      case WhPackage.COMMANDS__C2:
-        return c2 != null && !c2.isEmpty();
+      case WhPackage.COMMANDS__COMMAND:
+        return command != null && !command.isEmpty();
     }
     return super.eIsSet(featureID);
   }

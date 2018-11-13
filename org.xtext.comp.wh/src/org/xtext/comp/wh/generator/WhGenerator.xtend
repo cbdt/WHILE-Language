@@ -7,8 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.xtext.comp.wh.wh.Program
+import org.xtext.comp.wh.wh.Commands
+import org.xtext.comp.wh.wh.Definition
 import org.xtext.comp.wh.wh.Function
+import org.xtext.comp.wh.wh.Program
+import org.xtext.comp.wh.wh.Command
 
 /**
  * Generates code from your model files on save.
@@ -30,8 +33,28 @@ class WhGenerator extends AbstractGenerator {
 	'''
 	
 	def compile(Function f) '''
-	function «f.function_name»:
+	function «f.fname»:
+	«f.definition.compile()»
+	'''
+	
+	def compile(Definition d)'''
+	read «FOR param : d.inputs.params SEPARATOR ", "»«param»«ENDFOR»
+	%
+	«d.commands.compile()»
+	%
+	write «FOR r_value : d.outputs.r_values SEPARATOR ", "»«r_value»«ENDFOR»
+	'''
+	
+	
+	def compile(Commands c)'''
+	«FOR command: c.command»
+	«command.compile()»;
+	«ENDFOR»
+	'''
+	
+	def compile(Command c)'''
 	
 	'''
+	
 
 }

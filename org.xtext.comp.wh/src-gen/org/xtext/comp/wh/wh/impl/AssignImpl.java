@@ -25,8 +25,8 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.AssignImpl#getV <em>V</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.AssignImpl#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.AssignImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.AssignImpl#getExprs <em>Exprs</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +34,24 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
 {
   /**
-   * The cached value of the '{@link #getV() <em>V</em>}' containment reference.
+   * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getV()
+   * @see #getVars()
    * @generated
    * @ordered
    */
-  protected Vars v;
+  protected Vars vars;
 
   /**
-   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * The cached value of the '{@link #getExprs() <em>Exprs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE()
+   * @see #getExprs()
    * @generated
    * @ordered
    */
-  protected Exprs e;
+  protected Exprs exprs;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +79,9 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public Vars getV()
+  public Vars getVars()
   {
-    return v;
+    return vars;
   }
 
   /**
@@ -89,13 +89,13 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetV(Vars newV, NotificationChain msgs)
+  public NotificationChain basicSetVars(Vars newVars, NotificationChain msgs)
   {
-    Vars oldV = v;
-    v = newV;
+    Vars oldVars = vars;
+    vars = newVars;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__V, oldV, newV);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__VARS, oldVars, newVars);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -106,20 +106,20 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setV(Vars newV)
+  public void setVars(Vars newVars)
   {
-    if (newV != v)
+    if (newVars != vars)
     {
       NotificationChain msgs = null;
-      if (v != null)
-        msgs = ((InternalEObject)v).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__V, null, msgs);
-      if (newV != null)
-        msgs = ((InternalEObject)newV).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__V, null, msgs);
-      msgs = basicSetV(newV, msgs);
+      if (vars != null)
+        msgs = ((InternalEObject)vars).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__VARS, null, msgs);
+      if (newVars != null)
+        msgs = ((InternalEObject)newVars).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__VARS, null, msgs);
+      msgs = basicSetVars(newVars, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__V, newV, newV));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__VARS, newVars, newVars));
   }
 
   /**
@@ -127,9 +127,9 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public Exprs getE()
+  public Exprs getExprs()
   {
-    return e;
+    return exprs;
   }
 
   /**
@@ -137,13 +137,13 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(Exprs newE, NotificationChain msgs)
+  public NotificationChain basicSetExprs(Exprs newExprs, NotificationChain msgs)
   {
-    Exprs oldE = e;
-    e = newE;
+    Exprs oldExprs = exprs;
+    exprs = newExprs;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__E, oldE, newE);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__EXPRS, oldExprs, newExprs);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,20 +154,20 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(Exprs newE)
+  public void setExprs(Exprs newExprs)
   {
-    if (newE != e)
+    if (newExprs != exprs)
     {
       NotificationChain msgs = null;
-      if (e != null)
-        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__E, null, msgs);
-      if (newE != null)
-        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__E, null, msgs);
-      msgs = basicSetE(newE, msgs);
+      if (exprs != null)
+        msgs = ((InternalEObject)exprs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__EXPRS, null, msgs);
+      if (newExprs != null)
+        msgs = ((InternalEObject)newExprs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.ASSIGN__EXPRS, null, msgs);
+      msgs = basicSetExprs(newExprs, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__E, newE, newE));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.ASSIGN__EXPRS, newExprs, newExprs));
   }
 
   /**
@@ -180,10 +180,10 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
   {
     switch (featureID)
     {
-      case WhPackage.ASSIGN__V:
-        return basicSetV(null, msgs);
-      case WhPackage.ASSIGN__E:
-        return basicSetE(null, msgs);
+      case WhPackage.ASSIGN__VARS:
+        return basicSetVars(null, msgs);
+      case WhPackage.ASSIGN__EXPRS:
+        return basicSetExprs(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +198,10 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
   {
     switch (featureID)
     {
-      case WhPackage.ASSIGN__V:
-        return getV();
-      case WhPackage.ASSIGN__E:
-        return getE();
+      case WhPackage.ASSIGN__VARS:
+        return getVars();
+      case WhPackage.ASSIGN__EXPRS:
+        return getExprs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,11 +216,11 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
   {
     switch (featureID)
     {
-      case WhPackage.ASSIGN__V:
-        setV((Vars)newValue);
+      case WhPackage.ASSIGN__VARS:
+        setVars((Vars)newValue);
         return;
-      case WhPackage.ASSIGN__E:
-        setE((Exprs)newValue);
+      case WhPackage.ASSIGN__EXPRS:
+        setExprs((Exprs)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +236,11 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
   {
     switch (featureID)
     {
-      case WhPackage.ASSIGN__V:
-        setV((Vars)null);
+      case WhPackage.ASSIGN__VARS:
+        setVars((Vars)null);
         return;
-      case WhPackage.ASSIGN__E:
-        setE((Exprs)null);
+      case WhPackage.ASSIGN__EXPRS:
+        setExprs((Exprs)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +256,10 @@ public class AssignImpl extends MinimalEObjectImpl.Container implements Assign
   {
     switch (featureID)
     {
-      case WhPackage.ASSIGN__V:
-        return v != null;
-      case WhPackage.ASSIGN__E:
-        return e != null;
+      case WhPackage.ASSIGN__VARS:
+        return vars != null;
+      case WhPackage.ASSIGN__EXPRS:
+        return exprs != null;
     }
     return super.eIsSet(featureID);
   }

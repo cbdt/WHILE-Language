@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Definition#getI <em>I</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Definition#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Definition#getO <em>O</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Definition#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Definition#getCommands <em>Commands</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Definition#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getDefinition()
@@ -26,81 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface Definition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>I</b></em>' containment reference.
+   * Returns the value of the '<em><b>Inputs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>I</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Inputs</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>I</em>' containment reference.
-   * @see #setI(Input)
-   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_I()
+   * @return the value of the '<em>Inputs</em>' containment reference.
+   * @see #setInputs(Input)
+   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_Inputs()
    * @model containment="true"
    * @generated
    */
-  Input getI();
+  Input getInputs();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getI <em>I</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getInputs <em>Inputs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>I</em>' containment reference.
-   * @see #getI()
+   * @param value the new value of the '<em>Inputs</em>' containment reference.
+   * @see #getInputs()
    * @generated
    */
-  void setI(Input value);
+  void setInputs(Input value);
 
   /**
-   * Returns the value of the '<em><b>C</b></em>' containment reference.
+   * Returns the value of the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Commands</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' containment reference.
-   * @see #setC(Commands)
-   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_C()
+   * @return the value of the '<em>Commands</em>' containment reference.
+   * @see #setCommands(Commands)
+   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_Commands()
    * @model containment="true"
    * @generated
    */
-  Commands getC();
+  Commands getCommands();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getC <em>C</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getCommands <em>Commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C</em>' containment reference.
-   * @see #getC()
+   * @param value the new value of the '<em>Commands</em>' containment reference.
+   * @see #getCommands()
    * @generated
    */
-  void setC(Commands value);
+  void setCommands(Commands value);
 
   /**
-   * Returns the value of the '<em><b>O</b></em>' containment reference.
+   * Returns the value of the '<em><b>Outputs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>O</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Outputs</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>O</em>' containment reference.
-   * @see #setO(Output)
-   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_O()
+   * @return the value of the '<em>Outputs</em>' containment reference.
+   * @see #setOutputs(Output)
+   * @see org.xtext.comp.wh.wh.WhPackage#getDefinition_Outputs()
    * @model containment="true"
    * @generated
    */
-  Output getO();
+  Output getOutputs();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getO <em>O</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Definition#getOutputs <em>Outputs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>O</em>' containment reference.
-   * @see #getO()
+   * @param value the new value of the '<em>Outputs</em>' containment reference.
+   * @see #getOutputs()
    * @generated
    */
-  void setO(Output value);
+  void setOutputs(Output value);
 
 } // Definition

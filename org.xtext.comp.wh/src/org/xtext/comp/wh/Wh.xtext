@@ -78,25 +78,25 @@ Program:
 ;
 
 Function:
-	'function' function_name=SYMBOL ':' d=Definition
+	'function' fname=SYMBOL ':' definition=Definition
 ;
 
 Definition:
-	'read'  i=Input
-	'%' c=Commands
-	'%' 'write'  o=Output
+	'read'  inputs=Input
+	'%' commands=Commands
+	'%' 'write'  outputs=Output
 ;
 
 Input:
-	v=VARIABLE (',' v2+=VARIABLE)*
+	params+=VARIABLE (',' params+=VARIABLE)*
 ;
 
 Output:
-	v=VARIABLE (',' v2+=VARIABLE)*
+	r_values+=VARIABLE (',' r_values+=VARIABLE)*
 ;
 
 Commands:
-	c+=Command (';'  c2+=Command)*
+	(command+=Command ';')*
 ;
 
 Command:
@@ -104,30 +104,30 @@ Command:
 ;
 
 Assign:
-	(v=Vars ':=' e=Exprs)
+	(vars=Vars ':=' exprs=Exprs)
 ;
 
 While:
-	('while'  e=Expr  'do'  c=Commands  'od')
+	('while'  cond=Expr  'do'  commands=Commands  'od')
 ;
 
 For:
-	('for'  e=Expr  'do'  c=Commands  'od')
+	('for'  cond=Expr  'do'  commands=Commands  'od')
 ;
 
 If:
-	('if'  e=Expr  'then'  c=Commands  ('else'  c2=Commands )? 'fi')
+	('if'  cond=Expr  'then'  if_commands=Commands  ('else'  else_commands=Commands )? 'fi')
 ;
 
 Foreach:
-	('foreach'  e=Expr  'in'  e2=Expr  'do'  c=Commands  'od')
+	('foreach'  expr=Expr  'in'  e2=Expr  'do'  commands=Commands  'od')
 ;
 
 Vars:
-	v=VARIABLE (',' v2+=VARIABLE)*
+	var+=VARIABLE (',' var+=VARIABLE)*
 ;
 Exprs:
-	e=Expr (',' e2+=Expr)*
+	e+=Expr (',' e+=Expr)*
 ;
 
 Expr:
@@ -135,16 +135,16 @@ Expr:
 ;
 
 ExprSimple:
-	(nil='nil' | var=VARIABLE | sym=SYMBOL | '(' 'cons' e3=LExpr ')' | '(' 'list' e4=LExpr ')' | '(' 'hd'  e5=Expr ')' | '(' 'tl'  e6=Expr ')' 
+	(nil='nil' | var=VARIABLE | sym=SYMBOL | '(' 'cons' cons_exp=LExpr ')' | '(' 'list' list_exp=LExpr ')' | '(' 'hd'  hd_expr=Expr ')' | '(' 'tl'  tl_expr=Expr ')' 
 	)
 ;
 
 ExprAnd:
-	eo=ExprOr ( 'and'  eo2+=ExprOr)*
+	eo+=ExprOr ( 'and'  eo+=ExprOr)*
 ;
 
 ExprOr:
-	en=ExprNot ( 'or'  en2+=ExprNot)*
+	en+=ExprNot ( 'or'  en+=ExprNot)*
 ;
 
 ExprNot:
@@ -156,7 +156,7 @@ ExprEq:
 ;
 
 LExpr:
-	( e1+=Expr)+
+	( le+=Expr)+
 ;
 
 

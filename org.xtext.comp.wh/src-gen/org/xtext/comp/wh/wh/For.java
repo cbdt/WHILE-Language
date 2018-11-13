@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.For#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.For#getC <em>C</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.For#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.For#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getFor()
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface For extends EObject
 {
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Cond</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Expr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getFor_E()
+   * @return the value of the '<em>Cond</em>' containment reference.
+   * @see #setCond(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getFor_Cond()
    * @model containment="true"
    * @generated
    */
-  Expr getE();
+  Expr getCond();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.For#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.For#getCond <em>Cond</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Cond</em>' containment reference.
+   * @see #getCond()
    * @generated
    */
-  void setE(Expr value);
+  void setCond(Expr value);
 
   /**
-   * Returns the value of the '<em><b>C</b></em>' containment reference.
+   * Returns the value of the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Commands</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' containment reference.
-   * @see #setC(Commands)
-   * @see org.xtext.comp.wh.wh.WhPackage#getFor_C()
+   * @return the value of the '<em>Commands</em>' containment reference.
+   * @see #setCommands(Commands)
+   * @see org.xtext.comp.wh.wh.WhPackage#getFor_Commands()
    * @model containment="true"
    * @generated
    */
-  Commands getC();
+  Commands getCommands();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.For#getC <em>C</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.For#getCommands <em>Commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C</em>' containment reference.
-   * @see #getC()
+   * @param value the new value of the '<em>Commands</em>' containment reference.
+   * @see #getCommands()
    * @generated
    */
-  void setC(Commands value);
+  void setCommands(Commands value);
 
 } // For

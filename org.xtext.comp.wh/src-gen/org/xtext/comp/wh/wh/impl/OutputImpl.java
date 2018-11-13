@@ -5,13 +5,10 @@ package org.xtext.comp.wh.wh.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
@@ -27,8 +24,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.OutputImpl#getV <em>V</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.OutputImpl#getV2 <em>V2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.OutputImpl#getR_values <em>Rvalues</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,34 +32,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class OutputImpl extends MinimalEObjectImpl.Container implements Output
 {
   /**
-   * The default value of the '{@link #getV() <em>V</em>}' attribute.
+   * The cached value of the '{@link #getR_values() <em>Rvalues</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getV()
+   * @see #getR_values()
    * @generated
    * @ordered
    */
-  protected static final String V_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getV() <em>V</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getV()
-   * @generated
-   * @ordered
-   */
-  protected String v = V_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getV2() <em>V2</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getV2()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> v2;
+  protected EList<String> r_values;
 
   /**
    * <!-- begin-user-doc -->
@@ -91,36 +67,13 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getV()
+  public EList<String> getR_values()
   {
-    return v;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setV(String newV)
-  {
-    String oldV = v;
-    v = newV;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.OUTPUT__V, oldV, v));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getV2()
-  {
-    if (v2 == null)
+    if (r_values == null)
     {
-      v2 = new EDataTypeEList<String>(String.class, this, WhPackage.OUTPUT__V2);
+      r_values = new EDataTypeEList<String>(String.class, this, WhPackage.OUTPUT__RVALUES);
     }
-    return v2;
+    return r_values;
   }
 
   /**
@@ -133,10 +86,8 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case WhPackage.OUTPUT__V:
-        return getV();
-      case WhPackage.OUTPUT__V2:
-        return getV2();
+      case WhPackage.OUTPUT__RVALUES:
+        return getR_values();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,12 +103,9 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case WhPackage.OUTPUT__V:
-        setV((String)newValue);
-        return;
-      case WhPackage.OUTPUT__V2:
-        getV2().clear();
-        getV2().addAll((Collection<? extends String>)newValue);
+      case WhPackage.OUTPUT__RVALUES:
+        getR_values().clear();
+        getR_values().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +121,8 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case WhPackage.OUTPUT__V:
-        setV(V_EDEFAULT);
-        return;
-      case WhPackage.OUTPUT__V2:
-        getV2().clear();
+      case WhPackage.OUTPUT__RVALUES:
+        getR_values().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,10 +138,8 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case WhPackage.OUTPUT__V:
-        return V_EDEFAULT == null ? v != null : !V_EDEFAULT.equals(v);
-      case WhPackage.OUTPUT__V2:
-        return v2 != null && !v2.isEmpty();
+      case WhPackage.OUTPUT__RVALUES:
+        return r_values != null && !r_values.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -212,10 +155,8 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (v: ");
-    result.append(v);
-    result.append(", v2: ");
-    result.append(v2);
+    result.append(" (r_values: ");
+    result.append(r_values);
     result.append(')');
     return result.toString();
   }

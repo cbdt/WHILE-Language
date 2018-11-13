@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Output#getV <em>V</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Output#getV2 <em>V2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Output#getR_values <em>Rvalues</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getOutput()
@@ -27,45 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Output extends EObject
 {
   /**
-   * Returns the value of the '<em><b>V</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>V</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>V</em>' attribute.
-   * @see #setV(String)
-   * @see org.xtext.comp.wh.wh.WhPackage#getOutput_V()
-   * @model
-   * @generated
-   */
-  String getV();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Output#getV <em>V</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>V</em>' attribute.
-   * @see #getV()
-   * @generated
-   */
-  void setV(String value);
-
-  /**
-   * Returns the value of the '<em><b>V2</b></em>' attribute list.
+   * Returns the value of the '<em><b>Rvalues</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>V2</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Rvalues</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>V2</em>' attribute list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getOutput_V2()
+   * @return the value of the '<em>Rvalues</em>' attribute list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getOutput_R_values()
    * @model unique="false"
    * @generated
    */
-  EList<String> getV2();
+  EList<String> getR_values();
 
 } // Output

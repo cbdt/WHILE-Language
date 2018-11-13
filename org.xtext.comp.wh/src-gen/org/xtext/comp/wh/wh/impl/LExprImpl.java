@@ -27,7 +27,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.LExprImpl#getE1 <em>E1</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.LExprImpl#getLe <em>Le</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class LExprImpl extends ExprEqImpl implements LExpr
 {
   /**
-   * The cached value of the '{@link #getE1() <em>E1</em>}' containment reference list.
+   * The cached value of the '{@link #getLe() <em>Le</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE1()
+   * @see #getLe()
    * @generated
    * @ordered
    */
-  protected EList<Expr> e1;
+  protected EList<Expr> le;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class LExprImpl extends ExprEqImpl implements LExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expr> getE1()
+  public EList<Expr> getLe()
   {
-    if (e1 == null)
+    if (le == null)
     {
-      e1 = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.LEXPR__E1);
+      le = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.LEXPR__LE);
     }
-    return e1;
+    return le;
   }
 
   /**
@@ -89,8 +89,8 @@ public class LExprImpl extends ExprEqImpl implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__E1:
-        return ((InternalEList<?>)getE1()).basicRemove(otherEnd, msgs);
+      case WhPackage.LEXPR__LE:
+        return ((InternalEList<?>)getLe()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class LExprImpl extends ExprEqImpl implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__E1:
-        return getE1();
+      case WhPackage.LEXPR__LE:
+        return getLe();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class LExprImpl extends ExprEqImpl implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__E1:
-        getE1().clear();
-        getE1().addAll((Collection<? extends Expr>)newValue);
+      case WhPackage.LEXPR__LE:
+        getLe().clear();
+        getLe().addAll((Collection<? extends Expr>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class LExprImpl extends ExprEqImpl implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__E1:
-        getE1().clear();
+      case WhPackage.LEXPR__LE:
+        getLe().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class LExprImpl extends ExprEqImpl implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__E1:
-        return e1 != null && !e1.isEmpty();
+      case WhPackage.LEXPR__LE:
+        return le != null && !le.isEmpty();
     }
     return super.eIsSet(featureID);
   }

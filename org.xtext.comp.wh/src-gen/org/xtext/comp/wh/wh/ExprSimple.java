@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getNil <em>Nil</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getVar <em>Var</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getSym <em>Sym</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getE3 <em>E3</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getE4 <em>E4</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getE5 <em>E5</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getE6 <em>E6</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getCons_exp <em>Cons exp</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getList_exp <em>List exp</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getHd_expr <em>Hd expr</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getTl_expr <em>Tl expr</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple()
@@ -108,107 +108,107 @@ public interface ExprSimple extends EObject
   void setSym(String value);
 
   /**
-   * Returns the value of the '<em><b>E3</b></em>' containment reference.
+   * Returns the value of the '<em><b>Cons exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E3</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Cons exp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E3</em>' containment reference.
-   * @see #setE3(LExpr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_E3()
+   * @return the value of the '<em>Cons exp</em>' containment reference.
+   * @see #setCons_exp(LExpr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_Cons_exp()
    * @model containment="true"
    * @generated
    */
-  LExpr getE3();
+  LExpr getCons_exp();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getE3 <em>E3</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getCons_exp <em>Cons exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E3</em>' containment reference.
-   * @see #getE3()
+   * @param value the new value of the '<em>Cons exp</em>' containment reference.
+   * @see #getCons_exp()
    * @generated
    */
-  void setE3(LExpr value);
+  void setCons_exp(LExpr value);
 
   /**
-   * Returns the value of the '<em><b>E4</b></em>' containment reference.
+   * Returns the value of the '<em><b>List exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E4</em>' containment reference isn't clear,
+   * If the meaning of the '<em>List exp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E4</em>' containment reference.
-   * @see #setE4(LExpr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_E4()
+   * @return the value of the '<em>List exp</em>' containment reference.
+   * @see #setList_exp(LExpr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_List_exp()
    * @model containment="true"
    * @generated
    */
-  LExpr getE4();
+  LExpr getList_exp();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getE4 <em>E4</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getList_exp <em>List exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E4</em>' containment reference.
-   * @see #getE4()
+   * @param value the new value of the '<em>List exp</em>' containment reference.
+   * @see #getList_exp()
    * @generated
    */
-  void setE4(LExpr value);
+  void setList_exp(LExpr value);
 
   /**
-   * Returns the value of the '<em><b>E5</b></em>' containment reference.
+   * Returns the value of the '<em><b>Hd expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E5</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Hd expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E5</em>' containment reference.
-   * @see #setE5(Expr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_E5()
+   * @return the value of the '<em>Hd expr</em>' containment reference.
+   * @see #setHd_expr(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_Hd_expr()
    * @model containment="true"
    * @generated
    */
-  Expr getE5();
+  Expr getHd_expr();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getE5 <em>E5</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getHd_expr <em>Hd expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E5</em>' containment reference.
-   * @see #getE5()
+   * @param value the new value of the '<em>Hd expr</em>' containment reference.
+   * @see #getHd_expr()
    * @generated
    */
-  void setE5(Expr value);
+  void setHd_expr(Expr value);
 
   /**
-   * Returns the value of the '<em><b>E6</b></em>' containment reference.
+   * Returns the value of the '<em><b>Tl expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E6</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Tl expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E6</em>' containment reference.
-   * @see #setE6(Expr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_E6()
+   * @return the value of the '<em>Tl expr</em>' containment reference.
+   * @see #setTl_expr(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_Tl_expr()
    * @model containment="true"
    * @generated
    */
-  Expr getE6();
+  Expr getTl_expr();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getE6 <em>E6</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getTl_expr <em>Tl expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E6</em>' containment reference.
-   * @see #getE6()
+   * @param value the new value of the '<em>Tl expr</em>' containment reference.
+   * @see #getTl_expr()
    * @generated
    */
-  void setE6(Expr value);
+  void setTl_expr(Expr value);
 
 } // ExprSimple

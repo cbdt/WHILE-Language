@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Commands#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Commands#getC2 <em>C2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Commands#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getCommands()
@@ -27,35 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Commands extends EObject
 {
   /**
-   * Returns the value of the '<em><b>C</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Command</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.Command}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Command</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommands_C()
+   * @return the value of the '<em>Command</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getCommands_Command()
    * @model containment="true"
    * @generated
    */
-  EList<Command> getC();
-
-  /**
-   * Returns the value of the '<em><b>C2</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.comp.wh.wh.Command}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>C2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>C2</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommands_C2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Command> getC2();
+  EList<Command> getCommand();
 
 } // Commands

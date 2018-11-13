@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprOr#getEn2 <em>En2</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprOr()
@@ -27,45 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprOr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>En</b></em>' containment reference.
+   * Returns the value of the '<em><b>En</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.comp.wh.wh.ExprNot}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>En</em>' containment reference isn't clear,
+   * If the meaning of the '<em>En</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>En</em>' containment reference.
-   * @see #setEn(ExprNot)
+   * @return the value of the '<em>En</em>' containment reference list.
    * @see org.xtext.comp.wh.wh.WhPackage#getExprOr_En()
    * @model containment="true"
    * @generated
    */
-  ExprNot getEn();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>En</em>' containment reference.
-   * @see #getEn()
-   * @generated
-   */
-  void setEn(ExprNot value);
-
-  /**
-   * Returns the value of the '<em><b>En2</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.comp.wh.wh.ExprNot}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>En2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>En2</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprOr_En2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ExprNot> getEn2();
+  EList<ExprNot> getEn();
 
 } // ExprOr

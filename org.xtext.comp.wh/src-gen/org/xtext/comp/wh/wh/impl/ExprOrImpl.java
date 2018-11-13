@@ -5,7 +5,6 @@ package org.xtext.comp.wh.wh.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +30,6 @@ import org.xtext.comp.wh.wh.WhPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprOrImpl#getEn <em>En</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprOrImpl#getEn2 <em>En2</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
 {
   /**
-   * The cached value of the '{@link #getEn() <em>En</em>}' containment reference.
+   * The cached value of the '{@link #getEn() <em>En</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEn()
    * @generated
    * @ordered
    */
-  protected ExprNot en;
-
-  /**
-   * The cached value of the '{@link #getEn2() <em>En2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEn2()
-   * @generated
-   * @ordered
-   */
-  protected EList<ExprNot> en2;
+  protected EList<ExprNot> en;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,61 +72,13 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprNot getEn()
+  public EList<ExprNot> getEn()
   {
+    if (en == null)
+    {
+      en = new EObjectContainmentEList<ExprNot>(ExprNot.class, this, WhPackage.EXPR_OR__EN);
+    }
     return en;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetEn(ExprNot newEn, NotificationChain msgs)
-  {
-    ExprNot oldEn = en;
-    en = newEn;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_OR__EN, oldEn, newEn);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEn(ExprNot newEn)
-  {
-    if (newEn != en)
-    {
-      NotificationChain msgs = null;
-      if (en != null)
-        msgs = ((InternalEObject)en).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_OR__EN, null, msgs);
-      if (newEn != null)
-        msgs = ((InternalEObject)newEn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_OR__EN, null, msgs);
-      msgs = basicSetEn(newEn, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_OR__EN, newEn, newEn));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ExprNot> getEn2()
-  {
-    if (en2 == null)
-    {
-      en2 = new EObjectContainmentEList<ExprNot>(ExprNot.class, this, WhPackage.EXPR_OR__EN2);
-    }
-    return en2;
   }
 
   /**
@@ -153,9 +92,7 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
     switch (featureID)
     {
       case WhPackage.EXPR_OR__EN:
-        return basicSetEn(null, msgs);
-      case WhPackage.EXPR_OR__EN2:
-        return ((InternalEList<?>)getEn2()).basicRemove(otherEnd, msgs);
+        return ((InternalEList<?>)getEn()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +109,6 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
     {
       case WhPackage.EXPR_OR__EN:
         return getEn();
-      case WhPackage.EXPR_OR__EN2:
-        return getEn2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -190,11 +125,8 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
     switch (featureID)
     {
       case WhPackage.EXPR_OR__EN:
-        setEn((ExprNot)newValue);
-        return;
-      case WhPackage.EXPR_OR__EN2:
-        getEn2().clear();
-        getEn2().addAll((Collection<? extends ExprNot>)newValue);
+        getEn().clear();
+        getEn().addAll((Collection<? extends ExprNot>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,10 +143,7 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
     switch (featureID)
     {
       case WhPackage.EXPR_OR__EN:
-        setEn((ExprNot)null);
-        return;
-      case WhPackage.EXPR_OR__EN2:
-        getEn2().clear();
+        getEn().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,9 +160,7 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
     switch (featureID)
     {
       case WhPackage.EXPR_OR__EN:
-        return en != null;
-      case WhPackage.EXPR_OR__EN2:
-        return en2 != null && !en2.isEmpty();
+        return en != null && !en.isEmpty();
     }
     return super.eIsSet(featureID);
   }

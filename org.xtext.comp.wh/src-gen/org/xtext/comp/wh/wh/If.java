@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.If#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.If#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.If#getC2 <em>C2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.If#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.If#getIf_commands <em>If commands</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.If#getElse_commands <em>Else commands</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getIf()
@@ -26,81 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface If extends EObject
 {
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Cond</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Expr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getIf_E()
+   * @return the value of the '<em>Cond</em>' containment reference.
+   * @see #setCond(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getIf_Cond()
    * @model containment="true"
    * @generated
    */
-  Expr getE();
+  Expr getCond();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getCond <em>Cond</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Cond</em>' containment reference.
+   * @see #getCond()
    * @generated
    */
-  void setE(Expr value);
+  void setCond(Expr value);
 
   /**
-   * Returns the value of the '<em><b>C</b></em>' containment reference.
+   * Returns the value of the '<em><b>If commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference isn't clear,
+   * If the meaning of the '<em>If commands</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' containment reference.
-   * @see #setC(Commands)
-   * @see org.xtext.comp.wh.wh.WhPackage#getIf_C()
+   * @return the value of the '<em>If commands</em>' containment reference.
+   * @see #setIf_commands(Commands)
+   * @see org.xtext.comp.wh.wh.WhPackage#getIf_If_commands()
    * @model containment="true"
    * @generated
    */
-  Commands getC();
+  Commands getIf_commands();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getC <em>C</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getIf_commands <em>If commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C</em>' containment reference.
-   * @see #getC()
+   * @param value the new value of the '<em>If commands</em>' containment reference.
+   * @see #getIf_commands()
    * @generated
    */
-  void setC(Commands value);
+  void setIf_commands(Commands value);
 
   /**
-   * Returns the value of the '<em><b>C2</b></em>' containment reference.
+   * Returns the value of the '<em><b>Else commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C2</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Else commands</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C2</em>' containment reference.
-   * @see #setC2(Commands)
-   * @see org.xtext.comp.wh.wh.WhPackage#getIf_C2()
+   * @return the value of the '<em>Else commands</em>' containment reference.
+   * @see #setElse_commands(Commands)
+   * @see org.xtext.comp.wh.wh.WhPackage#getIf_Else_commands()
    * @model containment="true"
    * @generated
    */
-  Commands getC2();
+  Commands getElse_commands();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getC2 <em>C2</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.If#getElse_commands <em>Else commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C2</em>' containment reference.
-   * @see #getC2()
+   * @param value the new value of the '<em>Else commands</em>' containment reference.
+   * @see #getElse_commands()
    * @generated
    */
-  void setC2(Commands value);
+  void setElse_commands(Commands value);
 
 } // If

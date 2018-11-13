@@ -5,7 +5,6 @@ package org.xtext.comp.wh.wh.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +30,6 @@ import org.xtext.comp.wh.wh.WhPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprsImpl#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprsImpl#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
 {
   /**
-   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * The cached value of the '{@link #getE() <em>E</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getE()
    * @generated
    * @ordered
    */
-  protected Expr e;
-
-  /**
-   * The cached value of the '{@link #getE2() <em>E2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getE2()
-   * @generated
-   * @ordered
-   */
-  protected EList<Expr> e2;
+  protected EList<Expr> e;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,61 +72,13 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE()
+  public EList<Expr> getE()
   {
+    if (e == null)
+    {
+      e = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.EXPRS__E);
+    }
     return e;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetE(Expr newE, NotificationChain msgs)
-  {
-    Expr oldE = e;
-    e = newE;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPRS__E, oldE, newE);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setE(Expr newE)
-  {
-    if (newE != e)
-    {
-      NotificationChain msgs = null;
-      if (e != null)
-        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPRS__E, null, msgs);
-      if (newE != null)
-        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPRS__E, null, msgs);
-      msgs = basicSetE(newE, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPRS__E, newE, newE));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Expr> getE2()
-  {
-    if (e2 == null)
-    {
-      e2 = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.EXPRS__E2);
-    }
-    return e2;
   }
 
   /**
@@ -153,9 +92,7 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
     switch (featureID)
     {
       case WhPackage.EXPRS__E:
-        return basicSetE(null, msgs);
-      case WhPackage.EXPRS__E2:
-        return ((InternalEList<?>)getE2()).basicRemove(otherEnd, msgs);
+        return ((InternalEList<?>)getE()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +109,6 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
     {
       case WhPackage.EXPRS__E:
         return getE();
-      case WhPackage.EXPRS__E2:
-        return getE2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -190,11 +125,8 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
     switch (featureID)
     {
       case WhPackage.EXPRS__E:
-        setE((Expr)newValue);
-        return;
-      case WhPackage.EXPRS__E2:
-        getE2().clear();
-        getE2().addAll((Collection<? extends Expr>)newValue);
+        getE().clear();
+        getE().addAll((Collection<? extends Expr>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,10 +143,7 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
     switch (featureID)
     {
       case WhPackage.EXPRS__E:
-        setE((Expr)null);
-        return;
-      case WhPackage.EXPRS__E2:
-        getE2().clear();
+        getE().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,9 +160,7 @@ public class ExprsImpl extends MinimalEObjectImpl.Container implements Exprs
     switch (featureID)
     {
       case WhPackage.EXPRS__E:
-        return e != null;
-      case WhPackage.EXPRS__E2:
-        return e2 != null && !e2.isEmpty();
+        return e != null && !e.isEmpty();
     }
     return super.eIsSet(featureID);
   }

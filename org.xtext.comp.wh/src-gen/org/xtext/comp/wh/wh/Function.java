@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Function#getFunction_name <em>Function name</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Function#getD <em>D</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Function#getFname <em>Fname</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Function#getDefinition <em>Definition</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getFunction()
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Function extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Function name</b></em>' attribute.
+   * Returns the value of the '<em><b>Fname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Function name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Fname</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Function name</em>' attribute.
-   * @see #setFunction_name(String)
-   * @see org.xtext.comp.wh.wh.WhPackage#getFunction_Function_name()
+   * @return the value of the '<em>Fname</em>' attribute.
+   * @see #setFname(String)
+   * @see org.xtext.comp.wh.wh.WhPackage#getFunction_Fname()
    * @model
    * @generated
    */
-  String getFunction_name();
+  String getFname();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Function#getFunction_name <em>Function name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Function#getFname <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function name</em>' attribute.
-   * @see #getFunction_name()
+   * @param value the new value of the '<em>Fname</em>' attribute.
+   * @see #getFname()
    * @generated
    */
-  void setFunction_name(String value);
+  void setFname(String value);
 
   /**
-   * Returns the value of the '<em><b>D</b></em>' containment reference.
+   * Returns the value of the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>D</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Definition</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>D</em>' containment reference.
-   * @see #setD(Definition)
-   * @see org.xtext.comp.wh.wh.WhPackage#getFunction_D()
+   * @return the value of the '<em>Definition</em>' containment reference.
+   * @see #setDefinition(Definition)
+   * @see org.xtext.comp.wh.wh.WhPackage#getFunction_Definition()
    * @model containment="true"
    * @generated
    */
-  Definition getD();
+  Definition getDefinition();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Function#getD <em>D</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Function#getDefinition <em>Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>D</em>' containment reference.
-   * @see #getD()
+   * @param value the new value of the '<em>Definition</em>' containment reference.
+   * @see #getDefinition()
    * @generated
    */
-  void setD(Definition value);
+  void setDefinition(Definition value);
 
 } // Function

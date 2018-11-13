@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Exprs#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprs()
@@ -27,45 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Exprs extends EObject
 {
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>E</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.comp.wh.wh.Expr}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>E</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Expr)
+   * @return the value of the '<em>E</em>' containment reference list.
    * @see org.xtext.comp.wh.wh.WhPackage#getExprs_E()
    * @model containment="true"
    * @generated
    */
-  Expr getE();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
-   * @generated
-   */
-  void setE(Expr value);
-
-  /**
-   * Returns the value of the '<em><b>E2</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.comp.wh.wh.Expr}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>E2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>E2</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprs_E2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Expr> getE2();
+  EList<Expr> getE();
 
 } // Exprs

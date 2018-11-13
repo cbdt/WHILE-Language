@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Assign#getV <em>V</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Assign#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Assign#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Assign#getExprs <em>Exprs</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getAssign()
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Assign extends EObject
 {
   /**
-   * Returns the value of the '<em><b>V</b></em>' containment reference.
+   * Returns the value of the '<em><b>Vars</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>V</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Vars</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>V</em>' containment reference.
-   * @see #setV(Vars)
-   * @see org.xtext.comp.wh.wh.WhPackage#getAssign_V()
+   * @return the value of the '<em>Vars</em>' containment reference.
+   * @see #setVars(Vars)
+   * @see org.xtext.comp.wh.wh.WhPackage#getAssign_Vars()
    * @model containment="true"
    * @generated
    */
-  Vars getV();
+  Vars getVars();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Assign#getV <em>V</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Assign#getVars <em>Vars</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>V</em>' containment reference.
-   * @see #getV()
+   * @param value the new value of the '<em>Vars</em>' containment reference.
+   * @see #getVars()
    * @generated
    */
-  void setV(Vars value);
+  void setVars(Vars value);
 
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Exprs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Exprs</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Exprs)
-   * @see org.xtext.comp.wh.wh.WhPackage#getAssign_E()
+   * @return the value of the '<em>Exprs</em>' containment reference.
+   * @see #setExprs(Exprs)
+   * @see org.xtext.comp.wh.wh.WhPackage#getAssign_Exprs()
    * @model containment="true"
    * @generated
    */
-  Exprs getE();
+  Exprs getExprs();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Assign#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Assign#getExprs <em>Exprs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Exprs</em>' containment reference.
+   * @see #getExprs()
    * @generated
    */
-  void setE(Exprs value);
+  void setExprs(Exprs value);
 
 } // Assign

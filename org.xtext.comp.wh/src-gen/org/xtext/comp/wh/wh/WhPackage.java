@@ -124,22 +124,22 @@ public interface WhPackage extends EPackage
   int FUNCTION = 2;
 
   /**
-   * The feature id for the '<em><b>Function name</b></em>' attribute.
+   * The feature id for the '<em><b>Fname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION__FUNCTION_NAME = 0;
+  int FUNCTION__FNAME = 0;
 
   /**
-   * The feature id for the '<em><b>D</b></em>' containment reference.
+   * The feature id for the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION__D = 1;
+  int FUNCTION__DEFINITION = 1;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -161,31 +161,31 @@ public interface WhPackage extends EPackage
   int DEFINITION = 3;
 
   /**
-   * The feature id for the '<em><b>I</b></em>' containment reference.
+   * The feature id for the '<em><b>Inputs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION__I = 0;
+  int DEFINITION__INPUTS = 0;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION__C = 1;
+  int DEFINITION__COMMANDS = 1;
 
   /**
-   * The feature id for the '<em><b>O</b></em>' containment reference.
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION__O = 2;
+  int DEFINITION__OUTPUTS = 2;
 
   /**
    * The number of structural features of the '<em>Definition</em>' class.
@@ -207,22 +207,13 @@ public interface WhPackage extends EPackage
   int INPUT = 4;
 
   /**
-   * The feature id for the '<em><b>V</b></em>' attribute.
+   * The feature id for the '<em><b>Params</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__V = 0;
-
-  /**
-   * The feature id for the '<em><b>V2</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INPUT__V2 = 1;
+  int INPUT__PARAMS = 0;
 
   /**
    * The number of structural features of the '<em>Input</em>' class.
@@ -231,7 +222,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INPUT_FEATURE_COUNT = 2;
+  int INPUT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.OutputImpl <em>Output</em>}' class.
@@ -244,22 +235,13 @@ public interface WhPackage extends EPackage
   int OUTPUT = 5;
 
   /**
-   * The feature id for the '<em><b>V</b></em>' attribute.
+   * The feature id for the '<em><b>Rvalues</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT__V = 0;
-
-  /**
-   * The feature id for the '<em><b>V2</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTPUT__V2 = 1;
+  int OUTPUT__RVALUES = 0;
 
   /**
    * The number of structural features of the '<em>Output</em>' class.
@@ -268,7 +250,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT_FEATURE_COUNT = 2;
+  int OUTPUT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.CommandsImpl <em>Commands</em>}' class.
@@ -281,22 +263,13 @@ public interface WhPackage extends EPackage
   int COMMANDS = 6;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * The feature id for the '<em><b>Command</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMANDS__C = 0;
-
-  /**
-   * The feature id for the '<em><b>C2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMANDS__C2 = 1;
+  int COMMANDS__COMMAND = 0;
 
   /**
    * The number of structural features of the '<em>Commands</em>' class.
@@ -305,7 +278,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMANDS_FEATURE_COUNT = 2;
+  int COMMANDS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.CommandImpl <em>Command</em>}' class.
@@ -391,22 +364,22 @@ public interface WhPackage extends EPackage
   int ASSIGN = 8;
 
   /**
-   * The feature id for the '<em><b>V</b></em>' containment reference.
+   * The feature id for the '<em><b>Vars</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSIGN__V = 0;
+  int ASSIGN__VARS = 0;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSIGN__E = 1;
+  int ASSIGN__EXPRS = 1;
 
   /**
    * The number of structural features of the '<em>Assign</em>' class.
@@ -428,22 +401,22 @@ public interface WhPackage extends EPackage
   int WHILE = 9;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHILE__E = 0;
+  int WHILE__COND = 0;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHILE__C = 1;
+  int WHILE__COMMANDS = 1;
 
   /**
    * The number of structural features of the '<em>While</em>' class.
@@ -465,22 +438,22 @@ public interface WhPackage extends EPackage
   int FOR = 10;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR__E = 0;
+  int FOR__COND = 0;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR__C = 1;
+  int FOR__COMMANDS = 1;
 
   /**
    * The number of structural features of the '<em>For</em>' class.
@@ -502,31 +475,31 @@ public interface WhPackage extends EPackage
   int IF = 11;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__E = 0;
+  int IF__COND = 0;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * The feature id for the '<em><b>If commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__C = 1;
+  int IF__IF_COMMANDS = 1;
 
   /**
-   * The feature id for the '<em><b>C2</b></em>' containment reference.
+   * The feature id for the '<em><b>Else commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__C2 = 2;
+  int IF__ELSE_COMMANDS = 2;
 
   /**
    * The number of structural features of the '<em>If</em>' class.
@@ -548,13 +521,13 @@ public interface WhPackage extends EPackage
   int FOREACH = 12;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOREACH__E = 0;
+  int FOREACH__EXPR = 0;
 
   /**
    * The feature id for the '<em><b>E2</b></em>' containment reference.
@@ -566,13 +539,13 @@ public interface WhPackage extends EPackage
   int FOREACH__E2 = 1;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOREACH__C = 2;
+  int FOREACH__COMMANDS = 2;
 
   /**
    * The number of structural features of the '<em>Foreach</em>' class.
@@ -594,22 +567,13 @@ public interface WhPackage extends EPackage
   int VARS = 13;
 
   /**
-   * The feature id for the '<em><b>V</b></em>' attribute.
+   * The feature id for the '<em><b>Var</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARS__V = 0;
-
-  /**
-   * The feature id for the '<em><b>V2</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARS__V2 = 1;
+  int VARS__VAR = 0;
 
   /**
    * The number of structural features of the '<em>Vars</em>' class.
@@ -618,7 +582,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARS_FEATURE_COUNT = 2;
+  int VARS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.ExprsImpl <em>Exprs</em>}' class.
@@ -631,7 +595,7 @@ public interface WhPackage extends EPackage
   int EXPRS = 14;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>E</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -640,22 +604,13 @@ public interface WhPackage extends EPackage
   int EXPRS__E = 0;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRS__E2 = 1;
-
-  /**
    * The number of structural features of the '<em>Exprs</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRS_FEATURE_COUNT = 2;
+  int EXPRS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.ExprImpl <em>Expr</em>}' class.
@@ -723,40 +678,40 @@ public interface WhPackage extends EPackage
   int EXPR_SIMPLE__SYM = 2;
 
   /**
-   * The feature id for the '<em><b>E3</b></em>' containment reference.
+   * The feature id for the '<em><b>Cons exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_SIMPLE__E3 = 3;
+  int EXPR_SIMPLE__CONS_EXP = 3;
 
   /**
-   * The feature id for the '<em><b>E4</b></em>' containment reference.
+   * The feature id for the '<em><b>List exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_SIMPLE__E4 = 4;
+  int EXPR_SIMPLE__LIST_EXP = 4;
 
   /**
-   * The feature id for the '<em><b>E5</b></em>' containment reference.
+   * The feature id for the '<em><b>Hd expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_SIMPLE__E5 = 5;
+  int EXPR_SIMPLE__HD_EXPR = 5;
 
   /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * The feature id for the '<em><b>Tl expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_SIMPLE__E6 = 6;
+  int EXPR_SIMPLE__TL_EXPR = 6;
 
   /**
    * The number of structural features of the '<em>Expr Simple</em>' class.
@@ -778,7 +733,7 @@ public interface WhPackage extends EPackage
   int EXPR_AND = 17;
 
   /**
-   * The feature id for the '<em><b>Eo</b></em>' containment reference.
+   * The feature id for the '<em><b>Eo</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -787,22 +742,13 @@ public interface WhPackage extends EPackage
   int EXPR_AND__EO = 0;
 
   /**
-   * The feature id for the '<em><b>Eo2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR_AND__EO2 = 1;
-
-  /**
    * The number of structural features of the '<em>Expr And</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_AND_FEATURE_COUNT = 2;
+  int EXPR_AND_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.ExprOrImpl <em>Expr Or</em>}' class.
@@ -815,7 +761,7 @@ public interface WhPackage extends EPackage
   int EXPR_OR = 18;
 
   /**
-   * The feature id for the '<em><b>En</b></em>' containment reference.
+   * The feature id for the '<em><b>En</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -824,22 +770,13 @@ public interface WhPackage extends EPackage
   int EXPR_OR__EN = 0;
 
   /**
-   * The feature id for the '<em><b>En2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR_OR__EN2 = 1;
-
-  /**
    * The number of structural features of the '<em>Expr Or</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_OR_FEATURE_COUNT = 2;
+  int EXPR_OR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.ExprNotImpl <em>Expr Not</em>}' class.
@@ -944,13 +881,13 @@ public interface WhPackage extends EPackage
   int LEXPR__E2 = EXPR_EQ__E2;
 
   /**
-   * The feature id for the '<em><b>E1</b></em>' containment reference list.
+   * The feature id for the '<em><b>Le</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LEXPR__E1 = EXPR_EQ_FEATURE_COUNT + 0;
+  int LEXPR__LE = EXPR_EQ_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>LExpr</em>' class.
@@ -1015,26 +952,26 @@ public interface WhPackage extends EPackage
   EClass getFunction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Function#getFunction_name <em>Function name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Function#getFname <em>Fname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Function name</em>'.
-   * @see org.xtext.comp.wh.wh.Function#getFunction_name()
+   * @return the meta object for the attribute '<em>Fname</em>'.
+   * @see org.xtext.comp.wh.wh.Function#getFname()
    * @see #getFunction()
    * @generated
    */
-  EAttribute getFunction_Function_name();
+  EAttribute getFunction_Fname();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Function#getD <em>D</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Function#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>D</em>'.
-   * @see org.xtext.comp.wh.wh.Function#getD()
+   * @return the meta object for the containment reference '<em>Definition</em>'.
+   * @see org.xtext.comp.wh.wh.Function#getDefinition()
    * @see #getFunction()
    * @generated
    */
-  EReference getFunction_D();
+  EReference getFunction_Definition();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Definition <em>Definition</em>}'.
@@ -1047,37 +984,37 @@ public interface WhPackage extends EPackage
   EClass getDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getI <em>I</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getInputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>I</em>'.
-   * @see org.xtext.comp.wh.wh.Definition#getI()
+   * @return the meta object for the containment reference '<em>Inputs</em>'.
+   * @see org.xtext.comp.wh.wh.Definition#getInputs()
    * @see #getDefinition()
    * @generated
    */
-  EReference getDefinition_I();
+  EReference getDefinition_Inputs();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.Definition#getC()
+   * @return the meta object for the containment reference '<em>Commands</em>'.
+   * @see org.xtext.comp.wh.wh.Definition#getCommands()
    * @see #getDefinition()
    * @generated
    */
-  EReference getDefinition_C();
+  EReference getDefinition_Commands();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getO <em>O</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Definition#getOutputs <em>Outputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>O</em>'.
-   * @see org.xtext.comp.wh.wh.Definition#getO()
+   * @return the meta object for the containment reference '<em>Outputs</em>'.
+   * @see org.xtext.comp.wh.wh.Definition#getOutputs()
    * @see #getDefinition()
    * @generated
    */
-  EReference getDefinition_O();
+  EReference getDefinition_Outputs();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Input <em>Input</em>}'.
@@ -1090,26 +1027,15 @@ public interface WhPackage extends EPackage
   EClass getInput();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Input#getV <em>V</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Input#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>V</em>'.
-   * @see org.xtext.comp.wh.wh.Input#getV()
+   * @return the meta object for the attribute list '<em>Params</em>'.
+   * @see org.xtext.comp.wh.wh.Input#getParams()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_V();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Input#getV2 <em>V2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>V2</em>'.
-   * @see org.xtext.comp.wh.wh.Input#getV2()
-   * @see #getInput()
-   * @generated
-   */
-  EAttribute getInput_V2();
+  EAttribute getInput_Params();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Output <em>Output</em>}'.
@@ -1122,26 +1048,15 @@ public interface WhPackage extends EPackage
   EClass getOutput();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Output#getV <em>V</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Output#getR_values <em>Rvalues</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>V</em>'.
-   * @see org.xtext.comp.wh.wh.Output#getV()
+   * @return the meta object for the attribute list '<em>Rvalues</em>'.
+   * @see org.xtext.comp.wh.wh.Output#getR_values()
    * @see #getOutput()
    * @generated
    */
-  EAttribute getOutput_V();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Output#getV2 <em>V2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>V2</em>'.
-   * @see org.xtext.comp.wh.wh.Output#getV2()
-   * @see #getOutput()
-   * @generated
-   */
-  EAttribute getOutput_V2();
+  EAttribute getOutput_R_values();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Commands <em>Commands</em>}'.
@@ -1154,26 +1069,15 @@ public interface WhPackage extends EPackage
   EClass getCommands();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Commands#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Commands#getCommand <em>Command</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.Commands#getC()
+   * @return the meta object for the containment reference list '<em>Command</em>'.
+   * @see org.xtext.comp.wh.wh.Commands#getCommand()
    * @see #getCommands()
    * @generated
    */
-  EReference getCommands_C();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Commands#getC2 <em>C2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>C2</em>'.
-   * @see org.xtext.comp.wh.wh.Commands#getC2()
-   * @see #getCommands()
-   * @generated
-   */
-  EReference getCommands_C2();
+  EReference getCommands_Command();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Command <em>Command</em>}'.
@@ -1262,26 +1166,26 @@ public interface WhPackage extends EPackage
   EClass getAssign();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Assign#getV <em>V</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Assign#getVars <em>Vars</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>V</em>'.
-   * @see org.xtext.comp.wh.wh.Assign#getV()
+   * @return the meta object for the containment reference '<em>Vars</em>'.
+   * @see org.xtext.comp.wh.wh.Assign#getVars()
    * @see #getAssign()
    * @generated
    */
-  EReference getAssign_V();
+  EReference getAssign_Vars();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Assign#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Assign#getExprs <em>Exprs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.Assign#getE()
+   * @return the meta object for the containment reference '<em>Exprs</em>'.
+   * @see org.xtext.comp.wh.wh.Assign#getExprs()
    * @see #getAssign()
    * @generated
    */
-  EReference getAssign_E();
+  EReference getAssign_Exprs();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.While <em>While</em>}'.
@@ -1294,26 +1198,26 @@ public interface WhPackage extends EPackage
   EClass getWhile();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.While#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.While#getCond <em>Cond</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.While#getE()
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see org.xtext.comp.wh.wh.While#getCond()
    * @see #getWhile()
    * @generated
    */
-  EReference getWhile_E();
+  EReference getWhile_Cond();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.While#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.While#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.While#getC()
+   * @return the meta object for the containment reference '<em>Commands</em>'.
+   * @see org.xtext.comp.wh.wh.While#getCommands()
    * @see #getWhile()
    * @generated
    */
-  EReference getWhile_C();
+  EReference getWhile_Commands();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.For <em>For</em>}'.
@@ -1326,26 +1230,26 @@ public interface WhPackage extends EPackage
   EClass getFor();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.For#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.For#getCond <em>Cond</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.For#getE()
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see org.xtext.comp.wh.wh.For#getCond()
    * @see #getFor()
    * @generated
    */
-  EReference getFor_E();
+  EReference getFor_Cond();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.For#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.For#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.For#getC()
+   * @return the meta object for the containment reference '<em>Commands</em>'.
+   * @see org.xtext.comp.wh.wh.For#getCommands()
    * @see #getFor()
    * @generated
    */
-  EReference getFor_C();
+  EReference getFor_Commands();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.If <em>If</em>}'.
@@ -1358,37 +1262,37 @@ public interface WhPackage extends EPackage
   EClass getIf();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getCond <em>Cond</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.If#getE()
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see org.xtext.comp.wh.wh.If#getCond()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_E();
+  EReference getIf_Cond();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getIf_commands <em>If commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.If#getC()
+   * @return the meta object for the containment reference '<em>If commands</em>'.
+   * @see org.xtext.comp.wh.wh.If#getIf_commands()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_C();
+  EReference getIf_If_commands();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getC2 <em>C2</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.If#getElse_commands <em>Else commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C2</em>'.
-   * @see org.xtext.comp.wh.wh.If#getC2()
+   * @return the meta object for the containment reference '<em>Else commands</em>'.
+   * @see org.xtext.comp.wh.wh.If#getElse_commands()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_C2();
+  EReference getIf_Else_commands();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Foreach <em>Foreach</em>}'.
@@ -1401,15 +1305,15 @@ public interface WhPackage extends EPackage
   EClass getForeach();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.Foreach#getE()
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.comp.wh.wh.Foreach#getExpr()
    * @see #getForeach()
    * @generated
    */
-  EReference getForeach_E();
+  EReference getForeach_Expr();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getE2 <em>E2</em>}'.
@@ -1423,15 +1327,15 @@ public interface WhPackage extends EPackage
   EReference getForeach_E2();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getC <em>C</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see org.xtext.comp.wh.wh.Foreach#getC()
+   * @return the meta object for the containment reference '<em>Commands</em>'.
+   * @see org.xtext.comp.wh.wh.Foreach#getCommands()
    * @see #getForeach()
    * @generated
    */
-  EReference getForeach_C();
+  EReference getForeach_Commands();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Vars <em>Vars</em>}'.
@@ -1444,26 +1348,15 @@ public interface WhPackage extends EPackage
   EClass getVars();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Vars#getV <em>V</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Vars#getVar <em>Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>V</em>'.
-   * @see org.xtext.comp.wh.wh.Vars#getV()
+   * @return the meta object for the attribute list '<em>Var</em>'.
+   * @see org.xtext.comp.wh.wh.Vars#getVar()
    * @see #getVars()
    * @generated
    */
-  EAttribute getVars_V();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Vars#getV2 <em>V2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>V2</em>'.
-   * @see org.xtext.comp.wh.wh.Vars#getV2()
-   * @see #getVars()
-   * @generated
-   */
-  EAttribute getVars_V2();
+  EAttribute getVars_Var();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Exprs <em>Exprs</em>}'.
@@ -1476,26 +1369,15 @@ public interface WhPackage extends EPackage
   EClass getExprs();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
+   * @return the meta object for the containment reference list '<em>E</em>'.
    * @see org.xtext.comp.wh.wh.Exprs#getE()
    * @see #getExprs()
    * @generated
    */
   EReference getExprs_E();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Exprs#getE2 <em>E2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E2</em>'.
-   * @see org.xtext.comp.wh.wh.Exprs#getE2()
-   * @see #getExprs()
-   * @generated
-   */
-  EReference getExprs_E2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Expr <em>Expr</em>}'.
@@ -1562,48 +1444,48 @@ public interface WhPackage extends EPackage
   EAttribute getExprSimple_Sym();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getE3 <em>E3</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getCons_exp <em>Cons exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E3</em>'.
-   * @see org.xtext.comp.wh.wh.ExprSimple#getE3()
+   * @return the meta object for the containment reference '<em>Cons exp</em>'.
+   * @see org.xtext.comp.wh.wh.ExprSimple#getCons_exp()
    * @see #getExprSimple()
    * @generated
    */
-  EReference getExprSimple_E3();
+  EReference getExprSimple_Cons_exp();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getE4 <em>E4</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getList_exp <em>List exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E4</em>'.
-   * @see org.xtext.comp.wh.wh.ExprSimple#getE4()
+   * @return the meta object for the containment reference '<em>List exp</em>'.
+   * @see org.xtext.comp.wh.wh.ExprSimple#getList_exp()
    * @see #getExprSimple()
    * @generated
    */
-  EReference getExprSimple_E4();
+  EReference getExprSimple_List_exp();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getE5 <em>E5</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getHd_expr <em>Hd expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E5</em>'.
-   * @see org.xtext.comp.wh.wh.ExprSimple#getE5()
+   * @return the meta object for the containment reference '<em>Hd expr</em>'.
+   * @see org.xtext.comp.wh.wh.ExprSimple#getHd_expr()
    * @see #getExprSimple()
    * @generated
    */
-  EReference getExprSimple_E5();
+  EReference getExprSimple_Hd_expr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getE6 <em>E6</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprSimple#getTl_expr <em>Tl expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E6</em>'.
-   * @see org.xtext.comp.wh.wh.ExprSimple#getE6()
+   * @return the meta object for the containment reference '<em>Tl expr</em>'.
+   * @see org.xtext.comp.wh.wh.ExprSimple#getTl_expr()
    * @see #getExprSimple()
    * @generated
    */
-  EReference getExprSimple_E6();
+  EReference getExprSimple_Tl_expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprAnd <em>Expr And</em>}'.
@@ -1616,26 +1498,15 @@ public interface WhPackage extends EPackage
   EClass getExprAnd();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Eo</em>'.
+   * @return the meta object for the containment reference list '<em>Eo</em>'.
    * @see org.xtext.comp.wh.wh.ExprAnd#getEo()
    * @see #getExprAnd()
    * @generated
    */
   EReference getExprAnd_Eo();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprAnd#getEo2 <em>Eo2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Eo2</em>'.
-   * @see org.xtext.comp.wh.wh.ExprAnd#getEo2()
-   * @see #getExprAnd()
-   * @generated
-   */
-  EReference getExprAnd_Eo2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprOr <em>Expr Or</em>}'.
@@ -1648,26 +1519,15 @@ public interface WhPackage extends EPackage
   EClass getExprOr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>En</em>'.
+   * @return the meta object for the containment reference list '<em>En</em>'.
    * @see org.xtext.comp.wh.wh.ExprOr#getEn()
    * @see #getExprOr()
    * @generated
    */
   EReference getExprOr_En();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprOr#getEn2 <em>En2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>En2</em>'.
-   * @see org.xtext.comp.wh.wh.ExprOr#getEn2()
-   * @see #getExprOr()
-   * @generated
-   */
-  EReference getExprOr_En2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprNot <em>Expr Not</em>}'.
@@ -1744,15 +1604,15 @@ public interface WhPackage extends EPackage
   EClass getLExpr();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.LExpr#getE1 <em>E1</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.LExpr#getLe <em>Le</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E1</em>'.
-   * @see org.xtext.comp.wh.wh.LExpr#getE1()
+   * @return the meta object for the containment reference list '<em>Le</em>'.
+   * @see org.xtext.comp.wh.wh.LExpr#getLe()
    * @see #getLExpr()
    * @generated
    */
-  EReference getLExpr_E1();
+  EReference getLExpr_Le();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1824,20 +1684,20 @@ public interface WhPackage extends EPackage
     EClass FUNCTION = eINSTANCE.getFunction();
 
     /**
-     * The meta object literal for the '<em><b>Function name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Fname</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION__FUNCTION_NAME = eINSTANCE.getFunction_Function_name();
+    EAttribute FUNCTION__FNAME = eINSTANCE.getFunction_Fname();
 
     /**
-     * The meta object literal for the '<em><b>D</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FUNCTION__D = eINSTANCE.getFunction_D();
+    EReference FUNCTION__DEFINITION = eINSTANCE.getFunction_Definition();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -1850,28 +1710,28 @@ public interface WhPackage extends EPackage
     EClass DEFINITION = eINSTANCE.getDefinition();
 
     /**
-     * The meta object literal for the '<em><b>I</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Inputs</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEFINITION__I = eINSTANCE.getDefinition_I();
+    EReference DEFINITION__INPUTS = eINSTANCE.getDefinition_Inputs();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEFINITION__C = eINSTANCE.getDefinition_C();
+    EReference DEFINITION__COMMANDS = eINSTANCE.getDefinition_Commands();
 
     /**
-     * The meta object literal for the '<em><b>O</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Outputs</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEFINITION__O = eINSTANCE.getDefinition_O();
+    EReference DEFINITION__OUTPUTS = eINSTANCE.getDefinition_Outputs();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.InputImpl <em>Input</em>}' class.
@@ -1884,20 +1744,12 @@ public interface WhPackage extends EPackage
     EClass INPUT = eINSTANCE.getInput();
 
     /**
-     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Params</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__V = eINSTANCE.getInput_V();
-
-    /**
-     * The meta object literal for the '<em><b>V2</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INPUT__V2 = eINSTANCE.getInput_V2();
+    EAttribute INPUT__PARAMS = eINSTANCE.getInput_Params();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.OutputImpl <em>Output</em>}' class.
@@ -1910,20 +1762,12 @@ public interface WhPackage extends EPackage
     EClass OUTPUT = eINSTANCE.getOutput();
 
     /**
-     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rvalues</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTPUT__V = eINSTANCE.getOutput_V();
-
-    /**
-     * The meta object literal for the '<em><b>V2</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT__V2 = eINSTANCE.getOutput_V2();
+    EAttribute OUTPUT__RVALUES = eINSTANCE.getOutput_R_values();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.CommandsImpl <em>Commands</em>}' class.
@@ -1936,20 +1780,12 @@ public interface WhPackage extends EPackage
     EClass COMMANDS = eINSTANCE.getCommands();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMMANDS__C = eINSTANCE.getCommands_C();
-
-    /**
-     * The meta object literal for the '<em><b>C2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMANDS__C2 = eINSTANCE.getCommands_C2();
+    EReference COMMANDS__COMMAND = eINSTANCE.getCommands_Command();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.CommandImpl <em>Command</em>}' class.
@@ -2020,20 +1856,20 @@ public interface WhPackage extends EPackage
     EClass ASSIGN = eINSTANCE.getAssign();
 
     /**
-     * The meta object literal for the '<em><b>V</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Vars</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ASSIGN__V = eINSTANCE.getAssign_V();
+    EReference ASSIGN__VARS = eINSTANCE.getAssign_Vars();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ASSIGN__E = eINSTANCE.getAssign_E();
+    EReference ASSIGN__EXPRS = eINSTANCE.getAssign_Exprs();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.WhileImpl <em>While</em>}' class.
@@ -2046,20 +1882,20 @@ public interface WhPackage extends EPackage
     EClass WHILE = eINSTANCE.getWhile();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHILE__E = eINSTANCE.getWhile_E();
+    EReference WHILE__COND = eINSTANCE.getWhile_Cond();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHILE__C = eINSTANCE.getWhile_C();
+    EReference WHILE__COMMANDS = eINSTANCE.getWhile_Commands();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ForImpl <em>For</em>}' class.
@@ -2072,20 +1908,20 @@ public interface WhPackage extends EPackage
     EClass FOR = eINSTANCE.getFor();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOR__E = eINSTANCE.getFor_E();
+    EReference FOR__COND = eINSTANCE.getFor_Cond();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOR__C = eINSTANCE.getFor_C();
+    EReference FOR__COMMANDS = eINSTANCE.getFor_Commands();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.IfImpl <em>If</em>}' class.
@@ -2098,28 +1934,28 @@ public interface WhPackage extends EPackage
     EClass IF = eINSTANCE.getIf();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__E = eINSTANCE.getIf_E();
+    EReference IF__COND = eINSTANCE.getIf_Cond();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>If commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__C = eINSTANCE.getIf_C();
+    EReference IF__IF_COMMANDS = eINSTANCE.getIf_If_commands();
 
     /**
-     * The meta object literal for the '<em><b>C2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Else commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__C2 = eINSTANCE.getIf_C2();
+    EReference IF__ELSE_COMMANDS = eINSTANCE.getIf_Else_commands();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ForeachImpl <em>Foreach</em>}' class.
@@ -2132,12 +1968,12 @@ public interface WhPackage extends EPackage
     EClass FOREACH = eINSTANCE.getForeach();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOREACH__E = eINSTANCE.getForeach_E();
+    EReference FOREACH__EXPR = eINSTANCE.getForeach_Expr();
 
     /**
      * The meta object literal for the '<em><b>E2</b></em>' containment reference feature.
@@ -2148,12 +1984,12 @@ public interface WhPackage extends EPackage
     EReference FOREACH__E2 = eINSTANCE.getForeach_E2();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOREACH__C = eINSTANCE.getForeach_C();
+    EReference FOREACH__COMMANDS = eINSTANCE.getForeach_Commands();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.VarsImpl <em>Vars</em>}' class.
@@ -2166,20 +2002,12 @@ public interface WhPackage extends EPackage
     EClass VARS = eINSTANCE.getVars();
 
     /**
-     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Var</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARS__V = eINSTANCE.getVars_V();
-
-    /**
-     * The meta object literal for the '<em><b>V2</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARS__V2 = eINSTANCE.getVars_V2();
+    EAttribute VARS__VAR = eINSTANCE.getVars_Var();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprsImpl <em>Exprs</em>}' class.
@@ -2192,20 +2020,12 @@ public interface WhPackage extends EPackage
     EClass EXPRS = eINSTANCE.getExprs();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>E</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EXPRS__E = eINSTANCE.getExprs_E();
-
-    /**
-     * The meta object literal for the '<em><b>E2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRS__E2 = eINSTANCE.getExprs_E2();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprImpl <em>Expr</em>}' class.
@@ -2260,36 +2080,36 @@ public interface WhPackage extends EPackage
     EAttribute EXPR_SIMPLE__SYM = eINSTANCE.getExprSimple_Sym();
 
     /**
-     * The meta object literal for the '<em><b>E3</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Cons exp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_SIMPLE__E3 = eINSTANCE.getExprSimple_E3();
+    EReference EXPR_SIMPLE__CONS_EXP = eINSTANCE.getExprSimple_Cons_exp();
 
     /**
-     * The meta object literal for the '<em><b>E4</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>List exp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_SIMPLE__E4 = eINSTANCE.getExprSimple_E4();
+    EReference EXPR_SIMPLE__LIST_EXP = eINSTANCE.getExprSimple_List_exp();
 
     /**
-     * The meta object literal for the '<em><b>E5</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Hd expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_SIMPLE__E5 = eINSTANCE.getExprSimple_E5();
+    EReference EXPR_SIMPLE__HD_EXPR = eINSTANCE.getExprSimple_Hd_expr();
 
     /**
-     * The meta object literal for the '<em><b>E6</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Tl expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_SIMPLE__E6 = eINSTANCE.getExprSimple_E6();
+    EReference EXPR_SIMPLE__TL_EXPR = eINSTANCE.getExprSimple_Tl_expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprAndImpl <em>Expr And</em>}' class.
@@ -2302,20 +2122,12 @@ public interface WhPackage extends EPackage
     EClass EXPR_AND = eINSTANCE.getExprAnd();
 
     /**
-     * The meta object literal for the '<em><b>Eo</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Eo</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EXPR_AND__EO = eINSTANCE.getExprAnd_Eo();
-
-    /**
-     * The meta object literal for the '<em><b>Eo2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR_AND__EO2 = eINSTANCE.getExprAnd_Eo2();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprOrImpl <em>Expr Or</em>}' class.
@@ -2328,20 +2140,12 @@ public interface WhPackage extends EPackage
     EClass EXPR_OR = eINSTANCE.getExprOr();
 
     /**
-     * The meta object literal for the '<em><b>En</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>En</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EXPR_OR__EN = eINSTANCE.getExprOr_En();
-
-    /**
-     * The meta object literal for the '<em><b>En2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR_OR__EN2 = eINSTANCE.getExprOr_En2();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprNotImpl <em>Expr Not</em>}' class.
@@ -2406,12 +2210,12 @@ public interface WhPackage extends EPackage
     EClass LEXPR = eINSTANCE.getLExpr();
 
     /**
-     * The meta object literal for the '<em><b>E1</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Le</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LEXPR__E1 = eINSTANCE.getLExpr_E1();
+    EReference LEXPR__LE = eINSTANCE.getLExpr_Le();
 
   }
 

@@ -61,7 +61,7 @@ public class WhSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     SYMBOL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) '(' (ambiguity) e1+=Expr
+	 *     (rule start) '(' (ambiguity) le+=Expr
 	 */
 	protected void emit_ExprEq_SYMBOLTerminalRuleCall_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

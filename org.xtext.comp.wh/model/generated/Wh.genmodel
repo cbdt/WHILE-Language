@@ -13,25 +13,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Program/functions"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Function/function_name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Function/d"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Function/fname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Function/definition"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Definition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/i"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/c"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/o"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Definition/outputs"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Input">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Input/v"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Input/v2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Input/params"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Output">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Output/v"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Output/v2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Output/r_values"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Commands">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Commands/c"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Commands/c2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Commands/command"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Command">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Command/nop"/>
@@ -42,34 +39,32 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/foreach"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Assign">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Assign/v"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Assign/e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Assign/vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Assign/exprs"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//While">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//While/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//While/c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//While/cond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//While/commands"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//For">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//For/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//For/c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//For/cond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//For/commands"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//If">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/c"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/c2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/cond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/if_commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//If/else_commands"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Foreach">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Foreach/e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Foreach/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Foreach/e2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Foreach/c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Foreach/commands"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Vars">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Vars/v"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Vars/v2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Vars/var"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Exprs">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Exprs/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Exprs/e2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Expr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Expr/ea"/>
@@ -78,18 +73,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprSimple/nil"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprSimple/var"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprSimple/sym"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/e3"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/e4"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/e5"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/e6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/cons_exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/list_exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/hd_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprSimple/tl_expr"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//ExprAnd">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprAnd/eo"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprAnd/eo2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//ExprOr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprOr/en"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprOr/en2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//ExprNot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprNot/e"/>
@@ -100,7 +93,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/e2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//LExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//LExpr/e1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//LExpr/le"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

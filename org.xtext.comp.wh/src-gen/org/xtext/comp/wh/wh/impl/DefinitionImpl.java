@@ -26,9 +26,9 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getI <em>I</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getC <em>C</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getO <em>O</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getCommands <em>Commands</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.DefinitionImpl#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,34 +36,34 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class DefinitionImpl extends MinimalEObjectImpl.Container implements Definition
 {
   /**
-   * The cached value of the '{@link #getI() <em>I</em>}' containment reference.
+   * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getI()
+   * @see #getInputs()
    * @generated
    * @ordered
    */
-  protected Input i;
+  protected Input inputs;
 
   /**
-   * The cached value of the '{@link #getC() <em>C</em>}' containment reference.
+   * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getCommands()
    * @generated
    * @ordered
    */
-  protected Commands c;
+  protected Commands commands;
 
   /**
-   * The cached value of the '{@link #getO() <em>O</em>}' containment reference.
+   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getO()
+   * @see #getOutputs()
    * @generated
    * @ordered
    */
-  protected Output o;
+  protected Output outputs;
 
   /**
    * <!-- begin-user-doc -->
@@ -91,9 +91,9 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Input getI()
+  public Input getInputs()
   {
-    return i;
+    return inputs;
   }
 
   /**
@@ -101,13 +101,13 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetI(Input newI, NotificationChain msgs)
+  public NotificationChain basicSetInputs(Input newInputs, NotificationChain msgs)
   {
-    Input oldI = i;
-    i = newI;
+    Input oldInputs = inputs;
+    inputs = newInputs;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__I, oldI, newI);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__INPUTS, oldInputs, newInputs);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -118,20 +118,20 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setI(Input newI)
+  public void setInputs(Input newInputs)
   {
-    if (newI != i)
+    if (newInputs != inputs)
     {
       NotificationChain msgs = null;
-      if (i != null)
-        msgs = ((InternalEObject)i).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__I, null, msgs);
-      if (newI != null)
-        msgs = ((InternalEObject)newI).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__I, null, msgs);
-      msgs = basicSetI(newI, msgs);
+      if (inputs != null)
+        msgs = ((InternalEObject)inputs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__INPUTS, null, msgs);
+      if (newInputs != null)
+        msgs = ((InternalEObject)newInputs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__INPUTS, null, msgs);
+      msgs = basicSetInputs(newInputs, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__I, newI, newI));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__INPUTS, newInputs, newInputs));
   }
 
   /**
@@ -139,9 +139,9 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Commands getC()
+  public Commands getCommands()
   {
-    return c;
+    return commands;
   }
 
   /**
@@ -149,13 +149,13 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetC(Commands newC, NotificationChain msgs)
+  public NotificationChain basicSetCommands(Commands newCommands, NotificationChain msgs)
   {
-    Commands oldC = c;
-    c = newC;
+    Commands oldCommands = commands;
+    commands = newCommands;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__C, oldC, newC);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__COMMANDS, oldCommands, newCommands);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -166,20 +166,20 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setC(Commands newC)
+  public void setCommands(Commands newCommands)
   {
-    if (newC != c)
+    if (newCommands != commands)
     {
       NotificationChain msgs = null;
-      if (c != null)
-        msgs = ((InternalEObject)c).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__C, null, msgs);
-      if (newC != null)
-        msgs = ((InternalEObject)newC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__C, null, msgs);
-      msgs = basicSetC(newC, msgs);
+      if (commands != null)
+        msgs = ((InternalEObject)commands).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__COMMANDS, null, msgs);
+      if (newCommands != null)
+        msgs = ((InternalEObject)newCommands).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__COMMANDS, null, msgs);
+      msgs = basicSetCommands(newCommands, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__C, newC, newC));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__COMMANDS, newCommands, newCommands));
   }
 
   /**
@@ -187,9 +187,9 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Output getO()
+  public Output getOutputs()
   {
-    return o;
+    return outputs;
   }
 
   /**
@@ -197,13 +197,13 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetO(Output newO, NotificationChain msgs)
+  public NotificationChain basicSetOutputs(Output newOutputs, NotificationChain msgs)
   {
-    Output oldO = o;
-    o = newO;
+    Output oldOutputs = outputs;
+    outputs = newOutputs;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__O, oldO, newO);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__OUTPUTS, oldOutputs, newOutputs);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -214,20 +214,20 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setO(Output newO)
+  public void setOutputs(Output newOutputs)
   {
-    if (newO != o)
+    if (newOutputs != outputs)
     {
       NotificationChain msgs = null;
-      if (o != null)
-        msgs = ((InternalEObject)o).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__O, null, msgs);
-      if (newO != null)
-        msgs = ((InternalEObject)newO).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__O, null, msgs);
-      msgs = basicSetO(newO, msgs);
+      if (outputs != null)
+        msgs = ((InternalEObject)outputs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__OUTPUTS, null, msgs);
+      if (newOutputs != null)
+        msgs = ((InternalEObject)newOutputs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.DEFINITION__OUTPUTS, null, msgs);
+      msgs = basicSetOutputs(newOutputs, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__O, newO, newO));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.DEFINITION__OUTPUTS, newOutputs, newOutputs));
   }
 
   /**
@@ -240,12 +240,12 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case WhPackage.DEFINITION__I:
-        return basicSetI(null, msgs);
-      case WhPackage.DEFINITION__C:
-        return basicSetC(null, msgs);
-      case WhPackage.DEFINITION__O:
-        return basicSetO(null, msgs);
+      case WhPackage.DEFINITION__INPUTS:
+        return basicSetInputs(null, msgs);
+      case WhPackage.DEFINITION__COMMANDS:
+        return basicSetCommands(null, msgs);
+      case WhPackage.DEFINITION__OUTPUTS:
+        return basicSetOutputs(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -260,12 +260,12 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case WhPackage.DEFINITION__I:
-        return getI();
-      case WhPackage.DEFINITION__C:
-        return getC();
-      case WhPackage.DEFINITION__O:
-        return getO();
+      case WhPackage.DEFINITION__INPUTS:
+        return getInputs();
+      case WhPackage.DEFINITION__COMMANDS:
+        return getCommands();
+      case WhPackage.DEFINITION__OUTPUTS:
+        return getOutputs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -280,14 +280,14 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case WhPackage.DEFINITION__I:
-        setI((Input)newValue);
+      case WhPackage.DEFINITION__INPUTS:
+        setInputs((Input)newValue);
         return;
-      case WhPackage.DEFINITION__C:
-        setC((Commands)newValue);
+      case WhPackage.DEFINITION__COMMANDS:
+        setCommands((Commands)newValue);
         return;
-      case WhPackage.DEFINITION__O:
-        setO((Output)newValue);
+      case WhPackage.DEFINITION__OUTPUTS:
+        setOutputs((Output)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -303,14 +303,14 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case WhPackage.DEFINITION__I:
-        setI((Input)null);
+      case WhPackage.DEFINITION__INPUTS:
+        setInputs((Input)null);
         return;
-      case WhPackage.DEFINITION__C:
-        setC((Commands)null);
+      case WhPackage.DEFINITION__COMMANDS:
+        setCommands((Commands)null);
         return;
-      case WhPackage.DEFINITION__O:
-        setO((Output)null);
+      case WhPackage.DEFINITION__OUTPUTS:
+        setOutputs((Output)null);
         return;
     }
     super.eUnset(featureID);
@@ -326,12 +326,12 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case WhPackage.DEFINITION__I:
-        return i != null;
-      case WhPackage.DEFINITION__C:
-        return c != null;
-      case WhPackage.DEFINITION__O:
-        return o != null;
+      case WhPackage.DEFINITION__INPUTS:
+        return inputs != null;
+      case WhPackage.DEFINITION__COMMANDS:
+        return commands != null;
+      case WhPackage.DEFINITION__OUTPUTS:
+        return outputs != null;
     }
     return super.eIsSet(featureID);
   }

@@ -24,8 +24,8 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.FunctionImpl#getFunction_name <em>Function name</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.FunctionImpl#getD <em>D</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.FunctionImpl#getFname <em>Fname</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.FunctionImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,34 +33,34 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class FunctionImpl extends MinimalEObjectImpl.Container implements Function
 {
   /**
-   * The default value of the '{@link #getFunction_name() <em>Function name</em>}' attribute.
+   * The default value of the '{@link #getFname() <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction_name()
+   * @see #getFname()
    * @generated
    * @ordered
    */
-  protected static final String FUNCTION_NAME_EDEFAULT = null;
+  protected static final String FNAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFunction_name() <em>Function name</em>}' attribute.
+   * The cached value of the '{@link #getFname() <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction_name()
+   * @see #getFname()
    * @generated
    * @ordered
    */
-  protected String function_name = FUNCTION_NAME_EDEFAULT;
+  protected String fname = FNAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getD() <em>D</em>}' containment reference.
+   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getD()
+   * @see #getDefinition()
    * @generated
    * @ordered
    */
-  protected Definition d;
+  protected Definition definition;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,9 +88,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFunction_name()
+  public String getFname()
   {
-    return function_name;
+    return fname;
   }
 
   /**
@@ -98,12 +98,12 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFunction_name(String newFunction_name)
+  public void setFname(String newFname)
   {
-    String oldFunction_name = function_name;
-    function_name = newFunction_name;
+    String oldFname = fname;
+    fname = newFname;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__FUNCTION_NAME, oldFunction_name, function_name));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__FNAME, oldFname, fname));
   }
 
   /**
@@ -111,9 +111,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Definition getD()
+  public Definition getDefinition()
   {
-    return d;
+    return definition;
   }
 
   /**
@@ -121,13 +121,13 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetD(Definition newD, NotificationChain msgs)
+  public NotificationChain basicSetDefinition(Definition newDefinition, NotificationChain msgs)
   {
-    Definition oldD = d;
-    d = newD;
+    Definition oldDefinition = definition;
+    definition = newDefinition;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__D, oldD, newD);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__DEFINITION, oldDefinition, newDefinition);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -138,20 +138,20 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setD(Definition newD)
+  public void setDefinition(Definition newDefinition)
   {
-    if (newD != d)
+    if (newDefinition != definition)
     {
       NotificationChain msgs = null;
-      if (d != null)
-        msgs = ((InternalEObject)d).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FUNCTION__D, null, msgs);
-      if (newD != null)
-        msgs = ((InternalEObject)newD).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FUNCTION__D, null, msgs);
-      msgs = basicSetD(newD, msgs);
+      if (definition != null)
+        msgs = ((InternalEObject)definition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FUNCTION__DEFINITION, null, msgs);
+      if (newDefinition != null)
+        msgs = ((InternalEObject)newDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FUNCTION__DEFINITION, null, msgs);
+      msgs = basicSetDefinition(newDefinition, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__D, newD, newD));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FUNCTION__DEFINITION, newDefinition, newDefinition));
   }
 
   /**
@@ -164,8 +164,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case WhPackage.FUNCTION__D:
-        return basicSetD(null, msgs);
+      case WhPackage.FUNCTION__DEFINITION:
+        return basicSetDefinition(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,10 +180,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case WhPackage.FUNCTION__FUNCTION_NAME:
-        return getFunction_name();
-      case WhPackage.FUNCTION__D:
-        return getD();
+      case WhPackage.FUNCTION__FNAME:
+        return getFname();
+      case WhPackage.FUNCTION__DEFINITION:
+        return getDefinition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,11 +198,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case WhPackage.FUNCTION__FUNCTION_NAME:
-        setFunction_name((String)newValue);
+      case WhPackage.FUNCTION__FNAME:
+        setFname((String)newValue);
         return;
-      case WhPackage.FUNCTION__D:
-        setD((Definition)newValue);
+      case WhPackage.FUNCTION__DEFINITION:
+        setDefinition((Definition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +218,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case WhPackage.FUNCTION__FUNCTION_NAME:
-        setFunction_name(FUNCTION_NAME_EDEFAULT);
+      case WhPackage.FUNCTION__FNAME:
+        setFname(FNAME_EDEFAULT);
         return;
-      case WhPackage.FUNCTION__D:
-        setD((Definition)null);
+      case WhPackage.FUNCTION__DEFINITION:
+        setDefinition((Definition)null);
         return;
     }
     super.eUnset(featureID);
@@ -238,10 +238,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
   {
     switch (featureID)
     {
-      case WhPackage.FUNCTION__FUNCTION_NAME:
-        return FUNCTION_NAME_EDEFAULT == null ? function_name != null : !FUNCTION_NAME_EDEFAULT.equals(function_name);
-      case WhPackage.FUNCTION__D:
-        return d != null;
+      case WhPackage.FUNCTION__FNAME:
+        return FNAME_EDEFAULT == null ? fname != null : !FNAME_EDEFAULT.equals(fname);
+      case WhPackage.FUNCTION__DEFINITION:
+        return definition != null;
     }
     return super.eIsSet(featureID);
   }
@@ -257,8 +257,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (function_name: ");
-    result.append(function_name);
+    result.append(" (fname: ");
+    result.append(fname);
     result.append(')');
     return result.toString();
   }

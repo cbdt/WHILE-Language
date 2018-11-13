@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprAnd#getEo2 <em>Eo2</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd()
@@ -27,45 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprAnd extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Eo</b></em>' containment reference.
+   * Returns the value of the '<em><b>Eo</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.comp.wh.wh.ExprOr}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Eo</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Eo</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Eo</em>' containment reference.
-   * @see #setEo(ExprOr)
+   * @return the value of the '<em>Eo</em>' containment reference list.
    * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd_Eo()
    * @model containment="true"
    * @generated
    */
-  ExprOr getEo();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Eo</em>' containment reference.
-   * @see #getEo()
-   * @generated
-   */
-  void setEo(ExprOr value);
-
-  /**
-   * Returns the value of the '<em><b>Eo2</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.comp.wh.wh.ExprOr}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Eo2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Eo2</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd_Eo2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ExprOr> getEo2();
+  EList<ExprOr> getEo();
 
 } // ExprAnd

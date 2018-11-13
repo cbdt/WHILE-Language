@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Foreach#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Foreach#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.Foreach#getE2 <em>E2</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Foreach#getC <em>C</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Foreach#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getForeach()
@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Foreach extends EObject
 {
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Expr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getForeach_E()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getForeach_Expr()
    * @model containment="true"
    * @generated
    */
-  Expr getE();
+  Expr getExpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Foreach#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Foreach#getExpr <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
    * @generated
    */
-  void setE(Expr value);
+  void setExpr(Expr value);
 
   /**
    * Returns the value of the '<em><b>E2</b></em>' containment reference.
@@ -78,29 +78,29 @@ public interface Foreach extends EObject
   void setE2(Expr value);
 
   /**
-   * Returns the value of the '<em><b>C</b></em>' containment reference.
+   * Returns the value of the '<em><b>Commands</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Commands</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' containment reference.
-   * @see #setC(Commands)
-   * @see org.xtext.comp.wh.wh.WhPackage#getForeach_C()
+   * @return the value of the '<em>Commands</em>' containment reference.
+   * @see #setCommands(Commands)
+   * @see org.xtext.comp.wh.wh.WhPackage#getForeach_Commands()
    * @model containment="true"
    * @generated
    */
-  Commands getC();
+  Commands getCommands();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Foreach#getC <em>C</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Foreach#getCommands <em>Commands</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C</em>' containment reference.
-   * @see #getC()
+   * @param value the new value of the '<em>Commands</em>' containment reference.
+   * @see #getCommands()
    * @generated
    */
-  void setC(Commands value);
+  void setCommands(Commands value);
 
 } // Foreach
