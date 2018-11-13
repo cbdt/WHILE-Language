@@ -73,6 +73,7 @@ public class WhFactoryImpl extends EFactoryImpl implements WhFactory
       case WhPackage.OUTPUT: return createOutput();
       case WhPackage.COMMANDS: return createCommands();
       case WhPackage.COMMAND: return createCommand();
+      case WhPackage.NOP: return createNop();
       case WhPackage.ASSIGN: return createAssign();
       case WhPackage.WHILE: return createWhile();
       case WhPackage.FOR: return createFor();
@@ -178,6 +179,17 @@ public class WhFactoryImpl extends EFactoryImpl implements WhFactory
   {
     CommandImpl command = new CommandImpl();
     return command;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Nop createNop()
+  {
+    NopImpl nop = new NopImpl();
+    return nop;
   }
 
   /**

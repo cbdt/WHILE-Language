@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.comp.wh.wh.ExprEq;
 import org.xtext.comp.wh.wh.ExprSimple;
+import org.xtext.comp.wh.wh.LExpr;
 import org.xtext.comp.wh.wh.WhPackage;
 
 /**
@@ -24,14 +25,56 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getE_left <em>Eleft</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getE_right <em>Eright</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
 {
+  /**
+   * The cached value of the '{@link #getE_left() <em>Eleft</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getE_left()
+   * @generated
+   * @ordered
+   */
+  protected ExprSimple e_left;
+
+  /**
+   * The cached value of the '{@link #getE_right() <em>Eright</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getE_right()
+   * @generated
+   * @ordered
+   */
+  protected ExprSimple e_right;
+
+  /**
+   * The default value of the '{@link #getSym() <em>Sym</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSym()
+   * @generated
+   * @ordered
+   */
+  protected static final String SYM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSym() <em>Sym</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSym()
+   * @generated
+   * @ordered
+   */
+  protected String sym = SYM_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -40,17 +83,7 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * @generated
    * @ordered
    */
-  protected ExprSimple e;
-
-  /**
-   * The cached value of the '{@link #getE2() <em>E2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getE2()
-   * @generated
-   * @ordered
-   */
-  protected ExprSimple e2;
+  protected LExpr e;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,7 +111,126 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprSimple getE()
+  public ExprSimple getE_left()
+  {
+    return e_left;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetE_left(ExprSimple newE_left, NotificationChain msgs)
+  {
+    ExprSimple oldE_left = e_left;
+    e_left = newE_left;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__ELEFT, oldE_left, newE_left);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setE_left(ExprSimple newE_left)
+  {
+    if (newE_left != e_left)
+    {
+      NotificationChain msgs = null;
+      if (e_left != null)
+        msgs = ((InternalEObject)e_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__ELEFT, null, msgs);
+      if (newE_left != null)
+        msgs = ((InternalEObject)newE_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__ELEFT, null, msgs);
+      msgs = basicSetE_left(newE_left, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__ELEFT, newE_left, newE_left));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExprSimple getE_right()
+  {
+    return e_right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetE_right(ExprSimple newE_right, NotificationChain msgs)
+  {
+    ExprSimple oldE_right = e_right;
+    e_right = newE_right;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__ERIGHT, oldE_right, newE_right);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setE_right(ExprSimple newE_right)
+  {
+    if (newE_right != e_right)
+    {
+      NotificationChain msgs = null;
+      if (e_right != null)
+        msgs = ((InternalEObject)e_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__ERIGHT, null, msgs);
+      if (newE_right != null)
+        msgs = ((InternalEObject)newE_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__ERIGHT, null, msgs);
+      msgs = basicSetE_right(newE_right, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__ERIGHT, newE_right, newE_right));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getSym()
+  {
+    return sym;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSym(String newSym)
+  {
+    String oldSym = sym;
+    sym = newSym;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__SYM, oldSym, sym));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LExpr getE()
   {
     return e;
   }
@@ -88,9 +240,9 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(ExprSimple newE, NotificationChain msgs)
+  public NotificationChain basicSetE(LExpr newE, NotificationChain msgs)
   {
-    ExprSimple oldE = e;
+    LExpr oldE = e;
     e = newE;
     if (eNotificationRequired())
     {
@@ -105,7 +257,7 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(ExprSimple newE)
+  public void setE(LExpr newE)
   {
     if (newE != e)
     {
@@ -126,63 +278,17 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprSimple getE2()
-  {
-    return e2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetE2(ExprSimple newE2, NotificationChain msgs)
-  {
-    ExprSimple oldE2 = e2;
-    e2 = newE2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__E2, oldE2, newE2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setE2(ExprSimple newE2)
-  {
-    if (newE2 != e2)
-    {
-      NotificationChain msgs = null;
-      if (e2 != null)
-        msgs = ((InternalEObject)e2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__E2, null, msgs);
-      if (newE2 != null)
-        msgs = ((InternalEObject)newE2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__E2, null, msgs);
-      msgs = basicSetE2(newE2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__E2, newE2, newE2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_EQ__ELEFT:
+        return basicSetE_left(null, msgs);
+      case WhPackage.EXPR_EQ__ERIGHT:
+        return basicSetE_right(null, msgs);
       case WhPackage.EXPR_EQ__E:
         return basicSetE(null, msgs);
-      case WhPackage.EXPR_EQ__E2:
-        return basicSetE2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +303,14 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_EQ__ELEFT:
+        return getE_left();
+      case WhPackage.EXPR_EQ__ERIGHT:
+        return getE_right();
+      case WhPackage.EXPR_EQ__SYM:
+        return getSym();
       case WhPackage.EXPR_EQ__E:
         return getE();
-      case WhPackage.EXPR_EQ__E2:
-        return getE2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,11 +325,17 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_EQ__E:
-        setE((ExprSimple)newValue);
+      case WhPackage.EXPR_EQ__ELEFT:
+        setE_left((ExprSimple)newValue);
         return;
-      case WhPackage.EXPR_EQ__E2:
-        setE2((ExprSimple)newValue);
+      case WhPackage.EXPR_EQ__ERIGHT:
+        setE_right((ExprSimple)newValue);
+        return;
+      case WhPackage.EXPR_EQ__SYM:
+        setSym((String)newValue);
+        return;
+      case WhPackage.EXPR_EQ__E:
+        setE((LExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +351,17 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_EQ__E:
-        setE((ExprSimple)null);
+      case WhPackage.EXPR_EQ__ELEFT:
+        setE_left((ExprSimple)null);
         return;
-      case WhPackage.EXPR_EQ__E2:
-        setE2((ExprSimple)null);
+      case WhPackage.EXPR_EQ__ERIGHT:
+        setE_right((ExprSimple)null);
+        return;
+      case WhPackage.EXPR_EQ__SYM:
+        setSym(SYM_EDEFAULT);
+        return;
+      case WhPackage.EXPR_EQ__E:
+        setE((LExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,12 +377,33 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_EQ__ELEFT:
+        return e_left != null;
+      case WhPackage.EXPR_EQ__ERIGHT:
+        return e_right != null;
+      case WhPackage.EXPR_EQ__SYM:
+        return SYM_EDEFAULT == null ? sym != null : !SYM_EDEFAULT.equals(sym);
       case WhPackage.EXPR_EQ__E:
         return e != null;
-      case WhPackage.EXPR_EQ__E2:
-        return e2 != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (sym: ");
+    result.append(sym);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExprEqImpl

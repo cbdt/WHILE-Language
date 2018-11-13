@@ -33,6 +33,7 @@ import org.xtext.comp.wh.wh.If;
 import org.xtext.comp.wh.wh.Input;
 import org.xtext.comp.wh.wh.LExpr;
 import org.xtext.comp.wh.wh.Model;
+import org.xtext.comp.wh.wh.Nop;
 import org.xtext.comp.wh.wh.Output;
 import org.xtext.comp.wh.wh.Program;
 import org.xtext.comp.wh.wh.Vars;
@@ -107,6 +108,9 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case WhPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case WhPackage.NOP:
+				sequence_Nop(context, (Nop) semanticObject); 
+				return; 
 			case WhPackage.OUTPUT:
 				sequence_Output(context, (Output) semanticObject); 
 				return; 
@@ -151,12 +155,12 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         nop='nop' | 
-	 *         assign=Assign | 
-	 *         wh=While | 
-	 *         for=For | 
-	 *         if=If | 
-	 *         foreach=Foreach
+	 *         command=Nop | 
+	 *         command=Assign | 
+	 *         command=While | 
+	 *         command=For | 
+	 *         command=If | 
+	 *         command=Foreach
 	 *     )
 	 */
 	protected void sequence_Command(ISerializationContext context, Command semanticObject) {
@@ -217,7 +221,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprEq returns ExprEq
 	 *
 	 * Constraint:
-	 *     (e=ExprSimple e2=ExprSimple?)
+	 *     ((e_left=ExprSimple e_right=ExprSimple?) | (sym=SYMBOL? e=LExpr))
 	 */
 	protected void sequence_ExprEq(ISerializationContext context, ExprEq semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -229,7 +233,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprNot returns ExprNot
 	 *
 	 * Constraint:
-	 *     (e=ExprEq | e2=ExprEq)
+	 *     (hasNot='not'? e=ExprEq)
 	 */
 	protected void sequence_ExprNot(ISerializationContext context, ExprNot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -390,7 +394,6 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ExprEq returns LExpr
 	 *     LExpr returns LExpr
 	 *
 	 * Constraint:
@@ -415,6 +418,24 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getModelAccess().getTextProgramParserRuleCall_0(), semanticObject.getText());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Nop returns Nop
+	 *
+	 * Constraint:
+	 *     nop='nop'
+	 */
+	protected void sequence_Nop(ISerializationContext context, Nop semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.NOP__NOP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.NOP__NOP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNopAccess().getNopNopKeyword_0(), semanticObject.getNop());
 		feeder.finish();
 	}
 	

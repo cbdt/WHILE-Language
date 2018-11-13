@@ -31,12 +31,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Commands/command"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Command">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Command/nop"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/assign"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/wh"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/for"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/if"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/foreach"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/command"/>
+    </genClasses>
+    <genClasses ecoreClass="Wh.ecore#//Nop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Nop/nop"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//Assign">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Assign/vars"/>
@@ -85,12 +83,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprOr/en"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//ExprNot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprNot/hasNot"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprNot/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprNot/e2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//ExprEq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/e_left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/e_right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprEq/sym"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/e"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/e2"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//LExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//LExpr/le"/>

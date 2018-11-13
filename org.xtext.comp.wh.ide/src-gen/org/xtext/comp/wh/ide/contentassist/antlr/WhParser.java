@@ -33,7 +33,6 @@ public class WhParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WhGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getCommandAccess().getAlternatives(), "rule__Command__Alternatives");
 			builder.put(grammarAccess.getExprSimpleAccess().getAlternatives(), "rule__ExprSimple__Alternatives");
-			builder.put(grammarAccess.getExprNotAccess().getAlternatives(), "rule__ExprNot__Alternatives");
 			builder.put(grammarAccess.getExprEqAccess().getAlternatives(), "rule__ExprEq__Alternatives");
 			builder.put(grammarAccess.getFunctionAccess().getGroup(), "rule__Function__Group__0");
 			builder.put(grammarAccess.getDefinitionAccess().getGroup(), "rule__Definition__Group__0");
@@ -61,7 +60,7 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExprAndAccess().getGroup_1(), "rule__ExprAnd__Group_1__0");
 			builder.put(grammarAccess.getExprOrAccess().getGroup(), "rule__ExprOr__Group__0");
 			builder.put(grammarAccess.getExprOrAccess().getGroup_1(), "rule__ExprOr__Group_1__0");
-			builder.put(grammarAccess.getExprNotAccess().getGroup_0(), "rule__ExprNot__Group_0__0");
+			builder.put(grammarAccess.getExprNotAccess().getGroup(), "rule__ExprNot__Group__0");
 			builder.put(grammarAccess.getExprEqAccess().getGroup_0(), "rule__ExprEq__Group_0__0");
 			builder.put(grammarAccess.getExprEqAccess().getGroup_0_1(), "rule__ExprEq__Group_0_1__0");
 			builder.put(grammarAccess.getExprEqAccess().getGroup_1(), "rule__ExprEq__Group_1__0");
@@ -78,12 +77,13 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOutputAccess().getR_valuesAssignment_1_1(), "rule__Output__R_valuesAssignment_1_1");
 			builder.put(grammarAccess.getCommandsAccess().getCommandAssignment_0(), "rule__Commands__CommandAssignment_0");
 			builder.put(grammarAccess.getCommandsAccess().getCommandAssignment_1_1(), "rule__Commands__CommandAssignment_1_1");
-			builder.put(grammarAccess.getCommandAccess().getNopAssignment_0(), "rule__Command__NopAssignment_0");
-			builder.put(grammarAccess.getCommandAccess().getAssignAssignment_1(), "rule__Command__AssignAssignment_1");
-			builder.put(grammarAccess.getCommandAccess().getWhAssignment_2(), "rule__Command__WhAssignment_2");
-			builder.put(grammarAccess.getCommandAccess().getForAssignment_3(), "rule__Command__ForAssignment_3");
-			builder.put(grammarAccess.getCommandAccess().getIfAssignment_4(), "rule__Command__IfAssignment_4");
-			builder.put(grammarAccess.getCommandAccess().getForeachAssignment_5(), "rule__Command__ForeachAssignment_5");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_0(), "rule__Command__CommandAssignment_0");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_1(), "rule__Command__CommandAssignment_1");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_2(), "rule__Command__CommandAssignment_2");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_3(), "rule__Command__CommandAssignment_3");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_4(), "rule__Command__CommandAssignment_4");
+			builder.put(grammarAccess.getCommandAccess().getCommandAssignment_5(), "rule__Command__CommandAssignment_5");
+			builder.put(grammarAccess.getNopAccess().getNopAssignment(), "rule__Nop__NopAssignment");
 			builder.put(grammarAccess.getAssignAccess().getVarsAssignment_0(), "rule__Assign__VarsAssignment_0");
 			builder.put(grammarAccess.getAssignAccess().getExprsAssignment_2(), "rule__Assign__ExprsAssignment_2");
 			builder.put(grammarAccess.getWhileAccess().getCondAssignment_1(), "rule__While__CondAssignment_1");
@@ -112,10 +112,12 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExprAndAccess().getEoAssignment_1_1(), "rule__ExprAnd__EoAssignment_1_1");
 			builder.put(grammarAccess.getExprOrAccess().getEnAssignment_0(), "rule__ExprOr__EnAssignment_0");
 			builder.put(grammarAccess.getExprOrAccess().getEnAssignment_1_1(), "rule__ExprOr__EnAssignment_1_1");
-			builder.put(grammarAccess.getExprNotAccess().getEAssignment_0_1(), "rule__ExprNot__EAssignment_0_1");
-			builder.put(grammarAccess.getExprNotAccess().getE2Assignment_1(), "rule__ExprNot__E2Assignment_1");
-			builder.put(grammarAccess.getExprEqAccess().getEAssignment_0_0(), "rule__ExprEq__EAssignment_0_0");
-			builder.put(grammarAccess.getExprEqAccess().getE2Assignment_0_1_1(), "rule__ExprEq__E2Assignment_0_1_1");
+			builder.put(grammarAccess.getExprNotAccess().getHasNotAssignment_0(), "rule__ExprNot__HasNotAssignment_0");
+			builder.put(grammarAccess.getExprNotAccess().getEAssignment_1(), "rule__ExprNot__EAssignment_1");
+			builder.put(grammarAccess.getExprEqAccess().getE_leftAssignment_0_0(), "rule__ExprEq__E_leftAssignment_0_0");
+			builder.put(grammarAccess.getExprEqAccess().getE_rightAssignment_0_1_1(), "rule__ExprEq__E_rightAssignment_0_1_1");
+			builder.put(grammarAccess.getExprEqAccess().getSymAssignment_1_1(), "rule__ExprEq__SymAssignment_1_1");
+			builder.put(grammarAccess.getExprEqAccess().getEAssignment_1_2(), "rule__ExprEq__EAssignment_1_2");
 			builder.put(grammarAccess.getLExprAccess().getLeAssignment(), "rule__LExpr__LeAssignment");
 		}
 	}

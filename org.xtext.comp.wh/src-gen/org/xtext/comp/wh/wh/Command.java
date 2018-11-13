@@ -14,12 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getNop <em>Nop</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getAssign <em>Assign</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getFor <em>For</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getIf <em>If</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getForeach <em>Foreach</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Command#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getCommand()
@@ -29,159 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Command extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Nop</b></em>' attribute.
+   * Returns the value of the '<em><b>Command</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Nop</em>' attribute isn't clear,
+   * If the meaning of the '<em>Command</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Nop</em>' attribute.
-   * @see #setNop(String)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Nop()
-   * @model
-   * @generated
-   */
-  String getNop();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getNop <em>Nop</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Nop</em>' attribute.
-   * @see #getNop()
-   * @generated
-   */
-  void setNop(String value);
-
-  /**
-   * Returns the value of the '<em><b>Assign</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Assign</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Assign</em>' containment reference.
-   * @see #setAssign(Assign)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Assign()
+   * @return the value of the '<em>Command</em>' containment reference.
+   * @see #setCommand(EObject)
+   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Command()
    * @model containment="true"
    * @generated
    */
-  Assign getAssign();
+  EObject getCommand();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getAssign <em>Assign</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getCommand <em>Command</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Assign</em>' containment reference.
-   * @see #getAssign()
+   * @param value the new value of the '<em>Command</em>' containment reference.
+   * @see #getCommand()
    * @generated
    */
-  void setAssign(Assign value);
-
-  /**
-   * Returns the value of the '<em><b>Wh</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Wh</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Wh</em>' containment reference.
-   * @see #setWh(While)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Wh()
-   * @model containment="true"
-   * @generated
-   */
-  While getWh();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Wh</em>' containment reference.
-   * @see #getWh()
-   * @generated
-   */
-  void setWh(While value);
-
-  /**
-   * Returns the value of the '<em><b>For</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>For</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>For</em>' containment reference.
-   * @see #setFor(For)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_For()
-   * @model containment="true"
-   * @generated
-   */
-  For getFor();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getFor <em>For</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>For</em>' containment reference.
-   * @see #getFor()
-   * @generated
-   */
-  void setFor(For value);
-
-  /**
-   * Returns the value of the '<em><b>If</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>If</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>If</em>' containment reference.
-   * @see #setIf(If)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_If()
-   * @model containment="true"
-   * @generated
-   */
-  If getIf();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getIf <em>If</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>If</em>' containment reference.
-   * @see #getIf()
-   * @generated
-   */
-  void setIf(If value);
-
-  /**
-   * Returns the value of the '<em><b>Foreach</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Foreach</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Foreach</em>' containment reference.
-   * @see #setForeach(Foreach)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Foreach()
-   * @model containment="true"
-   * @generated
-   */
-  Foreach getForeach();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getForeach <em>Foreach</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Foreach</em>' containment reference.
-   * @see #getForeach()
-   * @generated
-   */
-  void setForeach(Foreach value);
+  void setCommand(EObject value);
 
 } // Command

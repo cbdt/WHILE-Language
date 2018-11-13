@@ -7,18 +7,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.comp.wh.wh.Assign;
 import org.xtext.comp.wh.wh.Command;
-import org.xtext.comp.wh.wh.For;
-import org.xtext.comp.wh.wh.Foreach;
-import org.xtext.comp.wh.wh.If;
 import org.xtext.comp.wh.wh.WhPackage;
-import org.xtext.comp.wh.wh.While;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,12 +24,7 @@ import org.xtext.comp.wh.wh.While;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getNop <em>Nop</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getAssign <em>Assign</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getWh <em>Wh</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getFor <em>For</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getIf <em>If</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getForeach <em>Foreach</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,74 +32,14 @@ import org.xtext.comp.wh.wh.While;
 public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 {
   /**
-   * The default value of the '{@link #getNop() <em>Nop</em>}' attribute.
+   * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNop()
+   * @see #getCommand()
    * @generated
    * @ordered
    */
-  protected static final String NOP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNop() <em>Nop</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNop()
-   * @generated
-   * @ordered
-   */
-  protected String nop = NOP_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getAssign() <em>Assign</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssign()
-   * @generated
-   * @ordered
-   */
-  protected Assign assign;
-
-  /**
-   * The cached value of the '{@link #getWh() <em>Wh</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWh()
-   * @generated
-   * @ordered
-   */
-  protected While wh;
-
-  /**
-   * The cached value of the '{@link #getFor() <em>For</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFor()
-   * @generated
-   * @ordered
-   */
-  protected For for_;
-
-  /**
-   * The cached value of the '{@link #getIf() <em>If</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIf()
-   * @generated
-   * @ordered
-   */
-  protected If if_;
-
-  /**
-   * The cached value of the '{@link #getForeach() <em>Foreach</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getForeach()
-   * @generated
-   * @ordered
-   */
-  protected Foreach foreach;
+  protected EObject command;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,9 +67,9 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNop()
+  public EObject getCommand()
   {
-    return nop;
+    return command;
   }
 
   /**
@@ -146,36 +77,13 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNop(String newNop)
+  public NotificationChain basicSetCommand(EObject newCommand, NotificationChain msgs)
   {
-    String oldNop = nop;
-    nop = newNop;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__NOP, oldNop, nop));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Assign getAssign()
-  {
-    return assign;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAssign(Assign newAssign, NotificationChain msgs)
-  {
-    Assign oldAssign = assign;
-    assign = newAssign;
+    EObject oldCommand = command;
+    command = newCommand;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__ASSIGN, oldAssign, newAssign);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__COMMAND, oldCommand, newCommand);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -186,212 +94,20 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAssign(Assign newAssign)
+  public void setCommand(EObject newCommand)
   {
-    if (newAssign != assign)
+    if (newCommand != command)
     {
       NotificationChain msgs = null;
-      if (assign != null)
-        msgs = ((InternalEObject)assign).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__ASSIGN, null, msgs);
-      if (newAssign != null)
-        msgs = ((InternalEObject)newAssign).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__ASSIGN, null, msgs);
-      msgs = basicSetAssign(newAssign, msgs);
+      if (command != null)
+        msgs = ((InternalEObject)command).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__COMMAND, null, msgs);
+      if (newCommand != null)
+        msgs = ((InternalEObject)newCommand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__COMMAND, null, msgs);
+      msgs = basicSetCommand(newCommand, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__ASSIGN, newAssign, newAssign));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public While getWh()
-  {
-    return wh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetWh(While newWh, NotificationChain msgs)
-  {
-    While oldWh = wh;
-    wh = newWh;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WH, oldWh, newWh);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWh(While newWh)
-  {
-    if (newWh != wh)
-    {
-      NotificationChain msgs = null;
-      if (wh != null)
-        msgs = ((InternalEObject)wh).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WH, null, msgs);
-      if (newWh != null)
-        msgs = ((InternalEObject)newWh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WH, null, msgs);
-      msgs = basicSetWh(newWh, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WH, newWh, newWh));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public For getFor()
-  {
-    return for_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFor(For newFor, NotificationChain msgs)
-  {
-    For oldFor = for_;
-    for_ = newFor;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__FOR, oldFor, newFor);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFor(For newFor)
-  {
-    if (newFor != for_)
-    {
-      NotificationChain msgs = null;
-      if (for_ != null)
-        msgs = ((InternalEObject)for_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__FOR, null, msgs);
-      if (newFor != null)
-        msgs = ((InternalEObject)newFor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__FOR, null, msgs);
-      msgs = basicSetFor(newFor, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__FOR, newFor, newFor));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public If getIf()
-  {
-    return if_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetIf(If newIf, NotificationChain msgs)
-  {
-    If oldIf = if_;
-    if_ = newIf;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__IF, oldIf, newIf);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIf(If newIf)
-  {
-    if (newIf != if_)
-    {
-      NotificationChain msgs = null;
-      if (if_ != null)
-        msgs = ((InternalEObject)if_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__IF, null, msgs);
-      if (newIf != null)
-        msgs = ((InternalEObject)newIf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__IF, null, msgs);
-      msgs = basicSetIf(newIf, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__IF, newIf, newIf));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Foreach getForeach()
-  {
-    return foreach;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetForeach(Foreach newForeach, NotificationChain msgs)
-  {
-    Foreach oldForeach = foreach;
-    foreach = newForeach;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__FOREACH, oldForeach, newForeach);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setForeach(Foreach newForeach)
-  {
-    if (newForeach != foreach)
-    {
-      NotificationChain msgs = null;
-      if (foreach != null)
-        msgs = ((InternalEObject)foreach).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__FOREACH, null, msgs);
-      if (newForeach != null)
-        msgs = ((InternalEObject)newForeach).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__FOREACH, null, msgs);
-      msgs = basicSetForeach(newForeach, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__FOREACH, newForeach, newForeach));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__COMMAND, newCommand, newCommand));
   }
 
   /**
@@ -404,16 +120,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   {
     switch (featureID)
     {
-      case WhPackage.COMMAND__ASSIGN:
-        return basicSetAssign(null, msgs);
-      case WhPackage.COMMAND__WH:
-        return basicSetWh(null, msgs);
-      case WhPackage.COMMAND__FOR:
-        return basicSetFor(null, msgs);
-      case WhPackage.COMMAND__IF:
-        return basicSetIf(null, msgs);
-      case WhPackage.COMMAND__FOREACH:
-        return basicSetForeach(null, msgs);
+      case WhPackage.COMMAND__COMMAND:
+        return basicSetCommand(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -428,18 +136,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   {
     switch (featureID)
     {
-      case WhPackage.COMMAND__NOP:
-        return getNop();
-      case WhPackage.COMMAND__ASSIGN:
-        return getAssign();
-      case WhPackage.COMMAND__WH:
-        return getWh();
-      case WhPackage.COMMAND__FOR:
-        return getFor();
-      case WhPackage.COMMAND__IF:
-        return getIf();
-      case WhPackage.COMMAND__FOREACH:
-        return getForeach();
+      case WhPackage.COMMAND__COMMAND:
+        return getCommand();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -454,23 +152,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   {
     switch (featureID)
     {
-      case WhPackage.COMMAND__NOP:
-        setNop((String)newValue);
-        return;
-      case WhPackage.COMMAND__ASSIGN:
-        setAssign((Assign)newValue);
-        return;
-      case WhPackage.COMMAND__WH:
-        setWh((While)newValue);
-        return;
-      case WhPackage.COMMAND__FOR:
-        setFor((For)newValue);
-        return;
-      case WhPackage.COMMAND__IF:
-        setIf((If)newValue);
-        return;
-      case WhPackage.COMMAND__FOREACH:
-        setForeach((Foreach)newValue);
+      case WhPackage.COMMAND__COMMAND:
+        setCommand((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -486,23 +169,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   {
     switch (featureID)
     {
-      case WhPackage.COMMAND__NOP:
-        setNop(NOP_EDEFAULT);
-        return;
-      case WhPackage.COMMAND__ASSIGN:
-        setAssign((Assign)null);
-        return;
-      case WhPackage.COMMAND__WH:
-        setWh((While)null);
-        return;
-      case WhPackage.COMMAND__FOR:
-        setFor((For)null);
-        return;
-      case WhPackage.COMMAND__IF:
-        setIf((If)null);
-        return;
-      case WhPackage.COMMAND__FOREACH:
-        setForeach((Foreach)null);
+      case WhPackage.COMMAND__COMMAND:
+        setCommand((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -518,37 +186,10 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   {
     switch (featureID)
     {
-      case WhPackage.COMMAND__NOP:
-        return NOP_EDEFAULT == null ? nop != null : !NOP_EDEFAULT.equals(nop);
-      case WhPackage.COMMAND__ASSIGN:
-        return assign != null;
-      case WhPackage.COMMAND__WH:
-        return wh != null;
-      case WhPackage.COMMAND__FOR:
-        return for_ != null;
-      case WhPackage.COMMAND__IF:
-        return if_ != null;
-      case WhPackage.COMMAND__FOREACH:
-        return foreach != null;
+      case WhPackage.COMMAND__COMMAND:
+        return command != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nop: ");
-    result.append(nop);
-    result.append(')');
-    return result.toString();
   }
 
 } //CommandImpl

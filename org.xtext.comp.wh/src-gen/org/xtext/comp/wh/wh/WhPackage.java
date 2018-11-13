@@ -291,58 +291,13 @@ public interface WhPackage extends EPackage
   int COMMAND = 7;
 
   /**
-   * The feature id for the '<em><b>Nop</b></em>' attribute.
+   * The feature id for the '<em><b>Command</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMAND__NOP = 0;
-
-  /**
-   * The feature id for the '<em><b>Assign</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__ASSIGN = 1;
-
-  /**
-   * The feature id for the '<em><b>Wh</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__WH = 2;
-
-  /**
-   * The feature id for the '<em><b>For</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__FOR = 3;
-
-  /**
-   * The feature id for the '<em><b>If</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__IF = 4;
-
-  /**
-   * The feature id for the '<em><b>Foreach</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__FOREACH = 5;
+  int COMMAND__COMMAND = 0;
 
   /**
    * The number of structural features of the '<em>Command</em>' class.
@@ -351,7 +306,35 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_FEATURE_COUNT = 6;
+  int COMMAND_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.NopImpl <em>Nop</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.comp.wh.wh.impl.NopImpl
+   * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getNop()
+   * @generated
+   */
+  int NOP = 8;
+
+  /**
+   * The feature id for the '<em><b>Nop</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOP__NOP = 0;
+
+  /**
+   * The number of structural features of the '<em>Nop</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOP_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.AssignImpl <em>Assign</em>}' class.
@@ -361,7 +344,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getAssign()
    * @generated
    */
-  int ASSIGN = 8;
+  int ASSIGN = 9;
 
   /**
    * The feature id for the '<em><b>Vars</b></em>' containment reference.
@@ -398,7 +381,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 9;
+  int WHILE = 10;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -435,7 +418,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getFor()
    * @generated
    */
-  int FOR = 10;
+  int FOR = 11;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -472,7 +455,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getIf()
    * @generated
    */
-  int IF = 11;
+  int IF = 12;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -518,7 +501,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 12;
+  int FOREACH = 13;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -564,7 +547,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getVars()
    * @generated
    */
-  int VARS = 13;
+  int VARS = 14;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute list.
@@ -592,7 +575,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprs()
    * @generated
    */
-  int EXPRS = 14;
+  int EXPRS = 15;
 
   /**
    * The feature id for the '<em><b>E</b></em>' containment reference list.
@@ -620,7 +603,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 15;
+  int EXPR = 16;
 
   /**
    * The feature id for the '<em><b>Ea</b></em>' containment reference.
@@ -648,7 +631,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprSimple()
    * @generated
    */
-  int EXPR_SIMPLE = 16;
+  int EXPR_SIMPLE = 17;
 
   /**
    * The feature id for the '<em><b>Nil</b></em>' attribute.
@@ -730,7 +713,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprAnd()
    * @generated
    */
-  int EXPR_AND = 17;
+  int EXPR_AND = 18;
 
   /**
    * The feature id for the '<em><b>Eo</b></em>' containment reference list.
@@ -758,7 +741,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprOr()
    * @generated
    */
-  int EXPR_OR = 18;
+  int EXPR_OR = 19;
 
   /**
    * The feature id for the '<em><b>En</b></em>' containment reference list.
@@ -786,7 +769,16 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprNot()
    * @generated
    */
-  int EXPR_NOT = 19;
+  int EXPR_NOT = 20;
+
+  /**
+   * The feature id for the '<em><b>Has Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_NOT__HAS_NOT = 0;
 
   /**
    * The feature id for the '<em><b>E</b></em>' containment reference.
@@ -795,16 +787,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_NOT__E = 0;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR_NOT__E2 = 1;
+  int EXPR_NOT__E = 1;
 
   /**
    * The number of structural features of the '<em>Expr Not</em>' class.
@@ -823,7 +806,34 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getExprEq()
    * @generated
    */
-  int EXPR_EQ = 20;
+  int EXPR_EQ = 21;
+
+  /**
+   * The feature id for the '<em><b>Eleft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_EQ__ELEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Eright</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_EQ__ERIGHT = 1;
+
+  /**
+   * The feature id for the '<em><b>Sym</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_EQ__SYM = 2;
 
   /**
    * The feature id for the '<em><b>E</b></em>' containment reference.
@@ -832,16 +842,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_EQ__E = 0;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR_EQ__E2 = 1;
+  int EXPR_EQ__E = 3;
 
   /**
    * The number of structural features of the '<em>Expr Eq</em>' class.
@@ -850,7 +851,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_EQ_FEATURE_COUNT = 2;
+  int EXPR_EQ_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.LExprImpl <em>LExpr</em>}' class.
@@ -860,25 +861,7 @@ public interface WhPackage extends EPackage
    * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getLExpr()
    * @generated
    */
-  int LEXPR = 21;
-
-  /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LEXPR__E = EXPR_EQ__E;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LEXPR__E2 = EXPR_EQ__E2;
+  int LEXPR = 22;
 
   /**
    * The feature id for the '<em><b>Le</b></em>' containment reference list.
@@ -887,7 +870,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LEXPR__LE = EXPR_EQ_FEATURE_COUNT + 0;
+  int LEXPR__LE = 0;
 
   /**
    * The number of structural features of the '<em>LExpr</em>' class.
@@ -896,7 +879,7 @@ public interface WhPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LEXPR_FEATURE_COUNT = EXPR_EQ_FEATURE_COUNT + 1;
+  int LEXPR_FEATURE_COUNT = 1;
 
 
   /**
@@ -1090,70 +1073,36 @@ public interface WhPackage extends EPackage
   EClass getCommand();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Command#getNop <em>Nop</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getCommand <em>Command</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Command</em>'.
+   * @see org.xtext.comp.wh.wh.Command#getCommand()
+   * @see #getCommand()
+   * @generated
+   */
+  EReference getCommand_Command();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Nop <em>Nop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Nop</em>'.
+   * @see org.xtext.comp.wh.wh.Nop
+   * @generated
+   */
+  EClass getNop();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.Nop#getNop <em>Nop</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Nop</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getNop()
-   * @see #getCommand()
+   * @see org.xtext.comp.wh.wh.Nop#getNop()
+   * @see #getNop()
    * @generated
    */
-  EAttribute getCommand_Nop();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getAssign <em>Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Assign</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getAssign()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_Assign();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wh</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getWh()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_Wh();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getFor <em>For</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>For</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getFor()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_For();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getIf <em>If</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>If</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getIf()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_If();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getForeach <em>Foreach</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Foreach</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getForeach()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_Foreach();
+  EAttribute getNop_Nop();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Assign <em>Assign</em>}'.
@@ -1540,6 +1489,17 @@ public interface WhPackage extends EPackage
   EClass getExprNot();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprNot#getHasNot <em>Has Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Has Not</em>'.
+   * @see org.xtext.comp.wh.wh.ExprNot#getHasNot()
+   * @see #getExprNot()
+   * @generated
+   */
+  EAttribute getExprNot_HasNot();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprNot#getE <em>E</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1549,17 +1509,6 @@ public interface WhPackage extends EPackage
    * @generated
    */
   EReference getExprNot_E();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprNot#getE2 <em>E2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E2</em>'.
-   * @see org.xtext.comp.wh.wh.ExprNot#getE2()
-   * @see #getExprNot()
-   * @generated
-   */
-  EReference getExprNot_E2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprEq <em>Expr Eq</em>}'.
@@ -1572,6 +1521,39 @@ public interface WhPackage extends EPackage
   EClass getExprEq();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Eleft</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getE_left()
+   * @see #getExprEq()
+   * @generated
+   */
+  EReference getExprEq_E_left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Eright</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getE_right()
+   * @see #getExprEq()
+   * @generated
+   */
+  EReference getExprEq_E_right();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sym</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getSym()
+   * @see #getExprEq()
+   * @generated
+   */
+  EAttribute getExprEq_Sym();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1581,17 +1563,6 @@ public interface WhPackage extends EPackage
    * @generated
    */
   EReference getExprEq_E();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE2 <em>E2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E2</em>'.
-   * @see org.xtext.comp.wh.wh.ExprEq#getE2()
-   * @see #getExprEq()
-   * @generated
-   */
-  EReference getExprEq_E2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.LExpr <em>LExpr</em>}'.
@@ -1798,52 +1769,30 @@ public interface WhPackage extends EPackage
     EClass COMMAND = eINSTANCE.getCommand();
 
     /**
+     * The meta object literal for the '<em><b>Command</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMMAND__COMMAND = eINSTANCE.getCommand_Command();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.NopImpl <em>Nop</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.comp.wh.wh.impl.NopImpl
+     * @see org.xtext.comp.wh.wh.impl.WhPackageImpl#getNop()
+     * @generated
+     */
+    EClass NOP = eINSTANCE.getNop();
+
+    /**
      * The meta object literal for the '<em><b>Nop</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMMAND__NOP = eINSTANCE.getCommand_Nop();
-
-    /**
-     * The meta object literal for the '<em><b>Assign</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__ASSIGN = eINSTANCE.getCommand_Assign();
-
-    /**
-     * The meta object literal for the '<em><b>Wh</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__WH = eINSTANCE.getCommand_Wh();
-
-    /**
-     * The meta object literal for the '<em><b>For</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__FOR = eINSTANCE.getCommand_For();
-
-    /**
-     * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__IF = eINSTANCE.getCommand_If();
-
-    /**
-     * The meta object literal for the '<em><b>Foreach</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__FOREACH = eINSTANCE.getCommand_Foreach();
+    EAttribute NOP__NOP = eINSTANCE.getNop_Nop();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.AssignImpl <em>Assign</em>}' class.
@@ -2158,20 +2107,20 @@ public interface WhPackage extends EPackage
     EClass EXPR_NOT = eINSTANCE.getExprNot();
 
     /**
+     * The meta object literal for the '<em><b>Has Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR_NOT__HAS_NOT = eINSTANCE.getExprNot_HasNot();
+
+    /**
      * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EXPR_NOT__E = eINSTANCE.getExprNot_E();
-
-    /**
-     * The meta object literal for the '<em><b>E2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR_NOT__E2 = eINSTANCE.getExprNot_E2();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprEqImpl <em>Expr Eq</em>}' class.
@@ -2184,20 +2133,36 @@ public interface WhPackage extends EPackage
     EClass EXPR_EQ = eINSTANCE.getExprEq();
 
     /**
+     * The meta object literal for the '<em><b>Eleft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_EQ__ELEFT = eINSTANCE.getExprEq_E_left();
+
+    /**
+     * The meta object literal for the '<em><b>Eright</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_EQ__ERIGHT = eINSTANCE.getExprEq_E_right();
+
+    /**
+     * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR_EQ__SYM = eINSTANCE.getExprEq_Sym();
+
+    /**
      * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EXPR_EQ__E = eINSTANCE.getExprEq_E();
-
-    /**
-     * The meta object literal for the '<em><b>E2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR_EQ__E2 = eINSTANCE.getExprEq_E2();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.LExprImpl <em>LExpr</em>}' class.

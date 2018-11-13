@@ -24,14 +24,34 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getHasNot <em>Has Not</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
 {
+  /**
+   * The default value of the '{@link #getHasNot() <em>Has Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHasNot()
+   * @generated
+   * @ordered
+   */
+  protected static final String HAS_NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getHasNot() <em>Has Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHasNot()
+   * @generated
+   * @ordered
+   */
+  protected String hasNot = HAS_NOT_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -41,16 +61,6 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
    * @ordered
    */
   protected ExprEq e;
-
-  /**
-   * The cached value of the '{@link #getE2() <em>E2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getE2()
-   * @generated
-   * @ordered
-   */
-  protected ExprEq e2;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,6 +81,29 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   protected EClass eStaticClass()
   {
     return WhPackage.Literals.EXPR_NOT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getHasNot()
+  {
+    return hasNot;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHasNot(String newHasNot)
+  {
+    String oldHasNot = hasNot;
+    hasNot = newHasNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__HAS_NOT, oldHasNot, hasNot));
   }
 
   /**
@@ -126,54 +159,6 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprEq getE2()
-  {
-    return e2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetE2(ExprEq newE2, NotificationChain msgs)
-  {
-    ExprEq oldE2 = e2;
-    e2 = newE2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__E2, oldE2, newE2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setE2(ExprEq newE2)
-  {
-    if (newE2 != e2)
-    {
-      NotificationChain msgs = null;
-      if (e2 != null)
-        msgs = ((InternalEObject)e2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__E2, null, msgs);
-      if (newE2 != null)
-        msgs = ((InternalEObject)newE2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__E2, null, msgs);
-      msgs = basicSetE2(newE2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__E2, newE2, newE2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -181,8 +166,6 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
     {
       case WhPackage.EXPR_NOT__E:
         return basicSetE(null, msgs);
-      case WhPackage.EXPR_NOT__E2:
-        return basicSetE2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +180,10 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_NOT__HAS_NOT:
+        return getHasNot();
       case WhPackage.EXPR_NOT__E:
         return getE();
-      case WhPackage.EXPR_NOT__E2:
-        return getE2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,11 +198,11 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_NOT__HAS_NOT:
+        setHasNot((String)newValue);
+        return;
       case WhPackage.EXPR_NOT__E:
         setE((ExprEq)newValue);
-        return;
-      case WhPackage.EXPR_NOT__E2:
-        setE2((ExprEq)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +218,11 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_NOT__HAS_NOT:
+        setHasNot(HAS_NOT_EDEFAULT);
+        return;
       case WhPackage.EXPR_NOT__E:
         setE((ExprEq)null);
-        return;
-      case WhPackage.EXPR_NOT__E2:
-        setE2((ExprEq)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,12 +238,29 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   {
     switch (featureID)
     {
+      case WhPackage.EXPR_NOT__HAS_NOT:
+        return HAS_NOT_EDEFAULT == null ? hasNot != null : !HAS_NOT_EDEFAULT.equals(hasNot);
       case WhPackage.EXPR_NOT__E:
         return e != null;
-      case WhPackage.EXPR_NOT__E2:
-        return e2 != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (hasNot: ");
+    result.append(hasNot);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExprNotImpl

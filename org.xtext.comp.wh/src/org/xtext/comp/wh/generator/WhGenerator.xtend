@@ -12,6 +12,13 @@ import org.xtext.comp.wh.wh.Definition
 import org.xtext.comp.wh.wh.Function
 import org.xtext.comp.wh.wh.Program
 import org.xtext.comp.wh.wh.Command
+import org.xtext.comp.wh.wh.While
+import org.xtext.comp.wh.wh.Nop
+import org.xtext.comp.wh.wh.Expr
+import org.xtext.comp.wh.wh.ExprAnd
+import org.xtext.comp.wh.wh.ExprOr
+import org.xtext.comp.wh.wh.ExprNot
+import org.xtext.comp.wh.wh.ExprEq
 
 /**
  * Generates code from your model files on save.
@@ -19,10 +26,27 @@ import org.xtext.comp.wh.wh.Command
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class WhGenerator extends AbstractGenerator {
+	
+	val NB_DEFAULT_INDENTATION = 2;
+	
+	val NB_WHILE_INDENTATION = 3;
+	
+	var String default_indentation;
+	var String while_indentation;
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for(e : resource.allContents.toIterable.filter(Program)) {
-			fsa.generateFile("output.wh", e.compile())
+		default_indentation= "";
+		while_indentation= "";
+		
+		for(var i = 0; i < NB_DEFAULT_INDENTATION; i++) {
+			default_indentation += " "
+		}
+		for(var i = 0; i < NB_WHILE_INDENTATION; i++) {
+			while_indentation += " "
+		}
+		
+		for(p : resource.allContents.toIterable.filter(Program)) {
+			fsa.generateFile("output.wh", p.compile())
 		}
 	}
 	
@@ -40,13 +64,13 @@ class WhGenerator extends AbstractGenerator {
 	def compile(Definition d)'''
 	read «FOR param : d.inputs.params SEPARATOR ", "»«param»«ENDFOR»
 	%
-	«d.commands.compile()»
+	«d.commands.compile(default_indentation)»
 	%
 	write «FOR r_value : d.outputs.r_values SEPARATOR ", "»«r_value»«ENDFOR»
 	'''
 	
 	
-	def compile(Commands c) {
+	def compile(Commands c, String indent) {
 		val nb_commands = c.command.size;
 		var counter = 0;
 		var commands = ""
@@ -55,19 +79,56 @@ class WhGenerator extends AbstractGenerator {
 			counter++;
 			
 			if(counter == nb_commands) {
-				commands += command.compile() + "\n";
+				commands += command.compile(indent)
 			} else {
-				commands += command.compile() + " ;\n";
+				commands += command.compile(indent) + " ;";
 			}
+			commands += "\n";
 		}
 		
 		return commands
 		
 	}
 	
-	def compile(Command c) {
-		return 'nop'
+	def compile(Command c, String indent) {
+		if(c.command instanceof While) {
+			return (c.command as While).compile(indent)
+		}
+		if(c.command instanceof Nop) {
+			return indent+"nop"
+		}
+		
 	}
+	
+	def compile(While wh, String indent)'''
+	«indent»while nop do
+	«wh.commands.compile(indent+while_indentation)»
+	«indent»od'''
+	
+	def compile(Expr e)'''
+	e.ea.compile()'''
+	
+	def compile(ExprAnd ea)'''
+	«FOR expr : ea.eo SEPARATOR " and "»«expr.compile()»«ENDFOR»
+	'''
+	
+	def compile(ExprOr eo)'''
+	«FOR expr : eo.en SEPARATOR " and "»«expr.compile()»«ENDFOR»
+	'''
+	
+	def compile(ExprNot en){
+		var expr = "";
+		if(en.hasNot !== null) {
+			expr += "not "
+		}
+		expr += en.e.compile()
+		return expr
+	}
+	
+	def compile(ExprEq eq){
+		
+	}
+	
 	
 
 }

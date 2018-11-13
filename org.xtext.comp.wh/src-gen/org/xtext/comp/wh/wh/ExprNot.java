@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getHasNot <em>Has Not</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprNot()
@@ -24,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ExprNot extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Has Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Has Not</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Has Not</em>' attribute.
+   * @see #setHasNot(String)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprNot_HasNot()
+   * @model
+   * @generated
+   */
+  String getHasNot();
+
+  /**
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprNot#getHasNot <em>Has Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Has Not</em>' attribute.
+   * @see #getHasNot()
+   * @generated
+   */
+  void setHasNot(String value);
+
   /**
    * Returns the value of the '<em><b>E</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -49,31 +75,5 @@ public interface ExprNot extends EObject
    * @generated
    */
   void setE(ExprEq value);
-
-  /**
-   * Returns the value of the '<em><b>E2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>E2</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>E2</em>' containment reference.
-   * @see #setE2(ExprEq)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprNot_E2()
-   * @model containment="true"
-   * @generated
-   */
-  ExprEq getE2();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprNot#getE2 <em>E2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E2</em>' containment reference.
-   * @see #getE2()
-   * @generated
-   */
-  void setE2(ExprEq value);
 
 } // ExprNot

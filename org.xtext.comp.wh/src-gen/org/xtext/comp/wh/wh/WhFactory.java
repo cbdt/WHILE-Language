@@ -96,6 +96,15 @@ public interface WhFactory extends EFactory
   Command createCommand();
 
   /**
+   * Returns a new object of class '<em>Nop</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Nop</em>'.
+   * @generated
+   */
+  Nop createNop();
+
+  /**
    * Returns a new object of class '<em>Assign</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

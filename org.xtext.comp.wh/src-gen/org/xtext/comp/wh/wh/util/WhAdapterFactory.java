@@ -116,6 +116,11 @@ public class WhAdapterFactory extends AdapterFactoryImpl
         return createCommandAdapter();
       }
       @Override
+      public Adapter caseNop(Nop object)
+      {
+        return createNopAdapter();
+      }
+      @Override
       public Adapter caseAssign(Assign object)
       {
         return createAssignAdapter();
@@ -323,6 +328,21 @@ public class WhAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCommandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.comp.wh.wh.Nop <em>Nop</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.comp.wh.wh.Nop
+   * @generated
+   */
+  public Adapter createNopAdapter()
   {
     return null;
   }

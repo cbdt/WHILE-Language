@@ -14,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE2 <em>E2</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprEq()
@@ -25,6 +27,84 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprEq extends EObject
 {
   /**
+   * Returns the value of the '<em><b>Eleft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Eleft</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Eleft</em>' containment reference.
+   * @see #setE_left(ExprSimple)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E_left()
+   * @model containment="true"
+   * @generated
+   */
+  ExprSimple getE_left();
+
+  /**
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Eleft</em>' containment reference.
+   * @see #getE_left()
+   * @generated
+   */
+  void setE_left(ExprSimple value);
+
+  /**
+   * Returns the value of the '<em><b>Eright</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Eright</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Eright</em>' containment reference.
+   * @see #setE_right(ExprSimple)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E_right()
+   * @model containment="true"
+   * @generated
+   */
+  ExprSimple getE_right();
+
+  /**
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Eright</em>' containment reference.
+   * @see #getE_right()
+   * @generated
+   */
+  void setE_right(ExprSimple value);
+
+  /**
+   * Returns the value of the '<em><b>Sym</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sym</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sym</em>' attribute.
+   * @see #setSym(String)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_Sym()
+   * @model
+   * @generated
+   */
+  String getSym();
+
+  /**
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sym</em>' attribute.
+   * @see #getSym()
+   * @generated
+   */
+  void setSym(String value);
+
+  /**
    * Returns the value of the '<em><b>E</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -33,12 +113,12 @@ public interface ExprEq extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(ExprSimple)
+   * @see #setE(LExpr)
    * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E()
    * @model containment="true"
    * @generated
    */
-  ExprSimple getE();
+  LExpr getE();
 
   /**
    * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}' containment reference.
@@ -48,32 +128,6 @@ public interface ExprEq extends EObject
    * @see #getE()
    * @generated
    */
-  void setE(ExprSimple value);
-
-  /**
-   * Returns the value of the '<em><b>E2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>E2</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>E2</em>' containment reference.
-   * @see #setE2(ExprSimple)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E2()
-   * @model containment="true"
-   * @generated
-   */
-  ExprSimple getE2();
-
-  /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE2 <em>E2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E2</em>' containment reference.
-   * @see #getE2()
-   * @generated
-   */
-  void setE2(ExprSimple value);
+  void setE(LExpr value);
 
 } // ExprEq

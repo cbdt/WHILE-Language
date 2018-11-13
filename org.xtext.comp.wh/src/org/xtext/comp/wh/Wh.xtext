@@ -100,7 +100,11 @@ Commands:
 ;
 
 Command:
-	(nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach)
+	( command=Nop | command=Assign | command=While | command=For | command=If | command=Foreach )
+;
+
+Nop:
+	nop='nop'
 ;
 
 Assign:
@@ -148,11 +152,11 @@ ExprOr:
 ;
 
 ExprNot:
-	('not'  e=ExprEq) | e2=ExprEq
+	(hasNot='not'?  e=ExprEq)
 ;
 
 ExprEq:
-	e=ExprSimple ('=?' e2=ExprSimple)? | (=> '(' SYMBOL? LExpr ')')
+	e_left=ExprSimple ('=?' e_right=ExprSimple)? | (=> '(' sym=SYMBOL? e=LExpr ')')
 ;
 
 LExpr:

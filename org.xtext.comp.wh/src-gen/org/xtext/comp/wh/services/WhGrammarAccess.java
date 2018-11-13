@@ -313,61 +313,76 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Command");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cNopAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cNopNopKeyword_0_0 = (Keyword)cNopAssignment_0.eContents().get(0);
-		private final Assignment cAssignAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cAssignAssignParserRuleCall_1_0 = (RuleCall)cAssignAssignment_1.eContents().get(0);
-		private final Assignment cWhAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cWhWhileParserRuleCall_2_0 = (RuleCall)cWhAssignment_2.eContents().get(0);
-		private final Assignment cForAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cForForParserRuleCall_3_0 = (RuleCall)cForAssignment_3.eContents().get(0);
-		private final Assignment cIfAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cIfIfParserRuleCall_4_0 = (RuleCall)cIfAssignment_4.eContents().get(0);
-		private final Assignment cForeachAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cForeachForeachParserRuleCall_5_0 = (RuleCall)cForeachAssignment_5.eContents().get(0);
+		private final Assignment cCommandAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCommandNopParserRuleCall_0_0 = (RuleCall)cCommandAssignment_0.eContents().get(0);
+		private final Assignment cCommandAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCommandAssignParserRuleCall_1_0 = (RuleCall)cCommandAssignment_1.eContents().get(0);
+		private final Assignment cCommandAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cCommandWhileParserRuleCall_2_0 = (RuleCall)cCommandAssignment_2.eContents().get(0);
+		private final Assignment cCommandAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cCommandForParserRuleCall_3_0 = (RuleCall)cCommandAssignment_3.eContents().get(0);
+		private final Assignment cCommandAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cCommandIfParserRuleCall_4_0 = (RuleCall)cCommandAssignment_4.eContents().get(0);
+		private final Assignment cCommandAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cCommandForeachParserRuleCall_5_0 = (RuleCall)cCommandAssignment_5.eContents().get(0);
 		
 		//Command:
-		//	nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach;
+		//	command=Nop | command=Assign | command=While | command=For | command=If | command=Foreach;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach
+		//command=Nop | command=Assign | command=While | command=For | command=If | command=Foreach
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//nop='nop'
-		public Assignment getNopAssignment_0() { return cNopAssignment_0; }
+		//command=Nop
+		public Assignment getCommandAssignment_0() { return cCommandAssignment_0; }
 		
-		//'nop'
-		public Keyword getNopNopKeyword_0_0() { return cNopNopKeyword_0_0; }
+		//Nop
+		public RuleCall getCommandNopParserRuleCall_0_0() { return cCommandNopParserRuleCall_0_0; }
 		
-		//assign=Assign
-		public Assignment getAssignAssignment_1() { return cAssignAssignment_1; }
+		//command=Assign
+		public Assignment getCommandAssignment_1() { return cCommandAssignment_1; }
 		
 		//Assign
-		public RuleCall getAssignAssignParserRuleCall_1_0() { return cAssignAssignParserRuleCall_1_0; }
+		public RuleCall getCommandAssignParserRuleCall_1_0() { return cCommandAssignParserRuleCall_1_0; }
 		
-		//wh=While
-		public Assignment getWhAssignment_2() { return cWhAssignment_2; }
+		//command=While
+		public Assignment getCommandAssignment_2() { return cCommandAssignment_2; }
 		
 		//While
-		public RuleCall getWhWhileParserRuleCall_2_0() { return cWhWhileParserRuleCall_2_0; }
+		public RuleCall getCommandWhileParserRuleCall_2_0() { return cCommandWhileParserRuleCall_2_0; }
 		
-		//for=For
-		public Assignment getForAssignment_3() { return cForAssignment_3; }
+		//command=For
+		public Assignment getCommandAssignment_3() { return cCommandAssignment_3; }
 		
 		//For
-		public RuleCall getForForParserRuleCall_3_0() { return cForForParserRuleCall_3_0; }
+		public RuleCall getCommandForParserRuleCall_3_0() { return cCommandForParserRuleCall_3_0; }
 		
-		//if=If
-		public Assignment getIfAssignment_4() { return cIfAssignment_4; }
+		//command=If
+		public Assignment getCommandAssignment_4() { return cCommandAssignment_4; }
 		
 		//If
-		public RuleCall getIfIfParserRuleCall_4_0() { return cIfIfParserRuleCall_4_0; }
+		public RuleCall getCommandIfParserRuleCall_4_0() { return cCommandIfParserRuleCall_4_0; }
 		
-		//foreach=Foreach
-		public Assignment getForeachAssignment_5() { return cForeachAssignment_5; }
+		//command=Foreach
+		public Assignment getCommandAssignment_5() { return cCommandAssignment_5; }
 		
 		//Foreach
-		public RuleCall getForeachForeachParserRuleCall_5_0() { return cForeachForeachParserRuleCall_5_0; }
+		public RuleCall getCommandForeachParserRuleCall_5_0() { return cCommandForeachParserRuleCall_5_0; }
+	}
+	public class NopElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Nop");
+		private final Assignment cNopAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cNopNopKeyword_0 = (Keyword)cNopAssignment.eContents().get(0);
+		
+		//Nop:
+		//	nop='nop';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//nop='nop'
+		public Assignment getNopAssignment() { return cNopAssignment; }
+		
+		//'nop'
+		public Keyword getNopNopKeyword_0() { return cNopNopKeyword_0; }
 	}
 	public class AssignElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Assign");
@@ -874,94 +889,94 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ExprNotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.ExprNot");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cNotKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cEAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cEExprEqParserRuleCall_0_1_0 = (RuleCall)cEAssignment_0_1.eContents().get(0);
-		private final Assignment cE2Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cE2ExprEqParserRuleCall_1_0 = (RuleCall)cE2Assignment_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cHasNotAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cHasNotNotKeyword_0_0 = (Keyword)cHasNotAssignment_0.eContents().get(0);
+		private final Assignment cEAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEExprEqParserRuleCall_1_0 = (RuleCall)cEAssignment_1.eContents().get(0);
 		
 		//ExprNot:
-		//	'not' e=ExprEq | e2=ExprEq;
+		//	hasNot='not'? e=ExprEq;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'not' e=ExprEq | e2=ExprEq
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//hasNot='not'? e=ExprEq
+		public Group getGroup() { return cGroup; }
 		
-		//'not' e=ExprEq
-		public Group getGroup_0() { return cGroup_0; }
+		//hasNot='not'?
+		public Assignment getHasNotAssignment_0() { return cHasNotAssignment_0; }
 		
 		//'not'
-		public Keyword getNotKeyword_0_0() { return cNotKeyword_0_0; }
+		public Keyword getHasNotNotKeyword_0_0() { return cHasNotNotKeyword_0_0; }
 		
 		//e=ExprEq
-		public Assignment getEAssignment_0_1() { return cEAssignment_0_1; }
+		public Assignment getEAssignment_1() { return cEAssignment_1; }
 		
 		//ExprEq
-		public RuleCall getEExprEqParserRuleCall_0_1_0() { return cEExprEqParserRuleCall_0_1_0; }
-		
-		//e2=ExprEq
-		public Assignment getE2Assignment_1() { return cE2Assignment_1; }
-		
-		//ExprEq
-		public RuleCall getE2ExprEqParserRuleCall_1_0() { return cE2ExprEqParserRuleCall_1_0; }
+		public RuleCall getEExprEqParserRuleCall_1_0() { return cEExprEqParserRuleCall_1_0; }
 	}
 	public class ExprEqElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.ExprEq");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cEAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cEExprSimpleParserRuleCall_0_0_0 = (RuleCall)cEAssignment_0_0.eContents().get(0);
+		private final Assignment cE_leftAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cE_leftExprSimpleParserRuleCall_0_0_0 = (RuleCall)cE_leftAssignment_0_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
 		private final Keyword cEqualsSignQuestionMarkKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final Assignment cE2Assignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
-		private final RuleCall cE2ExprSimpleParserRuleCall_0_1_1_0 = (RuleCall)cE2Assignment_0_1_1.eContents().get(0);
+		private final Assignment cE_rightAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final RuleCall cE_rightExprSimpleParserRuleCall_0_1_1_0 = (RuleCall)cE_rightAssignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cSYMBOLTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final RuleCall cLExprParserRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Assignment cSymAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSymSYMBOLTerminalRuleCall_1_1_0 = (RuleCall)cSymAssignment_1_1.eContents().get(0);
+		private final Assignment cEAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cELExprParserRuleCall_1_2_0 = (RuleCall)cEAssignment_1_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
 		//ExprEq:
-		//	e=ExprSimple ('=?' e2=ExprSimple)? | => '(' SYMBOL? LExpr ')';
+		//	e_left=ExprSimple ('=?' e_right=ExprSimple)? | => '(' sym=SYMBOL? e=LExpr ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//e=ExprSimple ('=?' e2=ExprSimple)? | => '(' SYMBOL? LExpr ')'
+		//e_left=ExprSimple ('=?' e_right=ExprSimple)? | => '(' sym=SYMBOL? e=LExpr ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//e=ExprSimple ('=?' e2=ExprSimple)?
+		//e_left=ExprSimple ('=?' e_right=ExprSimple)?
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//e=ExprSimple
-		public Assignment getEAssignment_0_0() { return cEAssignment_0_0; }
+		//e_left=ExprSimple
+		public Assignment getE_leftAssignment_0_0() { return cE_leftAssignment_0_0; }
 		
 		//ExprSimple
-		public RuleCall getEExprSimpleParserRuleCall_0_0_0() { return cEExprSimpleParserRuleCall_0_0_0; }
+		public RuleCall getE_leftExprSimpleParserRuleCall_0_0_0() { return cE_leftExprSimpleParserRuleCall_0_0_0; }
 		
-		//('=?' e2=ExprSimple)?
+		//('=?' e_right=ExprSimple)?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
 		//'=?'
 		public Keyword getEqualsSignQuestionMarkKeyword_0_1_0() { return cEqualsSignQuestionMarkKeyword_0_1_0; }
 		
-		//e2=ExprSimple
-		public Assignment getE2Assignment_0_1_1() { return cE2Assignment_0_1_1; }
+		//e_right=ExprSimple
+		public Assignment getE_rightAssignment_0_1_1() { return cE_rightAssignment_0_1_1; }
 		
 		//ExprSimple
-		public RuleCall getE2ExprSimpleParserRuleCall_0_1_1_0() { return cE2ExprSimpleParserRuleCall_0_1_1_0; }
+		public RuleCall getE_rightExprSimpleParserRuleCall_0_1_1_0() { return cE_rightExprSimpleParserRuleCall_0_1_1_0; }
 		
-		//=> '(' SYMBOL? LExpr ')'
+		//=> '(' sym=SYMBOL? e=LExpr ')'
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//=> '('
 		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
-		//SYMBOL?
-		public RuleCall getSYMBOLTerminalRuleCall_1_1() { return cSYMBOLTerminalRuleCall_1_1; }
+		//sym=SYMBOL?
+		public Assignment getSymAssignment_1_1() { return cSymAssignment_1_1; }
+		
+		//SYMBOL
+		public RuleCall getSymSYMBOLTerminalRuleCall_1_1_0() { return cSymSYMBOLTerminalRuleCall_1_1_0; }
+		
+		//e=LExpr
+		public Assignment getEAssignment_1_2() { return cEAssignment_1_2; }
 		
 		//LExpr
-		public RuleCall getLExprParserRuleCall_1_2() { return cLExprParserRuleCall_1_2; }
+		public RuleCall getELExprParserRuleCall_1_2_0() { return cELExprParserRuleCall_1_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
@@ -991,6 +1006,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	private final OutputElements pOutput;
 	private final CommandsElements pCommands;
 	private final CommandElements pCommand;
+	private final NopElements pNop;
 	private final AssignElements pAssign;
 	private final WhileElements pWhile;
 	private final ForElements pFor;
@@ -1026,6 +1042,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOutput = new OutputElements();
 		this.pCommands = new CommandsElements();
 		this.pCommand = new CommandElements();
+		this.pNop = new NopElements();
 		this.pAssign = new AssignElements();
 		this.pWhile = new WhileElements();
 		this.pFor = new ForElements();
@@ -1210,13 +1227,23 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Command:
-	//	nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach;
+	//	command=Nop | command=Assign | command=While | command=For | command=If | command=Foreach;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
 	
 	public ParserRule getCommandRule() {
 		return getCommandAccess().getRule();
+	}
+	
+	//Nop:
+	//	nop='nop';
+	public NopElements getNopAccess() {
+		return pNop;
+	}
+	
+	public ParserRule getNopRule() {
+		return getNopAccess().getRule();
 	}
 	
 	//Assign:
@@ -1331,7 +1358,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExprNot:
-	//	'not' e=ExprEq | e2=ExprEq;
+	//	hasNot='not'? e=ExprEq;
 	public ExprNotElements getExprNotAccess() {
 		return pExprNot;
 	}
@@ -1341,7 +1368,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExprEq:
-	//	e=ExprSimple ('=?' e2=ExprSimple)? | => '(' SYMBOL? LExpr ')';
+	//	e_left=ExprSimple ('=?' e_right=ExprSimple)? | => '(' sym=SYMBOL? e=LExpr ')';
 	public ExprEqElements getExprEqAccess() {
 		return pExprEq;
 	}

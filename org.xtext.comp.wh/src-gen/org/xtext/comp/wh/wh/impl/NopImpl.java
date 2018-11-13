@@ -3,55 +3,57 @@
  */
 package org.xtext.comp.wh.wh.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.xtext.comp.wh.wh.Expr;
-import org.xtext.comp.wh.wh.LExpr;
+import org.xtext.comp.wh.wh.Nop;
 import org.xtext.comp.wh.wh.WhPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>LExpr</b></em>'.
+ * An implementation of the model object '<em><b>Nop</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.LExprImpl#getLe <em>Le</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.NopImpl#getNop <em>Nop</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
+public class NopImpl extends MinimalEObjectImpl.Container implements Nop
 {
   /**
-   * The cached value of the '{@link #getLe() <em>Le</em>}' containment reference list.
+   * The default value of the '{@link #getNop() <em>Nop</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLe()
+   * @see #getNop()
    * @generated
    * @ordered
    */
-  protected EList<Expr> le;
+  protected static final String NOP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNop() <em>Nop</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNop()
+   * @generated
+   * @ordered
+   */
+  protected String nop = NOP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LExprImpl()
+  protected NopImpl()
   {
     super();
   }
@@ -64,7 +66,7 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   @Override
   protected EClass eStaticClass()
   {
-    return WhPackage.Literals.LEXPR;
+    return WhPackage.Literals.NOP;
   }
 
   /**
@@ -72,13 +74,9 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expr> getLe()
+  public String getNop()
   {
-    if (le == null)
-    {
-      le = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.LEXPR__LE);
-    }
-    return le;
+    return nop;
   }
 
   /**
@@ -86,15 +84,12 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setNop(String newNop)
   {
-    switch (featureID)
-    {
-      case WhPackage.LEXPR__LE:
-        return ((InternalEList<?>)getLe()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldNop = nop;
+    nop = newNop;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.NOP__NOP, oldNop, nop));
   }
 
   /**
@@ -107,8 +102,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        return getLe();
+      case WhPackage.NOP__NOP:
+        return getNop();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +113,13 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        getLe().clear();
-        getLe().addAll((Collection<? extends Expr>)newValue);
+      case WhPackage.NOP__NOP:
+        setNop((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +135,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        getLe().clear();
+      case WhPackage.NOP__NOP:
+        setNop(NOP_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +152,27 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        return le != null && !le.isEmpty();
+      case WhPackage.NOP__NOP:
+        return NOP_EDEFAULT == null ? nop != null : !NOP_EDEFAULT.equals(nop);
     }
     return super.eIsSet(featureID);
   }
 
-} //LExprImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (nop: ");
+    result.append(nop);
+    result.append(')');
+    return result.toString();
+  }
+
+} //NopImpl
