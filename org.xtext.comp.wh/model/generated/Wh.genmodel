@@ -33,7 +33,7 @@
     <genClasses ecoreClass="Wh.ecore#//Command">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//Command/nop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/assign"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/while"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/wh"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/for"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/if"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//Command/foreach"/>

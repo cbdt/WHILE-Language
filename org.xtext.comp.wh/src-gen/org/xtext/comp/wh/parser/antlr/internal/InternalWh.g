@@ -445,11 +445,32 @@ ruleCommands returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1=';'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getSemicolonKeyword_1());
-		}
-	)*
+		(
+			otherlv_1=';'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getSemicolonKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCommandsAccess().getCommandCommandParserRuleCall_1_1_0());
+					}
+					lv_command_2_0=ruleCommand
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCommandsRule());
+						}
+						add(
+							$current,
+							"command",
+							lv_command_2_0,
+							"org.xtext.comp.wh.Wh.Command");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
 ;
 
 // Entry rule entryRuleCommand
@@ -506,17 +527,17 @@ ruleCommand returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCommandAccess().getWhileWhileParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCommandAccess().getWhWhileParserRuleCall_2_0());
 				}
-				lv_while_2_0=ruleWhile
+				lv_wh_2_0=ruleWhile
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCommandRule());
 					}
 					set(
 						$current,
-						"while",
-						lv_while_2_0,
+						"wh",
+						lv_wh_2_0,
 						"org.xtext.comp.wh.Wh.While");
 					afterParserOrEnumRuleCall();
 				}

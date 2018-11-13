@@ -309,13 +309,13 @@ public interface WhPackage extends EPackage
   int COMMAND__ASSIGN = 1;
 
   /**
-   * The feature id for the '<em><b>While</b></em>' containment reference.
+   * The feature id for the '<em><b>Wh</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMAND__WHILE = 2;
+  int COMMAND__WH = 2;
 
   /**
    * The feature id for the '<em><b>For</b></em>' containment reference.
@@ -1112,15 +1112,15 @@ public interface WhPackage extends EPackage
   EReference getCommand_Assign();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getWhile <em>While</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>While</em>'.
-   * @see org.xtext.comp.wh.wh.Command#getWhile()
+   * @return the meta object for the containment reference '<em>Wh</em>'.
+   * @see org.xtext.comp.wh.wh.Command#getWh()
    * @see #getCommand()
    * @generated
    */
-  EReference getCommand_While();
+  EReference getCommand_Wh();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Command#getFor <em>For</em>}'.
@@ -1814,12 +1814,12 @@ public interface WhPackage extends EPackage
     EReference COMMAND__ASSIGN = eINSTANCE.getCommand_Assign();
 
     /**
-     * The meta object literal for the '<em><b>While</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Wh</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMMAND__WHILE = eINSTANCE.getCommand_While();
+    EReference COMMAND__WH = eINSTANCE.getCommand_Wh();
 
     /**
      * The meta object literal for the '<em><b>For</b></em>' containment reference feature.

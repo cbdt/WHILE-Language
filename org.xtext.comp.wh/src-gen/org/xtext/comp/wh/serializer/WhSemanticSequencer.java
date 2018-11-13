@@ -153,7 +153,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         nop='nop' | 
 	 *         assign=Assign | 
-	 *         while=While | 
+	 *         wh=While | 
 	 *         for=For | 
 	 *         if=If | 
 	 *         foreach=Foreach
@@ -169,7 +169,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Commands returns Commands
 	 *
 	 * Constraint:
-	 *     command+=Command+
+	 *     (command+=Command command+=Command*)
 	 */
 	protected void sequence_Commands(ISerializationContext context, Commands semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

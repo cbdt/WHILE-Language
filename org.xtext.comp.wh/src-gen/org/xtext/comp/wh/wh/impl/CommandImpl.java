@@ -30,7 +30,7 @@ import org.xtext.comp.wh.wh.While;
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getNop <em>Nop</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getAssign <em>Assign</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getWhile <em>While</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getWh <em>Wh</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getFor <em>For</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getIf <em>If</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.CommandImpl#getForeach <em>Foreach</em>}</li>
@@ -71,14 +71,14 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   protected Assign assign;
 
   /**
-   * The cached value of the '{@link #getWhile() <em>While</em>}' containment reference.
+   * The cached value of the '{@link #getWh() <em>Wh</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWhile()
+   * @see #getWh()
    * @generated
    * @ordered
    */
-  protected While while_;
+  protected While wh;
 
   /**
    * The cached value of the '{@link #getFor() <em>For</em>}' containment reference.
@@ -207,9 +207,9 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public While getWhile()
+  public While getWh()
   {
-    return while_;
+    return wh;
   }
 
   /**
@@ -217,13 +217,13 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetWhile(While newWhile, NotificationChain msgs)
+  public NotificationChain basicSetWh(While newWh, NotificationChain msgs)
   {
-    While oldWhile = while_;
-    while_ = newWhile;
+    While oldWh = wh;
+    wh = newWh;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WHILE, oldWhile, newWhile);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WH, oldWh, newWh);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -234,20 +234,20 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWhile(While newWhile)
+  public void setWh(While newWh)
   {
-    if (newWhile != while_)
+    if (newWh != wh)
     {
       NotificationChain msgs = null;
-      if (while_ != null)
-        msgs = ((InternalEObject)while_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WHILE, null, msgs);
-      if (newWhile != null)
-        msgs = ((InternalEObject)newWhile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WHILE, null, msgs);
-      msgs = basicSetWhile(newWhile, msgs);
+      if (wh != null)
+        msgs = ((InternalEObject)wh).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WH, null, msgs);
+      if (newWh != null)
+        msgs = ((InternalEObject)newWh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.COMMAND__WH, null, msgs);
+      msgs = basicSetWh(newWh, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WHILE, newWhile, newWhile));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.COMMAND__WH, newWh, newWh));
   }
 
   /**
@@ -406,8 +406,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
     {
       case WhPackage.COMMAND__ASSIGN:
         return basicSetAssign(null, msgs);
-      case WhPackage.COMMAND__WHILE:
-        return basicSetWhile(null, msgs);
+      case WhPackage.COMMAND__WH:
+        return basicSetWh(null, msgs);
       case WhPackage.COMMAND__FOR:
         return basicSetFor(null, msgs);
       case WhPackage.COMMAND__IF:
@@ -432,8 +432,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
         return getNop();
       case WhPackage.COMMAND__ASSIGN:
         return getAssign();
-      case WhPackage.COMMAND__WHILE:
-        return getWhile();
+      case WhPackage.COMMAND__WH:
+        return getWh();
       case WhPackage.COMMAND__FOR:
         return getFor();
       case WhPackage.COMMAND__IF:
@@ -460,8 +460,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
       case WhPackage.COMMAND__ASSIGN:
         setAssign((Assign)newValue);
         return;
-      case WhPackage.COMMAND__WHILE:
-        setWhile((While)newValue);
+      case WhPackage.COMMAND__WH:
+        setWh((While)newValue);
         return;
       case WhPackage.COMMAND__FOR:
         setFor((For)newValue);
@@ -492,8 +492,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
       case WhPackage.COMMAND__ASSIGN:
         setAssign((Assign)null);
         return;
-      case WhPackage.COMMAND__WHILE:
-        setWhile((While)null);
+      case WhPackage.COMMAND__WH:
+        setWh((While)null);
         return;
       case WhPackage.COMMAND__FOR:
         setFor((For)null);
@@ -522,8 +522,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
         return NOP_EDEFAULT == null ? nop != null : !NOP_EDEFAULT.equals(nop);
       case WhPackage.COMMAND__ASSIGN:
         return assign != null;
-      case WhPackage.COMMAND__WHILE:
-        return while_ != null;
+      case WhPackage.COMMAND__WH:
+        return wh != null;
       case WhPackage.COMMAND__FOR:
         return for_ != null;
       case WhPackage.COMMAND__IF:

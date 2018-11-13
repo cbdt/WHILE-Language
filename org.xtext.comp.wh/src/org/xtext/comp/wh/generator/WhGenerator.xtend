@@ -46,15 +46,28 @@ class WhGenerator extends AbstractGenerator {
 	'''
 	
 	
-	def compile(Commands c)'''
-	«FOR command: c.command»
-	«command.compile()»;
-	«ENDFOR»
-	'''
+	def compile(Commands c) {
+		val nb_commands = c.command.size;
+		var counter = 0;
+		var commands = ""
+		
+		for (command : c.command) {
+			counter++;
+			
+			if(counter == nb_commands) {
+				commands += command.compile() + "\n";
+			} else {
+				commands += command.compile() + " ;\n";
+			}
+		}
+		
+		return commands
+		
+	}
 	
-	def compile(Command c)'''
-	
-	'''
+	def compile(Command c) {
+		return 'nop'
+	}
 	
 
 }

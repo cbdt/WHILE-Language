@@ -280,13 +280,16 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cCommandAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cCommandCommandParserRuleCall_0_0 = (RuleCall)cCommandAssignment_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cSemicolonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cCommandAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cCommandCommandParserRuleCall_1_1_0 = (RuleCall)cCommandAssignment_1_1.eContents().get(0);
 		
 		//Commands:
-		//	(command+=Command ';')*;
+		//	command+=Command (';' command+=Command)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(command+=Command ';')*
+		//command+=Command (';' command+=Command)*
 		public Group getGroup() { return cGroup; }
 		
 		//command+=Command
@@ -295,8 +298,17 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		//Command
 		public RuleCall getCommandCommandParserRuleCall_0_0() { return cCommandCommandParserRuleCall_0_0; }
 		
+		//(';' command+=Command)*
+		public Group getGroup_1() { return cGroup_1; }
+		
 		//';'
-		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+		public Keyword getSemicolonKeyword_1_0() { return cSemicolonKeyword_1_0; }
+		
+		//command+=Command
+		public Assignment getCommandAssignment_1_1() { return cCommandAssignment_1_1; }
+		
+		//Command
+		public RuleCall getCommandCommandParserRuleCall_1_1_0() { return cCommandCommandParserRuleCall_1_1_0; }
 	}
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Command");
@@ -305,8 +317,8 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNopNopKeyword_0_0 = (Keyword)cNopAssignment_0.eContents().get(0);
 		private final Assignment cAssignAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cAssignAssignParserRuleCall_1_0 = (RuleCall)cAssignAssignment_1.eContents().get(0);
-		private final Assignment cWhileAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cWhileWhileParserRuleCall_2_0 = (RuleCall)cWhileAssignment_2.eContents().get(0);
+		private final Assignment cWhAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cWhWhileParserRuleCall_2_0 = (RuleCall)cWhAssignment_2.eContents().get(0);
 		private final Assignment cForAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
 		private final RuleCall cForForParserRuleCall_3_0 = (RuleCall)cForAssignment_3.eContents().get(0);
 		private final Assignment cIfAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
@@ -315,10 +327,10 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForeachForeachParserRuleCall_5_0 = (RuleCall)cForeachAssignment_5.eContents().get(0);
 		
 		//Command:
-		//	nop='nop' | assign=Assign | while=While | for=For | if=If | foreach=Foreach;
+		//	nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//nop='nop' | assign=Assign | while=While | for=For | if=If | foreach=Foreach
+		//nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//nop='nop'
@@ -333,11 +345,11 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		//Assign
 		public RuleCall getAssignAssignParserRuleCall_1_0() { return cAssignAssignParserRuleCall_1_0; }
 		
-		//while=While
-		public Assignment getWhileAssignment_2() { return cWhileAssignment_2; }
+		//wh=While
+		public Assignment getWhAssignment_2() { return cWhAssignment_2; }
 		
 		//While
-		public RuleCall getWhileWhileParserRuleCall_2_0() { return cWhileWhileParserRuleCall_2_0; }
+		public RuleCall getWhWhileParserRuleCall_2_0() { return cWhWhileParserRuleCall_2_0; }
 		
 		//for=For
 		public Assignment getForAssignment_3() { return cForAssignment_3; }
@@ -1188,7 +1200,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Commands:
-	//	(command+=Command ';')*;
+	//	command+=Command (';' command+=Command)*;
 	public CommandsElements getCommandsAccess() {
 		return pCommands;
 	}
@@ -1198,7 +1210,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Command:
-	//	nop='nop' | assign=Assign | while=While | for=For | if=If | foreach=Foreach;
+	//	nop='nop' | assign=Assign | wh=While | for=For | if=If | foreach=Foreach;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}

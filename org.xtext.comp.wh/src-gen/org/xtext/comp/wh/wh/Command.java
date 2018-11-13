@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.Command#getNop <em>Nop</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.Command#getAssign <em>Assign</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.Command#getWhile <em>While</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.Command#getFor <em>For</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.Command#getIf <em>If</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.Command#getForeach <em>Foreach</em>}</li>
@@ -81,30 +81,30 @@ public interface Command extends EObject
   void setAssign(Assign value);
 
   /**
-   * Returns the value of the '<em><b>While</b></em>' containment reference.
+   * Returns the value of the '<em><b>Wh</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>While</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Wh</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>While</em>' containment reference.
-   * @see #setWhile(While)
-   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_While()
+   * @return the value of the '<em>Wh</em>' containment reference.
+   * @see #setWh(While)
+   * @see org.xtext.comp.wh.wh.WhPackage#getCommand_Wh()
    * @model containment="true"
    * @generated
    */
-  While getWhile();
+  While getWh();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getWhile <em>While</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Command#getWh <em>Wh</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>While</em>' containment reference.
-   * @see #getWhile()
+   * @param value the new value of the '<em>Wh</em>' containment reference.
+   * @see #getWh()
    * @generated
    */
-  void setWhile(While value);
+  void setWh(While value);
 
   /**
    * Returns the value of the '<em><b>For</b></em>' containment reference.

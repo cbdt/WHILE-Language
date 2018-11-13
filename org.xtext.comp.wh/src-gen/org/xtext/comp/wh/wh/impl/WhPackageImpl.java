@@ -465,7 +465,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCommand_While()
+  public EReference getCommand_Wh()
   {
     return (EReference)commandEClass.getEStructuralFeatures().get(2);
   }
@@ -987,7 +987,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     commandEClass = createEClass(COMMAND);
     createEAttribute(commandEClass, COMMAND__NOP);
     createEReference(commandEClass, COMMAND__ASSIGN);
-    createEReference(commandEClass, COMMAND__WHILE);
+    createEReference(commandEClass, COMMAND__WH);
     createEReference(commandEClass, COMMAND__FOR);
     createEReference(commandEClass, COMMAND__IF);
     createEReference(commandEClass, COMMAND__FOREACH);
@@ -1109,7 +1109,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCommand_Nop(), ecorePackage.getEString(), "nop", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommand_Assign(), this.getAssign(), null, "assign", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCommand_While(), this.getWhile(), null, "while", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommand_Wh(), this.getWhile(), null, "wh", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommand_For(), this.getFor(), null, "for", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommand_If(), this.getIf(), null, "if", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommand_Foreach(), this.getForeach(), null, "foreach", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

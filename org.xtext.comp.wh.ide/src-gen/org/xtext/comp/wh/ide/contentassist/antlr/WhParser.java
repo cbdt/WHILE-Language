@@ -42,6 +42,7 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOutputAccess().getGroup(), "rule__Output__Group__0");
 			builder.put(grammarAccess.getOutputAccess().getGroup_1(), "rule__Output__Group_1__0");
 			builder.put(grammarAccess.getCommandsAccess().getGroup(), "rule__Commands__Group__0");
+			builder.put(grammarAccess.getCommandsAccess().getGroup_1(), "rule__Commands__Group_1__0");
 			builder.put(grammarAccess.getAssignAccess().getGroup(), "rule__Assign__Group__0");
 			builder.put(grammarAccess.getWhileAccess().getGroup(), "rule__While__Group__0");
 			builder.put(grammarAccess.getForAccess().getGroup(), "rule__For__Group__0");
@@ -76,9 +77,10 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOutputAccess().getR_valuesAssignment_0(), "rule__Output__R_valuesAssignment_0");
 			builder.put(grammarAccess.getOutputAccess().getR_valuesAssignment_1_1(), "rule__Output__R_valuesAssignment_1_1");
 			builder.put(grammarAccess.getCommandsAccess().getCommandAssignment_0(), "rule__Commands__CommandAssignment_0");
+			builder.put(grammarAccess.getCommandsAccess().getCommandAssignment_1_1(), "rule__Commands__CommandAssignment_1_1");
 			builder.put(grammarAccess.getCommandAccess().getNopAssignment_0(), "rule__Command__NopAssignment_0");
 			builder.put(grammarAccess.getCommandAccess().getAssignAssignment_1(), "rule__Command__AssignAssignment_1");
-			builder.put(grammarAccess.getCommandAccess().getWhileAssignment_2(), "rule__Command__WhileAssignment_2");
+			builder.put(grammarAccess.getCommandAccess().getWhAssignment_2(), "rule__Command__WhAssignment_2");
 			builder.put(grammarAccess.getCommandAccess().getForAssignment_3(), "rule__Command__ForAssignment_3");
 			builder.put(grammarAccess.getCommandAccess().getIfAssignment_4(), "rule__Command__IfAssignment_4");
 			builder.put(grammarAccess.getCommandAccess().getForeachAssignment_5(), "rule__Command__ForeachAssignment_5");
