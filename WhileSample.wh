@@ -1,12 +1,12 @@
-function p: read C,
+function p: read V,
 
 
 
 
 Y % while X do
-while X do nop; nop
+while C do nop; nop
    od
-                               od
+                               od;
 while X do nop od
 
 
@@ -14,3 +14,26 @@ while X do nop od
 %
 write
  Y,         C
+ 
+function p:
+read V, Y
+%
+  while not V do
+     while not ( cons nil (cons nil nil)) do
+        if (a a4) and Var2 then
+        	nop else nop        fi;        foreach null in null do  		while null do
+        			if C then C:=B else      				nop;nop
+        			
+        			fi
+        		od
+    	
+        od
+     od
+  od ;
+  while X do
+     nop
+  od
+%
+write Y, C
+ 
+ 
