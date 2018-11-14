@@ -8,11 +8,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
+import org.xtext.comp.wh.generator.Main;
 
 class Test1 {
 
 	void assertFileEquals(String name) throws IOException {
-		File ugly = new File("UglyWhFile/" + name);
+		Main.main(new String[]{"UglyWhFile/" + name, "-o", "PrettyGenWhFile/" + name});
+		File ugly = new File("PrettyGenWhFile/" + name);
 		File pretty = new File("PrettyWhFile/" + name);
 		
 		FileReader input = new FileReader(ugly);
@@ -26,12 +28,13 @@ class Test1 {
 		}
 		input.close();
 		input = new FileReader(pretty);
+		Main.main(new String[]{"PrettyGenWhFile/" + name, "-o", "PrettyWhFile/" + name});
 		while((c = input.read()) != -1) {
 			prettyBuilder.append((char) c);
 		}
 		input.close();
 		
-		System.out.println("Ugly :\n" + uglyBuilder.toString());
+		System.out.println(" :\n" + uglyBuilder.toString());
 		System.out.println("Pretty :\n" + prettyBuilder.toString());
 		
 		assertTrue(uglyBuilder.toString().equals(prettyBuilder.toString()));
