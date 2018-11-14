@@ -209,7 +209,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprAnd returns ExprAnd
 	 *
 	 * Constraint:
-	 *     (eo+=ExprOr eo+=ExprOr*)
+	 *     (expr_or+=ExprOr expr_or+=ExprOr*)
 	 */
 	protected void sequence_ExprAnd(ISerializationContext context, ExprAnd semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -221,7 +221,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprEq returns ExprEq
 	 *
 	 * Constraint:
-	 *     ((e_left=ExprSimple e_right=ExprSimple?) | (sym=SYMBOL? e=LExpr))
+	 *     ((expr_left=ExprSimple expr_right=ExprSimple?) | (sym=SYMBOL lexpr=LExpr))
 	 */
 	protected void sequence_ExprEq(ISerializationContext context, ExprEq semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -233,7 +233,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprNot returns ExprNot
 	 *
 	 * Constraint:
-	 *     (hasNot='not'? e=ExprEq)
+	 *     (hasNot='not'? expr_eq=ExprEq)
 	 */
 	protected void sequence_ExprNot(ISerializationContext context, ExprNot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -245,7 +245,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprOr returns ExprOr
 	 *
 	 * Constraint:
-	 *     (en+=ExprNot en+=ExprNot*)
+	 *     (expr_not+=ExprNot expr_not+=ExprNot*)
 	 */
 	protected void sequence_ExprOr(ISerializationContext context, ExprOr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -259,7 +259,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         nil='nil' | 
-	 *         var=VARIABLE | 
+	 *         variable=VARIABLE | 
 	 *         sym=SYMBOL | 
 	 *         cons_exp=LExpr | 
 	 *         list_exp=LExpr | 
@@ -277,15 +277,15 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expr returns Expr
 	 *
 	 * Constraint:
-	 *     ea=ExprAnd
+	 *     expr_and=ExprAnd
 	 */
 	protected void sequence_Expr(ISerializationContext context, Expr semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.EXPR__EA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.EXPR__EA));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.EXPR__EXPR_AND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.EXPR__EXPR_AND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExprAccess().getEaExprAndParserRuleCall_0(), semanticObject.getEa());
+		feeder.accept(grammarAccess.getExprAccess().getExpr_andExprAndParserRuleCall_0(), semanticObject.getExpr_and());
 		feeder.finish();
 	}
 	
@@ -295,7 +295,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Exprs returns Exprs
 	 *
 	 * Constraint:
-	 *     (e+=Expr e+=Expr*)
+	 *     (expr+=Expr expr+=Expr*)
 	 */
 	protected void sequence_Exprs(ISerializationContext context, Exprs semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -397,7 +397,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LExpr returns LExpr
 	 *
 	 * Constraint:
-	 *     le+=Expr+
+	 *     expr+=Expr+
 	 */
 	protected void sequence_LExpr(ISerializationContext context, LExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -469,7 +469,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Vars returns Vars
 	 *
 	 * Constraint:
-	 *     (var+=VARIABLE var+=VARIABLE*)
+	 *     (variables+=VARIABLE variables+=VARIABLE*)
 	 */
 	protected void sequence_Vars(ISerializationContext context, Vars semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

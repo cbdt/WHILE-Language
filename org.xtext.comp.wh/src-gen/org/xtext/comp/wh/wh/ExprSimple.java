@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getNil <em>Nil</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getCons_exp <em>Cons exp</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprSimple#getList_exp <em>List exp</em>}</li>
@@ -56,30 +56,30 @@ public interface ExprSimple extends EObject
   void setNil(String value);
 
   /**
-   * Returns the value of the '<em><b>Var</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' attribute isn't clear,
+   * If the meaning of the '<em>Variable</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' attribute.
-   * @see #setVar(String)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_Var()
+   * @return the value of the '<em>Variable</em>' attribute.
+   * @see #setVariable(String)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprSimple_Variable()
    * @model
    * @generated
    */
-  String getVar();
+  String getVariable();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getVar <em>Var</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprSimple#getVariable <em>Variable</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' attribute.
-   * @see #getVar()
+   * @param value the new value of the '<em>Variable</em>' attribute.
+   * @see #getVariable()
    * @generated
    */
-  void setVar(String value);
+  void setVariable(String value);
 
   /**
    * Returns the value of the '<em><b>Sym</b></em>' attribute.

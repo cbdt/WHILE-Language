@@ -25,7 +25,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getHasNot <em>Has Not</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprNotImpl#getExpr_eq <em>Expr eq</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,14 +53,14 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   protected String hasNot = HAS_NOT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * The cached value of the '{@link #getExpr_eq() <em>Expr eq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE()
+   * @see #getExpr_eq()
    * @generated
    * @ordered
    */
-  protected ExprEq e;
+  protected ExprEq expr_eq;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,9 +111,9 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprEq getE()
+  public ExprEq getExpr_eq()
   {
-    return e;
+    return expr_eq;
   }
 
   /**
@@ -121,13 +121,13 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(ExprEq newE, NotificationChain msgs)
+  public NotificationChain basicSetExpr_eq(ExprEq newExpr_eq, NotificationChain msgs)
   {
-    ExprEq oldE = e;
-    e = newE;
+    ExprEq oldExpr_eq = expr_eq;
+    expr_eq = newExpr_eq;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__E, oldE, newE);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__EXPR_EQ, oldExpr_eq, newExpr_eq);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -138,20 +138,20 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(ExprEq newE)
+  public void setExpr_eq(ExprEq newExpr_eq)
   {
-    if (newE != e)
+    if (newExpr_eq != expr_eq)
     {
       NotificationChain msgs = null;
-      if (e != null)
-        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__E, null, msgs);
-      if (newE != null)
-        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__E, null, msgs);
-      msgs = basicSetE(newE, msgs);
+      if (expr_eq != null)
+        msgs = ((InternalEObject)expr_eq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__EXPR_EQ, null, msgs);
+      if (newExpr_eq != null)
+        msgs = ((InternalEObject)newExpr_eq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_NOT__EXPR_EQ, null, msgs);
+      msgs = basicSetExpr_eq(newExpr_eq, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__E, newE, newE));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_NOT__EXPR_EQ, newExpr_eq, newExpr_eq));
   }
 
   /**
@@ -164,8 +164,8 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_NOT__E:
-        return basicSetE(null, msgs);
+      case WhPackage.EXPR_NOT__EXPR_EQ:
+        return basicSetExpr_eq(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -182,8 +182,8 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
     {
       case WhPackage.EXPR_NOT__HAS_NOT:
         return getHasNot();
-      case WhPackage.EXPR_NOT__E:
-        return getE();
+      case WhPackage.EXPR_NOT__EXPR_EQ:
+        return getExpr_eq();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,8 +201,8 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
       case WhPackage.EXPR_NOT__HAS_NOT:
         setHasNot((String)newValue);
         return;
-      case WhPackage.EXPR_NOT__E:
-        setE((ExprEq)newValue);
+      case WhPackage.EXPR_NOT__EXPR_EQ:
+        setExpr_eq((ExprEq)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,8 +221,8 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
       case WhPackage.EXPR_NOT__HAS_NOT:
         setHasNot(HAS_NOT_EDEFAULT);
         return;
-      case WhPackage.EXPR_NOT__E:
-        setE((ExprEq)null);
+      case WhPackage.EXPR_NOT__EXPR_EQ:
+        setExpr_eq((ExprEq)null);
         return;
     }
     super.eUnset(featureID);
@@ -240,8 +240,8 @@ public class ExprNotImpl extends MinimalEObjectImpl.Container implements ExprNot
     {
       case WhPackage.EXPR_NOT__HAS_NOT:
         return HAS_NOT_EDEFAULT == null ? hasNot != null : !HAS_NOT_EDEFAULT.equals(hasNot);
-      case WhPackage.EXPR_NOT__E:
-        return e != null;
+      case WhPackage.EXPR_NOT__EXPR_EQ:
+        return expr_eq != null;
     }
     return super.eIsSet(featureID);
   }

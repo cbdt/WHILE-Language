@@ -663,7 +663,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVars_Var()
+  public EAttribute getVars_Variables()
   {
     return (EAttribute)varsEClass.getEStructuralFeatures().get(0);
   }
@@ -683,7 +683,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprs_E()
+  public EReference getExprs_Expr()
   {
     return (EReference)exprsEClass.getEStructuralFeatures().get(0);
   }
@@ -703,7 +703,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpr_Ea()
+  public EReference getExpr_Expr_and()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(0);
   }
@@ -733,7 +733,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExprSimple_Var()
+  public EAttribute getExprSimple_Variable()
   {
     return (EAttribute)exprSimpleEClass.getEStructuralFeatures().get(1);
   }
@@ -803,7 +803,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprAnd_Eo()
+  public EReference getExprAnd_Expr_or()
   {
     return (EReference)exprAndEClass.getEStructuralFeatures().get(0);
   }
@@ -823,7 +823,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprOr_En()
+  public EReference getExprOr_Expr_not()
   {
     return (EReference)exprOrEClass.getEStructuralFeatures().get(0);
   }
@@ -853,7 +853,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprNot_E()
+  public EReference getExprNot_Expr_eq()
   {
     return (EReference)exprNotEClass.getEStructuralFeatures().get(1);
   }
@@ -873,7 +873,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprEq_E_left()
+  public EReference getExprEq_Expr_left()
   {
     return (EReference)exprEqEClass.getEStructuralFeatures().get(0);
   }
@@ -883,7 +883,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprEq_E_right()
+  public EReference getExprEq_Expr_right()
   {
     return (EReference)exprEqEClass.getEStructuralFeatures().get(1);
   }
@@ -903,7 +903,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExprEq_E()
+  public EReference getExprEq_Lexpr()
   {
     return (EReference)exprEqEClass.getEStructuralFeatures().get(3);
   }
@@ -923,7 +923,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLExpr_Le()
+  public EReference getLExpr_Expr()
   {
     return (EReference)lExprEClass.getEStructuralFeatures().get(0);
   }
@@ -1011,17 +1011,17 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     createEReference(foreachEClass, FOREACH__COMMANDS);
 
     varsEClass = createEClass(VARS);
-    createEAttribute(varsEClass, VARS__VAR);
+    createEAttribute(varsEClass, VARS__VARIABLES);
 
     exprsEClass = createEClass(EXPRS);
-    createEReference(exprsEClass, EXPRS__E);
+    createEReference(exprsEClass, EXPRS__EXPR);
 
     exprEClass = createEClass(EXPR);
-    createEReference(exprEClass, EXPR__EA);
+    createEReference(exprEClass, EXPR__EXPR_AND);
 
     exprSimpleEClass = createEClass(EXPR_SIMPLE);
     createEAttribute(exprSimpleEClass, EXPR_SIMPLE__NIL);
-    createEAttribute(exprSimpleEClass, EXPR_SIMPLE__VAR);
+    createEAttribute(exprSimpleEClass, EXPR_SIMPLE__VARIABLE);
     createEAttribute(exprSimpleEClass, EXPR_SIMPLE__SYM);
     createEReference(exprSimpleEClass, EXPR_SIMPLE__CONS_EXP);
     createEReference(exprSimpleEClass, EXPR_SIMPLE__LIST_EXP);
@@ -1029,23 +1029,23 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     createEReference(exprSimpleEClass, EXPR_SIMPLE__TL_EXPR);
 
     exprAndEClass = createEClass(EXPR_AND);
-    createEReference(exprAndEClass, EXPR_AND__EO);
+    createEReference(exprAndEClass, EXPR_AND__EXPR_OR);
 
     exprOrEClass = createEClass(EXPR_OR);
-    createEReference(exprOrEClass, EXPR_OR__EN);
+    createEReference(exprOrEClass, EXPR_OR__EXPR_NOT);
 
     exprNotEClass = createEClass(EXPR_NOT);
     createEAttribute(exprNotEClass, EXPR_NOT__HAS_NOT);
-    createEReference(exprNotEClass, EXPR_NOT__E);
+    createEReference(exprNotEClass, EXPR_NOT__EXPR_EQ);
 
     exprEqEClass = createEClass(EXPR_EQ);
-    createEReference(exprEqEClass, EXPR_EQ__ELEFT);
-    createEReference(exprEqEClass, EXPR_EQ__ERIGHT);
+    createEReference(exprEqEClass, EXPR_EQ__EXPR_LEFT);
+    createEReference(exprEqEClass, EXPR_EQ__EXPR_RIGHT);
     createEAttribute(exprEqEClass, EXPR_EQ__SYM);
-    createEReference(exprEqEClass, EXPR_EQ__E);
+    createEReference(exprEqEClass, EXPR_EQ__LEXPR);
 
     lExprEClass = createEClass(LEXPR);
-    createEReference(lExprEClass, LEXPR__LE);
+    createEReference(lExprEClass, LEXPR__EXPR);
   }
 
   /**
@@ -1132,17 +1132,17 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEReference(getForeach_Commands(), this.getCommands(), null, "commands", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varsEClass, Vars.class, "Vars", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVars_Var(), ecorePackage.getEString(), "var", null, 0, -1, Vars.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVars_Variables(), ecorePackage.getEString(), "variables", null, 0, -1, Vars.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprsEClass, Exprs.class, "Exprs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExprs_E(), this.getExpr(), null, "e", null, 0, -1, Exprs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprs_Expr(), this.getExpr(), null, "expr", null, 0, -1, Exprs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpr_Ea(), this.getExprAnd(), null, "ea", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_Expr_and(), this.getExprAnd(), null, "expr_and", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprSimpleEClass, ExprSimple.class, "ExprSimple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExprSimple_Nil(), ecorePackage.getEString(), "nil", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExprSimple_Var(), ecorePackage.getEString(), "var", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExprSimple_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExprSimple_Sym(), ecorePackage.getEString(), "sym", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExprSimple_Cons_exp(), this.getLExpr(), null, "cons_exp", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExprSimple_List_exp(), this.getLExpr(), null, "list_exp", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1150,23 +1150,23 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEReference(getExprSimple_Tl_expr(), this.getExpr(), null, "tl_expr", null, 0, 1, ExprSimple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprAndEClass, ExprAnd.class, "ExprAnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExprAnd_Eo(), this.getExprOr(), null, "eo", null, 0, -1, ExprAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprAnd_Expr_or(), this.getExprOr(), null, "expr_or", null, 0, -1, ExprAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprOrEClass, ExprOr.class, "ExprOr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExprOr_En(), this.getExprNot(), null, "en", null, 0, -1, ExprOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprOr_Expr_not(), this.getExprNot(), null, "expr_not", null, 0, -1, ExprOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprNotEClass, ExprNot.class, "ExprNot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExprNot_HasNot(), ecorePackage.getEString(), "hasNot", null, 0, 1, ExprNot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExprNot_E(), this.getExprEq(), null, "e", null, 0, 1, ExprNot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprNot_Expr_eq(), this.getExprEq(), null, "expr_eq", null, 0, 1, ExprNot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEqEClass, ExprEq.class, "ExprEq", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExprEq_E_left(), this.getExprSimple(), null, "e_left", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExprEq_E_right(), this.getExprSimple(), null, "e_right", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprEq_Expr_left(), this.getExprSimple(), null, "expr_left", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprEq_Expr_right(), this.getExprSimple(), null, "expr_right", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExprEq_Sym(), ecorePackage.getEString(), "sym", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExprEq_E(), this.getLExpr(), null, "e", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprEq_Lexpr(), this.getLExpr(), null, "lexpr", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lExprEClass, LExpr.class, "LExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLExpr_Le(), this.getExpr(), null, "le", null, 0, -1, LExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLExpr_Expr(), this.getExpr(), null, "expr", null, 0, -1, LExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

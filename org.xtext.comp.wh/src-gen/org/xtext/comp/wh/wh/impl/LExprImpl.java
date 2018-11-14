@@ -29,7 +29,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.LExprImpl#getLe <em>Le</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.LExprImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
 {
   /**
-   * The cached value of the '{@link #getLe() <em>Le</em>}' containment reference list.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLe()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected EList<Expr> le;
+  protected EList<Expr> expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expr> getLe()
+  public EList<Expr> getExpr()
   {
-    if (le == null)
+    if (expr == null)
     {
-      le = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.LEXPR__LE);
+      expr = new EObjectContainmentEList<Expr>(Expr.class, this, WhPackage.LEXPR__EXPR);
     }
-    return le;
+    return expr;
   }
 
   /**
@@ -91,8 +91,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        return ((InternalEList<?>)getLe()).basicRemove(otherEnd, msgs);
+      case WhPackage.LEXPR__EXPR:
+        return ((InternalEList<?>)getExpr()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        return getLe();
+      case WhPackage.LEXPR__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        getLe().clear();
-        getLe().addAll((Collection<? extends Expr>)newValue);
+      case WhPackage.LEXPR__EXPR:
+        getExpr().clear();
+        getExpr().addAll((Collection<? extends Expr>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        getLe().clear();
+      case WhPackage.LEXPR__EXPR:
+        getExpr().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class LExprImpl extends MinimalEObjectImpl.Container implements LExpr
   {
     switch (featureID)
     {
-      case WhPackage.LEXPR__LE:
-        return le != null && !le.isEmpty();
+      case WhPackage.LEXPR__EXPR:
+        return expr != null && !expr.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -24,7 +24,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.VarsImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.VarsImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute list.
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVariables()
    * @generated
    * @ordered
    */
-  protected EList<String> var;
+  protected EList<String> variables;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +67,13 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getVar()
+  public EList<String> getVariables()
   {
-    if (var == null)
+    if (variables == null)
     {
-      var = new EDataTypeEList<String>(String.class, this, WhPackage.VARS__VAR);
+      variables = new EDataTypeEList<String>(String.class, this, WhPackage.VARS__VARIABLES);
     }
-    return var;
+    return variables;
   }
 
   /**
@@ -86,8 +86,8 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
   {
     switch (featureID)
     {
-      case WhPackage.VARS__VAR:
-        return getVar();
+      case WhPackage.VARS__VARIABLES:
+        return getVariables();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -103,9 +103,9 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
   {
     switch (featureID)
     {
-      case WhPackage.VARS__VAR:
-        getVar().clear();
-        getVar().addAll((Collection<? extends String>)newValue);
+      case WhPackage.VARS__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -121,8 +121,8 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
   {
     switch (featureID)
     {
-      case WhPackage.VARS__VAR:
-        getVar().clear();
+      case WhPackage.VARS__VARIABLES:
+        getVariables().clear();
         return;
     }
     super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
   {
     switch (featureID)
     {
-      case WhPackage.VARS__VAR:
-        return var != null && !var.isEmpty();
+      case WhPackage.VARS__VARIABLES:
+        return variables != null && !variables.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -155,8 +155,8 @@ public class VarsImpl extends MinimalEObjectImpl.Container implements Vars
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (var: ");
-    result.append(var);
+    result.append(" (variables: ");
+    result.append(variables);
     result.append(')');
     return result.toString();
   }

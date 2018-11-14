@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprOr#getExpr_not <em>Expr not</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprOr()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprOr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>En</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Expr not</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.ExprNot}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>En</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Expr not</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>En</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprOr_En()
+   * @return the value of the '<em>Expr not</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprOr_Expr_not()
    * @model containment="true"
    * @generated
    */
-  EList<ExprNot> getEn();
+  EList<ExprNot> getExpr_not();
 
 } // ExprOr

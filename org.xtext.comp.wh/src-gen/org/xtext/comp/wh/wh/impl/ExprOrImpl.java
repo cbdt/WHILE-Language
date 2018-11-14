@@ -29,7 +29,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprOrImpl#getEn <em>En</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprOrImpl#getExpr_not <em>Expr not</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
 {
   /**
-   * The cached value of the '{@link #getEn() <em>En</em>}' containment reference list.
+   * The cached value of the '{@link #getExpr_not() <em>Expr not</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEn()
+   * @see #getExpr_not()
    * @generated
    * @ordered
    */
-  protected EList<ExprNot> en;
+  protected EList<ExprNot> expr_not;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExprNot> getEn()
+  public EList<ExprNot> getExpr_not()
   {
-    if (en == null)
+    if (expr_not == null)
     {
-      en = new EObjectContainmentEList<ExprNot>(ExprNot.class, this, WhPackage.EXPR_OR__EN);
+      expr_not = new EObjectContainmentEList<ExprNot>(ExprNot.class, this, WhPackage.EXPR_OR__EXPR_NOT);
     }
-    return en;
+    return expr_not;
   }
 
   /**
@@ -91,8 +91,8 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_OR__EN:
-        return ((InternalEList<?>)getEn()).basicRemove(otherEnd, msgs);
+      case WhPackage.EXPR_OR__EXPR_NOT:
+        return ((InternalEList<?>)getExpr_not()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_OR__EN:
-        return getEn();
+      case WhPackage.EXPR_OR__EXPR_NOT:
+        return getExpr_not();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_OR__EN:
-        getEn().clear();
-        getEn().addAll((Collection<? extends ExprNot>)newValue);
+      case WhPackage.EXPR_OR__EXPR_NOT:
+        getExpr_not().clear();
+        getExpr_not().addAll((Collection<? extends ExprNot>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_OR__EN:
-        getEn().clear();
+      case WhPackage.EXPR_OR__EXPR_NOT:
+        getExpr_not().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class ExprOrImpl extends MinimalEObjectImpl.Container implements ExprOr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR_OR__EN:
-        return en != null && !en.isEmpty();
+      case WhPackage.EXPR_OR__EXPR_NOT:
+        return expr_not != null && !expr_not.isEmpty();
     }
     return super.eIsSet(featureID);
   }

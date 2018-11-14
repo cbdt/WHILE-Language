@@ -26,7 +26,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getNil <em>Nil</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getCons_exp <em>Cons exp</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl#getList_exp <em>List exp</em>}</li>
@@ -59,24 +59,24 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
   protected String nil = NIL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected static final String VAR_EDEFAULT = null;
+  protected static final String VARIABLE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected String var = VAR_EDEFAULT;
+  protected String variable = VARIABLE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSym() <em>Sym</em>}' attribute.
@@ -187,9 +187,9 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVar()
+  public String getVariable()
   {
-    return var;
+    return variable;
   }
 
   /**
@@ -197,12 +197,12 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(String newVar)
+  public void setVariable(String newVariable)
   {
-    String oldVar = var;
-    var = newVar;
+    String oldVariable = variable;
+    variable = newVariable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__VAR, oldVar, var));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_SIMPLE__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -454,8 +454,8 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case WhPackage.EXPR_SIMPLE__NIL:
         return getNil();
-      case WhPackage.EXPR_SIMPLE__VAR:
-        return getVar();
+      case WhPackage.EXPR_SIMPLE__VARIABLE:
+        return getVariable();
       case WhPackage.EXPR_SIMPLE__SYM:
         return getSym();
       case WhPackage.EXPR_SIMPLE__CONS_EXP:
@@ -483,8 +483,8 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
       case WhPackage.EXPR_SIMPLE__NIL:
         setNil((String)newValue);
         return;
-      case WhPackage.EXPR_SIMPLE__VAR:
-        setVar((String)newValue);
+      case WhPackage.EXPR_SIMPLE__VARIABLE:
+        setVariable((String)newValue);
         return;
       case WhPackage.EXPR_SIMPLE__SYM:
         setSym((String)newValue);
@@ -518,8 +518,8 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
       case WhPackage.EXPR_SIMPLE__NIL:
         setNil(NIL_EDEFAULT);
         return;
-      case WhPackage.EXPR_SIMPLE__VAR:
-        setVar(VAR_EDEFAULT);
+      case WhPackage.EXPR_SIMPLE__VARIABLE:
+        setVariable(VARIABLE_EDEFAULT);
         return;
       case WhPackage.EXPR_SIMPLE__SYM:
         setSym(SYM_EDEFAULT);
@@ -552,8 +552,8 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case WhPackage.EXPR_SIMPLE__NIL:
         return NIL_EDEFAULT == null ? nil != null : !NIL_EDEFAULT.equals(nil);
-      case WhPackage.EXPR_SIMPLE__VAR:
-        return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
+      case WhPackage.EXPR_SIMPLE__VARIABLE:
+        return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
       case WhPackage.EXPR_SIMPLE__SYM:
         return SYM_EDEFAULT == null ? sym != null : !SYM_EDEFAULT.equals(sym);
       case WhPackage.EXPR_SIMPLE__CONS_EXP:
@@ -581,8 +581,8 @@ public class ExprSimpleImpl extends MinimalEObjectImpl.Container implements Expr
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (nil: ");
     result.append(nil);
-    result.append(", var: ");
-    result.append(var);
+    result.append(", variable: ");
+    result.append(variable);
     result.append(", sym: ");
     result.append(sym);
     result.append(')');

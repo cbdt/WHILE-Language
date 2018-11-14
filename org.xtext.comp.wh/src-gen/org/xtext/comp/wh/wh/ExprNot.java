@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getHasNot <em>Has Not</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprNot#getExpr_eq <em>Expr eq</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprNot()
@@ -51,29 +51,29 @@ public interface ExprNot extends EObject
   void setHasNot(String value);
 
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr eq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr eq</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(ExprEq)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprNot_E()
+   * @return the value of the '<em>Expr eq</em>' containment reference.
+   * @see #setExpr_eq(ExprEq)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprNot_Expr_eq()
    * @model containment="true"
    * @generated
    */
-  ExprEq getE();
+  ExprEq getExpr_eq();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprNot#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprNot#getExpr_eq <em>Expr eq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Expr eq</em>' containment reference.
+   * @see #getExpr_eq()
    * @generated
    */
-  void setE(ExprEq value);
+  void setExpr_eq(ExprEq value);
 
 } // ExprNot

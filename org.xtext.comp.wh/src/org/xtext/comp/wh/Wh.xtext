@@ -128,39 +128,39 @@ Foreach:
 ;
 
 Vars:
-	var+=VARIABLE (',' var+=VARIABLE)*
+	variables+=VARIABLE (',' variables+=VARIABLE)*
 ;
 Exprs:
-	e+=Expr (',' e+=Expr)*
+	expr+=Expr (',' expr+=Expr)*
 ;
 
 Expr:
-	ea=ExprAnd
+	expr_and=ExprAnd
 ;
 
 ExprSimple:
-	(nil='nil' | var=VARIABLE | sym=SYMBOL | '(' 'cons' cons_exp=LExpr ')' | '(' 'list' list_exp=LExpr ')' | '(' 'hd'  hd_expr=Expr ')' | '(' 'tl'  tl_expr=Expr ')' 
+	(nil='nil' | variable=VARIABLE | sym=SYMBOL | '(' 'cons' cons_exp=LExpr ')' | '(' 'list' list_exp=LExpr ')' | '(' 'hd'  hd_expr=Expr ')' | '(' 'tl'  tl_expr=Expr ')' 
 	)
 ;
 
 ExprAnd:
-	eo+=ExprOr ( 'and'  eo+=ExprOr)*
+	expr_or+=ExprOr ( 'and'  expr_or+=ExprOr)*
 ;
 
 ExprOr:
-	en+=ExprNot ( 'or'  en+=ExprNot)*
+	expr_not+=ExprNot ( 'or'  expr_not+=ExprNot)*
 ;
 
 ExprNot:
-	(hasNot='not'?  e=ExprEq)
+	(hasNot='not'?  expr_eq=ExprEq)
 ;
 
 ExprEq:
-	e_left=ExprSimple ('=?' e_right=ExprSimple)? | (=> '(' sym=SYMBOL? e=LExpr ')')
+	expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | (=> '(' sym=SYMBOL lexpr=LExpr ')')
 ;
 
 LExpr:
-	( le+=Expr)+
+	( expr+=Expr)+
 ;
 
 

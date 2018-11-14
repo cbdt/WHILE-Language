@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Exprs#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprs()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Exprs extends EObject
 {
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.Expr}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprs_E()
+   * @return the value of the '<em>Expr</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprs_Expr()
    * @model containment="true"
    * @generated
    */
-  EList<Expr> getE();
+  EList<Expr> getExpr();
 
 } // Exprs

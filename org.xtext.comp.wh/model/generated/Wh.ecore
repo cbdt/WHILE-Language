@@ -70,20 +70,20 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vars">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variables" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exprs">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="e" upperBound="-1" eType="#//Expr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" upperBound="-1" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ea" eType="#//ExprAnd"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_and" eType="#//ExprAnd"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExprSimple">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nil" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sym" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cons_exp" eType="#//LExpr"
         containment="true"/>
@@ -95,27 +95,29 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExprAnd">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eo" upperBound="-1" eType="#//ExprOr"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_or" upperBound="-1"
+        eType="#//ExprOr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExprOr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="en" upperBound="-1" eType="#//ExprNot"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_not" upperBound="-1"
+        eType="#//ExprNot" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExprNot">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasNot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//ExprEq" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_eq" eType="#//ExprEq"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExprEq">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="e_left" eType="#//ExprSimple"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_left" eType="#//ExprSimple"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="e_right" eType="#//ExprSimple"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr_right" eType="#//ExprSimple"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sym" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//LExpr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lexpr" eType="#//LExpr"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="le" upperBound="-1" eType="#//Expr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" upperBound="-1" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

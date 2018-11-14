@@ -96,29 +96,29 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForeachAccess().getExprAssignment_1(), "rule__Foreach__ExprAssignment_1");
 			builder.put(grammarAccess.getForeachAccess().getE2Assignment_3(), "rule__Foreach__E2Assignment_3");
 			builder.put(grammarAccess.getForeachAccess().getCommandsAssignment_5(), "rule__Foreach__CommandsAssignment_5");
-			builder.put(grammarAccess.getVarsAccess().getVarAssignment_0(), "rule__Vars__VarAssignment_0");
-			builder.put(grammarAccess.getVarsAccess().getVarAssignment_1_1(), "rule__Vars__VarAssignment_1_1");
-			builder.put(grammarAccess.getExprsAccess().getEAssignment_0(), "rule__Exprs__EAssignment_0");
-			builder.put(grammarAccess.getExprsAccess().getEAssignment_1_1(), "rule__Exprs__EAssignment_1_1");
-			builder.put(grammarAccess.getExprAccess().getEaAssignment(), "rule__Expr__EaAssignment");
+			builder.put(grammarAccess.getVarsAccess().getVariablesAssignment_0(), "rule__Vars__VariablesAssignment_0");
+			builder.put(grammarAccess.getVarsAccess().getVariablesAssignment_1_1(), "rule__Vars__VariablesAssignment_1_1");
+			builder.put(grammarAccess.getExprsAccess().getExprAssignment_0(), "rule__Exprs__ExprAssignment_0");
+			builder.put(grammarAccess.getExprsAccess().getExprAssignment_1_1(), "rule__Exprs__ExprAssignment_1_1");
+			builder.put(grammarAccess.getExprAccess().getExpr_andAssignment(), "rule__Expr__Expr_andAssignment");
 			builder.put(grammarAccess.getExprSimpleAccess().getNilAssignment_0(), "rule__ExprSimple__NilAssignment_0");
-			builder.put(grammarAccess.getExprSimpleAccess().getVarAssignment_1(), "rule__ExprSimple__VarAssignment_1");
+			builder.put(grammarAccess.getExprSimpleAccess().getVariableAssignment_1(), "rule__ExprSimple__VariableAssignment_1");
 			builder.put(grammarAccess.getExprSimpleAccess().getSymAssignment_2(), "rule__ExprSimple__SymAssignment_2");
 			builder.put(grammarAccess.getExprSimpleAccess().getCons_expAssignment_3_2(), "rule__ExprSimple__Cons_expAssignment_3_2");
 			builder.put(grammarAccess.getExprSimpleAccess().getList_expAssignment_4_2(), "rule__ExprSimple__List_expAssignment_4_2");
 			builder.put(grammarAccess.getExprSimpleAccess().getHd_exprAssignment_5_2(), "rule__ExprSimple__Hd_exprAssignment_5_2");
 			builder.put(grammarAccess.getExprSimpleAccess().getTl_exprAssignment_6_2(), "rule__ExprSimple__Tl_exprAssignment_6_2");
-			builder.put(grammarAccess.getExprAndAccess().getEoAssignment_0(), "rule__ExprAnd__EoAssignment_0");
-			builder.put(grammarAccess.getExprAndAccess().getEoAssignment_1_1(), "rule__ExprAnd__EoAssignment_1_1");
-			builder.put(grammarAccess.getExprOrAccess().getEnAssignment_0(), "rule__ExprOr__EnAssignment_0");
-			builder.put(grammarAccess.getExprOrAccess().getEnAssignment_1_1(), "rule__ExprOr__EnAssignment_1_1");
+			builder.put(grammarAccess.getExprAndAccess().getExpr_orAssignment_0(), "rule__ExprAnd__Expr_orAssignment_0");
+			builder.put(grammarAccess.getExprAndAccess().getExpr_orAssignment_1_1(), "rule__ExprAnd__Expr_orAssignment_1_1");
+			builder.put(grammarAccess.getExprOrAccess().getExpr_notAssignment_0(), "rule__ExprOr__Expr_notAssignment_0");
+			builder.put(grammarAccess.getExprOrAccess().getExpr_notAssignment_1_1(), "rule__ExprOr__Expr_notAssignment_1_1");
 			builder.put(grammarAccess.getExprNotAccess().getHasNotAssignment_0(), "rule__ExprNot__HasNotAssignment_0");
-			builder.put(grammarAccess.getExprNotAccess().getEAssignment_1(), "rule__ExprNot__EAssignment_1");
-			builder.put(grammarAccess.getExprEqAccess().getE_leftAssignment_0_0(), "rule__ExprEq__E_leftAssignment_0_0");
-			builder.put(grammarAccess.getExprEqAccess().getE_rightAssignment_0_1_1(), "rule__ExprEq__E_rightAssignment_0_1_1");
+			builder.put(grammarAccess.getExprNotAccess().getExpr_eqAssignment_1(), "rule__ExprNot__Expr_eqAssignment_1");
+			builder.put(grammarAccess.getExprEqAccess().getExpr_leftAssignment_0_0(), "rule__ExprEq__Expr_leftAssignment_0_0");
+			builder.put(grammarAccess.getExprEqAccess().getExpr_rightAssignment_0_1_1(), "rule__ExprEq__Expr_rightAssignment_0_1_1");
 			builder.put(grammarAccess.getExprEqAccess().getSymAssignment_1_1(), "rule__ExprEq__SymAssignment_1_1");
-			builder.put(grammarAccess.getExprEqAccess().getEAssignment_1_2(), "rule__ExprEq__EAssignment_1_2");
-			builder.put(grammarAccess.getLExprAccess().getLeAssignment(), "rule__LExpr__LeAssignment");
+			builder.put(grammarAccess.getExprEqAccess().getLexprAssignment_1_2(), "rule__ExprEq__LexprAssignment_1_2");
+			builder.put(grammarAccess.getLExprAccess().getExprAssignment(), "rule__LExpr__ExprAssignment");
 		}
 	}
 	

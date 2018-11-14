@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprAnd#getExpr_or <em>Expr or</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprAnd extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Eo</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Expr or</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.comp.wh.wh.ExprOr}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Eo</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Expr or</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Eo</em>' containment reference list.
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd_Eo()
+   * @return the value of the '<em>Expr or</em>' containment reference list.
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprAnd_Expr_or()
    * @model containment="true"
    * @generated
    */
-  EList<ExprOr> getEo();
+  EList<ExprOr> getExpr_or();
 
 } // ExprAnd

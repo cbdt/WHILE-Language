@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.Expr#getEa <em>Ea</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.Expr#getExpr_and <em>Expr and</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExpr()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Ea</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr and</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ea</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr and</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ea</em>' containment reference.
-   * @see #setEa(ExprAnd)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExpr_Ea()
+   * @return the value of the '<em>Expr and</em>' containment reference.
+   * @see #setExpr_and(ExprAnd)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExpr_Expr_and()
    * @model containment="true"
    * @generated
    */
-  ExprAnd getEa();
+  ExprAnd getExpr_and();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.Expr#getEa <em>Ea</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.Expr#getExpr_and <em>Expr and</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ea</em>' containment reference.
-   * @see #getEa()
+   * @param value the new value of the '<em>Expr and</em>' containment reference.
+   * @see #getExpr_and()
    * @generated
    */
-  void setEa(ExprAnd value);
+  void setExpr_and(ExprAnd value);
 
 } // Expr

@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getExpr_left <em>Expr left</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getExpr_right <em>Expr right</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getLexpr <em>Lexpr</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprEq()
@@ -27,56 +27,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExprEq extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Eleft</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Eleft</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Eleft</em>' containment reference.
-   * @see #setE_left(ExprSimple)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E_left()
+   * @return the value of the '<em>Expr left</em>' containment reference.
+   * @see #setExpr_left(ExprSimple)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_Expr_left()
    * @model containment="true"
    * @generated
    */
-  ExprSimple getE_left();
+  ExprSimple getExpr_left();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getExpr_left <em>Expr left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Eleft</em>' containment reference.
-   * @see #getE_left()
+   * @param value the new value of the '<em>Expr left</em>' containment reference.
+   * @see #getExpr_left()
    * @generated
    */
-  void setE_left(ExprSimple value);
+  void setExpr_left(ExprSimple value);
 
   /**
-   * Returns the value of the '<em><b>Eright</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expr right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Eright</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expr right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Eright</em>' containment reference.
-   * @see #setE_right(ExprSimple)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E_right()
+   * @return the value of the '<em>Expr right</em>' containment reference.
+   * @see #setExpr_right(ExprSimple)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_Expr_right()
    * @model containment="true"
    * @generated
    */
-  ExprSimple getE_right();
+  ExprSimple getExpr_right();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getExpr_right <em>Expr right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Eright</em>' containment reference.
-   * @see #getE_right()
+   * @param value the new value of the '<em>Expr right</em>' containment reference.
+   * @see #getExpr_right()
    * @generated
    */
-  void setE_right(ExprSimple value);
+  void setExpr_right(ExprSimple value);
 
   /**
    * Returns the value of the '<em><b>Sym</b></em>' attribute.
@@ -105,29 +105,29 @@ public interface ExprEq extends EObject
   void setSym(String value);
 
   /**
-   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * Returns the value of the '<em><b>Lexpr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Lexpr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(LExpr)
-   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_E()
+   * @return the value of the '<em>Lexpr</em>' containment reference.
+   * @see #setLexpr(LExpr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_Lexpr()
    * @model containment="true"
    * @generated
    */
-  LExpr getE();
+  LExpr getLexpr();
 
   /**
-   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getLexpr <em>Lexpr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>E</em>' containment reference.
-   * @see #getE()
+   * @param value the new value of the '<em>Lexpr</em>' containment reference.
+   * @see #getLexpr()
    * @generated
    */
-  void setE(LExpr value);
+  void setLexpr(LExpr value);
 
 } // ExprEq

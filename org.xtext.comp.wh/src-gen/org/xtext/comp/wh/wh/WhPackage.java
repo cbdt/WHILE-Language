@@ -550,13 +550,13 @@ public interface WhPackage extends EPackage
   int VARS = 14;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute list.
+   * The feature id for the '<em><b>Variables</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARS__VAR = 0;
+  int VARS__VARIABLES = 0;
 
   /**
    * The number of structural features of the '<em>Vars</em>' class.
@@ -578,13 +578,13 @@ public interface WhPackage extends EPackage
   int EXPRS = 15;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expr</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRS__E = 0;
+  int EXPRS__EXPR = 0;
 
   /**
    * The number of structural features of the '<em>Exprs</em>' class.
@@ -606,13 +606,13 @@ public interface WhPackage extends EPackage
   int EXPR = 16;
 
   /**
-   * The feature id for the '<em><b>Ea</b></em>' containment reference.
+   * The feature id for the '<em><b>Expr and</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR__EA = 0;
+  int EXPR__EXPR_AND = 0;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -643,13 +643,13 @@ public interface WhPackage extends EPackage
   int EXPR_SIMPLE__NIL = 0;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_SIMPLE__VAR = 1;
+  int EXPR_SIMPLE__VARIABLE = 1;
 
   /**
    * The feature id for the '<em><b>Sym</b></em>' attribute.
@@ -716,13 +716,13 @@ public interface WhPackage extends EPackage
   int EXPR_AND = 18;
 
   /**
-   * The feature id for the '<em><b>Eo</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expr or</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_AND__EO = 0;
+  int EXPR_AND__EXPR_OR = 0;
 
   /**
    * The number of structural features of the '<em>Expr And</em>' class.
@@ -744,13 +744,13 @@ public interface WhPackage extends EPackage
   int EXPR_OR = 19;
 
   /**
-   * The feature id for the '<em><b>En</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expr not</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_OR__EN = 0;
+  int EXPR_OR__EXPR_NOT = 0;
 
   /**
    * The number of structural features of the '<em>Expr Or</em>' class.
@@ -781,13 +781,13 @@ public interface WhPackage extends EPackage
   int EXPR_NOT__HAS_NOT = 0;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Expr eq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_NOT__E = 1;
+  int EXPR_NOT__EXPR_EQ = 1;
 
   /**
    * The number of structural features of the '<em>Expr Not</em>' class.
@@ -809,22 +809,22 @@ public interface WhPackage extends EPackage
   int EXPR_EQ = 21;
 
   /**
-   * The feature id for the '<em><b>Eleft</b></em>' containment reference.
+   * The feature id for the '<em><b>Expr left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_EQ__ELEFT = 0;
+  int EXPR_EQ__EXPR_LEFT = 0;
 
   /**
-   * The feature id for the '<em><b>Eright</b></em>' containment reference.
+   * The feature id for the '<em><b>Expr right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_EQ__ERIGHT = 1;
+  int EXPR_EQ__EXPR_RIGHT = 1;
 
   /**
    * The feature id for the '<em><b>Sym</b></em>' attribute.
@@ -836,13 +836,13 @@ public interface WhPackage extends EPackage
   int EXPR_EQ__SYM = 2;
 
   /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
+   * The feature id for the '<em><b>Lexpr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_EQ__E = 3;
+  int EXPR_EQ__LEXPR = 3;
 
   /**
    * The number of structural features of the '<em>Expr Eq</em>' class.
@@ -864,13 +864,13 @@ public interface WhPackage extends EPackage
   int LEXPR = 22;
 
   /**
-   * The feature id for the '<em><b>Le</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expr</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LEXPR__LE = 0;
+  int LEXPR__EXPR = 0;
 
   /**
    * The number of structural features of the '<em>LExpr</em>' class.
@@ -1297,15 +1297,15 @@ public interface WhPackage extends EPackage
   EClass getVars();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Vars#getVar <em>Var</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.comp.wh.wh.Vars#getVariables <em>Variables</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Var</em>'.
-   * @see org.xtext.comp.wh.wh.Vars#getVar()
+   * @return the meta object for the attribute list '<em>Variables</em>'.
+   * @see org.xtext.comp.wh.wh.Vars#getVariables()
    * @see #getVars()
    * @generated
    */
-  EAttribute getVars_Var();
+  EAttribute getVars_Variables();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Exprs <em>Exprs</em>}'.
@@ -1318,15 +1318,15 @@ public interface WhPackage extends EPackage
   EClass getExprs();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Exprs#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.Exprs#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.Exprs#getE()
+   * @return the meta object for the containment reference list '<em>Expr</em>'.
+   * @see org.xtext.comp.wh.wh.Exprs#getExpr()
    * @see #getExprs()
    * @generated
    */
-  EReference getExprs_E();
+  EReference getExprs_Expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.Expr <em>Expr</em>}'.
@@ -1339,15 +1339,15 @@ public interface WhPackage extends EPackage
   EClass getExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Expr#getEa <em>Ea</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Expr#getExpr_and <em>Expr and</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ea</em>'.
-   * @see org.xtext.comp.wh.wh.Expr#getEa()
+   * @return the meta object for the containment reference '<em>Expr and</em>'.
+   * @see org.xtext.comp.wh.wh.Expr#getExpr_and()
    * @see #getExpr()
    * @generated
    */
-  EReference getExpr_Ea();
+  EReference getExpr_Expr_and();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprSimple <em>Expr Simple</em>}'.
@@ -1371,15 +1371,15 @@ public interface WhPackage extends EPackage
   EAttribute getExprSimple_Nil();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprSimple#getVar <em>Var</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprSimple#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see org.xtext.comp.wh.wh.ExprSimple#getVar()
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see org.xtext.comp.wh.wh.ExprSimple#getVariable()
    * @see #getExprSimple()
    * @generated
    */
-  EAttribute getExprSimple_Var();
+  EAttribute getExprSimple_Variable();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprSimple#getSym <em>Sym</em>}'.
@@ -1447,15 +1447,15 @@ public interface WhPackage extends EPackage
   EClass getExprAnd();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprAnd#getEo <em>Eo</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprAnd#getExpr_or <em>Expr or</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Eo</em>'.
-   * @see org.xtext.comp.wh.wh.ExprAnd#getEo()
+   * @return the meta object for the containment reference list '<em>Expr or</em>'.
+   * @see org.xtext.comp.wh.wh.ExprAnd#getExpr_or()
    * @see #getExprAnd()
    * @generated
    */
-  EReference getExprAnd_Eo();
+  EReference getExprAnd_Expr_or();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprOr <em>Expr Or</em>}'.
@@ -1468,15 +1468,15 @@ public interface WhPackage extends EPackage
   EClass getExprOr();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprOr#getEn <em>En</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.ExprOr#getExpr_not <em>Expr not</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>En</em>'.
-   * @see org.xtext.comp.wh.wh.ExprOr#getEn()
+   * @return the meta object for the containment reference list '<em>Expr not</em>'.
+   * @see org.xtext.comp.wh.wh.ExprOr#getExpr_not()
    * @see #getExprOr()
    * @generated
    */
-  EReference getExprOr_En();
+  EReference getExprOr_Expr_not();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprNot <em>Expr Not</em>}'.
@@ -1500,15 +1500,15 @@ public interface WhPackage extends EPackage
   EAttribute getExprNot_HasNot();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprNot#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprNot#getExpr_eq <em>Expr eq</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.ExprNot#getE()
+   * @return the meta object for the containment reference '<em>Expr eq</em>'.
+   * @see org.xtext.comp.wh.wh.ExprNot#getExpr_eq()
    * @see #getExprNot()
    * @generated
    */
-  EReference getExprNot_E();
+  EReference getExprNot_Expr_eq();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.ExprEq <em>Expr Eq</em>}'.
@@ -1521,26 +1521,26 @@ public interface WhPackage extends EPackage
   EClass getExprEq();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE_left <em>Eleft</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getExpr_left <em>Expr left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Eleft</em>'.
-   * @see org.xtext.comp.wh.wh.ExprEq#getE_left()
+   * @return the meta object for the containment reference '<em>Expr left</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getExpr_left()
    * @see #getExprEq()
    * @generated
    */
-  EReference getExprEq_E_left();
+  EReference getExprEq_Expr_left();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE_right <em>Eright</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getExpr_right <em>Expr right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Eright</em>'.
-   * @see org.xtext.comp.wh.wh.ExprEq#getE_right()
+   * @return the meta object for the containment reference '<em>Expr right</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getExpr_right()
    * @see #getExprEq()
    * @generated
    */
-  EReference getExprEq_E_right();
+  EReference getExprEq_Expr_right();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}'.
@@ -1554,15 +1554,15 @@ public interface WhPackage extends EPackage
   EAttribute getExprEq_Sym();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getE <em>E</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getLexpr <em>Lexpr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see org.xtext.comp.wh.wh.ExprEq#getE()
+   * @return the meta object for the containment reference '<em>Lexpr</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getLexpr()
    * @see #getExprEq()
    * @generated
    */
-  EReference getExprEq_E();
+  EReference getExprEq_Lexpr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.LExpr <em>LExpr</em>}'.
@@ -1575,15 +1575,15 @@ public interface WhPackage extends EPackage
   EClass getLExpr();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.LExpr#getLe <em>Le</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.comp.wh.wh.LExpr#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Le</em>'.
-   * @see org.xtext.comp.wh.wh.LExpr#getLe()
+   * @return the meta object for the containment reference list '<em>Expr</em>'.
+   * @see org.xtext.comp.wh.wh.LExpr#getExpr()
    * @see #getLExpr()
    * @generated
    */
-  EReference getLExpr_Le();
+  EReference getLExpr_Expr();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1951,12 +1951,12 @@ public interface WhPackage extends EPackage
     EClass VARS = eINSTANCE.getVars();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Variables</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARS__VAR = eINSTANCE.getVars_Var();
+    EAttribute VARS__VARIABLES = eINSTANCE.getVars_Variables();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprsImpl <em>Exprs</em>}' class.
@@ -1969,12 +1969,12 @@ public interface WhPackage extends EPackage
     EClass EXPRS = eINSTANCE.getExprs();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRS__E = eINSTANCE.getExprs_E();
+    EReference EXPRS__EXPR = eINSTANCE.getExprs_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprImpl <em>Expr</em>}' class.
@@ -1987,12 +1987,12 @@ public interface WhPackage extends EPackage
     EClass EXPR = eINSTANCE.getExpr();
 
     /**
-     * The meta object literal for the '<em><b>Ea</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expr and</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR__EA = eINSTANCE.getExpr_Ea();
+    EReference EXPR__EXPR_AND = eINSTANCE.getExpr_Expr_and();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprSimpleImpl <em>Expr Simple</em>}' class.
@@ -2013,12 +2013,12 @@ public interface WhPackage extends EPackage
     EAttribute EXPR_SIMPLE__NIL = eINSTANCE.getExprSimple_Nil();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPR_SIMPLE__VAR = eINSTANCE.getExprSimple_Var();
+    EAttribute EXPR_SIMPLE__VARIABLE = eINSTANCE.getExprSimple_Variable();
 
     /**
      * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
@@ -2071,12 +2071,12 @@ public interface WhPackage extends EPackage
     EClass EXPR_AND = eINSTANCE.getExprAnd();
 
     /**
-     * The meta object literal for the '<em><b>Eo</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expr or</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_AND__EO = eINSTANCE.getExprAnd_Eo();
+    EReference EXPR_AND__EXPR_OR = eINSTANCE.getExprAnd_Expr_or();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprOrImpl <em>Expr Or</em>}' class.
@@ -2089,12 +2089,12 @@ public interface WhPackage extends EPackage
     EClass EXPR_OR = eINSTANCE.getExprOr();
 
     /**
-     * The meta object literal for the '<em><b>En</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expr not</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_OR__EN = eINSTANCE.getExprOr_En();
+    EReference EXPR_OR__EXPR_NOT = eINSTANCE.getExprOr_Expr_not();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprNotImpl <em>Expr Not</em>}' class.
@@ -2115,12 +2115,12 @@ public interface WhPackage extends EPackage
     EAttribute EXPR_NOT__HAS_NOT = eINSTANCE.getExprNot_HasNot();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expr eq</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_NOT__E = eINSTANCE.getExprNot_E();
+    EReference EXPR_NOT__EXPR_EQ = eINSTANCE.getExprNot_Expr_eq();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.ExprEqImpl <em>Expr Eq</em>}' class.
@@ -2133,20 +2133,20 @@ public interface WhPackage extends EPackage
     EClass EXPR_EQ = eINSTANCE.getExprEq();
 
     /**
-     * The meta object literal for the '<em><b>Eleft</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expr left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_EQ__ELEFT = eINSTANCE.getExprEq_E_left();
+    EReference EXPR_EQ__EXPR_LEFT = eINSTANCE.getExprEq_Expr_left();
 
     /**
-     * The meta object literal for the '<em><b>Eright</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expr right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_EQ__ERIGHT = eINSTANCE.getExprEq_E_right();
+    EReference EXPR_EQ__EXPR_RIGHT = eINSTANCE.getExprEq_Expr_right();
 
     /**
      * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
@@ -2157,12 +2157,12 @@ public interface WhPackage extends EPackage
     EAttribute EXPR_EQ__SYM = eINSTANCE.getExprEq_Sym();
 
     /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Lexpr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR_EQ__E = eINSTANCE.getExprEq_E();
+    EReference EXPR_EQ__LEXPR = eINSTANCE.getExprEq_Lexpr();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.LExprImpl <em>LExpr</em>}' class.
@@ -2175,12 +2175,12 @@ public interface WhPackage extends EPackage
     EClass LEXPR = eINSTANCE.getLExpr();
 
     /**
-     * The meta object literal for the '<em><b>Le</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LEXPR__LE = eINSTANCE.getLExpr_Le();
+    EReference LEXPR__EXPR = eINSTANCE.getLExpr_Expr();
 
   }
 

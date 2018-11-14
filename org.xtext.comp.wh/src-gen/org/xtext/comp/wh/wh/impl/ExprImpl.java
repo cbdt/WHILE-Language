@@ -24,7 +24,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ExprImpl#getEa <em>Ea</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprImpl#getExpr_and <em>Expr and</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
 {
   /**
-   * The cached value of the '{@link #getEa() <em>Ea</em>}' containment reference.
+   * The cached value of the '{@link #getExpr_and() <em>Expr and</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEa()
+   * @see #getExpr_and()
    * @generated
    * @ordered
    */
-  protected ExprAnd ea;
+  protected ExprAnd expr_and;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExprAnd getEa()
+  public ExprAnd getExpr_and()
   {
-    return ea;
+    return expr_and;
   }
 
   /**
@@ -77,13 +77,13 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEa(ExprAnd newEa, NotificationChain msgs)
+  public NotificationChain basicSetExpr_and(ExprAnd newExpr_and, NotificationChain msgs)
   {
-    ExprAnd oldEa = ea;
-    ea = newEa;
+    ExprAnd oldExpr_and = expr_and;
+    expr_and = newExpr_and;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR__EA, oldEa, newEa);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR__EXPR_AND, oldExpr_and, newExpr_and);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEa(ExprAnd newEa)
+  public void setExpr_and(ExprAnd newExpr_and)
   {
-    if (newEa != ea)
+    if (newExpr_and != expr_and)
     {
       NotificationChain msgs = null;
-      if (ea != null)
-        msgs = ((InternalEObject)ea).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR__EA, null, msgs);
-      if (newEa != null)
-        msgs = ((InternalEObject)newEa).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR__EA, null, msgs);
-      msgs = basicSetEa(newEa, msgs);
+      if (expr_and != null)
+        msgs = ((InternalEObject)expr_and).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR__EXPR_AND, null, msgs);
+      if (newExpr_and != null)
+        msgs = ((InternalEObject)newExpr_and).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR__EXPR_AND, null, msgs);
+      msgs = basicSetExpr_and(newExpr_and, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR__EA, newEa, newEa));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR__EXPR_AND, newExpr_and, newExpr_and));
   }
 
   /**
@@ -120,8 +120,8 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR__EA:
-        return basicSetEa(null, msgs);
+      case WhPackage.EXPR__EXPR_AND:
+        return basicSetExpr_and(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR__EA:
-        return getEa();
+      case WhPackage.EXPR__EXPR_AND:
+        return getExpr_and();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR__EA:
-        setEa((ExprAnd)newValue);
+      case WhPackage.EXPR__EXPR_AND:
+        setExpr_and((ExprAnd)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR__EA:
-        setEa((ExprAnd)null);
+      case WhPackage.EXPR__EXPR_AND:
+        setExpr_and((ExprAnd)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case WhPackage.EXPR__EA:
-        return ea != null;
+      case WhPackage.EXPR__EXPR_AND:
+        return expr_and != null;
     }
     return super.eIsSet(featureID);
   }

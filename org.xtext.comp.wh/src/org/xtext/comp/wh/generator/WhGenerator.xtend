@@ -19,6 +19,13 @@ import org.xtext.comp.wh.wh.ExprAnd
 import org.xtext.comp.wh.wh.ExprOr
 import org.xtext.comp.wh.wh.ExprNot
 import org.xtext.comp.wh.wh.ExprEq
+import org.xtext.comp.wh.wh.ExprSimple
+import org.xtext.comp.wh.wh.LExpr
+import org.xtext.comp.wh.wh.If
+import org.xtext.comp.wh.wh.For
+import org.xtext.comp.wh.wh.Foreach
+import org.xtext.comp.wh.wh.Assign
+import org.xtext.comp.wh.wh.Exprs
 
 /**
  * Generates code from your model files on save.
@@ -27,31 +34,46 @@ import org.xtext.comp.wh.wh.ExprEq
  */
 class WhGenerator extends AbstractGenerator {
 	
-	val NB_DEFAULT_INDENTATION = 2;
-	
-	val NB_WHILE_INDENTATION = 3;
-	
 	var String default_indentation;
 	var String while_indentation;
-
+	var String if_indentation;
+	var String for_indentation;
+	var String foreach_indentation;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		doGenerate(resource, fsa, context, "output.wh", 2, 2, 2, 2, 2);
+	}
+
+	def doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, String output, int nb_default_indent, int nb_if_indent, int nb_while_indent, int nb_for_indent, int nb_foreach_indent) {
 		default_indentation= "";
 		while_indentation= "";
+		for_indentation= "";
+		if_indentation= "";
+		foreach_indentation= "";
 		
-		for(var i = 0; i < NB_DEFAULT_INDENTATION; i++) {
+		for(var i = 0; i < nb_default_indent; i++) {
 			default_indentation += " "
 		}
-		for(var i = 0; i < NB_WHILE_INDENTATION; i++) {
+		for(var i = 0; i < nb_while_indent; i++) {
 			while_indentation += " "
+		}
+		for(var i = 0; i < nb_for_indent; i++) {
+			for_indentation += " "
+		}
+		for(var i = 0; i < nb_foreach_indent; i++) {
+			foreach_indentation += " "
+		}
+		for(var i = 0; i < nb_if_indent; i++) {
+			if_indentation += " "
 		}
 		
 		for(p : resource.allContents.toIterable.filter(Program)) {
-			fsa.generateFile("output.wh", p.compile())
+			fsa.generateFile(output, p.compile())
 		}
 	}
 	
 	def compile(Program p) '''
-	«FOR f : p.functions»
+	«FOR f : p.functions SEPARATOR "\n"»
 	«f.compile()»
 	«ENDFOR»
 	'''
@@ -93,41 +115,104 @@ class WhGenerator extends AbstractGenerator {
 	def compile(Command c, String indent) {
 		if(c.command instanceof While) {
 			return (c.command as While).compile(indent)
-		}
-		if(c.command instanceof Nop) {
+		} else if(c.command instanceof Nop) {
 			return indent+"nop"
+		} else if(c.command instanceof If) {
+			return (c.command as If).compile(indent)
+		} else if(c.command instanceof For) {
+			return (c.command as For).compile(indent)
+		} else if(c.command instanceof Foreach) {
+			return (c.command as Foreach).compile(indent)
+		} else if(c.command instanceof Assign) {
+			return (c.command as Assign).compile(indent)
 		}
 		
 	}
 	
 	def compile(While wh, String indent)'''
-	«indent»while nop do
+	«indent»while «wh.cond.compile()» do
 	«wh.commands.compile(indent+while_indentation)»
 	«indent»od'''
 	
+	def compile(For fo, String indent)'''
+	«indent»for «fo.cond.compile()» do
+	«fo.commands.compile(indent+for_indentation)»
+	«indent»od'''
+	
+	def compile(Foreach foreach, String indent)'''
+	«indent»foreach «foreach.expr.compile()» in «foreach.e2.compile» do
+	«foreach.commands.compile(indent+foreach_indentation)»
+	«indent»od'''
+	
+	def compile(If i, String indent) {
+		var expr = indent+"if " + i.cond.compile() + " then\n" + i.if_commands.compile(indent+if_indentation);
+		if(i.else_commands !== null) {
+			expr += indent+"else\n" + i.else_commands.compile(indent+if_indentation);
+		}
+		expr += indent+"fi";
+		return expr;
+		
+	}
+	
+	def compile(Assign assign, String indent)'''
+	«indent»«FOR variable : assign.vars.variables SEPARATOR ","»«variable»«ENDFOR» := «assign.exprs.compile()»'''
+	
+	
 	def compile(Expr e)'''
-	e.ea.compile()'''
+	«e.expr_and.compile()»'''
+	
+	def compile(Exprs exprs)'''
+	«FOR expr : exprs.expr SEPARATOR ","»«expr.compile()»«ENDFOR»'''
 	
 	def compile(ExprAnd ea)'''
-	«FOR expr : ea.eo SEPARATOR " and "»«expr.compile()»«ENDFOR»
-	'''
+	«FOR expr : ea.expr_or SEPARATOR " and "»«expr.compile()»«ENDFOR»'''
 	
 	def compile(ExprOr eo)'''
-	«FOR expr : eo.en SEPARATOR " and "»«expr.compile()»«ENDFOR»
-	'''
+	«FOR expr : eo.expr_not SEPARATOR " and "»«expr.compile()»«ENDFOR»'''
 	
 	def compile(ExprNot en){
 		var expr = "";
 		if(en.hasNot !== null) {
 			expr += "not "
 		}
-		expr += en.e.compile()
+		expr += en.expr_eq.compile()
 		return expr
 	}
 	
 	def compile(ExprEq eq){
-		
+		var String expr = "";
+		if(eq.expr_left !== null) {
+			expr += eq.expr_left.compile();
+			if(eq.expr_right !== null) {
+				expr += " ?= " + eq.expr_right.compile();
+			}
+		} else {
+			expr += "(" + eq.sym + " " + eq.lexpr.compile() + ")"
+			
+		}
+		return expr;
 	}
+	
+	def compile(ExprSimple es) {
+			if(es.nil !== null) {
+				return "nil";
+			} else if(es.variable !== null) {
+				return es.variable
+			} else if(es.sym !== null) {
+				return es.sym
+			} else if(es.cons_exp !== null) {
+				return "(cons " + es.cons_exp.compile() + ")"
+			} else if (es.list_exp !== null) {
+				return "(list " + es.list_exp.compile() + ")"
+			} else if (es.hd_expr !== null) {
+				return "(hd " + es.hd_expr.compile() + ")"
+			} else if (es.tl_expr !== null) {
+				return "(tl " + es.tl_expr.compile() + ")"
+			}
+	}
+	
+	def compile(LExpr lexpr)'''
+	«FOR expr : lexpr.expr  SEPARATOR " "»«expr.compile() »«ENDFOR»'''
 	
 	
 
