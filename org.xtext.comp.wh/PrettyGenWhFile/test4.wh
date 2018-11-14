@@ -1,0 +1,11 @@
+function symbole1:
+read A, B
+%
+  A := null ;
+  if A then
+    for null do
+      B := null
+    od
+  fi
+%
+write B
