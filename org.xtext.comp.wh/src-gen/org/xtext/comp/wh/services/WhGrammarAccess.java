@@ -1021,8 +1021,8 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExprNotElements pExprNot;
 	private final ExprEqElements pExprEq;
 	private final LExprElements pLExpr;
-	private final TerminalRule tVARIABLE;
 	private final TerminalRule tSYMBOL;
+	private final TerminalRule tVARIABLE;
 	private final TerminalRule tCR;
 	
 	private final Grammar grammar;
@@ -1057,8 +1057,8 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExprNot = new ExprNotElements();
 		this.pExprEq = new ExprEqElements();
 		this.pLExpr = new LExprElements();
-		this.tVARIABLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.VARIABLE");
 		this.tSYMBOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.SYMBOL");
+		this.tVARIABLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.VARIABLE");
 		this.tCR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.CR");
 	}
 	
@@ -1387,16 +1387,18 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		return getLExprAccess().getRule();
 	}
 	
-	//terminal VARIABLE:
-	//	'A'..'Z' ('A'..'Z' | 'a'..'z' | '0'..'9')*;
-	public TerminalRule getVARIABLERule() {
-		return tVARIABLE;
-	}
-	
 	//terminal SYMBOL:
-	//	'a'..'z' ('A'..'Z' | 'a'..'z' | '0'..'9')*;
+	//	'a'..'z' ('0'..'9' | 'a'..'z' | 'A'..'Z')* ((('-' | '+' | '.' | '/' | '_' | '&') | '->') ('0'..'9' | 'a'..'z' |
+	//	'A'..'Z')+)* ('?' | '!')?;
 	public TerminalRule getSYMBOLRule() {
 		return tSYMBOL;
+	}
+	
+	//terminal VARIABLE:
+	//	'A'..'Z' ('0'..'9' | 'a'..'z' | 'A'..'Z')* ((('-' | '+' | '.' | '/' | '_' | '&') | '->') ('0'..'9' | 'a'..'z' |
+	//	'A'..'Z')+)* ('?' | '!')?;
+	public TerminalRule getVARIABLERule() {
+		return tVARIABLE;
 	}
 	
 	//terminal CR:
