@@ -61,7 +61,7 @@ public class Main {
 					if (args[i + 1].matches("\\d+")) {
 						i++;
 						indentAll = Integer.parseInt(args[i]);
-						System.out.println("all "+Integer.parseInt(args[i]));
+						//System.out.println("all "+Integer.parseInt(args[i]));
 					}else {
 						System.err.println("Invalid argument");
 					}
@@ -70,7 +70,7 @@ public class Main {
 					if (args[i + 1].matches("\\d+")) {
 						i++;
 						indentIf = Integer.parseInt(args[i]);
-						System.out.println("if "+Integer.parseInt(args[i]));
+						//System.out.println("if "+Integer.parseInt(args[i]));
 
 					}else {
 						System.err.println("Invalid argument");
@@ -80,7 +80,7 @@ public class Main {
 					if (args[i + 1].matches("\\d+")) {
 						i++;
 						indentWhile = Integer.parseInt(args[i]);
-						System.out.println("while "+Integer.parseInt(args[i]));
+						//System.out.println("while "+Integer.parseInt(args[i]));
 
 					}else {
 						System.err.println("Invalid argument");
@@ -90,7 +90,7 @@ public class Main {
 					if (args[i + 1].matches("\\d+")) {
 						i++;
 						indentFor = Integer.parseInt(args[i]);
-						System.out.println("for "+Integer.parseInt(args[i]));
+						//System.out.println("for "+Integer.parseInt(args[i]));
 
 					}else {
 						System.err.println("Invalid argument");
@@ -100,7 +100,7 @@ public class Main {
 					if (args[i + 1].matches("\\d+")) {
 						i++;
 						indentForeach = Integer.parseInt(args[i]);
-						System.out.println("foreach "+Integer.parseInt(args[i]));
+						//System.out.println("foreach "+Integer.parseInt(args[i]));
 
 					}else {
 						System.err.println("Invalid argument");
@@ -109,7 +109,7 @@ public class Main {
 				case "o":
 					i++;
 					outputName = args[i];
-					System.out.println("output "+args[i]);
+					//System.out.println("output "+args[i]);
 
 					break;
 				}
