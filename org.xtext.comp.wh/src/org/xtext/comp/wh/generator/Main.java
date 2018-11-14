@@ -155,6 +155,5 @@ public class Main {
 		GeneratorContext context = new GeneratorContext();
 		context.setCancelIndicator(CancelIndicator.NullImpl);
 		generator.doGenerate(resource, fileAccess, context,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach );
-		System.out.println("Code generation finished.");
 	}
 }
