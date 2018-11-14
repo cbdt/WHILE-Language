@@ -26,9 +26,102 @@ public class Main {
 			System.err.println("Aborting: no path to EMF resource provided!");
 			return;
 		}
+
+		// Default Values
+		final int DEFAULT_INDENT_ALL = 2;
+		final String DEFAULT_OUTPUT_NAME = "sth.whpp";
+
+		// Values
+		String fileName = args[0];
+		String outputName = DEFAULT_OUTPUT_NAME;
+		int indentAll = DEFAULT_INDENT_ALL;
+		int indentIf = DEFAULT_INDENT_ALL;
+		int indentWhile = DEFAULT_INDENT_ALL;
+		int indentFor = DEFAULT_INDENT_ALL;
+		int indentForeach = DEFAULT_INDENT_ALL;
+
+		// Parsing options
+		for (int i = 1; i < args.length; i++) {
+			if (args[i].charAt(0) == '-') {
+
+				// Bad option (only '-')
+				if (args[i].length() < 2) {
+					System.err.println("Error at argument " + args[i]);
+					return;
+				}
+				
+				// No argument for option
+				if ((i+1)==args.length) {
+					System.err.println("No argument for option " + args[i]);
+				}
+				
+				String option = args[i].substring(1);
+				switch (option) {
+				case "all":
+					if (args[i + 1].matches("\\d+")) {
+						i++;
+						indentAll = Integer.parseInt(args[i]);
+						System.out.println("all "+Integer.parseInt(args[i]));
+					}else {
+						System.err.println("Invalid argument");
+					}
+					break;
+				case "if":
+					if (args[i + 1].matches("\\d+")) {
+						i++;
+						indentIf = Integer.parseInt(args[i]);
+						System.out.println("if "+Integer.parseInt(args[i]));
+
+					}else {
+						System.err.println("Invalid argument");
+					}
+					break;
+				case "while":
+					if (args[i + 1].matches("\\d+")) {
+						i++;
+						indentWhile = Integer.parseInt(args[i]);
+						System.out.println("while "+Integer.parseInt(args[i]));
+
+					}else {
+						System.err.println("Invalid argument");
+					}
+					break;
+				case "for":
+					if (args[i + 1].matches("\\d+")) {
+						i++;
+						indentFor = Integer.parseInt(args[i]);
+						System.out.println("for "+Integer.parseInt(args[i]));
+
+					}else {
+						System.err.println("Invalid argument");
+					}
+					break;
+				case "foreach":
+					if (args[i + 1].matches("\\d+")) {
+						i++;
+						indentForeach = Integer.parseInt(args[i]);
+						System.out.println("foreach "+Integer.parseInt(args[i]));
+
+					}else {
+						System.err.println("Invalid argument");
+					}
+					break;
+				case "o":
+					i++;
+					outputName = args[i];
+					System.out.println("output "+args[i]);
+
+					break;
+				}
+
+			} else {
+				System.err.println("Command unknown : " + args[i]);
+			}
+
+		}
 		Injector injector = new WhStandaloneSetup().createInjectorAndDoEMFRegistration();
 		Main main = injector.getInstance(Main.class);
-		main.runGenerator(args[0]);
+		main.runGenerator(fileName,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach);
 	}
 
 	@Inject
@@ -38,15 +131,15 @@ public class Main {
 	private IResourceValidator validator;
 
 	@Inject
-	private GeneratorDelegate generator;
+	private WhGenerator generator;
 
-	@Inject 
+	@Inject
 	private JavaIoFileSystemAccess fileAccess;
 
-	protected void runGenerator(String string) {
+	protected void runGenerator(String fileName,String outputName,int indentAll,int indentIf,int indentWhile,int indentFor,int indentForeach) {
 		// Load the resource
 		ResourceSet set = resourceSetProvider.get();
-		Resource resource = set.getResource(URI.createFileURI(string), true);
+		Resource resource = set.getResource(URI.createFileURI(fileName), true);
 
 		// Validate the resource
 		List<Issue> list = validator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl);
@@ -58,11 +151,10 @@ public class Main {
 		}
 
 		// Configure and start the generator
-		fileAccess.setOutputPath("src-gen/");
+		fileAccess.setOutputPath("./");
 		GeneratorContext context = new GeneratorContext();
 		context.setCancelIndicator(CancelIndicator.NullImpl);
-		generator.generate(resource, fileAccess, context);
-
+		generator.doGenerate(resource, fileAccess, context,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach );
 		System.out.println("Code generation finished.");
 	}
 }
