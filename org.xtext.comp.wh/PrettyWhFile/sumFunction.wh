@@ -1,0 +1,11 @@
+function sumArray:
+read X
+%
+	SUM := nil;
+	if X then 
+		foreach S in X  do
+			SUM := (add S SUM)
+		od
+	fi
+%
+write SUM

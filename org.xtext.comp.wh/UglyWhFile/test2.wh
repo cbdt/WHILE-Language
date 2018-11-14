@@ -1,0 +1,25 @@
+function
+ symbole1 :
+    read Variable1
+    ,
+    
+    
+    
+     Variable2 % 
+ 			   Variable1
+   := null;
+    if Variable1 
+    then 
+     
+     
+        for null do
+      
+      
+             Variable2 := null
+ od
+    fi
+    % 
+  
+   write
+   
+    Variable2
