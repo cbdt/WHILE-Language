@@ -1,3 +1,9 @@
+if [ $1 == "-help" ]
+ then
+    cat help.txt
+    exit 1
+ fi
+
 java -jar whpp.jar "$@"
 args=("$@")
 count=0
@@ -5,6 +11,7 @@ has_o=0
 for i in $@
 do
  (( count++ ))
+
  if [ $i == "-o" ]
  then
     has_o=1
