@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.comp.wh.wh.Expr;
 import org.xtext.comp.wh.wh.ExprEq;
 import org.xtext.comp.wh.wh.ExprSimple;
 import org.xtext.comp.wh.wh.LExpr;
@@ -29,6 +30,7 @@ import org.xtext.comp.wh.wh.WhPackage;
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getExpr_right <em>Expr right</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getLexpr <em>Lexpr</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ExprEqImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +86,16 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * @ordered
    */
   protected LExpr lexpr;
+
+  /**
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr()
+   * @generated
+   * @ordered
+   */
+  protected Expr expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -278,6 +290,54 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expr getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(Expr newExpr, NotificationChain msgs)
+  {
+    Expr oldExpr = expr;
+    expr = newExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__EXPR, oldExpr, newExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr(Expr newExpr)
+  {
+    if (newExpr != expr)
+    {
+      NotificationChain msgs = null;
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.EXPR_EQ__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.EXPR_EQ__EXPR, newExpr, newExpr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -289,6 +349,8 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
         return basicSetExpr_right(null, msgs);
       case WhPackage.EXPR_EQ__LEXPR:
         return basicSetLexpr(null, msgs);
+      case WhPackage.EXPR_EQ__EXPR:
+        return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -311,6 +373,8 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
         return getSym();
       case WhPackage.EXPR_EQ__LEXPR:
         return getLexpr();
+      case WhPackage.EXPR_EQ__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -336,6 +400,9 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
         return;
       case WhPackage.EXPR_EQ__LEXPR:
         setLexpr((LExpr)newValue);
+        return;
+      case WhPackage.EXPR_EQ__EXPR:
+        setExpr((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -363,6 +430,9 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
       case WhPackage.EXPR_EQ__LEXPR:
         setLexpr((LExpr)null);
         return;
+      case WhPackage.EXPR_EQ__EXPR:
+        setExpr((Expr)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -385,6 +455,8 @@ public class ExprEqImpl extends MinimalEObjectImpl.Container implements ExprEq
         return SYM_EDEFAULT == null ? sym != null : !SYM_EDEFAULT.equals(sym);
       case WhPackage.EXPR_EQ__LEXPR:
         return lexpr != null;
+      case WhPackage.EXPR_EQ__EXPR:
+        return expr != null;
     }
     return super.eIsSet(featureID);
   }

@@ -1685,6 +1685,36 @@ ruleExprEq returns [EObject current=null]
 				newLeafNode(otherlv_6, grammarAccess.getExprEqAccess().getRightParenthesisKeyword_1_3());
 			}
 		)
+		    |
+		(
+			otherlv_7='('
+			{
+				newLeafNode(otherlv_7, grammarAccess.getExprEqAccess().getLeftParenthesisKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getExprEqAccess().getExprExprParserRuleCall_2_1_0());
+					}
+					lv_expr_8_0=ruleExpr
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getExprEqRule());
+						}
+						set(
+							$current,
+							"expr",
+							lv_expr_8_0,
+							"org.xtext.comp.wh.Wh.Expr");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_9=')'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getExprEqAccess().getRightParenthesisKeyword_2_2());
+			}
+		)
 	)
 ;
 

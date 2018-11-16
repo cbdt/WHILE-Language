@@ -221,7 +221,7 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExprEq returns ExprEq
 	 *
 	 * Constraint:
-	 *     ((expr_left=ExprSimple expr_right=ExprSimple?) | (sym=SYMBOL lexpr=LExpr))
+	 *     ((expr_left=ExprSimple expr_right=ExprSimple?) | (sym=SYMBOL lexpr=LExpr) | expr=Expr)
 	 */
 	protected void sequence_ExprEq(ISerializationContext context, ExprEq semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

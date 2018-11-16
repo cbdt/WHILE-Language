@@ -845,13 +845,22 @@ public interface WhPackage extends EPackage
   int EXPR_EQ__LEXPR = 3;
 
   /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_EQ__EXPR = 4;
+
+  /**
    * The number of structural features of the '<em>Expr Eq</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_EQ_FEATURE_COUNT = 4;
+  int EXPR_EQ_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.comp.wh.wh.impl.LExprImpl <em>LExpr</em>}' class.
@@ -1565,6 +1574,17 @@ public interface WhPackage extends EPackage
   EReference getExprEq_Lexpr();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.ExprEq#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.comp.wh.wh.ExprEq#getExpr()
+   * @see #getExprEq()
+   * @generated
+   */
+  EReference getExprEq_Expr();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.comp.wh.wh.LExpr <em>LExpr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2163,6 +2183,14 @@ public interface WhPackage extends EPackage
      * @generated
      */
     EReference EXPR_EQ__LEXPR = eINSTANCE.getExprEq_Lexpr();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_EQ__EXPR = eINSTANCE.getExprEq_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.comp.wh.wh.impl.LExprImpl <em>LExpr</em>}' class.

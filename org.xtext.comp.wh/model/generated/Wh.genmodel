@@ -91,6 +91,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/expr_right"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wh.ecore#//ExprEq/sym"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/lexpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//ExprEq/expr"/>
     </genClasses>
     <genClasses ecoreClass="Wh.ecore#//LExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wh.ecore#//LExpr/expr"/>

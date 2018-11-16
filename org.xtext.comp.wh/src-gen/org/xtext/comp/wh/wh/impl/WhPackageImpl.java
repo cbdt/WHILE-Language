@@ -913,6 +913,16 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getExprEq_Expr()
+  {
+    return (EReference)exprEqEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLExpr()
   {
     return lExprEClass;
@@ -1043,6 +1053,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     createEReference(exprEqEClass, EXPR_EQ__EXPR_RIGHT);
     createEAttribute(exprEqEClass, EXPR_EQ__SYM);
     createEReference(exprEqEClass, EXPR_EQ__LEXPR);
+    createEReference(exprEqEClass, EXPR_EQ__EXPR);
 
     lExprEClass = createEClass(LEXPR);
     createEReference(lExprEClass, LEXPR__EXPR);
@@ -1164,6 +1175,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEReference(getExprEq_Expr_right(), this.getExprSimple(), null, "expr_right", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExprEq_Sym(), ecorePackage.getEString(), "sym", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExprEq_Lexpr(), this.getLExpr(), null, "lexpr", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExprEq_Expr(), this.getExpr(), null, "expr", null, 0, 1, ExprEq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lExprEClass, LExpr.class, "LExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLExpr_Expr(), this.getExpr(), null, "expr", null, 0, -1, LExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

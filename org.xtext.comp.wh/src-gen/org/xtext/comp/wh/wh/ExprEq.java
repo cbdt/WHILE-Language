@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getExpr_right <em>Expr right</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getSym <em>Sym</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getLexpr <em>Lexpr</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.ExprEq#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @see org.xtext.comp.wh.wh.WhPackage#getExprEq()
@@ -129,5 +130,31 @@ public interface ExprEq extends EObject
    * @generated
    */
   void setLexpr(LExpr value);
+
+  /**
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(Expr)
+   * @see org.xtext.comp.wh.wh.WhPackage#getExprEq_Expr()
+   * @model containment="true"
+   * @generated
+   */
+  Expr getExpr();
+
+  /**
+   * Sets the value of the '{@link org.xtext.comp.wh.wh.ExprEq#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(Expr value);
 
 } // ExprEq

@@ -931,12 +931,17 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLexprAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cLexprLExprParserRuleCall_1_2_0 = (RuleCall)cLexprAssignment_1_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExprAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cExprExprParserRuleCall_2_1_0 = (RuleCall)cExprAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//ExprEq:
-		//	expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')';
+		//	expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')' | '(' expr=Expr ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')'
+		//expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')' | '(' expr=Expr ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//expr_left=ExprSimple ('=?' expr_right=ExprSimple)?
@@ -980,6 +985,21 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		
+		//'(' expr=Expr ')'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		
+		//expr=Expr
+		public Assignment getExprAssignment_2_1() { return cExprAssignment_2_1; }
+		
+		//Expr
+		public RuleCall getExprExprParserRuleCall_2_1_0() { return cExprExprParserRuleCall_2_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 	}
 	public class LExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.LExpr");
@@ -1368,7 +1388,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExprEq:
-	//	expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')';
+	//	expr_left=ExprSimple ('=?' expr_right=ExprSimple)? | => '(' sym=SYMBOL lexpr=LExpr ')' | '(' expr=Expr ')';
 	public ExprEqElements getExprEqAccess() {
 		return pExprEq;
 	}

@@ -186,9 +186,11 @@ class WhGenerator extends AbstractGenerator {
 			if(eq.expr_right !== null) {
 				expr += " ?= " + eq.expr_right.compile();
 			}
-		} else {
+		} else if(eq.sym !== null){
 			expr += "(" + eq.sym + " " + eq.lexpr.compile() + ")"
 			
+		} else {
+			expr += "(" + eq.expr.compile() + ")";
 		}
 		return expr;
 	}
