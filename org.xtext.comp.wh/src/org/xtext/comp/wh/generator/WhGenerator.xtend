@@ -168,7 +168,7 @@ class WhGenerator extends AbstractGenerator {
 	«FOR expr : ea.expr_or SEPARATOR " and "»«expr.compile()»«ENDFOR»'''
 	
 	def compile(ExprOr eo)'''
-	«FOR expr : eo.expr_not SEPARATOR " and "»«expr.compile()»«ENDFOR»'''
+	«FOR expr : eo.expr_not SEPARATOR " or "»«expr.compile()»«ENDFOR»'''
 	
 	def compile(ExprNot en){
 		var expr = "";
