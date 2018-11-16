@@ -1,0 +1,35 @@
+WHPP
+User Commands
+
+NAME
+	whpp - cree un fichier bien formaté d’un fichier ecrit en While
+
+SYNOPSIS
+	whpp NOM_FICHIER_ENTREE [OPTION]...
+
+DESCRIPTION 
+	Prend un fichier d’un programme écrit en While syntaxiquement correct et créé un fichier de ce même programme syntaxiquement identique, bien indenté, bien espacé, avec les saut de lignes et points virgules au bon endroit.
+	Le fichier est cree dans le dossier du whpp.
+
+	-o output_name
+		change le nom du fichier de destination, par defaut sth.whpp
+	-help
+		affiche la page d’aide
+	-all
+		change la valeur de l'indentation, par défaut X=2
+
+	-if
+		change la valeur spécifique pour les blocs if, par défaut X
+
+	-while 
+		change la valeur spécifique pour les blocs while, par défaut X
+
+	-for
+		change la valeur spécifique pour les blocs for, par défaut X
+
+	-foreach
+		change la valeur spécifique pour les blocs foreach, par défaut X
+	
+	Si vous spécifiez plusieurs fois la même option, seule la dernière sera prise en compte .
+
+	
