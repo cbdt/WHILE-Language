@@ -15,11 +15,15 @@ do
  if [ $i == "-o" ]
  then
     has_o=1
-    cat ${args[count]}
+    if [ -f ${args[count]} ]; then
+        cat ${args[count]}
+    fi
  fi
 done
 
 if [ $has_o == 0 ]
 then
-    cat sth.whpp
+    if [ -f sth.whpp ]; then
+        cat sth.whpp
+    fi
 fi
