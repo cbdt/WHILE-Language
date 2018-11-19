@@ -1,0 +1,13 @@
+function
+
+ hdTest: 
+
+
+read
+ A
+%
+	B
+	:= 
+	(hd A)
+%
+write B

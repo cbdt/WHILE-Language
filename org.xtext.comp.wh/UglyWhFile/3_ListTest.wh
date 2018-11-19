@@ -1,0 +1,16 @@
+function listTest: 
+read A, 
+B, 
+
+			C, D
+%
+
+
+
+
+	A := 
+	(list B C D)
+
+	
+	%
+		write A
