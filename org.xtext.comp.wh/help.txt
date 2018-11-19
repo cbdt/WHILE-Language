@@ -2,34 +2,39 @@ WHPP
 User Commands
 
 NAME
-	whpp - cree un fichier bien formaté d’un fichier ecrit en While
+	whpp - crée un fichier bien formaté d’un fichier écrit en While.
 
 SYNOPSIS
-	whpp NOM_FICHIER_ENTREE [OPTION]...
+	whpp nom_fichier_entrée [OPTION]...
 
 DESCRIPTION 
-	Prend un fichier d’un programme écrit en While syntaxiquement correct et créé un fichier de ce même programme syntaxiquement identique, bien indenté, bien espacé, avec les saut de lignes et points virgules au bon endroit.
-	Le fichier est cree dans le dossier du whpp.
+	Prend un fichier d’un programme écrit en While syntaxiquement correct et créé un fichier de ce même programme syntaxiquement identique, bien indenté, bien espacé, avec les sauts de lignes et points-virgules au bon endroit.
+	Le fichier est créé dans le dossier du whpp.
 
-	-o output_name
-		change le nom du fichier de destination, par defaut sth.whpp
+OPTIONS
+	-o nom_fichier_sortie
+		change le nom du fichier de destination, par defaut sth.whpp.
 	-help
 		affiche la page d’aide
-	-all
-		change la valeur de l'indentation, par défaut X=2
+	-all X
+		change la valeur de l'indentation, par défaut X=2.
 
-	-if
-		change la valeur spécifique pour les blocs if, par défaut X
+	-if Y
+		change la valeur spécifique pour les blocs if, par défaut Y=X.
 
-	-while 
-		change la valeur spécifique pour les blocs while, par défaut X
+	-while Y
+		change la valeur spécifique pour les blocs while, par défaut Y=X.
 
-	-for
-		change la valeur spécifique pour les blocs for, par défaut X
+	-for Y
+		change la valeur spécifique pour les blocs for, par défaut Y=X.
 
-	-foreach
-		change la valeur spécifique pour les blocs foreach, par défaut X
+	-foreach Y
+		change la valeur spécifique pour les blocs foreach, par défaut Y=X.
 	
-	Si vous spécifiez plusieurs fois la même option, seule la dernière sera prise en compte .
+	Si vous spécifiez plusieurs fois la même option, seule la dernière sera prise en compte.
 
+BUGS
+	Aucun bug n'est actuellement connu.
 	
+AUTHORS
+	Écrit par BAUDET Clément - BRETON Yoann - KHEAV Kévin - LAKBIRI Abdelali - MUGUET Nicolas - PHILIP Kévin	
