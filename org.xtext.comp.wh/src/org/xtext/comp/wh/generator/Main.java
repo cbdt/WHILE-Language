@@ -11,7 +11,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -25,16 +29,26 @@ import org.eclipse.xtext.validation.Issue;
 import org.xtext.comp.wh.WhStandaloneSetup;
 
 public class Main {
+	
+	public static String getErrorOpt(String opt) {
+		return "Option invalide " + opt + ", veuillez vous reférez au manuel -help";
+	}
+	
+	public static String getErrorArg(String arg, String val) {
+		return "Argument invalide \"" + val + "\" pour " + arg + ", veuillez vous reférez au manuel -help";
+	}
 
 	public static void main(String[] args) {
 		if (args.length == 0) {
-			System.err.println("Aborting: no path to EMF resource provided!");
+			System.err.println("Pas de fichier d'entrée précisé.");
 			return;
 		}
 
 		// Default Values
 		final int DEFAULT_INDENT_ALL = 2;
 		final String DEFAULT_OUTPUT_NAME = "sth.whpp";
+		
+		final List<String> ARGS = new ArrayList<>(Arrays.asList("-all", "-if", "-while", "-for", "-foreach", "-o", "-help"));
 
 		// Values
 		String fileName = args[0];
@@ -45,23 +59,27 @@ public class Main {
 		int indentFor = DEFAULT_INDENT_ALL;
 		int indentForeach = DEFAULT_INDENT_ALL;
 		
-		String errorString = "Argument invalide, veuillez vous reférez au manuel -help";
 		
 		// Check if input file is ok
 		
 		if(!(new File(fileName)).exists()) {
-			System.out.println("Le fichier d'entrée n'existe pas.");
+			System.err.println("Le fichier d'entrée n'existe pas.");
 			return;
 		}
 		
 		if(!fileName.endsWith(".wh")) {
-			System.out.println("Le fichier doit se terminer par l'extension .wh");
+			System.err.println("Le fichier doit se terminer par l'extension .wh");
 			return;
 		}
 
 		// Parsing options
 		for (int i = 1; i < args.length; i++) {
 			if (args[i].charAt(0) == '-') {
+				
+				if(!ARGS.contains(args[i])) {
+					System.err.println(getErrorOpt(args[i]));
+					return;
+				}
 
 				// Bad option (only '-')
 				if (args[i].length() < 2) {
@@ -83,7 +101,7 @@ public class Main {
 						indentAll = Integer.parseInt(args[i]);
 						//System.out.println("all "+Integer.parseInt(args[i]));
 					}else {
-						System.err.println(errorString);
+						System.err.println(getErrorArg(args[i], args[i+1]));
 						return;
 						
 					}
@@ -95,7 +113,7 @@ public class Main {
 						//System.out.println("if "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println(errorString);
+						System.err.println(getErrorArg(args[i], args[i+1]));
 						return;
 					}
 					break;
@@ -106,7 +124,7 @@ public class Main {
 						//System.out.println("while "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println(errorString);
+						System.err.println(getErrorArg(args[i], args[i+1]));
 						return;
 					}
 					break;
@@ -117,7 +135,7 @@ public class Main {
 						//System.out.println("for "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println(errorString);
+						System.err.println(getErrorArg(args[i], args[i+1]));
 						return;
 					}
 					break;
@@ -128,7 +146,7 @@ public class Main {
 						//System.out.println("foreach "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println(errorString);
+						System.err.println(getErrorArg(args[i], args[i+1]));
 						return;
 					}
 					break;
@@ -140,8 +158,21 @@ public class Main {
 				}
 
 			} else {
-				System.err.println(errorString);
+				System.err.println(getErrorOpt(args[i]));
 				return;
+			}
+		}
+		
+		if((new File(outputName)).exists()) {
+			while(true) {
+				System.out.println("Le fichier " + outputName + " existe, voulez-vous l'écraser ? (Y/N) : ");
+				Scanner sc = new Scanner(System.in);
+				String response = sc.nextLine().toLowerCase();
+				if(response.equals("y") || response.equals("yes")) {
+					break;
+				} else if(response.equals("n") || response.equals("no")) {
+					return;
+				}
 			}
 		}
 		Injector injector = new WhStandaloneSetup().createInjectorAndDoEMFRegistration();
@@ -157,7 +188,7 @@ public class Main {
 			}
 			System.out.print(s);
 		} catch (Exception e) {
-			System.out.println("Problem when opening the file");
+			System.out.println("Problème lors de l'ouvertue du fichier créé.");
 			return;
 		}
 		

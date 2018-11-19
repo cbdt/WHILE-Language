@@ -39,6 +39,7 @@ class WhGenerator extends AbstractGenerator {
 	var String if_indentation;
 	var String for_indentation;
 	var String foreach_indentation;
+	var line_size = 80;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		doGenerate(resource, fsa, context, "output.wh", 2, 2, 2, 2, 2);
@@ -82,6 +83,7 @@ class WhGenerator extends AbstractGenerator {
 	function «f.fname»:
 	«f.definition.compile()»
 	'''
+
 	
 	def compile(Definition d)'''
 	read «FOR param : d.inputs.params SEPARATOR ", "»«param»«ENDFOR»
@@ -90,7 +92,6 @@ class WhGenerator extends AbstractGenerator {
 	%
 	write «FOR r_value : d.outputs.r_values SEPARATOR ", "»«r_value»«ENDFOR»
 	'''
-	
 	
 	def compile(Commands c, String indent) {
 		val nb_commands = c.command.size;
