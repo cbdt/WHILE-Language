@@ -2,7 +2,7 @@ WHPP
 User Commands
 
 NAME
-	whpp - crée un fichier bien formaté d’un fichier écrit en While.
+	whpp - Crée un fichier bien formaté d’un fichier écrit en While.
 
 SYNOPSIS
 	whpp nom_fichier_entrée [OPTION]...
@@ -13,23 +13,23 @@ DESCRIPTION
 
 OPTIONS
 	-o nom_fichier_sortie
-		change le nom du fichier de destination, par defaut sth.whpp.
+		Change le nom du fichier de destination, par defaut sth.whpp.
 	-help
-		affiche la page d’aide
+		Affiche la page d’aide
 	-all X
-		change la valeur de l'indentation, par défaut X=2.
+		Change la valeur de l'indentation, par défaut X=2.
 
 	-if Y
-		change la valeur spécifique pour les blocs if, par défaut Y=X.
+		Change la valeur spécifique pour les blocs if, par défaut Y=X.
 
 	-while Y
-		change la valeur spécifique pour les blocs while, par défaut Y=X.
+		Change la valeur spécifique pour les blocs while, par défaut Y=X.
 
 	-for Y
-		change la valeur spécifique pour les blocs for, par défaut Y=X.
+		Change la valeur spécifique pour les blocs for, par défaut Y=X.
 
 	-foreach Y
-		change la valeur spécifique pour les blocs foreach, par défaut Y=X.
+		Change la valeur spécifique pour les blocs foreach, par défaut Y=X.
 	
 	Si vous spécifiez plusieurs fois la même option, seule la dernière sera prise en compte.
 
