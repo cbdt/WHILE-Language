@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
@@ -12,38 +11,41 @@ import org.xtext.comp.wh.generator.Main;
 
 class Test1 {
 
-	void assertFileEquals(String name) throws IOException {
+	void assertFilePrettyTwiceEquals(String name) throws IOException {
+		
+		// first pretty
 		Main.main(new String[]{"UglyWhFile/" + name, "-o", "PrettyGenWhFile/" + name});
-		File ugly = new File("PrettyGenWhFile/" + name);
-		File pretty = new File("PrettyWhFile/" + name);
+		String firstPretty = TestUtils.readFile(new File("PrettyGenWhFile/" + name));
 		
-		FileReader input = new FileReader(ugly);
-		
-		StringBuilder uglyBuilder = new StringBuilder();
-		StringBuilder prettyBuilder = new StringBuilder();
-		
-		int c;
-		while((c = input.read()) != -1) {
-			uglyBuilder.append((char) c);
-		}
-		input.close();
-		input = new FileReader(pretty);
+		// second pretty
 		Main.main(new String[]{"PrettyGenWhFile/" + name, "-o", "PrettyWhFile/" + name});
-		while((c = input.read()) != -1) {
-			prettyBuilder.append((char) c);
-		}
-		input.close();
+		String secondPretty = TestUtils.readFile(new File("PrettyWhFile/" + name));
 		
-		System.out.println(" :\n" + uglyBuilder.toString());
-		System.out.println("Pretty :\n" + prettyBuilder.toString());
+		System.out.println("First :\n" + firstPretty);
+		System.out.println("Second :\n" + secondPretty);
 		
-		assertTrue(uglyBuilder.toString().equals(prettyBuilder.toString()));
+		assertTrue(firstPretty.equals(secondPretty));
+	}
+	
+	void assertFileEquals(String name) throws IOException {
+		
+		// Generate pretty file
+		Main.main(new String[]{"UglyWhFile/" + name, "-o", "PrettyGenWhFile/" + name});
+		String generatedText = TestUtils.readFile(new File("PrettyGenWhFile/" + name));
+		
+		// read correct pretty file
+		String prettyText = TestUtils.readFile(new File("PrettyWhFile/" + name));
+		
+		System.out.println("generated :\n" + generatedText);
+		System.out.println("Pretty :\n" + prettyText);
+		
+		assertTrue(generatedText.equals(prettyText));
 	}
 	
 	@Test
 	void test() {
 		try {
-			assertFileEquals("sumFunction.wh");
+			assertFilePrettyTwiceEquals("sumFunction.wh");
 		} catch (FileNotFoundException e) {
 			fail("file not found");
 			System.err.println(e.getMessage());
@@ -52,5 +54,56 @@ class Test1 {
 			System.err.println(e.getMessage());
 		}
 	}
-
+	
+	@Test
+	void test1() {
+		try {
+			assertFilePrettyTwiceEquals("test1.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void test2() {
+		try {
+			assertFilePrettyTwiceEquals("test2.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void test3() {
+		try {
+			assertFilePrettyTwiceEquals("test3.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void test4() {
+		try {
+			assertFilePrettyTwiceEquals("test4.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
 }
