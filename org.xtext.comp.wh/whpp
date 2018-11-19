@@ -5,25 +5,3 @@ if [ $1 == "-help" ]
  fi
 
 java -jar whpp.jar "$@"
-args=("$@")
-count=0
-has_o=0
-for i in $@
-do
- (( count++ ))
-
- if [ $i == "-o" ]
- then
-    has_o=1
-    if [ -f ${args[count]} ]; then
-        cat ${args[count]}
-    fi
- fi
-done
-
-if [ $has_o == 0 ]
-then
-    if [ -f sth.whpp ]; then
-        cat sth.whpp
-    fi
-fi

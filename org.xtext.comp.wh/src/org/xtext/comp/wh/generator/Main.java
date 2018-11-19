@@ -6,6 +6,11 @@ package org.xtext.comp.wh.generator;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Provider;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -39,6 +44,20 @@ public class Main {
 		int indentWhile = DEFAULT_INDENT_ALL;
 		int indentFor = DEFAULT_INDENT_ALL;
 		int indentForeach = DEFAULT_INDENT_ALL;
+		
+		String errorString = "Argument invalide, veuillez vous reférez au manuel -help";
+		
+		// Check if input file is ok
+		
+		if(!(new File(fileName)).exists()) {
+			System.out.println("Le fichier d'entrée n'existe pas.");
+			return;
+		}
+		
+		if(!fileName.endsWith(".wh")) {
+			System.out.println("Le fichier doit se terminer par l'extension .wh");
+			return;
+		}
 
 		// Parsing options
 		for (int i = 1; i < args.length; i++) {
@@ -46,13 +65,14 @@ public class Main {
 
 				// Bad option (only '-')
 				if (args[i].length() < 2) {
-					System.err.println("Error at argument " + args[i]);
+					System.err.println("Erreur à l'argument " + args[i]);
 					return;
 				}
 				
 				// No argument for option
 				if ((i+1)==args.length) {
-					System.err.println("No argument for option " + args[i]);
+					System.err.println("Argument non précisé pour " + args[i]);
+					return;
 				}
 				
 				String option = args[i].substring(1);
@@ -63,7 +83,9 @@ public class Main {
 						indentAll = Integer.parseInt(args[i]);
 						//System.out.println("all "+Integer.parseInt(args[i]));
 					}else {
-						System.err.println("Invalid argument");
+						System.err.println(errorString);
+						return;
+						
 					}
 					break;
 				case "if":
@@ -73,7 +95,8 @@ public class Main {
 						//System.out.println("if "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println("Invalid argument");
+						System.err.println(errorString);
+						return;
 					}
 					break;
 				case "while":
@@ -83,7 +106,8 @@ public class Main {
 						//System.out.println("while "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println("Invalid argument");
+						System.err.println(errorString);
+						return;
 					}
 					break;
 				case "for":
@@ -93,7 +117,8 @@ public class Main {
 						//System.out.println("for "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println("Invalid argument");
+						System.err.println(errorString);
+						return;
 					}
 					break;
 				case "foreach":
@@ -103,25 +128,39 @@ public class Main {
 						//System.out.println("foreach "+Integer.parseInt(args[i]));
 
 					}else {
-						System.err.println("Invalid argument");
+						System.err.println(errorString);
+						return;
 					}
 					break;
 				case "o":
 					i++;
 					outputName = args[i];
 					//System.out.println("output "+args[i]);
-
 					break;
 				}
 
 			} else {
-				System.err.println("Command unknown : " + args[i]);
+				System.err.println(errorString);
+				return;
 			}
-
 		}
 		Injector injector = new WhStandaloneSetup().createInjectorAndDoEMFRegistration();
 		Main main = injector.getInstance(Main.class);
 		main.runGenerator(fileName,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach);
+		
+		BufferedReader r;
+		try {
+			r = new BufferedReader(new FileReader(outputName));
+			String s = "", line = null;
+			while ((line = r.readLine()) != null) {
+			    s += line + "\n";
+			}
+			System.out.print(s);
+		} catch (Exception e) {
+			System.out.println("Problem when opening the file");
+			return;
+		}
+		
 	}
 
 	@Inject
