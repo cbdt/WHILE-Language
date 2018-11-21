@@ -106,4 +106,134 @@ class Test1 {
 			System.err.println(e.getMessage());
 		}
 	}
+	
+	@Test
+	void testEquals0() {
+		try {
+			assertFileEquals("0_NopTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals1() {
+		try {
+			assertFileEquals("1_Affectation1Test.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals2() {
+		try {
+			assertFileEquals("2_ConsTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals3() {
+		try {
+			assertFileEquals("3_ListTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals4() {
+		try {
+			assertFileEquals("4_HdTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals5() {
+		try {
+			assertFileEquals("5_TlTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals6() {
+		try {
+			assertFileEquals("6_IfTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals7() {
+		try {
+			assertFileEquals("7_WhileTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals8() {
+		try {
+			assertFileEquals("8_ForTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void testEquals9() {
+		try {
+			assertFileEquals("9_FunMultTest.wh");
+		} catch (FileNotFoundException e) {
+			fail("file not found");
+			System.err.println(e.getMessage());
+		} catch (IOException e) {
+			fail("fail to read file");
+			System.err.println(e.getMessage());
+		}
+	}
 }

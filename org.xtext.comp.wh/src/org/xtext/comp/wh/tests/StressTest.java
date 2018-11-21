@@ -9,13 +9,13 @@ public class StressTest {
 
 	private static long getAverageTime(long[] measures) {
 		Arrays.sort(measures);
-		int q1 = (int) 0.25 * measures.length;
-		int q3 = (int) 0.75 * measures.length;
+		int q1 = (int) (0.25 * (measures.length-1));
+		int q3 = (int) (0.75 * (measures.length-1));
 
 		long measureSum = 0;
 		int n = 0;
 		for (int i = 0; i < measures.length; ++i) {
-			if (i >= q1 && i <= q3) {
+			if (i > q1 && i < q3) {
 				measureSum += measures[i];
 				++n;
 			}
@@ -31,7 +31,7 @@ public class StressTest {
 		for (int i = 0; i < iteration; ++i) {
 			String name = "stressTestFile" + i + fileType;
 
-			long[] measures = new long[10];
+			long[] measures = new long[6];
 			long end = -1;
 			long begin = -1;
 			for (int k = 0; k < measures.length; ++k) {
@@ -43,6 +43,7 @@ public class StressTest {
 				measures[k] = end - begin;
 			}
 			times[i] = getAverageTime(measures);
+			System.out.println(times[i]);
 
 			File newStressTestFile = new File("UglyWhFile/" + "stressTestFile" + (i + 1) + fileType);
 			if (!newStressTestFile.exists()) {
@@ -73,7 +74,8 @@ public class StressTest {
 	}
 
 	public static void main(String[] args) {
-		long[] times = stressTest(12);
+		long[] times = stressTest(17);
+		System.out.println("times :");
 		for (long t : times) {
 			System.out.println(t);
 		}
