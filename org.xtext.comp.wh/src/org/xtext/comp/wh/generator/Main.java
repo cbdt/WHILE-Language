@@ -177,7 +177,9 @@ public class Main {
 		}
 		Injector injector = new WhStandaloneSetup().createInjectorAndDoEMFRegistration();
 		Main main = injector.getInstance(Main.class);
-		main.runGenerator(fileName,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach);
+		boolean hasError = main.runGenerator(fileName,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach);
+		
+		if(hasError) return;
 		
 		BufferedReader r;
 		try {
@@ -206,18 +208,17 @@ public class Main {
 	@Inject
 	private JavaIoFileSystemAccess fileAccess;
 
-	protected void runGenerator(String fileName,String outputName,int indentAll,int indentIf,int indentWhile,int indentFor,int indentForeach) {
+	protected boolean runGenerator(String fileName,String outputName,int indentAll,int indentIf,int indentWhile,int indentFor,int indentForeach) {
 		// Load the resource
 		ResourceSet set = resourceSetProvider.get();
 		Resource resource = set.getResource(URI.createFileURI(fileName), true);
-
 		// Validate the resource
 		List<Issue> list = validator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl);
 		if (!list.isEmpty()) {
 			for (Issue issue : list) {
 				System.err.println(issue);
 			}
-			return;
+			return true;
 		}
 
 		// Configure and start the generator
@@ -225,5 +226,6 @@ public class Main {
 		GeneratorContext context = new GeneratorContext();
 		context.setCancelIndicator(CancelIndicator.NullImpl);
 		generator.doGenerate(resource, fileAccess, context,outputName,indentAll,indentIf,indentWhile,indentFor,indentForeach );
+		return false;
 	}
 }
