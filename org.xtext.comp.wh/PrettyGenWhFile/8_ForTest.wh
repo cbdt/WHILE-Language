@@ -1,0 +1,9 @@
+function forTest:
+read A
+%
+  for nil do
+    B := A ;
+    nop
+  od
+%
+write B
