@@ -13,24 +13,26 @@ public class Code3Addr {
 		this.arg2 = argr2;
 		this.arg3 = argr3;
 	}
-	
-	public int getop(){
+
+	public int getop() {
 		return this.operator;
 	}
-	
-	public String getarg1(){
+
+	public String getarg1() {
 		return this.arg1;
 	}
-	
-	public String getarg2(){
+
+	public String getarg2() {
 		return this.arg1;
 	}
-	
-	public String getarg3(){
+
+	public String getarg3() {
 		return this.arg1;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "<" + operator + ", " + arg1 + ", " + arg2 + ", " + arg3 + ">";
+	}
+
 }
