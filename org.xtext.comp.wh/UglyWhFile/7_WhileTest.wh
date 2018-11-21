@@ -1,0 +1,14 @@
+function whileTest: 
+read
+ A
+%
+	while
+	nil
+
+
+					do B 
+					
+		:= 			A ;
+					nop od
+%
+write D

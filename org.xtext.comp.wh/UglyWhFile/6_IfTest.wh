@@ -1,0 +1,13 @@
+function 
+ifTest: 
+read A
+%
+
+
+	if nil then
+	
+
+	nop	else
+				nop fi %
+write
+ A
