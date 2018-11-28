@@ -15,15 +15,15 @@ public class Code3Addr {
 	}
 	
 	public Code3Addr(Operator operator, String argr1, String argr2) {
-		new Code3Addr(operator, argr1, argr2, "");
+		this(operator, argr1, argr2, "_");
 	}
 	
 	public Code3Addr(Operator operator, String argr1) {
-		new Code3Addr(operator, argr1, "", "");
+		this(operator, argr1, "_", "_");
 	}
 	
 	public Code3Addr(Operator operator) {
-		new Code3Addr(operator, "", "", "");
+		this(operator, "_", "_", "_");
 	}
 
 	public Operator getop() {

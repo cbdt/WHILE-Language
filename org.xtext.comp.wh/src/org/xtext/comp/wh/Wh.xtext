@@ -84,7 +84,7 @@ Function:
 Definition:
 	'read'  inputs=Input
 	'%' commands=Commands
-	'%' 'write'  outputs=Output
+	'%' 'write' outputs=Output
 ;
 
 Input:

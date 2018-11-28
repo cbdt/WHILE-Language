@@ -1,0 +1,6 @@
+function main:
+read A, B
+% 
+	nop
+% 
+write A, B

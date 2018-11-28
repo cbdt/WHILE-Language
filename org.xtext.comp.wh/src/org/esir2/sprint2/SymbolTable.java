@@ -17,19 +17,19 @@ public class SymbolTable {
 		symbols = new HashMap<>();
 	}
 	
-	public void addFunction(String name, int nbInput, int nbOutput) throws Exception {
+	public void addFunction(String name, int nbInput, int nbOutput) throws CompilaxException {
 		if(!hasFunction(name)) {
 			functions.put(name, new FunctionInternal("f" + functionCounter, nbInput, nbOutput));
 			functionCounter++;
 		}
 		else {
-			throw new Exception("addFunction : La fonction " + name + " est déjà définie");
+			throw new CompilaxException("addFunction : La fonction " + name + " est déjà définie");
 		}
 	}
 	
-	public FunctionInternal getFunctionInternal(String name) throws Exception {
+	public FunctionInternal getFunctionInternal(String name) throws CompilaxException {
 		if(!hasFunction(name)) {
-			throw new Exception("getFunctionInternal : La fonction " + name + " n'est pas définie");
+			throw new CompilaxException("getFunctionInternal : La fonction " + name + " n'est pas définie");
 		}
 		return functions.get(name);
 	}
@@ -38,14 +38,14 @@ public class SymbolTable {
 		return functions.containsKey(name);
 	}
 	
-	public void addSymbol(String name) throws Exception {
+	public void addSymbol(String name) throws CompilaxException {
 		if(!hasSymbol(name)) {
 			symbols.put(name, "s" + symbolCounter);
 			symbolCounter++;
 			
 		}
 		else {
-			throw new Exception("addSymbol : Le symbol " + name + " est déjà définie");
+			throw new CompilaxException("addSymbol : Le symbol " + name + " est déjà définie");
 		}
 	}
 	
