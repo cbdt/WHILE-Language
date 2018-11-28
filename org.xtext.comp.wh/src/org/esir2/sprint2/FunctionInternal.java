@@ -3,10 +3,11 @@ package org.esir2.sprint2;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FunctionInternal {
 
-	private HashMap<String, String> vars;
+	private Map<String, String> vars;
 	private List<Code3Addr> codes;
 	private int input;
 	private int output;
@@ -27,12 +28,16 @@ public class FunctionInternal {
 		return this.output;
 	}
 
-	public String getVars(String key) {
+	public String getVar(String key) {
 		return this.vars.get(key);
 	}
 
-	public void setVars(String key, String value) {
+	public void setVar(String key, String value) {
 		this.vars.put(key, value);
+	}
+	
+	public Map<String, String> getVars() {
+		return this.vars;
 	}
 
 	public List<Code3Addr> getCode() {
