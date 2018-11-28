@@ -61,13 +61,24 @@ public class SymbolTable {
 	public String toString() {
 		StringBuilder codeBuilder = new StringBuilder();
 		
+		// Affichage table des symboles
+		codeBuilder.append("Table des symboles :\n");
 		for(Entry<String, String> e : symbols.entrySet()) {
 			codeBuilder.append(e.getKey() + " : " + e.getValue()).append("\n");
 		}
 		
 		for(Entry<String, FunctionInternal> e : functions.entrySet()) {
-			codeBuilder.append("function " + e.getKey() + ":").append("\n");
-			for(Code3Addr c : e.getValue().getCode()) {
+			FunctionInternal functionInfos = e.getValue();
+					
+			// Affichage table des variables
+			codeBuilder.append("Table des variables :\n");
+			for(Entry<String, String> varEntry : functionInfos.getVars().entrySet()) {
+				codeBuilder.append(varEntry.getKey() + " : " + varEntry.getValue()).append("\n");
+			}
+			
+			// affichage code3@ fonction 
+			codeBuilder.append("function " + e.getKey() + ":").append(" (input=" + functionInfos.getInput() + ", output=" + functionInfos.getOutput() + ")").append("\n");
+			for(Code3Addr c : functionInfos.getCode()) {
 				codeBuilder.append(c.toString() + "\n");
 			}
 			codeBuilder.append("\n");
