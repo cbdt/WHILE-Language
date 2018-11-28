@@ -46,7 +46,7 @@ public class FunctionInternal {
 	public void addVar(String var) {
 		if (!this.vars.containsKey(var)) {
 			this.counter++;
-			this.vars.put(var, "R" + counter);
+			this.vars.put(var, "Var" + counter);
 		}
 	}
 
