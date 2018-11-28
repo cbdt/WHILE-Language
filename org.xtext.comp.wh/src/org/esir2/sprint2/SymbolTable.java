@@ -12,9 +12,10 @@ public class SymbolTable {
 	private Map<String, String> symbols;
 	private static int symbolCounter = 0;
 	
-	public SymbolTable() {
+	public SymbolTable() throws CompilaxException {
 		functions = new HashMap<>();
 		symbols = new HashMap<>();
+		addSymbol("nil");
 	}
 	
 	public void addFunction(String name, int nbInput, int nbOutput) throws CompilaxException {
