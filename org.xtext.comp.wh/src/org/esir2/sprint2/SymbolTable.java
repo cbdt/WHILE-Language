@@ -66,9 +66,8 @@ public class SymbolTable {
 		}
 		
 		for(Entry<String, FunctionInternal> e : functions.entrySet()) {
-			FunctionInternal fi = e.getValue();
-			codeBuilder.append("function" + fi + ":").append("\n");
-			for(Code3Addr c : fi.getCode()) {
+			codeBuilder.append("function" + e.getKey() + ":").append("\n");
+			for(Code3Addr c : e.getValue().getCode()) {
 				codeBuilder.append(c.toString() + "\n");
 			}
 			codeBuilder.append("\n");
