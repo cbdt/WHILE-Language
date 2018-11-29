@@ -1,6 +1,6 @@
 function main:
 read A, B
 % 
-	A := (A or (B and B))
+	A := (cons A B C)
 % 
 write A, B

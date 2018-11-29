@@ -1,9 +1,8 @@
 package org.esir2.sprint2;
 
-import java.awt.event.FocusAdapter;
-import java.util.ArrayList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +13,6 @@ import org.xtext.comp.wh.wh.Command;
 import org.xtext.comp.wh.wh.Commands;
 import org.xtext.comp.wh.wh.Definition;
 import org.xtext.comp.wh.wh.Expr;
-import org.xtext.comp.wh.wh.ExprAnd;
 import org.xtext.comp.wh.wh.ExprEq;
 import org.xtext.comp.wh.wh.ExprNot;
 import org.xtext.comp.wh.wh.ExprOr;
@@ -29,8 +27,12 @@ import org.xtext.comp.wh.wh.Output;
 import org.xtext.comp.wh.wh.Program;
 import org.xtext.comp.wh.wh.While;
 
-
 public class GenerateSymbolTable {
+	
+	public static final String ANSI_RED = "\033[0;31m";
+	public static final String ANSI_RESET = "\u001B[0m";
+
+
 	private TreeIterator<EObject> AST;
 	private SymbolTable symTable;
 	
@@ -52,7 +54,7 @@ public class GenerateSymbolTable {
 					discoverFunctions((Program) obj);
 					runThrough((Program) obj);
 				} catch (CompilaxException e) {
-					System.out.println("Erreur : " + e.getMessage());
+					System.out.println(ANSI_RED + "ERREUR : " + ANSI_RESET + e.getMessage());
 					return true;
 				}
 			}
@@ -132,21 +134,21 @@ public class GenerateSymbolTable {
 	}
 	
 	private void runThrough(While cmd, FunctionInternal functionInternal) {
-		// 
+		// TODO WHILE
 	}
 	
 	private void runThrough(If cmd, FunctionInternal functionInternal) {
-		// TODO Auto-generated method stub
+		// TODO IF
 		
 	}
 	
 	private void runThrough(Foreach cmd, FunctionInternal functionInternal) {
-		// TODO Auto-generated method stub
+		// TODO FOREACH
 		
 	}
 	
 	private void runThrough(For cmd, FunctionInternal functionInternal) {
-		// TODO Auto-generated method stub
+		// TODO FOR
 		
 	}
 
@@ -160,7 +162,7 @@ public class GenerateSymbolTable {
 		Map<String, String> oldVars = new HashMap<>(); 
 		
 		if(nb_vars != nb_exprs) {
-			throw new CompilaxException("Il faut le même nombre de variable que d'expressions");
+			throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
 		}
 		
 		// On regarde s'il y a des variables identiques à gauche et à droite : A := A
@@ -182,6 +184,9 @@ public class GenerateSymbolTable {
 				fromVar = oldVars.get(ret.getLastVar());
 			} else {
 				fromVar = ret.getLastVar();
+			}
+			if(!functionInternal.containsVar(vars.get(i))) {
+				functionInternal.addVar(vars.get(i));
 			}
 			functionInternal.addCode(new Code3Addr(Operator.AFF, functionInternal.getVar(vars.get(i)), fromVar));
 		}
@@ -248,7 +253,7 @@ public class GenerateSymbolTable {
 			ReturnData ret_left = runThrough(expr_eq.getExpr_left(), functionInternal);
 			
 			if(expr_eq.getExpr_right() != null) {
-				
+
 				ReturnData ret_right = runThrough(expr_eq.getExpr_right(), functionInternal);
 				String tempVar  = functionInternal.getTempVar();
 				functionInternal.addCode(new Code3Addr(Operator.EQ, tempVar, ret_left.getLastVar(), ret_right.getLastVar()));
@@ -295,11 +300,49 @@ public class GenerateSymbolTable {
 			ret.addVar(functionInternal.getVar(expr.getVariable()));
 			return ret;
 		} else if(expr.getCons_exp() != null) {
+			EList<Expr> exprs = expr.getCons_exp().getExpr();
+			Deque<String> tempVars = new ArrayDeque<>();
+			
+			if(exprs.size() < 2) {
+				throw new CompilaxException("Erreur du nombre d'argument du cons");
+			}
+			
+			// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
+			for(Expr e : exprs) {
+				ReturnData ret = runThrough(e, functionInternal);
+				tempVars.push(ret.getLastVar());
+			}
+			// On créé les cons
+			boolean isFirst = true;
+			String tempVar = functionInternal.getTempVar();
+			while(tempVars.size() > 0) {
+				if(isFirst) {
+					String second = tempVars.poll();
+					String first = tempVars.poll();
+					functionInternal.addCode(new Code3Addr(Operator.CONS, tempVar, first, second));
+					isFirst = false;
+				} else {
+					functionInternal.addCode(new Code3Addr(Operator.CONS, tempVar, tempVars.poll(), tempVar));
+				}
+			}
+			ReturnData ret = new ReturnData();
+			ret.addVar(tempVar);
+			return ret;
 			
 		} else if(expr.getHd_expr() != null) {
-			
+			ReturnData retExpr = runThrough(expr.getHd_expr(), functionInternal);
+			String tempVar = functionInternal.getTempVar();
+			functionInternal.addCode(new Code3Addr(Operator.HD, tempVar, retExpr.getLastVar()));
+			ReturnData ret = new ReturnData();
+			ret.addVar(tempVar);
+			return ret;
 		} else if(expr.getTl_expr() != null) {
-			
+			ReturnData retExpr = runThrough(expr.getTl_expr(), functionInternal);
+			String tempVar = functionInternal.getTempVar();
+			functionInternal.addCode(new Code3Addr(Operator.TL, tempVar, retExpr.getLastVar()));
+			ReturnData ret = new ReturnData();
+			ret.addVar(tempVar);
+			return ret;
 		} else if(expr.getList_exp() != null) {
 			
 		}
