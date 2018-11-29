@@ -12,6 +12,7 @@ public class FunctionInternal {
 	private int input;
 	private int output;
 	private int counter = 0;
+	private int counterTemp = 0;
 
 	public FunctionInternal(String name, int input, int output) {
 		this.codes = new ArrayList<Code3Addr>();
@@ -31,10 +32,6 @@ public class FunctionInternal {
 	public String getVar(String key) {
 		return this.vars.get(key);
 	}
-
-	public void setVar(String key, String value) {
-		this.vars.put(key, value);
-	}
 	
 	public Map<String, String> getVars() {
 		return this.vars;
@@ -48,11 +45,23 @@ public class FunctionInternal {
 		this.codes.add(code);
 	}
 
-	public void addVar(String var) {
+	public String addVar(String var) {
 		if (!this.vars.containsKey(var)) {
 			this.counter++;
-			this.vars.put(var, "Var" + counter);
+			String varRename = "Var" + counter;
+			this.vars.put(var, varRename);
+			return varRename;
+		}else {
+			return this.vars.get(var);
 		}
+	}
+	
+	public String getTempVar() {
+		return "TempVar" + this.counterTemp++;
+	}
+
+	public boolean containsVar(String var) {
+		return this.vars.containsKey(var);
 	}
 
 }

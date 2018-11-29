@@ -59,8 +59,8 @@ public class Main {
 			TreeIterator<EObject> AST = resource.getAllContents();
 			
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
-			generator.execute();
-			System.out.println(generator.toString());
+			boolean error = generator.execute();
+			if(!error) System.out.println(generator.toString());
 	}
 	
 

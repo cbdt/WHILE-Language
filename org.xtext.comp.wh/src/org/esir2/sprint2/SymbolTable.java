@@ -46,7 +46,7 @@ public class SymbolTable {
 			
 		}
 		else {
-			throw new CompilaxException("addSymbol : Le symbol " + name + " est déjà définie");
+			throw new CompilaxException("addSymbol : Le symbol " + name + " est déjà défini");
 		}
 	}
 	

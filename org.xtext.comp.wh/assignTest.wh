@@ -1,6 +1,6 @@
 function main:
 read A, B
 % 
-	nop
+	A := (A or (B and B))
 % 
 write A, B
