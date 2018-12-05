@@ -1,0 +1,15 @@
+Table des symboles :
+nil : s0
+Table des variables :
+A : Var1
+B : Var2
+function main: (input=2, output=2)
+<READ, Var1, _, _>
+<READ, Var2, _, _>
+<CONS, TempVar0, s0, s0>
+<OR, TempVar1, Var2, TempVar0>
+<AND, TempVar2, Var1, TempVar1>
+<AFF, Var1, TempVar2, _>
+<WRITE, Var1, _, _>
+<WRITE, Var2, _, _>
+

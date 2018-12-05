@@ -1,5 +1,12 @@
 package org.esir2.sprint2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
@@ -39,8 +46,8 @@ public class Main {
 	}
 	
 	public void launch(String args[]) {
-			//String filename = args[0];
-			String filename = "assignTest.wh";
+			String filename = args[0];
+			//String filename = "assignTest.wh";
 			
 			boolean fileHasError = false;
 			
@@ -65,7 +72,29 @@ public class Main {
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
 			boolean error = generator.execute();
 			//if(!error) System.out.println(generator.toString());
+			if(filename.contains("WHILE_TEST")) {
+				String[] dirs = filename.split("/");
+				String lastName = dirs[dirs.length-1];
+				String name = lastName.substring(0, lastName.length()-3);
+				String path = "GEN/CODE3A/" + name + ".txt";
+				System.out.println(path);
+				writeInFile(path, generator.toString());
+			}
 			System.out.println(generator.toTSCode());
+	}
+	
+	public static void writeInFile(String path, String content) {
+		File file = new File(path);
+		try {
+			if(!file.exists())
+				file.createNewFile();
+			FileWriter fw;
+			fw = new FileWriter(file);
+			fw.write(content);
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 
