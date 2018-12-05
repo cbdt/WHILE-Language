@@ -1,15 +1,13 @@
 package org.esir2.sprint2.operations;
 import org.esir2.sprint2.*;
 
-public class NOP implements Operation{
-	
-	@Override
-	public String toString() {
-		return null;
+public class NOP extends Operation {
+	public NOP(Code3Addr code) {
+		super("NOP", code);
 	}
 	
 	@Override
-	public String toTS() {
+	public String toTSCode() {
 		return null;
 	}
 

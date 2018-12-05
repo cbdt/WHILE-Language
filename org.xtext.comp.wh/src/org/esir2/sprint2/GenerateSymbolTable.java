@@ -8,6 +8,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.esir2.sprint2.operations.AFF;
+import org.esir2.sprint2.operations.AND;
+import org.esir2.sprint2.operations.CONS;
+import org.esir2.sprint2.operations.EQ;
+import org.esir2.sprint2.operations.HD;
+import org.esir2.sprint2.operations.NOP;
+import org.esir2.sprint2.operations.NOT;
+import org.esir2.sprint2.operations.OR;
+import org.esir2.sprint2.operations.READ;
+import org.esir2.sprint2.operations.TL;
+import org.esir2.sprint2.operations.WRITE;
 import org.xtext.comp.wh.wh.Assign;
 import org.xtext.comp.wh.wh.Command;
 import org.xtext.comp.wh.wh.Commands;
@@ -92,19 +103,19 @@ public class GenerateSymbolTable {
 	
 	private void runThrough(Definition f, FunctionInternal functionInternal) throws CompilaxException{
 		runThrough(f.getInputs(), functionInternal);
-		runThrough(f.getCommands(), functionInternal);
 		runThrough(f.getOutputs(), functionInternal);
+		runThrough(f.getCommands(), functionInternal);
 	}
 	
 	private void runThrough(Input input, FunctionInternal functionInternal) throws CompilaxException {
 		for(String param : input.getParams()) {
-			functionInternal.addCode(new Code3Addr(Operator.READ, functionInternal.addVar(param)));
+			functionInternal.addCode(new READ(new Code3Addr(functionInternal.addVar(param))));
 		}
 	}
 	
 	private void runThrough(Output output, FunctionInternal functionInternal) throws CompilaxException {
 		for(String var : output.getR_values()) {
-			functionInternal.addCode(new Code3Addr(Operator.WRITE, functionInternal.addVar(var)));
+			functionInternal.addCode(new WRITE(new Code3Addr(functionInternal.addVar(var))));
 		}
 	}
 	
@@ -128,7 +139,7 @@ public class GenerateSymbolTable {
 		} else if (cmd instanceof For) {
 			runThrough((For) cmd, functionInternal);
 		} else if (cmd instanceof Nop) {
-			functionInternal.addCode(new Code3Addr(Operator.NOP));
+			functionInternal.addCode(new NOP(new Code3Addr()));
 		}
 				
 	}
@@ -172,7 +183,7 @@ public class GenerateSymbolTable {
 			if(isVar && vars.contains(var) && !oldVars.containsKey(functionInternal.getVar(var))) {
 				String tempVar = functionInternal.getTempVar();
 				oldVars.put(functionInternal.getVar(var), tempVar);
-				functionInternal.addCode(new Code3Addr(Operator.AFF, tempVar, functionInternal.addVar(var)));
+				functionInternal.addCode(new AFF(new Code3Addr(tempVar, functionInternal.addVar(var))));
 			}
 		}
 
@@ -188,7 +199,7 @@ public class GenerateSymbolTable {
 			if(!functionInternal.containsVar(vars.get(i))) {
 				functionInternal.addVar(vars.get(i));
 			}
-			functionInternal.addCode(new Code3Addr(Operator.AFF, functionInternal.getVar(vars.get(i)), fromVar));
+			functionInternal.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
 		}
 		
 	}	
@@ -205,7 +216,7 @@ public class GenerateSymbolTable {
 		ReturnData ret_left = runThrough(exprs.get(0), functionInternal);
 		ReturnData ret_right = runThrough(exprs.get(1), functionInternal);
 		String tempVar = functionInternal.getTempVar();
-		functionInternal.addCode(new Code3Addr(Operator.AND, tempVar, ret_left.getLastVar(), ret_right.getLastVar()));
+		functionInternal.addCode(new AND(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 		
 		ReturnData ret = new ReturnData();
 		ret.addVar(tempVar);
@@ -226,7 +237,7 @@ public class GenerateSymbolTable {
 		ReturnData ret_left = runThrough(exprs.get(0), functionInternal);
 		ReturnData ret_right = runThrough(exprs.get(1), functionInternal);
 		String tempVar = functionInternal.getTempVar();
-		functionInternal.addCode(new Code3Addr(Operator.OR, tempVar, ret_left.getLastVar(), ret_right.getLastVar()));
+		functionInternal.addCode(new OR(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 		
 		ReturnData ret = new ReturnData();
 		ret.addVar(tempVar);
@@ -239,7 +250,7 @@ public class GenerateSymbolTable {
 			
 			String tempVar = functionInternal.getTempVar();
 			ReturnData ret_expr = runThrough(exprNot.getExpr_eq(), functionInternal);
-			functionInternal.addCode(new Code3Addr(Operator.NOT, tempVar, ret_expr.getLastVar()));
+			functionInternal.addCode(new NOT(new Code3Addr(tempVar, ret_expr.getLastVar())));
 			ReturnData ret = new ReturnData();
 			ret.addVar(tempVar);
 			return ret;
@@ -256,7 +267,7 @@ public class GenerateSymbolTable {
 
 				ReturnData ret_right = runThrough(expr_eq.getExpr_right(), functionInternal);
 				String tempVar  = functionInternal.getTempVar();
-				functionInternal.addCode(new Code3Addr(Operator.EQ, tempVar, ret_left.getLastVar(), ret_right.getLastVar()));
+				functionInternal.addCode(new EQ(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 				ReturnData ret = new ReturnData();
 				ret.addVar(tempVar);
 				return ret;
@@ -319,10 +330,10 @@ public class GenerateSymbolTable {
 				if(isFirst) {
 					String second = tempVars.poll();
 					String first = tempVars.poll();
-					functionInternal.addCode(new Code3Addr(Operator.CONS, tempVar, first, second));
+					functionInternal.addCode(new CONS(new Code3Addr(tempVar, first, second)));
 					isFirst = false;
 				} else {
-					functionInternal.addCode(new Code3Addr(Operator.CONS, tempVar, tempVars.poll(), tempVar));
+					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
 				}
 			}
 			ReturnData ret = new ReturnData();
@@ -332,14 +343,14 @@ public class GenerateSymbolTable {
 		} else if(expr.getHd_expr() != null) {
 			ReturnData retExpr = runThrough(expr.getHd_expr(), functionInternal);
 			String tempVar = functionInternal.getTempVar();
-			functionInternal.addCode(new Code3Addr(Operator.HD, tempVar, retExpr.getLastVar()));
+			functionInternal.addCode(new HD(new Code3Addr(tempVar, retExpr.getLastVar())));
 			ReturnData ret = new ReturnData();
 			ret.addVar(tempVar);
 			return ret;
 		} else if(expr.getTl_expr() != null) {
 			ReturnData retExpr = runThrough(expr.getTl_expr(), functionInternal);
 			String tempVar = functionInternal.getTempVar();
-			functionInternal.addCode(new Code3Addr(Operator.TL, tempVar, retExpr.getLastVar()));
+			functionInternal.addCode(new TL(new Code3Addr(tempVar, retExpr.getLastVar())));
 			ReturnData ret = new ReturnData();
 			ret.addVar(tempVar);
 			return ret;

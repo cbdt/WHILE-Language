@@ -80,8 +80,8 @@ public class SymbolTable {
 			
 			// affichage code3@ fonction 
 			codeBuilder.append("function " + e.getKey() + ":").append(" (input=" + functionInfos.getInput() + ", output=" + functionInfos.getOutput() + ")").append("\n");
-			for(Code3Addr c : functionInfos.getCode()) {
-				codeBuilder.append(c.toString() + "\n");
+			for(Operation op : functionInfos.getOperations()) {
+				codeBuilder.append(op.toString() + "\n");
 			}
 			codeBuilder.append("\n");
 		}
@@ -89,14 +89,34 @@ public class SymbolTable {
 		return codeBuilder.toString();
 	}
 	
+	public String indent(int nb) {
+		String res = "";
+		for(int i = 0; i < nb; i++) {
+			res += " ";
+		}
+		return res;
+	}
+	
 	public String toTSCode() {
 		Map.Entry<String,FunctionInternal> entry = functions.entrySet().iterator().next();
 		FunctionInternal functionInternalMain = entry.getValue();
 		
 		StringBuilder str = new StringBuilder();
-		str.append("import libTree from './libTree'\n\n");
-		str.append("function isNumber(value: string | number): boolean\n{\n return !isNaN(Number(value.toString()));\n}\n");
-		str.append("function main(args: string | number) {\n");
+		str.append("import BinTree from './BinTree'\n");
+		
+		for(int i = 0; i < symbolCounter; i++) {
+			str.append("declare var s"+i+": BinTree;\n\n");
+		}
+		
+		//str.append("function isNumber(value: any[]): boolean\n{\n return !isNaN(Number(value.toString()));\n}\n");
+		str.append("function main(args: any[]) {\n");
+		
+		for(Entry<String, String> symb: symbols.entrySet()) {
+			str.append(indent(4)+symb.getValue()+"= new BinTree(\""+ symb.getKey() +"\", null, null);\n");
+		}
+		
+		str.append("\n"+indent(4) +"let nb_input: number = " + functionInternalMain.getInput() + ";");
+		str.append("\n"+indent(4) + "if(args.length != nb_input) {\n"+indent(8)+"throw new Error(`Le nombre d'argument n'est pas correct (${args.length} au lieu de ${nb_input})`)\n"+indent(4)+"}\n");
 		
 
 		str.append("// TODO: Check if arg type is number or string\n");
@@ -104,10 +124,27 @@ public class SymbolTable {
 			for(int i = 0; i < 4; i++) {
 				str.append(" ");
 			}
-			str.append("let Input"+ counterRead + ": number = args[" + counterRead + "];\n");
+			str.append("let input"+ counterRead + ": number = args[" + counterRead + "];\n");
 		}
 		
-		str.append("}");
+		str.append(indent(4)+"let outputs: BinTree[] = " + functionInternalMain.getName() + "(");
+		for(int counterInput = 0; counterInput < functionInternalMain.getInput(); counterInput++) {
+			str.append("input"+counterInput);
+			if(counterInput != functionInternalMain.getInput()-1) {
+				 str.append(", ");
+			}
+		}
+		str.append(");\n");
+		
+		str.append(indent(4)+"console.log(outputs);\n");
+		
+		str.append("}\n\n");
+		
+		for(Entry<String, FunctionInternal> function: functions.entrySet()) {
+			str.append(function.getValue().toTSCode());
+		}
+		
+		// afficher toute les fonctions sauf la première;
 		
 		return str.toString();
 	}
