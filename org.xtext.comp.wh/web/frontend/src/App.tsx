@@ -86,7 +86,7 @@ write A, B`,
             <Loader active={this.state.isCompiling}/>
           </div>
           <Button disabled={this.state.isCompiling} className="compileButton" handleClick={this.handleClickCompile}>
-            {this.state.isCompiling ? "..." : "Compiler"} 
+            {this.state.isCompiling ? "En cours..." : "Compiler"} 
           </Button>
         </div>
       );
