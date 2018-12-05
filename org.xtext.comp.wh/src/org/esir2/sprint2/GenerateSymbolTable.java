@@ -54,7 +54,7 @@ public class GenerateSymbolTable {
 					discoverFunctions((Program) obj);
 					runThrough((Program) obj);
 				} catch (CompilaxException e) {
-					System.out.println(ANSI_RED + "ERREUR : " + ANSI_RESET + e.getMessage());
+					System.err.println(ANSI_RED + "ERREUR : " + ANSI_RESET + e.getMessage());
 					return true;
 				}
 			}
@@ -344,7 +344,7 @@ public class GenerateSymbolTable {
 			ret.addVar(tempVar);
 			return ret;
 		} else if(expr.getList_exp() != null) {
-			
+			// TODO: LIST
 		}
 		
 		return null;
@@ -356,7 +356,9 @@ public class GenerateSymbolTable {
 		return this.symTable.toString();
 	}
 	
-	
+	public String toTSCode() {
+		return this.symTable.toTSCode();
+	}
 	
 	private String getVar(Expr expr) {
 		try {

@@ -39,7 +39,7 @@ public class Main {
 	}
 	
 	public void launch(String args[]) {
-		// String filename = args[0];
+			//String filename = args[0];
 			String filename = "assignTest.wh";
 			
 			boolean fileHasError = false;
@@ -56,11 +56,16 @@ public class Main {
 				fileHasError = true;
 			}
 			
+			if(fileHasError) {
+				return;
+			}
+			
 			TreeIterator<EObject> AST = resource.getAllContents();
 			
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
 			boolean error = generator.execute();
-			if(!error) System.out.println(generator.toString());
+			//if(!error) System.out.println(generator.toString());
+			System.out.println(generator.toTSCode());
 	}
 	
 

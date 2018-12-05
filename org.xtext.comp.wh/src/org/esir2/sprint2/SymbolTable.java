@@ -1,6 +1,7 @@
 package org.esir2.sprint2;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -86,6 +87,29 @@ public class SymbolTable {
 		}
 		
 		return codeBuilder.toString();
+	}
+	
+	public String toTSCode() {
+		Map.Entry<String,FunctionInternal> entry = functions.entrySet().iterator().next();
+		FunctionInternal functionInternalMain = entry.getValue();
+		
+		StringBuilder str = new StringBuilder();
+		str.append("import libTree from './libTree'\n\n");
+		str.append("function isNumber(value: string | number): boolean\n{\n return !isNaN(Number(value.toString()));\n}\n");
+		str.append("function main(args: string | number) {\n");
+		
+
+		str.append("// TODO: Check if arg type is number or string\n");
+		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
+			for(int i = 0; i < 4; i++) {
+				str.append(" ");
+			}
+			str.append("let Input"+ counterRead + ": number = args[" + counterRead + "];\n");
+		}
+		
+		str.append("}");
+		
+		return str.toString();
 	}
 
 }
