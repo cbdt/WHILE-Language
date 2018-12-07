@@ -83,29 +83,38 @@ public class FunctionInternal {
 			Operation read = this.operations.get(0);
 			this.operations.remove(0);
 			str.append(read.getCode().getarg1() + ": BinTree");
-			str.append(", ");
+			if(counterInput != getInput()-1) {
+				str.append(", ");
+			}
 			
 		}
 		str.append(") : BinTree[] {\n");
 		
 		List<Operation> outputs = new ArrayList<>();
-		
-		for(int counterOutput = 0; counterOutput < getOutput(); counterOutput++) {
-			Operation out = this.operations.get(0);
+		int size = operations.size();
+		for(int counterOutput = 0; counterOutput <  getOutput(); counterOutput++) {
+			int index =  size - getOutput();
+			Operation out = this.operations.get(index);
 			outputs.add(out);
-			this.operations.remove(0);
+			this.operations.remove(index);
 		}
+		
+		str.append("\n");
 		
 		for (int i = getInput(); i < vars.size(); i++) {
-			str.append(indent(4) + "let Var" + i + ": BinTree;\n");
+			str.append(indent(4) + "let Var" + (i + 1) + ": BinTree = new BinTree(\"nil\", null, null);\n");
+			if(i == vars.size()-1) {
+				str.append("\n");
+			}
 		}
 		
-		str.append("\n");
 		
 		for (int i = 0; i < counterTemp; i++) {
-			str.append(indent(4) + "let TempVar" + i + ": BinTree;\n");
+			str.append(indent(4) + "let TempVar" + i + ";\n");
+			if(i == counterTemp-1) {
+				str.append("\n");
+			}
 		}
-		str.append("\n");
 		
 		
 		for(Operation op: operations) {
@@ -122,7 +131,7 @@ public class FunctionInternal {
 			}
 		}
 		
-		str.append("]\n}");
+		str.append("];\n}");
 		
 		return str;
 		

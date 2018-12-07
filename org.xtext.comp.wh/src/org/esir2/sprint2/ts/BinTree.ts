@@ -125,8 +125,9 @@ class BinTree {
     static numberToBinTree(nb: number): BinTree {
         var res: BinTree = new BinTree("nil",null,null);
         for(var i: number = 0; i<nb; i++){
-            res = this.cons(new BinTree("nil",null,null), res);
+            res = this.cons(res, new BinTree("nil",null,null));
         }
+        console.log(res)
         return res;
     }
 

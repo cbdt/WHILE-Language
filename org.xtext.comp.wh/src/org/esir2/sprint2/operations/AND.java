@@ -11,7 +11,7 @@ public class AND extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return this.getCode().getarg1() + " = BinTree.and("+this.getCode().getarg2() + ", " + this.getCode().getarg3()+")";
+		return this.getCode().getarg1() + " = BinTree.and("+this.getCode().getarg2() + ", " + this.getCode().getarg3()+");";
 	}
 
 }

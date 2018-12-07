@@ -1,12 +1,8 @@
 package org.esir2.sprint2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
@@ -58,7 +54,7 @@ public class Main {
 			
 			if (!list.isEmpty()) {
 				for (Issue issue : list) {
-					System.err.println(issue);
+					System.out.println(issue);
 				}
 				fileHasError = true;
 			}
@@ -79,8 +75,14 @@ public class Main {
 				String path = "GEN/CODE3A/" + name + ".txt";
 				System.out.println(path);
 				writeInFile(path, generator.toString());
-			}
+				return;
+			} 
+			
+			
+			String name = filename.substring(0, filename.length()-3);
+			
 			System.out.println(generator.toTSCode());
+			//System.out.println(generator.toTSCode());
 	}
 	
 	public static void writeInFile(String path, String content) {

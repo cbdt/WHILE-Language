@@ -1,6 +1,6 @@
 function main:
 read A, B
-% 
-	A := (A and (B or (cons nil nil)))
-% 
-write A, B
+%
+    A, B := C, D
+%
+write A

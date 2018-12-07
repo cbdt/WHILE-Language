@@ -7,7 +7,7 @@ import 'codemirror/mode/javascript/javascript'
 import { Editor, EditorChange } from 'codemirror';
 
 interface ITextEditorProps {
-    value: string,
+    text: string,
     handleChange?: (value: string) => void,
     isWhile: boolean,
 }
@@ -31,16 +31,16 @@ class TextEditor extends React.Component<ITextEditorProps, ITextEditorState> {
     }
 
     public render() {
-        console.log("UPDATE TE"+this.props.isWhile)
 		var options = {
-            readOnly: this.props.isWhile ? false : true,
+            //readOnly: this.props.isWhile ? false : true,
             lineNumbers: true,
-            mode: 'javascript',
+            mode: "text/typescript",
+            lineWrapping: true,
 		};
         return (
             <div className={this.props.isWhile ? "whileEditor" : "TSEditor"}>
                 <CodeMirror 
-                value={this.props.value} 
+                value={this.props.text} 
                 onBeforeChange={this.handleChange} 
                 options={options}
                 />

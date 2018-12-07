@@ -1,6 +1,0 @@
-function main:
-read A, B, C, D
-%
-    A := E
-%
-write A, B, C

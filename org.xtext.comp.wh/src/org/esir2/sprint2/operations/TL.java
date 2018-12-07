@@ -11,7 +11,8 @@ public class TL extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return null;
+		return this.getCode().getarg1() + " = " + "BinTree.tl(" + this.getCode().getarg2() + ");";
 	}
+
 
 }

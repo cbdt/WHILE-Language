@@ -104,19 +104,16 @@ public class SymbolTable {
 		StringBuilder str = new StringBuilder();
 		str.append("import BinTree from './BinTree'\n");
 		
-		for(int i = 0; i < symbolCounter; i++) {
-			str.append("declare var s"+i+": BinTree;\n\n");
+		for(Entry<String, String> symb: symbols.entrySet()) {
+			str.append("var " + symb.getValue()+" = new BinTree(\""+ symb.getKey() +"\", null, null);\n");
 		}
 		
 		//str.append("function isNumber(value: any[]): boolean\n{\n return !isNaN(Number(value.toString()));\n}\n");
-		str.append("function main(args: any[]) {\n");
+		str.append("function main(args: string[]) {\n");
 		
-		for(Entry<String, String> symb: symbols.entrySet()) {
-			str.append(indent(4)+symb.getValue()+"= new BinTree(\""+ symb.getKey() +"\", null, null);\n");
-		}
 		
 		str.append("\n"+indent(4) +"let nb_input: number = " + functionInternalMain.getInput() + ";");
-		str.append("\n"+indent(4) + "if(args.length != nb_input) {\n"+indent(8)+"throw new Error(`Le nombre d'argument n'est pas correct (${args.length} au lieu de ${nb_input})`)\n"+indent(4)+"}\n");
+		str.append("\n"+indent(4) + "if(args.length != nb_input) {\n"+indent(8)+"console.error(`Le nombre d'argument n'est pas correct (${args.length} au lieu de ${nb_input})`); return;\n"+indent(4)+"}\n");
 		
 
 		str.append("// TODO: Check if arg type is number or string\n");
@@ -124,8 +121,16 @@ public class SymbolTable {
 			for(int i = 0; i < 4; i++) {
 				str.append(" ");
 			}
-			str.append("let input"+ counterRead + ": number = args[" + counterRead + "];\n");
+			str.append("let i"+ counterRead + ": number = Number(args[" + counterRead + "]);\n");
 		}
+		
+		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
+			for(int i = 0; i < 4; i++) {
+				str.append(" ");
+			}
+			str.append("let input"+ counterRead + ": BinTree = BinTree.numberToBinTree(i" + counterRead+ ");\n");
+		}
+		str.append("\n");
 		
 		str.append(indent(4)+"let outputs: BinTree[] = " + functionInternalMain.getName() + "(");
 		for(int counterInput = 0; counterInput < functionInternalMain.getInput(); counterInput++) {
@@ -136,7 +141,7 @@ public class SymbolTable {
 		}
 		str.append(");\n");
 		
-		str.append(indent(4)+"console.log(outputs);\n");
+		str.append(indent(4)+"console.log(BinTree.binTreesToNumbers(outputs));\n");
 		
 		str.append("}\n\n");
 		
@@ -144,6 +149,7 @@ public class SymbolTable {
 			str.append(function.getValue().toTSCode());
 		}
 		
+		str.append("\n\nmain(process.argv.slice(2));");
 		// afficher toute les fonctions sauf la première;
 		
 		return str.toString();

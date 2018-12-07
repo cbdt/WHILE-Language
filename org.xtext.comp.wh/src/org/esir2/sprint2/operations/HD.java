@@ -11,7 +11,7 @@ public class HD extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return null;
+		return this.getCode().getarg1() + " = " + "BinTree.hd(" + this.getCode().getarg2() + ");";
 	}
 
 }

@@ -11,7 +11,7 @@ public class AFF extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return this.getCode().getarg1() + " = " + this.getCode().getarg2();
+		return this.getCode().getarg1() + " = " + this.getCode().getarg2() + ";";
 	}
 
 }

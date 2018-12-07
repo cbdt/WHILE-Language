@@ -10,7 +10,7 @@ public class CONS extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return this.getCode().getarg1() + " = BinTree.cons("+this.getCode().getarg2()+", " +this.getCode().getarg3()+")";
+		return this.getCode().getarg1() + " = BinTree.cons("+this.getCode().getarg2()+", " +this.getCode().getarg3()+");";
 	}
 
 }

@@ -65,7 +65,7 @@ public class GenerateSymbolTable {
 					discoverFunctions((Program) obj);
 					runThrough((Program) obj);
 				} catch (CompilaxException e) {
-					System.err.println(ANSI_RED + "ERREUR : " + ANSI_RESET + e.getMessage());
+					System.out.println(ANSI_RED + "ERREUR : " + ANSI_RESET + e.getMessage());
 					return true;
 				}
 			}
@@ -103,8 +103,8 @@ public class GenerateSymbolTable {
 	
 	private void runThrough(Definition f, FunctionInternal functionInternal) throws CompilaxException{
 		runThrough(f.getInputs(), functionInternal);
-		runThrough(f.getOutputs(), functionInternal);
 		runThrough(f.getCommands(), functionInternal);
+		runThrough(f.getOutputs(), functionInternal);
 	}
 	
 	private void runThrough(Input input, FunctionInternal functionInternal) throws CompilaxException {
@@ -314,8 +314,13 @@ public class GenerateSymbolTable {
 			EList<Expr> exprs = expr.getCons_exp().getExpr();
 			Deque<String> tempVars = new ArrayDeque<>();
 			
-			if(exprs.size() < 2) {
-				throw new CompilaxException("Erreur du nombre d'argument du cons");
+			if(exprs.size() == 1) {
+				String tempVar = functionInternal.getTempVar();
+				ReturnData retExpr = runThrough(exprs.get(0), functionInternal);
+				functionInternal.addCode(new AFF(new Code3Addr(tempVar, retExpr.getLastVar())));
+				ReturnData ret = new ReturnData();
+				ret.addVar(tempVar);
+				return ret;
 			}
 			
 			// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
@@ -323,6 +328,7 @@ public class GenerateSymbolTable {
 				ReturnData ret = runThrough(e, functionInternal);
 				tempVars.push(ret.getLastVar());
 			}
+			
 			// On créé les cons
 			boolean isFirst = true;
 			String tempVar = functionInternal.getTempVar();
@@ -355,7 +361,32 @@ public class GenerateSymbolTable {
 			ret.addVar(tempVar);
 			return ret;
 		} else if(expr.getList_exp() != null) {
-			// TODO: LIST
+			EList<Expr> exprs = expr.getList_exp().getExpr();
+			Deque<String> tempVars = new ArrayDeque<>();
+			
+			if(exprs.size() == 0) {
+				throw new CompilaxException("Erreur du nombre d'argument du list");
+			}
+			
+			// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
+			for(Expr e : exprs) {
+				ReturnData ret = runThrough(e, functionInternal);
+				tempVars.push(ret.getLastVar());
+			}
+			// On créé les cons
+			boolean isFirst = true;
+			String tempVar = functionInternal.getTempVar();
+			while(tempVars.size() > 0) {
+				if(isFirst) {
+					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), symTable.getSymbol("nil"))));
+					isFirst = false;
+				} else {
+					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
+				}
+			}
+			ReturnData ret = new ReturnData();
+			ret.addVar(tempVar);
+			return ret;
 		}
 		
 		return null;
