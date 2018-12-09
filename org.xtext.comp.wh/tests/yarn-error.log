@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/local/Cellar/node/11.3.0_1/bin/node /usr/local/bin/yarn test
+
+PATH: 
+  /Users/cbaudet/.rvm/gems/ruby-2.5.1/bin:/Users/cbaudet/.rvm/gems/ruby-2.5.1@global/bin:/Users/cbaudet/.rvm/rubies/ruby-2.5.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/X11/bin:/Applications/Wireshark.app/Contents/MacOS:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/cbaudet/.rvm/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  11.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/cbaudet/git/Compilax/org.xtext.comp.wh/tests/package.json: Unexpected token } in JSON at position 229
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+
+npm manifest: 
+  {
+    "name": "tests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest --verbose ./tests"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "jest": "^23.6.0"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

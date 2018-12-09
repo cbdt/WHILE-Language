@@ -199,11 +199,17 @@ body {
 
 /* LOADER */
 
-.loader {
+/*.loader {
   position: absolute;
   top: 25vh;
   right: 20%;
+}*/
+.loader {
+  position: absolute;
+  top: 30vh;
+  right: 25%;
 }
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
