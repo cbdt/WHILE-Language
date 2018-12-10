@@ -16,7 +16,7 @@ async function compile(filename) {
             return
         } 
 
-        let whileCmd = spawn('./wh', [whileFilename])
+        let whileCmd = spawn('java', ["-jar", "WH.jar", whileFilename])
 
         let str = ""
         whileCmd.stdout.on('data', (data) => {
@@ -58,9 +58,11 @@ async function readFiles() {
     process.stdout.write('\033c\033[3J');
     let files =  await readdirAsync(WHILE_DIR)
     signale.pending("Compilation des fichiers while");
-    for (let i = 0; i < files.length; i++) {
+    /*for (let i = 0; i < files.length; i++) {
         await compile(files[i])
-    }
+    }*/
+    await Promise.all(files.map(async file => { await compile(file) }))
+
 }
     
 readFiles()
