@@ -22,7 +22,7 @@ test('cons', async () => {
 
 test('hd cons', async () => {
     let result = await execute("testAffect4.wh", 78);
-    expect(result).toEqual([2]);
+    expect(result).toEqual([0]);
 });
 
 test('tl cons', async () => {
@@ -33,5 +33,10 @@ test('tl cons', async () => {
 test('list', async () => {
     let result = await execute("testAffect6.wh", 78);
     expect(result).toEqual([4]);
+});
+
+test('tl tl cons', async () => {
+    let result = await execute("testAffect7.wh", 78);
+    expect(result).toEqual([1]);
 });
 
