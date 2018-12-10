@@ -20,3 +20,18 @@ test('cons', async () => {
     expect(result).toEqual([3]);
 });
 
+test('hd cons', async () => {
+    let result = await execute("testAffect4.wh", 78);
+    expect(result).toEqual([2]);
+});
+
+test('tl cons', async () => {
+    let result = await execute("testAffect5.wh", 78);
+    expect(result).toEqual([2]);
+});
+
+test('list', async () => {
+    let result = await execute("testAffect6.wh", 78);
+    expect(result).toEqual([4]);
+});
+

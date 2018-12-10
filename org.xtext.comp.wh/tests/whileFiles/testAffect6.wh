@@ -1,0 +1,6 @@
+function main:
+read A
+% 
+    A = (list nil nil nil nil)
+%
+write A

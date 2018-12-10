@@ -1,0 +1,7 @@
+function main:
+read A
+% 
+	A := (cons nil nil nil nil);
+    A := (tl A)
+%
+write A
