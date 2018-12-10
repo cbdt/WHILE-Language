@@ -2,8 +2,6 @@ const { spawn } = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
-const WHILE_DIR = "whileFiles";
-
 async function execute(filename, ...args) {
     return new Promise(resolve => {
         let filenamePath = "TS"+path.sep+filename.slice(0, filename.length-3)+".ts";

@@ -17,19 +17,50 @@ async function compile(filename) {
         } 
 
         let whileCmd = spawn('./wh', [whileFilename])
+
+        let str = ""
         whileCmd.stdout.on('data', (data) => {
-            fs.writeFile(tsFile, data, (err) => {
+            str += data.toString()
+        });
+
+        whileCmd.stderr.on('data', (data) => {
+            str += data.toString()
+        });
+
+        whileCmd.on("close", () => {
+            if(!str.startsWith("import")) {
+                signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
+                return;
+            }
+            fs.writeFile(tsFile, str, (err) => {
                 if (err) throw err;
                 signale.success(`${whileFilename} compilé ✅`);
                 resolve();
             });
-        });
+        })
+        
     })
 }
 
-fs.readdir(WHILE_DIR, async function(err, files) {
+function readdirAsync(path) {
+    return new Promise(function (resolve, reject) {
+      fs.readdir(path, function (error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+
+async function readFiles() {
     process.stdout.write('\033c\033[3J');
+    let files =  await readdirAsync(WHILE_DIR)
     signale.pending("Compilation des fichiers while");
-    const promises = files.map(compile)
-    await Promise.all(promises)
-});
+    for (let i = 0; i < files.length; i++) {
+        await compile(files[i])
+    }
+}
+    
+readFiles()
