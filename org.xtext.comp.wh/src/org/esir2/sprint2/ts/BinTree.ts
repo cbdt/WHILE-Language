@@ -1,4 +1,4 @@
-export default class BinTree {
+class BinTree {
     private _left: BinTree
     private _right: BinTree
     private _elem: string
@@ -59,16 +59,22 @@ export default class BinTree {
     static cons(firstTree: BinTree, secondTree: BinTree): BinTree {
         return new BinTree("", firstTree, secondTree);
     }
-    
-    static isTrue(tree:BinTree){
-        return tree.elem!=="nil";
+
+    private static consArray(listTree: BinTree[]): BinTree {
+        if (listTree !== null) {
+            if (listTree.length===1){
+                return listTree[0];
+            }
+            return new BinTree("", listTree[0], this.conslist(listTree.slice(1)));
+        }
+        return new BinTree("nil",null,null);
     }
 
-    static not(tree:BinTree){
-        if (this.isTrue(tree)){
-            return new BinTree("nil",null,null);
+    static not(tree: BinTree): BinTree {
+        if (this.isTrue(tree)) {
+            return new BinTree("nil", null, null);
         }
-        return new BinTree("",new BinTree("nil",null,null),new BinTree("nil",null,null));
+        return new BinTree("", new BinTree("nil", null, null), new BinTree("nil", null, null));
     }
 
     static and(firstTree: BinTree, secondTree: BinTree): BinTree {
@@ -141,6 +147,45 @@ export default class BinTree {
         return res;
     }
 
+    static stringToBinTree(str: string): BinTree {
+        /*
+        3 situations : 
+        -> str = (cons (cons A B) C...)
+        -> str = (list A B C...)
+        -> str = (nil)
+        */
+
+        // On vérifie la troisième situation
+        if (str === "(nil)") {
+            return new BinTree("nil", null, null);
+        }
+
+        // On crée un tableau pour chaque mots du string 
+        var word: string[] = str.split(" ");
+
+        // On déclare un tableau d'arguement
+        var args: BinTree[];
+
+        // On est dans la première situation
+        if (word[0] === '(cons') {
+            var i: number = 0;
+            while (word[i] !== ")") {
+                args[i] = new BinTree(word[i], null,null);
+            }
+            return this.consArray(args);
+        }
+
+        // On est dans la deuxième situation
+        if (word[0] == '(list') {
+            var i: number = 0;
+            while (word[i] !== ")") {
+                args[i] = new BinTree(word[i], null,null);
+            }
+            args[i+1]=new BinTree("nil",null,null);
+            return this.consArray(args);
+        }
+    }
+
     static DisplayTree(tree: BinTree): string {
         if (tree.elem !== "") {
             return tree.elem
@@ -153,4 +198,9 @@ export default class BinTree {
 
         return res
     }
+
+    static isTrue(tree: BinTree): boolean {
+        return tree.elem !== "nil";
+    }
+
 }
