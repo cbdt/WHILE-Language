@@ -1,4 +1,4 @@
-class BinTree {
+export default class BinTree {
     private _left: BinTree
     private _right: BinTree
     private _elem: string
@@ -65,7 +65,7 @@ class BinTree {
             if (listTree.length===1){
                 return listTree[0];
             }
-            return new BinTree("", listTree[0], this.conslist(listTree.slice(1)));
+            return new BinTree("", listTree[0], this.consArray(listTree.slice(1)));
         }
         return new BinTree("nil",null,null);
     }
@@ -150,10 +150,14 @@ class BinTree {
     static stringToBinTree(str: string): BinTree {
         /*
         3 situations : 
-        -> str = (cons (cons A B) C...)
+        -> str = (cons A B C...)
         -> str = (list A B C...)
         -> str = (nil)
         */
+
+       if (str === null) {
+        return null;
+    }
 
         // On vérifie la troisième situation
         if (str === "(nil)") {
@@ -161,27 +165,30 @@ class BinTree {
         }
 
         // On crée un tableau pour chaque mots du string 
-        var word: string[] = str.split(" ");
+        let re = /\s+|\(|\)/;
+        var word: string[] = str.split(re);
 
         // On déclare un tableau d'arguement
-        var args: BinTree[];
+        let args: BinTree[] = [];
 
         // On est dans la première situation
-        if (word[0] === '(cons') {
-            var i: number = 0;
-            while (word[i] !== ")") {
-                args[i] = new BinTree(word[i], null,null);
+        if (word[1] === 'cons') {
+            var i: number = 2;
+            while (word[i] !== '') {
+                args.push(new BinTree(word[i], null,null));
+                i++;
             }
             return this.consArray(args);
         }
 
         // On est dans la deuxième situation
-        if (word[0] == '(list') {
-            var i: number = 0;
-            while (word[i] !== ")") {
-                args[i] = new BinTree(word[i], null,null);
+        if (word[1] == 'list') {
+            var i: number = 2;
+            while (word[i] !== '') {
+                args.push(new BinTree(word[i], null,null));
+                i++;
             }
-            args[i+1]=new BinTree("nil",null,null);
+            args.push(new BinTree("nil",null,null));
             return this.consArray(args);
         }
     }
