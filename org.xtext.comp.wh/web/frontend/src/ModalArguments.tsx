@@ -2,8 +2,8 @@ import * as React from 'react';
 import { string } from 'prop-types';
 
 interface IModalArgumentsProps {
-    args: number[],
-    addArg: (value: number) => void,
+    args: string[],
+    addArg: (value: string) => void,
     removeArg: (index: number)  => void,
     handleExecute: () => void,
 }
@@ -26,15 +26,13 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
 
     handleInput(e: React.FormEvent<HTMLInputElement>) {
         this.setState({
-            value: e.currentTarget.value.trim(),
+            value: e.currentTarget.value
         })
     }
 
     addArgument() {
-        if(Number(this.state.value)) {
-            this.props.addArg(Number(this.state.value));
-            this.setState({value: ""})
-        }
+        this.props.addArg(this.state.value);
+        this.setState({value: ""})
     }
 
     removeArg(index:number) {
@@ -48,12 +46,11 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
                     <div className="arguments">
                         <span>Arguments : </span>
                         {this.props.args.map((value, index) => (
+                            <a onClick={() => this.removeArg(index)}>
                             <div className="arg">
                             <span>{value}</span>
-                            <button onClick={() => this.removeArg(index)} className="removeArg">
-                                x
-                            </button>
                             </div>
+                            </a>
                         ))}
                     </div>
                     <div className="adding">

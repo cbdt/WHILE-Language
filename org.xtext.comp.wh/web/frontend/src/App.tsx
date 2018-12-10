@@ -20,7 +20,7 @@ interface IAppState {
   canExecute: boolean,
   consoleText: string,
   modalArguments: boolean,
-  arguments: number[],
+  arguments: string[],
 }
 
 interface CompileResponse {
@@ -49,7 +49,7 @@ write A, B`,
       filename: "",
       canExecute: false,
       consoleText: "",
-      modalArguments: false,
+      modalArguments: true,
       arguments: [],
     }
 
@@ -67,7 +67,7 @@ write A, B`,
     })
   }
 
-  public handleArgument(argument: number) {
+  public handleArgument(argument: string) {
     this.setState({
       arguments: [...this.state.arguments, argument],
     })
@@ -93,7 +93,7 @@ write A, B`,
     })
   }
 
-  public handleRemoveArg(index:number) {
+  public handleRemoveArg(index: number) {
     this.setState({
       arguments: this.state.arguments.filter((value, i) => {
         return i !== index;

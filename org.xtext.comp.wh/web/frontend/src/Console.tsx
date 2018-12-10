@@ -2,7 +2,7 @@ import * as React from 'react'
 
 interface IConsoleProps {
     text: string,
-    arguments: number[],
+    arguments: string[],
 }
 
 export default function Console(props : IConsoleProps) {
