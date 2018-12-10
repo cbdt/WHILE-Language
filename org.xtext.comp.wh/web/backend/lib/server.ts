@@ -4,7 +4,6 @@ import * as path from "path";
 import { spawn } from "child_process";
 
 import app from "./app";
-import { compileFunction } from "vm";
 
 const PORT = 8000;
 
@@ -26,32 +25,32 @@ app.post("/compile", function(req: express.Request, res: express.Response) {
     fs.writeFile(dirname + path.sep + filenameWhile, whileContent, (err: NodeJS.ErrnoException) => {
         if(err != null) {
             res.status(400).send();
-        } else {
-            let cmd = spawn('./wh', [filenameWhile]);
-            cmd.stdout.on( 'data', data => {
-                let output:string = data.toString('utf-8');
-                if(!output.startsWith("import")) {
-                    // Si ça ne commence pas par import alors il y a une erreur
-                    res.json({
-                        error: true,
-                        value: output,
-                    })
-                    return;
-                }
-                fs.writeFile(filename + ".ts", output, (err: NodeJS.ErrnoException) => {
-                    if(err != null) {
-                        res.status(400).send();
-                    } else {
-                        compileTS(filename + ".ts");
-                        res.json({
-                            error: false,
-                            filename: filename + ".js",
-                            value: output,
-                        });
-                    }
-                })
-            });
+            return;
         }
+        let cmd = spawn('./wh', [filenameWhile]);
+        cmd.stdout.on( 'data', data => {
+            let output:string = data.toString('utf-8');
+            if(!output.startsWith("import")) {
+                // Si ça ne commence pas par import alors il y a une erreur
+                res.json({
+                    error: true,
+                    value: output,
+                })
+                return;
+            }
+            fs.writeFile(filename + ".ts", output, (err: NodeJS.ErrnoException) => {
+                if(err != null) {
+                    res.status(400).send();
+                } else {
+                    compileTS(filename + ".ts");
+                    res.json({
+                        error: false,
+                        filename: filename + ".js",
+                        value: output,
+                    });
+                }
+            })
+        });
     })
 });
 

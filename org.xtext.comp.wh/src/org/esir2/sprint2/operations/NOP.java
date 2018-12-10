@@ -8,7 +8,7 @@ public class NOP extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return null;
+		return "";
 	}
 
 }
