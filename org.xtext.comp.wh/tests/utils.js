@@ -5,7 +5,8 @@ const path = require('path')
 async function execute(filename, ...args) {
     return new Promise(resolve => {
         let filenamePath = "TS"+path.sep+filename.slice(0, filename.length-3)+".ts";
-        let nodeCmd = spawn('ts-node', [filenamePath, ...args])
+        let tsNodePath = "node_modules" + path.sep + ".bin" + path.sep + "ts-node"
+        let nodeCmd = spawn(tsNodePath, [filenamePath, ...args])
         let str = ""
         nodeCmd.stdout.on('data', (data) => {
             str+= data.toString()
