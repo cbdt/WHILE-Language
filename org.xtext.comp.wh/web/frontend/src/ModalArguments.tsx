@@ -6,6 +6,7 @@ interface IModalArgumentsProps {
     addArg: (value: string) => void,
     removeArg: (index: number)  => void,
     handleExecute: () => void,
+    handleClose: () => void,
 }
 
 interface IModalArgumentsState {
@@ -42,13 +43,17 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
     render() {
         return (
             <div className="overlay">
+                <a className="closeModal" onClick={() => this.props.handleClose()}>
+                    X
+                </a>
                 <div className="modal">
+                    <div className="textArg">{this.props.args.length} arguments : </div>
                     <div className="arguments">
-                        <span>Arguments : </span>
                         {this.props.args.map((value, index) => (
                             <a onClick={() => this.removeArg(index)}>
                             <div className="arg">
-                            <span>{value}</span>
+                                <span className="numero">{index+1}</span>
+                                <span className="text">{value}</span>
                             </div>
                             </a>
                         ))}

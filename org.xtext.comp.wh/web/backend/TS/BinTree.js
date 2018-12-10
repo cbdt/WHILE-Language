@@ -62,6 +62,21 @@ var BinTree = /** @class */ (function () {
     BinTree.cons = function (firstTree, secondTree) {
         return new BinTree("", firstTree, secondTree);
     };
+    BinTree.consArray = function (listTree) {
+        if (listTree !== null) {
+            if (listTree.length === 1) {
+                return listTree[0];
+            }
+            return new BinTree("", listTree[0], this.consArray(listTree.slice(1)));
+        }
+        return new BinTree("nil", null, null);
+    };
+    BinTree.not = function (tree) {
+        if (this.isTrue(tree)) {
+            return new BinTree("nil", null, null);
+        }
+        return new BinTree("", new BinTree("nil", null, null), new BinTree("nil", null, null));
+    };
     BinTree.and = function (firstTree, secondTree) {
         if (firstTree.elem === "nil" || secondTree.elem === "nil")
             return new BinTree("nil", null, null);
@@ -107,7 +122,7 @@ var BinTree = /** @class */ (function () {
     BinTree.binTreesToNumbers = function (list) {
         var res = [];
         for (var i = 0; i < list.length; i++) {
-            res[i] = this.binTreeToNumber(list[i]);
+            res.push(this.binTreeToNumber(list[i]));
         }
         return res;
     };
@@ -128,6 +143,45 @@ var BinTree = /** @class */ (function () {
         }
         return res;
     };
+    BinTree.stringToBinTree = function (str) {
+        /*
+        3 situations :
+        -> str = (cons A B C...)
+        -> str = (list A B C...)
+        -> str = (nil)
+        */
+        if (str === null) {
+            return null;
+        }
+        // On vérifie la troisième situation
+        if (str === "(nil)") {
+            return new BinTree("nil", null, null);
+        }
+        // On crée un tableau pour chaque mots du string 
+        var re = /\s+|\(|\)/;
+        var word = str.split(re);
+        // On déclare un tableau d'arguement
+        var args = [];
+        // On est dans la première situation
+        if (word[1] === 'cons') {
+            var i = 2;
+            while (word[i] !== '') {
+                args.push(new BinTree(word[i], null, null));
+                i++;
+            }
+            return this.consArray(args);
+        }
+        // On est dans la deuxième situation
+        if (word[1] == 'list') {
+            var i = 2;
+            while (word[i] !== '') {
+                args.push(new BinTree(word[i], null, null));
+                i++;
+            }
+            args.push(new BinTree("nil", null, null));
+            return this.consArray(args);
+        }
+    };
     BinTree.DisplayTree = function (tree) {
         if (tree.elem !== "") {
             return tree.elem;
@@ -138,6 +192,9 @@ var BinTree = /** @class */ (function () {
         res += this.DisplayTree(tree.right);
         res += ")";
         return res;
+    };
+    BinTree.isTrue = function (tree) {
+        return tree.elem !== "nil";
     };
     return BinTree;
 }());

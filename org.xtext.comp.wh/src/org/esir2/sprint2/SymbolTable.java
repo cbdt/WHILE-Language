@@ -118,17 +118,16 @@ public class SymbolTable {
 
 		str.append("// TODO: Check if arg type is number or string\n");
 		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
-			for(int i = 0; i < 4; i++) {
-				str.append(" ");
-			}
-			str.append("let i"+ counterRead + ": number = Number(args[" + counterRead + "]);\n");
+			str.append(indent(4)+"let i"+ counterRead + ": number = Number(args[" + counterRead + "]);\n");
 		}
 		
 		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
-			for(int i = 0; i < 4; i++) {
-				str.append(" ");
-			}
-			str.append("let input"+ counterRead + ": BinTree = BinTree.numberToBinTree(i" + counterRead+ ");\n");
+			str.append("\n"+indent(4)+"let input"+ counterRead + ": BinTree;");
+			str.append("\n"+indent(4)+"if(isNaN(i"+ + counterRead +")) {\n");
+			str.append(indent(8)+"input"+ counterRead + " = BinTree.stringToBinTree(args[" + counterRead + "]);\n");
+			str.append(indent(4)+"} else {\n");
+			str.append(indent(8)+"input"+ counterRead + " = BinTree.numberToBinTree(i" + counterRead+ ");\n");
+			str.append(indent(4)+"}\n");
 		}
 		str.append("\n");
 		

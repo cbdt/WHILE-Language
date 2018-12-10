@@ -14,6 +14,7 @@ interface IAppProps {
 interface IAppState {
   whileText : string,
   TSText: string,
+  AddrText: string,
   isCompiling: boolean,
   error: boolean,
   filename: string,
@@ -24,8 +25,9 @@ interface IAppState {
 }
 
 interface CompileResponse {
-  value: string,
-  error: boolean,
+  TSCode: string,
+  AddrCode: string,
+  error: string,
   filename: string,
 }
 
@@ -44,12 +46,13 @@ read A, B
 %
 write A, B`,
       TSText: "",
+      AddrText: "",
       isCompiling: false,
       error: false,
       filename: "",
       canExecute: false,
       consoleText: "",
-      modalArguments: true,
+      modalArguments: false,
       arguments: [],
     }
 
@@ -119,13 +122,14 @@ write A, B`,
         if(response.data.error) {
           this.setState({
             error: true,
-            consoleText: response.data.value,
+            consoleText: response.data.error,
             isCompiling: false,
           })
           return;
         }
         this.setState({
-          TSText: response.data.value,
+          TSText: response.data.TSCode,
+          AddrText: response.data.AddrCode,
           isCompiling: false,
           filename: response.data.filename,
           canExecute: true,
@@ -141,8 +145,18 @@ write A, B`,
   public render() {
       return (
         <div className="container">
+          <div className="winter-is-coming">
+            <div className="snow snow--near"></div>
+            <div className="snow snow--near snow--alt"></div>
+            
+            <div className="snow snow--mid"></div>
+            <div className="snow snow--mid snow--alt"></div>
+            
+            <div className="snow snow--far"></div>
+            <div className="snow snow--far snow--alt"></div>
+          </div>
           { this.state.modalArguments && 
-            <ModalArguments removeArg={this.handleRemoveArg} handleExecute={this.handleExecute} args={this.state.arguments} addArg={this.handleArgument}/>
+            <ModalArguments handleClose={() => this.setState({modalArguments: false})} removeArg={this.handleRemoveArg} handleExecute={this.handleExecute} args={this.state.arguments} addArg={this.handleArgument}/>
           }
           <div className="mainText">
             <span>While</span>
@@ -152,14 +166,15 @@ write A, B`,
             <div className="left-col">
               <TextEditor 
               isWhile={true}
-              text={this.state.whileText}
+              text1={this.state.whileText}
               handleChange={this.handleChangeWhileEditor}
               />
             </div>
             <div className="right-col">
               <TextEditor 
               isWhile={false}
-              text={this.state.TSText}
+              text1={this.state.TSText}
+              text2={this.state.AddrText}
               />
               <Loader active={this.state.isCompiling}/>
               <Console arguments={this.state.arguments} text={this.state.consoleText}/>

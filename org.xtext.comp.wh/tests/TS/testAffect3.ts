@@ -8,7 +8,13 @@ function main(args: string[]) {
     }
 // TODO: Check if arg type is number or string
     let i0: number = Number(args[0]);
-    let input0: BinTree = BinTree.numberToBinTree(i0);
+
+    let input0: BinTree;
+    if(isNaN(i0)) {
+        input0 = BinTree.stringToBinTree(args[0]);
+    } else {
+        input0 = BinTree.numberToBinTree(i0);
+    }
 
     let outputs: BinTree[] = f0(input0);
     console.log(BinTree.binTreesToNumbers(outputs));

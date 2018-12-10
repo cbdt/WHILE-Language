@@ -20,35 +20,39 @@ app.post("/compile", function(req: express.Request, res: express.Response) {
     let dirname = path.dirname(__dirname);
     let basename = Date.now();
     let filenameWhile: string = "while" + path.sep + basename + ".wh";
-    let filename: string = "TS" + path.sep + basename;
+
+    let filenameTS: string = "TS" + path.sep + basename + ".ts";
+    let filenameJS: string = "TS" + path.sep + basename + ".js";
+    let filenameCode3A: string = "Code3Adresse" + path.sep + basename + ".3ADDR";
 
     fs.writeFile(dirname + path.sep + filenameWhile, whileContent, (err: NodeJS.ErrnoException) => {
         if(err != null) {
             res.status(400).send();
             return;
         }
-        let cmd = spawn('./wh', [filenameWhile]);
-        cmd.stdout.on( 'data', data => {
-            let output:string = data.toString('utf-8');
-            if(!output.startsWith("import")) {
-                // Si ça ne commence pas par import alors il y a une erreur
-                res.json({
-                    error: true,
-                    value: output,
-                })
-                return;
-            }
-            fs.writeFile(filename + ".ts", output, (err: NodeJS.ErrnoException) => {
-                if(err != null) {
-                    res.status(400).send();
-                } else {
-                    compileTS(filename + ".ts");
+        let cmd = spawn('java', ["-jar", "WH.jar", filenameWhile, basename + ".ts"]);
+
+        cmd.on('close', () => {
+            fs.readFile(filenameTS, (err, data) => {
+                let outputTS:string = data.toString("utf-8")
+                if(!outputTS.startsWith("import")) {
+                    // Si ça ne commence pas par import alors il y a une erreur
+                    res.json({
+                        error: outputTS
+                    })
+                    return;
+                }
+
+                fs.readFile(filenameCode3A, (err, data) => {
+                    let output3A: string = data.toString("utf-8")
+                    compileTS(filenameTS);
                     res.json({
                         error: false,
-                        filename: filename + ".js",
-                        value: output,
+                        filename: filenameJS,
+                        TSCode: outputTS,
+                        AddrCode: output3A,
                     });
-                }
+                });
             })
         });
     })

@@ -16,27 +16,19 @@ async function compile(filename) {
             return
         } 
 
-        let whileCmd = spawn('java', ["-jar", "WH.jar", whileFilename])
-
-        let str = ""
-        whileCmd.stdout.on('data', (data) => {
-            str += data.toString()
-        });
-
-        whileCmd.stderr.on('data', (data) => {
-            str += data.toString()
-        });
+        let whileCmd = spawn('java', ["-jar", "WH.jar", whileFilename, baseFilename+".ts"])
 
         whileCmd.on("close", () => {
-            if(!str.startsWith("import")) {
-                signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
-                return;
-            }
-            fs.writeFile(tsFile, str, (err) => {
+            fs.readFile(tsFile, (err, data) => {
+                let str = data.toString();
                 if (err) throw err;
+                if(!str.startsWith("import")) {
+                    signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
+                    return;
+                }
                 signale.success(`${whileFilename} compilé ✅`);
                 resolve();
-            });
+            })
         })
         
     })

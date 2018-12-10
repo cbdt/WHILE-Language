@@ -43,6 +43,7 @@ public class Main {
 	
 	public void launch(String args[]) {
 			String filename = args[0];
+			String output = args[1];
 			//String filename = "assignTest.wh";
 			
 			boolean fileHasError = false;
@@ -67,7 +68,10 @@ public class Main {
 			
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
 			boolean error = generator.execute();
-			//if(!error) System.out.println(generator.toString());
+			String basename = output.substring(0, output.length()-3);
+			if(!error) {
+				writeInFile("Code3Adresse/"+basename+".3ADDR", generator.toString());
+			}
 			if(filename.contains("WHILE_TEST")) {
 				String[] dirs = filename.split("/");
 				String lastName = dirs[dirs.length-1];
@@ -77,11 +81,9 @@ public class Main {
 				writeInFile(path, generator.toString());
 				return;
 			} 
-			
-			
-			String name = filename.substring(0, filename.length()-3);
-			
-			System.out.println(generator.toTSCode());
+
+			writeInFile("TS/"+output, generator.toTSCode());
+		
 			//System.out.println(generator.toTSCode());
 	}
 	

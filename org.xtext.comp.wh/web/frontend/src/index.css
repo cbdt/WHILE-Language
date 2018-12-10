@@ -50,12 +50,25 @@ body {
   display: flex;
 }
 
+.textArg {
+  text-align: center;
+  font-family: "Source Code Pro", sans-serif;
+  line-height: 30px;
+  background-color: #006dff;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .arguments {
   color: white;
   font-weight: 500;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #545454;
   font-family: "Source Code Pro", sans-serif;
+  line-height: 30px;
+  overflow-x: scroll;
+  height: 30px;
 }
 
 .addArg {
@@ -83,13 +96,25 @@ body {
   background-color: #9e9e9e;
   margin-right: 5px;
   box-shadow: 0px 5px 25px 0px #656565;
-}
-
-.arg span {
   color:black;
   background-color: white;
-  border-right: 1px solid #242424;
-  padding: 0 4px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.arg:hover {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+.arg > .numero {
+  background-color: #868b92;
+  color: white;
+  padding: 0 3px;
+}
+
+.arg > .text {
+  padding: 0 3px;
 }
 
 .overlay {
@@ -106,7 +131,7 @@ body {
   width: 100%;
   height: 50px;
   border: none;
-  background-color: #ff0ed6;
+  background-color: #ff4c4c;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -173,14 +198,39 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #F7F7F7;
+  background-color: #ff4c4c;
   padding: 4px;
-  color: #242424;
+  color: white;
   font-size: 20px;
   font-weight: 500;
   font-family: -apple-system, Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.switchCode {
+  border: none;
+  background-color: #ff4a46;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  top: 70px;
+  right: 12px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.closeModal {
+  position: absolute;
+  right: 31px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #ffffff;
+  top: 10px;
+  font-weight: 700;
+  font-family: "Source Code Pro";
+}
 
 
 /* LOADER */
@@ -208,7 +258,7 @@ body {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #444444;
+  background: #ff4c4c;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -249,5 +299,63 @@ body {
   }
   100% {
     transform: translate(19px, 0);
+  }
+}
+
+
+.snow, .winter-is-coming {
+  z-index: 100;
+  pointer-events: none;
+}
+
+.winter-is-coming {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.snow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: falling linear infinite both;
+  transform: translate3D(0, -100%, 0);
+}
+.snow--near {
+  animation-duration: 10s;
+  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+  background-size: contain;
+}
+.snow--near + .snow--alt {
+  animation-delay: 5s;
+}
+.snow--mid {
+  animation-duration: 20s;
+  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
+  background-size: contain;
+}
+.snow--mid + .snow--alt {
+  animation-delay: 10s;
+}
+.snow--far {
+  animation-duration: 30s;
+  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
+  background-size: contain;
+}
+.snow--far + .snow--alt {
+  animation-delay: 15s;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate3D(-7.5%, -100%, 0);
+  }
+  100% {
+    transform: translate3D(7.5%, 100%, 0);
   }
 }

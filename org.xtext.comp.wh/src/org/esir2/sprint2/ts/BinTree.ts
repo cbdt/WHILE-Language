@@ -121,9 +121,9 @@ export default class BinTree {
     }
 
     static binTreesToNumbers(list: BinTree[]): number[] {
-        var res: number[];
+        var res: number[] = [];
         for (var i: number = 0; i < list.length; i++) {
-            res[i] = this.binTreeToNumber(list[i]);
+            res.push(this.binTreeToNumber(list[i]));
         }
         return res;
     }
@@ -142,7 +142,7 @@ export default class BinTree {
     static numberToBinTree(nb: number): BinTree {
         var res: BinTree = new BinTree("nil", null, null);
         for (var i: number = 0; i < nb; i++) {
-            res = this.cons(res, new BinTree("nil", null, null));
+            res = this.cons(new BinTree("nil", null, null), res);
         }
         return res;
     }
