@@ -88,7 +88,7 @@ export default class BinTree {
     }
 
     static eq(firstTree: BinTree, secondTree: BinTree): BinTree {
-        if (this.eqrec(firstTree, secondTree)) return new BinTree("cons", new BinTree("nil", null, null), new BinTree("nil", null, null))
+        if (this.eqrec(firstTree, secondTree)) return new BinTree("", new BinTree("nil", null, null), new BinTree("nil", null, null))
         return new BinTree("nil", null, null)
     }
 
