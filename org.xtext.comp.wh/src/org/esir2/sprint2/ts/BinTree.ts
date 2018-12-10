@@ -1,9 +1,9 @@
-class BinTree {
+export default class BinTree {
     private _left: BinTree
     private _right: BinTree
     private _elem: string
 
-    constructor(elem: string, right: BinTree, left: BinTree) {
+    constructor(elem: string, left: BinTree, right: BinTree) {
         if (elem !== "nil") {
             this._left = left;
             this._right = right;
@@ -59,6 +59,17 @@ class BinTree {
     static cons(firstTree: BinTree, secondTree: BinTree): BinTree {
         return new BinTree("", firstTree, secondTree);
     }
+    
+    static isTrue(tree:BinTree){
+        return tree.elem!=="nil";
+    }
+
+    static not(tree:BinTree){
+        if (this.isTrue(tree)){
+            return new BinTree("nil",null,null);
+        }
+        return new BinTree("",new BinTree("nil",null,null),new BinTree("nil",null,null));
+    }
 
     static and(firstTree: BinTree, secondTree: BinTree): BinTree {
         if (firstTree.elem === "nil" || secondTree.elem === "nil") return new BinTree("nil", null, null)
@@ -105,34 +116,33 @@ class BinTree {
 
     static binTreesToNumbers(list: BinTree[]): number[] {
         var res: number[];
-        for(var i: number = 0; i<list.length; i++){
-            res[i]=this.binTreeToNumber(list[i]);
+        for (var i: number = 0; i < list.length; i++) {
+            res[i] = this.binTreeToNumber(list[i]);
         }
         return res;
     }
 
     private static binTreeToNumber(tree: BinTree): number {
         var counter: number = 0;
-        if(tree !== null){
-            if(tree.elem===""){
+        if (tree !== null) {
+            if (tree.elem === "") {
                 counter++;
-                counter+= this.binTreeToNumber(tree.right)
+                counter += this.binTreeToNumber(tree.right)
             }
         }
         return counter;
     }
 
     static numberToBinTree(nb: number): BinTree {
-        var res: BinTree = new BinTree("nil",null,null);
-        for(var i: number = 0; i<nb; i++){
-            res = this.cons(res, new BinTree("nil",null,null));
+        var res: BinTree = new BinTree("nil", null, null);
+        for (var i: number = 0; i < nb; i++) {
+            res = this.cons(res, new BinTree("nil", null, null));
         }
-        console.log(res)
         return res;
     }
 
-    static DisplayTree (tree: BinTree):string{
-        if(tree.elem !== ""){
+    static DisplayTree(tree: BinTree): string {
+        if (tree.elem !== "") {
             return tree.elem
         }
         var res: string = "(Cons "
@@ -143,5 +153,4 @@ class BinTree {
 
         return res
     }
-
 }
