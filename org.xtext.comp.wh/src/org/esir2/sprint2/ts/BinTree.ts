@@ -168,7 +168,6 @@ export default class BinTree {
         // On crée un tableau pour chaque mots du string, qu'on coupe à chaque espace et parenthèse ouvrante ou fermante.
         let re = /\s+|\(|\)/;
         var word: string[] = str.split(re);
-        console.log(word);
 
         // On déclare un tableau d'arguement
         let args: BinTree[] = [];
