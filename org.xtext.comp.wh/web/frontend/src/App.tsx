@@ -86,6 +86,9 @@ write A, B`,
   public handleClickCompile() {
     this.setState({
       isCompiling: true,
+      TSText: "",
+      AddrText: "",
+      arguments: [],
     })
     this.compile();
   }

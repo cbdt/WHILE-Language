@@ -1,6 +1,6 @@
 function main:
-read A, B
+read A
 %
-    A, B := C, D
+  	R := (A =? a)
 %
-write A
+write R

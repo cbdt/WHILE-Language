@@ -45,7 +45,7 @@ public class Main {
 			String filename = args[0];
 			String output = args[1];
 			//String filename = "assignTest.wh";
-			
+			//String output = "";
 			boolean fileHasError = false;
 			
 			ResourceSet set = resourceSetProvider.get();
@@ -68,6 +68,10 @@ public class Main {
 			
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
 			boolean error = generator.execute();
+			/*
+			System.out.println(generator.toTSCode());
+			return;
+			*/
 			String basename = output.substring(0, output.length()-3);
 			if(!error) {
 				writeInFile("Code3Adresse/"+basename+".3ADDR", generator.toString());

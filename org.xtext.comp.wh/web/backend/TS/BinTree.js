@@ -182,15 +182,23 @@ var BinTree = /** @class */ (function () {
             return this.consArray(args);
         }
     };
-    BinTree.DisplayTree = function (tree) {
+    BinTree.displayTree = function (tree) {
         if (tree.elem !== "") {
             return tree.elem;
         }
         var res = "(Cons ";
-        res += this.DisplayTree(tree.left);
+        res += this.displayTree(tree.left);
         res += ", ";
-        res += this.DisplayTree(tree.right);
+        res += this.displayTree(tree.right);
         res += ")";
+        return res;
+    };
+    BinTree.displayTrees = function (trees) {
+        var res = [];
+        for (var _i = 0, trees_1 = trees; _i < trees_1.length; _i++) {
+            var tree = trees_1[_i];
+            res.push(this.displayTree(tree));
+        }
         return res;
     };
     BinTree.isTrue = function (tree) {

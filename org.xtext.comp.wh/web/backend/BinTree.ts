@@ -193,15 +193,24 @@ export default class BinTree {
         }
     }
 
-    static DisplayTree(tree: BinTree): string {
+    static displayTree(tree: BinTree): string {
         if (tree.elem !== "") {
             return tree.elem
         }
         var res: string = "(Cons "
-        res += this.DisplayTree(tree.left);
+        res += this.displayTree(tree.left);
         res += ", "
-        res += this.DisplayTree(tree.right)
+        res += this.displayTree(tree.right)
         res += ")"
+
+        return res
+    }
+
+    static displayTrees(trees: BinTree[]): string[] {
+        let res : string[] = [];
+        for(let tree of trees) {
+            res.push(this.displayTree(tree))
+        }
 
         return res
     }

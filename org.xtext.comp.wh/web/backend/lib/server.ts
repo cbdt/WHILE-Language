@@ -31,9 +31,29 @@ app.post("/compile", function(req: express.Request, res: express.Response) {
             return;
         }
         let cmd = spawn('java', ["-jar", "WH.jar", filenameWhile, basename + ".ts"]);
+        let str: string = ""
+        cmd.stderr.on("data", (data) => {
+            str += str.toString();
+        } )
+        cmd.stdout.on("data", (data) => {
+            str += str.toString();
+        } )
+
+
 
         cmd.on('close', () => {
+            console.log(str)
+            if(str !== "") {
+                res.json({
+                    error: str
+                })
+                return
+            }
             fs.readFile(filenameTS, (err, data) => {
+                if(err) {
+                    throw err;
+                };
+                
                 let outputTS:string = data.toString("utf-8")
                 if(!outputTS.startsWith("import")) {
                     // Si ça ne commence pas par import alors il y a une erreur

@@ -141,6 +141,7 @@ public class SymbolTable {
 		str.append(");\n");
 		
 		str.append(indent(4)+"console.log(BinTree.binTreesToNumbers(outputs));\n");
+		str.append(indent(4)+"console.log(BinTree.displayTrees(outputs));\n");
 		
 		str.append("}\n\n");
 		

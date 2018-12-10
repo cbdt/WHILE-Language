@@ -33,6 +33,7 @@ body {
 
 .TSEditor {
   flex: 5;
+  max-height: 580px;
 }
 
 .modal {
@@ -218,7 +219,14 @@ body {
   right: 12px;
   position: absolute;
   cursor: pointer;
-  z-index: 12;
+  z-index: 10;
+}
+
+.santa {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  transform: translateX(50%);
 }
 
 .closeModal {
@@ -242,8 +250,9 @@ body {
 }*/
 .loader {
   position: absolute;
-  top: 30vh;
-  right: 25%;
+  top: 25%;
+  right: 21%;
+  z-index: 14;
 }
 
 .lds-ellipsis {

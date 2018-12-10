@@ -65,7 +65,7 @@ class TextEditor extends React.Component<ITextEditorProps, ITextEditorState> {
                 />
                 { this.props.text2 &&
                     <button className="switchCode" onClick={this.switchCode}>
-                        Code 3A
+                        { this.state.isTS ? "Code 3A" : "Code TS" }
                     </button>
                 }
             </div>

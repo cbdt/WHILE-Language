@@ -11,7 +11,7 @@ public class EQ extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return null;
+		return getCode().getarg1() + " = BinTree.eq("+getCode().getarg2() + ", "+getCode().getarg3()+");";
 	}
 
 }

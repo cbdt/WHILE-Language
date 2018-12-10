@@ -14,6 +14,9 @@ export default class Loader extends React.Component<ILoaderProps> {
             return null;
         }
         return (
+            <img src="http://annacatharina.a.n.pic.centerblog.net/d122fdfb.gif" width="300px" alt="" className="santa"/>
+        )
+        return (
             <div className="loader">
             <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             </div>
