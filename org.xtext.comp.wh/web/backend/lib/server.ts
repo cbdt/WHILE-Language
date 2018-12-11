@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as fs from "fs";
 import * as path from "path";
-import { spawn } from "child_process";
+import { spawn } from "cross-spawn";
 
 import app from "./app";
 
