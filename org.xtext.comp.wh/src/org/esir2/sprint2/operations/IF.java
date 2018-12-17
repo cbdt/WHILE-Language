@@ -35,7 +35,18 @@ public class IF extends Operation {
 			str.append("        " + op.toTSCode() + "\n");
 		}
 		
-		str.append("    }\n");
+		str.append("    }");
+		
+		if(!elseCodes.isEmpty()) {
+			str.append(" else {\n");
+			
+			for(Operation op: elseCodes) {
+				str.append("        " + op.toTSCode() + "\n");
+			}
+			
+			str.append("    }");
+		}
+		str.append("\n");
 		
 		return str.toString();
 	}

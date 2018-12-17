@@ -124,7 +124,7 @@ If:
 ;
 
 Foreach:
-	('foreach'  expr=Expr  'in'  e2=Expr  'do'  commands=Commands  'od')
+	('foreach'  var=VARIABLE  'in'  e2=Expr  'do'  commands=Commands  'od')
 ;
 
 Vars:
