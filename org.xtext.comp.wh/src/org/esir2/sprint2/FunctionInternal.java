@@ -55,6 +55,11 @@ public class FunctionInternal {
 	public void addCode(Operation code) {
 		this.operations.add(code);
 	}
+	
+	public void addCodes(List<Operation> codes) {
+		this.operations.addAll(codes);
+	}
+	
 
 	public String addVar(String var) {
 		if (!this.vars.containsKey(var)) {
@@ -110,7 +115,7 @@ public class FunctionInternal {
 		
 		
 		for (int i = 0; i < counterTemp; i++) {
-			str.append(indent(4) + "let TempVar" + i + ";\n");
+			str.append(indent(4) + "let TempVar" + i + ": BinTree;\n");
 			if(i == counterTemp-1) {
 				str.append("\n");
 			}

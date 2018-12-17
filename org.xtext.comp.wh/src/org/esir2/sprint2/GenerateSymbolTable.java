@@ -12,12 +12,15 @@ import org.esir2.sprint2.operations.AFF;
 import org.esir2.sprint2.operations.AND;
 import org.esir2.sprint2.operations.CONS;
 import org.esir2.sprint2.operations.EQ;
+import org.esir2.sprint2.operations.FOR;
 import org.esir2.sprint2.operations.HD;
+import org.esir2.sprint2.operations.IF;
 import org.esir2.sprint2.operations.NOP;
 import org.esir2.sprint2.operations.NOT;
 import org.esir2.sprint2.operations.OR;
 import org.esir2.sprint2.operations.READ;
 import org.esir2.sprint2.operations.TL;
+import org.esir2.sprint2.operations.WHILE;
 import org.esir2.sprint2.operations.WRITE;
 import org.xtext.comp.wh.wh.Assign;
 import org.xtext.comp.wh.wh.Command;
@@ -33,6 +36,7 @@ import org.xtext.comp.wh.wh.Foreach;
 import org.xtext.comp.wh.wh.Function;
 import org.xtext.comp.wh.wh.If;
 import org.xtext.comp.wh.wh.Input;
+import org.xtext.comp.wh.wh.LExpr;
 import org.xtext.comp.wh.wh.Nop;
 import org.xtext.comp.wh.wh.Output;
 import org.xtext.comp.wh.wh.Program;
@@ -103,7 +107,8 @@ public class GenerateSymbolTable {
 	
 	private void runThrough(Definition f, FunctionInternal functionInternal) throws CompilaxException{
 		runThrough(f.getInputs(), functionInternal);
-		runThrough(f.getCommands(), functionInternal);
+		ReturnData ret = runThrough(f.getCommands(), functionInternal);
+		functionInternal.addCodes(ret.getCodes());
 		runThrough(f.getOutputs(), functionInternal);
 	}
 	
@@ -119,51 +124,90 @@ public class GenerateSymbolTable {
 		}
 	}
 	
-	private void runThrough(Commands commands, FunctionInternal functionInternal) throws CompilaxException {
+	private ReturnData runThrough(Commands commands, FunctionInternal functionInternal) throws CompilaxException {
+		ReturnData ret = new ReturnData();
 		for(Command command : commands.getCommand()) {
-			runThrough(command, functionInternal);
+			ReturnData retData = runThrough(command, functionInternal);
+			ret.getCodes().addAll(retData.getCodes());
 		}
+		return ret;
 	}
 	
-	private void runThrough(Command command, FunctionInternal functionInternal) throws CompilaxException {
+	private ReturnData runThrough(Command command, FunctionInternal functionInternal) throws CompilaxException {
 		EObject cmd = command.getCommand();
 		
 		if(cmd instanceof Assign) {
-			runThrough((Assign) cmd, functionInternal);
+			return runThrough((Assign) cmd, functionInternal);
 		} else if (cmd instanceof While) {
-			runThrough((While) cmd, functionInternal);
+			return runThrough((While) cmd, functionInternal);
 		} else if (cmd instanceof If) {
-			runThrough((If) cmd, functionInternal);
+			return runThrough((If) cmd, functionInternal);
 		} else if (cmd instanceof Foreach) {
-			runThrough((Foreach) cmd, functionInternal);
+			return runThrough((Foreach) cmd, functionInternal);
 		} else if (cmd instanceof For) {
-			runThrough((For) cmd, functionInternal);
-		} else if (cmd instanceof Nop) {
-			functionInternal.addCode(new NOP(new Code3Addr()));
+			return runThrough((For) cmd, functionInternal);
+		} else {
+			ReturnData ret = new ReturnData();
+			ret.addCode(new NOP(new Code3Addr()));
+			return ret;
 		}
+		
 				
 	}
 	
-	private void runThrough(While cmd, FunctionInternal functionInternal) {
-		// TODO WHILE
-	}
-	
-	private void runThrough(If cmd, FunctionInternal functionInternal) {
-		// TODO IF
+	private ReturnData runThrough(While whileCmd, FunctionInternal functionInternal) throws CompilaxException {
 		
+		ReturnData retCond = runThrough(whileCmd.getCond(), functionInternal);
+		ReturnData retBody = runThrough(whileCmd.getCommands(), functionInternal);
+		
+		WHILE opWhile = new WHILE(new Code3Addr("_", retCond.getLastVar()));
+		opWhile.setCond(retCond.getCodes());
+		opWhile.setBody(retBody.getCodes());
+		
+		ReturnData data = new ReturnData();
+		data.addCode(opWhile);
+		return data;
 	}
 	
-	private void runThrough(Foreach cmd, FunctionInternal functionInternal) {
+	private ReturnData runThrough(If ifCmd, FunctionInternal functionInternal) throws CompilaxException {
+		ReturnData dataCond = runThrough(ifCmd.getCond(), functionInternal);
+		ReturnData dataBody = runThrough(ifCmd.getIf_commands(), functionInternal);
+		
+		ReturnData data = new ReturnData();
+		
+		IF opIf = new IF(new Code3Addr("_", dataCond.getLastVar()));
+		opIf.setCondCodes(dataCond.getCodes());
+		opIf.setBodyCodes(dataBody.getCodes());
+		if(ifCmd.getElse_commands() != null) {
+			ReturnData dataElse = runThrough(ifCmd.getElse_commands(), functionInternal);
+			opIf.setElseCodes(dataElse.getCodes());
+		}
+		
+		data.addCode(opIf);
+		
+		return data;
+	}
+	
+	private ReturnData runThrough(Foreach foreachCmd, FunctionInternal functionInternal) {
 		// TODO FOREACH
-		
+		return null;
 	}
 	
-	private void runThrough(For cmd, FunctionInternal functionInternal) {
-		// TODO FOR
+	private ReturnData runThrough(For forCmd, FunctionInternal functionInternal) throws CompilaxException {
+		ReturnData dataCond = runThrough(forCmd.getCond(), functionInternal);
+		ReturnData dataBody = runThrough(forCmd.getCommands(), functionInternal);
+		
+		ReturnData data = new ReturnData();
+		FOR opFor = new FOR(new Code3Addr("_", dataCond.getLastVar()), functionInternal);
+		opFor.setCondCodes(dataCond.getCodes());
+		opFor.setBodyCodes(dataBody.getCodes());
+		data.addCode(opFor);
+		
+		return data;
 		
 	}
 
-	private void runThrough(Assign assign, FunctionInternal functionInternal) throws CompilaxException {
+	private ReturnData runThrough(Assign assign, FunctionInternal functionInternal) throws CompilaxException {
 		EList<String> vars = assign.getVars().getVariables();
 		EList<Expr> exprs = assign.getExprs().getExpr();
 		
@@ -176,6 +220,8 @@ public class GenerateSymbolTable {
 			throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
 		}
 		
+		ReturnData retAssign = new ReturnData();
+		
 		// On regarde s'il y a des variables identiques à gauche et à droite : A := A
 		for(Expr expr : exprs) {
 			String var = getVar(expr);
@@ -183,11 +229,10 @@ public class GenerateSymbolTable {
 			if(isVar && vars.contains(var) && !oldVars.containsKey(functionInternal.getVar(var))) {
 				String tempVar = functionInternal.getTempVar();
 				oldVars.put(functionInternal.getVar(var), tempVar);
-				functionInternal.addCode(new AFF(new Code3Addr(tempVar, functionInternal.addVar(var))));
+				retAssign.addCode(new AFF(new Code3Addr(tempVar, functionInternal.addVar(var))));
 			}
 		}
 
-		
 		for(int i = 0; i < nb_vars; i++) {
 			ReturnData ret = runThrough(exprs.get(i), functionInternal);
 			String fromVar;
@@ -199,26 +244,35 @@ public class GenerateSymbolTable {
 			if(!functionInternal.containsVar(vars.get(i))) {
 				functionInternal.addVar(vars.get(i));
 			}
-			functionInternal.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
+			retAssign.getCodes().addAll(ret.getCodes());
+			retAssign.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
 		}
+		return retAssign;
 		
 	}	
 	private ReturnData runThrough(Expr expr, FunctionInternal functionInternal) throws CompilaxException {
 		EList<ExprOr> exprs = expr.getExpr_and().getExpr_or();
 	
+		ReturnData ret = new ReturnData();
+		
 		if(exprs.size() <= 0  && exprs.size() > 2) {
 			throw new CompilaxException("Il y a trop d'opérandes dans le AND");
 		}
 		
 		if(exprs.size() == 1) {
-			return runThrough(exprs.get(0), functionInternal);
+			ReturnData reat = runThrough(exprs.get(0), functionInternal);
+			System.out.println(reat.getCodes());
+			return reat;
 		} 
 		ReturnData ret_left = runThrough(exprs.get(0), functionInternal);
 		ReturnData ret_right = runThrough(exprs.get(1), functionInternal);
 		String tempVar = functionInternal.getTempVar();
-		functionInternal.addCode(new AND(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 		
-		ReturnData ret = new ReturnData();
+		ret.getCodes().addAll(ret_left.getCodes());
+		ret.getCodes().addAll(ret_right.getCodes());
+		ret.addCode(new AND(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
+		
+		
 		ret.addVar(tempVar);
 		return ret;
 	}
@@ -226,6 +280,7 @@ public class GenerateSymbolTable {
 
 	private ReturnData runThrough(ExprOr exprOr, FunctionInternal functionInternal) throws CompilaxException {
 		EList<ExprNot> exprs = exprOr.getExpr_not();
+		ReturnData ret = new ReturnData();
 		
 		if(exprs.size() <= 0  && exprs.size() > 2) {
 			throw new CompilaxException("Il y a trop d'opérandes dans le OR");
@@ -237,21 +292,22 @@ public class GenerateSymbolTable {
 		ReturnData ret_left = runThrough(exprs.get(0), functionInternal);
 		ReturnData ret_right = runThrough(exprs.get(1), functionInternal);
 		String tempVar = functionInternal.getTempVar();
-		functionInternal.addCode(new OR(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 		
-		ReturnData ret = new ReturnData();
+		ret.getCodes().addAll(ret_left.getCodes());
+		ret.getCodes().addAll(ret_right.getCodes());
+		ret.addCode(new OR(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
 		ret.addVar(tempVar);
 		return ret;
 		
 	}
 
-	private ReturnData runThrough(ExprNot exprNot, FunctionInternal functionInternal) throws CompilaxException {
+	private ReturnData runThrough(ExprNot exprNot, FunctionInternal functionInternal) throws CompilaxException {		
 		if(exprNot.getHasNot() != null) {
-			
+			ReturnData ret = new ReturnData();
 			String tempVar = functionInternal.getTempVar();
 			ReturnData ret_expr = runThrough(exprNot.getExpr_eq(), functionInternal);
-			functionInternal.addCode(new NOT(new Code3Addr(tempVar, ret_expr.getLastVar())));
-			ReturnData ret = new ReturnData();
+			ret.getCodes().addAll(ret_expr.getCodes());
+			ret.addCode(new NOT(new Code3Addr(tempVar, ret_expr.getLastVar())));
 			ret.addVar(tempVar);
 			return ret;
 		}
@@ -264,26 +320,27 @@ public class GenerateSymbolTable {
 			ReturnData ret_left = runThrough(expr_eq.getExpr_left(), functionInternal);
 			
 			if(expr_eq.getExpr_right() != null) {
-
+				ReturnData ret = new ReturnData();
 				ReturnData ret_right = runThrough(expr_eq.getExpr_right(), functionInternal);
 				String tempVar  = functionInternal.getTempVar();
-				functionInternal.addCode(new EQ(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
-				ReturnData ret = new ReturnData();
+				ret.getCodes().addAll(ret_left.getCodes());
+				ret.getCodes().addAll(ret_right.getCodes());
+				ret.addCode(new EQ(new Code3Addr(tempVar, ret_left.getLastVar(), ret_right.getLastVar())));
+				
 				ret.addVar(tempVar);
 				return ret;
 				
 			} else {
 				ReturnData ret = new ReturnData();
+				ret.getCodes().addAll(ret_left.getCodes());
 				ret.addVar(ret_left.getLastVar());
 				return ret;
 			}
 		} else if(expr_eq.getExpr() != null) {
-			ReturnData ret = runThrough(expr_eq.getExpr(), functionInternal);
-			return ret;
-		} else if(expr_eq.getExpr() != null) {
 			return runThrough(expr_eq.getExpr(), functionInternal);
 		} else if(expr_eq.getSym() != null) {
-			// Appel de fonction
+			// TODO:  Appel de fonction
+			
 		}
 		throw new CompilaxException("Erreur lors de la compilation EXPR_EQ");
 	}
@@ -311,14 +368,17 @@ public class GenerateSymbolTable {
 			ret.addVar(functionInternal.getVar(expr.getVariable()));
 			return ret;
 		} else if(expr.getCons_exp() != null) {
+			ReturnData retCons = new ReturnData();
+			
 			EList<Expr> exprs = expr.getCons_exp().getExpr();
 			Deque<String> tempVars = new ArrayDeque<>();
 			
 			if(exprs.size() == 1) {
+				ReturnData ret = new ReturnData();
 				String tempVar = functionInternal.getTempVar();
 				ReturnData retExpr = runThrough(exprs.get(0), functionInternal);
-				functionInternal.addCode(new AFF(new Code3Addr(tempVar, retExpr.getLastVar())));
-				ReturnData ret = new ReturnData();
+				ret.getCodes().addAll(retExpr.getCodes());
+				ret.addCode(new AFF(new Code3Addr(tempVar, retExpr.getLastVar())));
 				ret.addVar(tempVar);
 				return ret;
 			}
@@ -326,6 +386,7 @@ public class GenerateSymbolTable {
 			// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
 			for(Expr e : exprs) {
 				ReturnData ret = runThrough(e, functionInternal);
+				retCons.getCodes().addAll(ret.getCodes());
 				tempVars.push(ret.getLastVar());
 			}
 			
@@ -336,31 +397,34 @@ public class GenerateSymbolTable {
 				if(isFirst) {
 					String second = tempVars.poll();
 					String first = tempVars.poll();
-					functionInternal.addCode(new CONS(new Code3Addr(tempVar, first, second)));
+					retCons.addCode(new CONS(new Code3Addr(tempVar, first, second)));
 					isFirst = false;
 				} else {
-					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
+					retCons.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
 				}
 			}
-			ReturnData ret = new ReturnData();
-			ret.addVar(tempVar);
-			return ret;
+			retCons.addVar(tempVar);
+			return retCons;
 			
 		} else if(expr.getHd_expr() != null) {
+			ReturnData ret = new ReturnData();
 			ReturnData retExpr = runThrough(expr.getHd_expr(), functionInternal);
 			String tempVar = functionInternal.getTempVar();
-			functionInternal.addCode(new HD(new Code3Addr(tempVar, retExpr.getLastVar())));
-			ReturnData ret = new ReturnData();
+			ret.getCodes().addAll(retExpr.getCodes());
+			ret.addCode(new HD(new Code3Addr(tempVar, retExpr.getLastVar())));
 			ret.addVar(tempVar);
 			return ret;
 		} else if(expr.getTl_expr() != null) {
+			ReturnData ret = new ReturnData();
 			ReturnData retExpr = runThrough(expr.getTl_expr(), functionInternal);
 			String tempVar = functionInternal.getTempVar();
-			functionInternal.addCode(new TL(new Code3Addr(tempVar, retExpr.getLastVar())));
-			ReturnData ret = new ReturnData();
+			ret.getCodes().addAll(retExpr.getCodes());
+			ret.addCode(new TL(new Code3Addr(tempVar, retExpr.getLastVar())));
 			ret.addVar(tempVar);
 			return ret;
 		} else if(expr.getList_exp() != null) {
+			ReturnData retList = new ReturnData();
+			
 			EList<Expr> exprs = expr.getList_exp().getExpr();
 			Deque<String> tempVars = new ArrayDeque<>();
 			
@@ -371,6 +435,7 @@ public class GenerateSymbolTable {
 			// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
 			for(Expr e : exprs) {
 				ReturnData ret = runThrough(e, functionInternal);
+				retList.getCodes().addAll(ret.getCodes());
 				tempVars.push(ret.getLastVar());
 			}
 			// On créé les cons
@@ -378,15 +443,14 @@ public class GenerateSymbolTable {
 			String tempVar = functionInternal.getTempVar();
 			while(tempVars.size() > 0) {
 				if(isFirst) {
-					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), symTable.getSymbol("nil"))));
+					retList.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), symTable.getSymbol("nil"))));
 					isFirst = false;
 				} else {
-					functionInternal.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
+					retList.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
 				}
 			}
-			ReturnData ret = new ReturnData();
-			ret.addVar(tempVar);
-			return ret;
+			retList.addVar(tempVar);
+			return retList;
 		}
 		
 		return null;

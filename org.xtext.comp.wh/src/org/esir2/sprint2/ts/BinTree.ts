@@ -155,7 +155,7 @@ export default class BinTree {
         // On crée un tableau pour chaque mots du string, qu'on coupe à chaque espace et parenthèse fermantes.
         let re = /\s+|\)/;
         var word: string[] = str.split(re);
-        console.log(word)
+        // console.log(word)
         return this.stringToBinTreeReq(word);
     }
 
@@ -178,7 +178,7 @@ export default class BinTree {
                 while (word[i] !== '') {
                     // Si on tombe sur un cons ou un list à l'intérieur du cons
                     if (word[i] === "(cons" || word[i] === "(list") {
-                        console.log("On rentre dans la réc")
+                        // console.log("On rentre dans la réc")
                         // On appelle récursivement la méthode en donnant la partie du tableau correspondante
                         args.push(this.stringToBinTreeReq(word.slice(i)));
                         // On fait évoluer notre curseur jusqu'à la prochaine parenthèse fermante +1, pour ne pas prendre deux fois les arguements
@@ -198,7 +198,7 @@ export default class BinTree {
 
             // La première entrée est "(list"
             case ("(list"): {
-                console.log("I'm here")
+                // console.log("I'm here")
                 // On déclare un tableau d'arguement
                 let args: BinTree[] = [];
 

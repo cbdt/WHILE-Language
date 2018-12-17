@@ -6,21 +6,27 @@ import java.util.List;
 public class ReturnData {
 	
 	private List<String> lastVars;
+	private List<Operation> codes;
 	
 	public ReturnData() {
 		this.lastVars = new ArrayList<>();
-	}
-	
-	public List<String> getLastVars() {
-		return this.getLastVars();
-	}
-	
-	public void addVar(String var) {
-		this.lastVars.add(var);
+		this.codes = new ArrayList<>();
 	}
 	
 	public String getLastVar() {
 		return this.lastVars.get(0);
+	}
+
+	public List<Operation> getCodes() {
+		return codes;
+	}
+
+	public void addCode(Operation code) {
+		this.codes.add(code);
+	}
+	
+	public void addVar(String var) {
+		this.lastVars.add(var);
 	}
 
 }

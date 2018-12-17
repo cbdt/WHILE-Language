@@ -11,7 +11,7 @@ public class NOT extends Operation {
 	
 	@Override
 	public String toTSCode() {
-		return null;
+		return getCode().getarg1()+" = BinTree.not("+ getCode().getarg2() +");";
 	}
 
 }

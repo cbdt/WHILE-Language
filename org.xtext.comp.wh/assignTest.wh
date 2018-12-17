@@ -1,6 +1,8 @@
 function main:
-read A
+read X, Y
 %
-  	R := (A =? a)
+	for X do
+		Z := (cons nil Z)
+	od
 %
-write R
+write Z

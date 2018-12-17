@@ -148,53 +148,88 @@ export default class BinTree {
     }
 
     static stringToBinTree(str: string): BinTree {
-        /*
-        4 situations : 
-        -> str = (cons A B C...)
-        -> str = (list A B C...)
-        -> str = (nil)
-        -> str = (a)
-        */
-
         if (str === null) {
             return null;
         }
 
-        // On vérifie la troisième situation
-        if (str === "(nil)") {
-            return new BinTree("nil", null, null);
-        }
-
-        // On crée un tableau pour chaque mots du string, qu'on coupe à chaque espace et parenthèse ouvrante ou fermante.
-        let re = /\s+|\(|\)/;
+        // On crée un tableau pour chaque mots du string, qu'on coupe à chaque espace et parenthèse fermantes.
+        let re = /\s+|\)/;
         var word: string[] = str.split(re);
+        // console.log(word)
+        return this.stringToBinTreeReq(word);
+    }
 
-        // On déclare un tableau d'arguement
-        let args: BinTree[] = [];
+    static stringToBinTreeReq(word: string[]): BinTree {
+        switch (word[0]) {
 
-        // On est dans la première situation
-        if (word[1] === 'cons') {
-            var i: number = 2;
-            while (word[i] !== '') {
-                args.push(new BinTree(word[i], null, null));
-                i++;
+            // La première entrée est "nil"
+            case ("nil"): {
+                return new BinTree("nil", null, null);
+
             }
-            return this.consArray(args);
-        }
 
-        // On est dans la deuxième situation
-        if (word[1] == 'list') {
-            var i: number = 2;
-            while (word[i] !== '') {
-                args.push(new BinTree(word[i], null, null));
-                i++;
+            // La première entrée est "(cons"
+            case ("(cons"): {
+                // On déclare un tableau d'arguement
+                let args: BinTree[] = [];
+
+                // On parcours les arguements du cons
+                var i: number = 1;
+                while (word[i] !== '') {
+                    // Si on tombe sur un cons ou un list à l'intérieur du cons
+                    if (word[i] === "(cons" || word[i] === "(list") {
+                        // console.log("On rentre dans la réc")
+                        // On appelle récursivement la méthode en donnant la partie du tableau correspondante
+                        args.push(this.stringToBinTreeReq(word.slice(i)));
+                        // On fait évoluer notre curseur jusqu'à la prochaine parenthèse fermante +1, pour ne pas prendre deux fois les arguements
+                        while (word[i] !== '') {
+                            i++;
+                        }
+                        i++;
+                    }
+                    // Si on ne tombe pas sur un cons/list, on crée un bintree de l'élément correspondant 
+                    else {
+                        args.push(new BinTree(word[i], null, null));
+                        i++;
+                    }
+                }
+                return this.consArray(args);
             }
-            args.push(new BinTree("nil", null, null));
-            return this.consArray(args);
-        }
 
-        // On est dans la 4ème situation
-        return new BinTree(word[1],null,null);
+            // La première entrée est "(list"
+            case ("(list"): {
+                // console.log("I'm here")
+                // On déclare un tableau d'arguement
+                let args: BinTree[] = [];
+
+                // On parcours les arguements du cons
+                var i: number = 1;
+                while (word[i] !== '') {
+                    // Si on tombe sur un cons ou un list à l'intérieur du cons
+                    if (word[i] === "(cons" || word[i] === "(list") {
+                        // On appelle récursivement la méthode en donnant la partie du tableau correspondante
+                        args.push(this.stringToBinTreeReq(word.slice(i)));
+                        // On fait évoluer notre curseur jusqu'à la prochaine parenthèse fermante +1, pour ne pas prendre deux fois les arguements
+                        while (word[i] !== '') {
+                            i++;
+                        }
+                        i++;
+                    }
+                    // Si on ne tombe pas sur un cons/list, on crée un bintree de l'élément correspondant 
+                    else {
+                        args.push(new BinTree(word[i], null, null));
+                        i++;
+                    }
+                }
+                args.push(new BinTree("nil", null, null));
+                return this.consArray(args);
+            }
+
+            // La première entrée est un symbole
+            default: {
+                return new BinTree(word[0], null, null);
+            }
+        }
     }
 
     static displayTree(tree: BinTree): string {

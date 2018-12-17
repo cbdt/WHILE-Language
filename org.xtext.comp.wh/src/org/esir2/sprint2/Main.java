@@ -68,6 +68,8 @@ public class Main {
 			
 			GenerateSymbolTable generator = new GenerateSymbolTable(AST);
 			boolean error = generator.execute();
+			//System.out.println(generator.toString());
+			//System.out.println(generator.toTSCode());
 			/*
 			System.out.println(generator.toTSCode());
 			return;

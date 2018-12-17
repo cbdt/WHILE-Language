@@ -141,9 +141,16 @@ body {
 }
 
 .console {
-  background-color: #242424;
+  /*background-color: #242424;*/
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  
+  -webkit-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+  border: 1px solid #4c4b4b;
   color: white;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 400;
   padding: 0px;
   font-family: "Source Code Pro", sans-serif;
   border-radius: 3px;
@@ -199,12 +206,30 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #ff4c4c;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  
+  -webkit-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
   padding: 4px;
   color: white;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
   font-family: -apple-system, Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
 }
 
 .switchCode {
