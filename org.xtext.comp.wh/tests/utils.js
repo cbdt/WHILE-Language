@@ -15,11 +15,12 @@ async function execute(filename, ...args) {
             str += data.toString()
         })
         nodeCmd.on("close", () => {
-            if(str.startsWith("[")) {
-                let res = str.trim().substr(1, str.trim().length-2).split(",").map(val => Number(val))
-                resolve(res)
+            let tab = str.split("\n")
+            if(tab[0].startsWith("[")) {
+                let res = tab[0].trim().substr(1, tab[0].trim().length-2).split(",").map(val => Number(val))
+                resolve([res, tab[1]])
             } else {
-                resolve(str.trim())
+                resolve([str.trim()])
             }
         })
         
