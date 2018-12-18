@@ -40,3 +40,7 @@ test('tl tl cons', async () => {
     expect(result).toEqual([1]);
 });
 
+test('isA', async () => {
+    let result = await execute("testIsA.wh", "a");
+    expect(result).toEqual([1]);
+});
