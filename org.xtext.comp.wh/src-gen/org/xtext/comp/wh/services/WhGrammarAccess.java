@@ -552,40 +552,40 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.comp.wh.Wh.Foreach");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cForeachKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExprExprParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
+		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCondExprParserRuleCall_1_0 = (RuleCall)cCondAssignment_1.eContents().get(0);
 		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cE2Assignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cE2ExprParserRuleCall_3_0 = (RuleCall)cE2Assignment_3.eContents().get(0);
+		private final Assignment cEnsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEnsExprParserRuleCall_3_0 = (RuleCall)cEnsAssignment_3.eContents().get(0);
 		private final Keyword cDoKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cCommandsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cCommandsCommandsParserRuleCall_5_0 = (RuleCall)cCommandsAssignment_5.eContents().get(0);
 		private final Keyword cOdKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Foreach:
-		//	'foreach' expr=Expr 'in' e2=Expr 'do' commands=Commands 'od';
+		//	'foreach' cond=Expr 'in' ens=Expr 'do' commands=Commands 'od';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'foreach' expr=Expr 'in' e2=Expr 'do' commands=Commands 'od'
+		//'foreach' cond=Expr 'in' ens=Expr 'do' commands=Commands 'od'
 		public Group getGroup() { return cGroup; }
 		
 		//'foreach'
 		public Keyword getForeachKeyword_0() { return cForeachKeyword_0; }
 		
-		//expr=Expr
-		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
+		//cond=Expr
+		public Assignment getCondAssignment_1() { return cCondAssignment_1; }
 		
 		//Expr
-		public RuleCall getExprExprParserRuleCall_1_0() { return cExprExprParserRuleCall_1_0; }
+		public RuleCall getCondExprParserRuleCall_1_0() { return cCondExprParserRuleCall_1_0; }
 		
 		//'in'
 		public Keyword getInKeyword_2() { return cInKeyword_2; }
 		
-		//e2=Expr
-		public Assignment getE2Assignment_3() { return cE2Assignment_3; }
+		//ens=Expr
+		public Assignment getEnsAssignment_3() { return cEnsAssignment_3; }
 		
 		//Expr
-		public RuleCall getE2ExprParserRuleCall_3_0() { return cE2ExprParserRuleCall_3_0; }
+		public RuleCall getEnsExprParserRuleCall_3_0() { return cEnsExprParserRuleCall_3_0; }
 		
 		//'do'
 		public Keyword getDoKeyword_4() { return cDoKeyword_4; }
@@ -1307,7 +1307,7 @@ public class WhGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Foreach:
-	//	'foreach' expr=Expr 'in' e2=Expr 'do' commands=Commands 'od';
+	//	'foreach' cond=Expr 'in' ens=Expr 'do' commands=Commands 'od';
 	public ForeachElements getForeachAccess() {
 		return pForeach;
 	}

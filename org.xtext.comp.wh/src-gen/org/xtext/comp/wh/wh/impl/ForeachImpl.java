@@ -25,8 +25,8 @@ import org.xtext.comp.wh.wh.WhPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ForeachImpl#getExpr <em>Expr</em>}</li>
- *   <li>{@link org.xtext.comp.wh.wh.impl.ForeachImpl#getE2 <em>E2</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ForeachImpl#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.comp.wh.wh.impl.ForeachImpl#getEns <em>Ens</em>}</li>
  *   <li>{@link org.xtext.comp.wh.wh.impl.ForeachImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
@@ -35,24 +35,24 @@ import org.xtext.comp.wh.wh.WhPackage;
 public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
 {
   /**
-   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpr()
+   * @see #getCond()
    * @generated
    * @ordered
    */
-  protected Expr expr;
+  protected Expr cond;
 
   /**
-   * The cached value of the '{@link #getE2() <em>E2</em>}' containment reference.
+   * The cached value of the '{@link #getEns() <em>Ens</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getE2()
+   * @see #getEns()
    * @generated
    * @ordered
    */
-  protected Expr e2;
+  protected Expr ens;
 
   /**
    * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference.
@@ -90,9 +90,9 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getExpr()
+  public Expr getCond()
   {
-    return expr;
+    return cond;
   }
 
   /**
@@ -100,13 +100,13 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(Expr newExpr, NotificationChain msgs)
+  public NotificationChain basicSetCond(Expr newCond, NotificationChain msgs)
   {
-    Expr oldExpr = expr;
-    expr = newExpr;
+    Expr oldCond = cond;
+    cond = newCond;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__EXPR, oldExpr, newExpr);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__COND, oldCond, newCond);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +117,20 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(Expr newExpr)
+  public void setCond(Expr newCond)
   {
-    if (newExpr != expr)
+    if (newCond != cond)
     {
       NotificationChain msgs = null;
-      if (expr != null)
-        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__EXPR, null, msgs);
-      if (newExpr != null)
-        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__EXPR, null, msgs);
-      msgs = basicSetExpr(newExpr, msgs);
+      if (cond != null)
+        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__COND, null, msgs);
+      if (newCond != null)
+        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__COND, null, msgs);
+      msgs = basicSetCond(newCond, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__EXPR, newExpr, newExpr));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__COND, newCond, newCond));
   }
 
   /**
@@ -138,9 +138,9 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getE2()
+  public Expr getEns()
   {
-    return e2;
+    return ens;
   }
 
   /**
@@ -148,13 +148,13 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE2(Expr newE2, NotificationChain msgs)
+  public NotificationChain basicSetEns(Expr newEns, NotificationChain msgs)
   {
-    Expr oldE2 = e2;
-    e2 = newE2;
+    Expr oldEns = ens;
+    ens = newEns;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__E2, oldE2, newE2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__ENS, oldEns, newEns);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -165,20 +165,20 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE2(Expr newE2)
+  public void setEns(Expr newEns)
   {
-    if (newE2 != e2)
+    if (newEns != ens)
     {
       NotificationChain msgs = null;
-      if (e2 != null)
-        msgs = ((InternalEObject)e2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__E2, null, msgs);
-      if (newE2 != null)
-        msgs = ((InternalEObject)newE2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__E2, null, msgs);
-      msgs = basicSetE2(newE2, msgs);
+      if (ens != null)
+        msgs = ((InternalEObject)ens).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__ENS, null, msgs);
+      if (newEns != null)
+        msgs = ((InternalEObject)newEns).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WhPackage.FOREACH__ENS, null, msgs);
+      msgs = basicSetEns(newEns, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__E2, newE2, newE2));
+      eNotify(new ENotificationImpl(this, Notification.SET, WhPackage.FOREACH__ENS, newEns, newEns));
   }
 
   /**
@@ -239,10 +239,10 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
   {
     switch (featureID)
     {
-      case WhPackage.FOREACH__EXPR:
-        return basicSetExpr(null, msgs);
-      case WhPackage.FOREACH__E2:
-        return basicSetE2(null, msgs);
+      case WhPackage.FOREACH__COND:
+        return basicSetCond(null, msgs);
+      case WhPackage.FOREACH__ENS:
+        return basicSetEns(null, msgs);
       case WhPackage.FOREACH__COMMANDS:
         return basicSetCommands(null, msgs);
     }
@@ -259,10 +259,10 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
   {
     switch (featureID)
     {
-      case WhPackage.FOREACH__EXPR:
-        return getExpr();
-      case WhPackage.FOREACH__E2:
-        return getE2();
+      case WhPackage.FOREACH__COND:
+        return getCond();
+      case WhPackage.FOREACH__ENS:
+        return getEns();
       case WhPackage.FOREACH__COMMANDS:
         return getCommands();
     }
@@ -279,11 +279,11 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
   {
     switch (featureID)
     {
-      case WhPackage.FOREACH__EXPR:
-        setExpr((Expr)newValue);
+      case WhPackage.FOREACH__COND:
+        setCond((Expr)newValue);
         return;
-      case WhPackage.FOREACH__E2:
-        setE2((Expr)newValue);
+      case WhPackage.FOREACH__ENS:
+        setEns((Expr)newValue);
         return;
       case WhPackage.FOREACH__COMMANDS:
         setCommands((Commands)newValue);
@@ -302,11 +302,11 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
   {
     switch (featureID)
     {
-      case WhPackage.FOREACH__EXPR:
-        setExpr((Expr)null);
+      case WhPackage.FOREACH__COND:
+        setCond((Expr)null);
         return;
-      case WhPackage.FOREACH__E2:
-        setE2((Expr)null);
+      case WhPackage.FOREACH__ENS:
+        setEns((Expr)null);
         return;
       case WhPackage.FOREACH__COMMANDS:
         setCommands((Commands)null);
@@ -325,10 +325,10 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
   {
     switch (featureID)
     {
-      case WhPackage.FOREACH__EXPR:
-        return expr != null;
-      case WhPackage.FOREACH__E2:
-        return e2 != null;
+      case WhPackage.FOREACH__COND:
+        return cond != null;
+      case WhPackage.FOREACH__ENS:
+        return ens != null;
       case WhPackage.FOREACH__COMMANDS:
         return commands != null;
     }

@@ -504,22 +504,22 @@ public interface WhPackage extends EPackage
   int FOREACH = 13;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOREACH__EXPR = 0;
+  int FOREACH__COND = 0;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' containment reference.
+   * The feature id for the '<em><b>Ens</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOREACH__E2 = 1;
+  int FOREACH__ENS = 1;
 
   /**
    * The feature id for the '<em><b>Commands</b></em>' containment reference.
@@ -1263,26 +1263,26 @@ public interface WhPackage extends EPackage
   EClass getForeach();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getExpr <em>Expr</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getCond <em>Cond</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.xtext.comp.wh.wh.Foreach#getExpr()
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see org.xtext.comp.wh.wh.Foreach#getCond()
    * @see #getForeach()
    * @generated
    */
-  EReference getForeach_Expr();
+  EReference getForeach_Cond();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getE2 <em>E2</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getEns <em>Ens</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E2</em>'.
-   * @see org.xtext.comp.wh.wh.Foreach#getE2()
+   * @return the meta object for the containment reference '<em>Ens</em>'.
+   * @see org.xtext.comp.wh.wh.Foreach#getEns()
    * @see #getForeach()
    * @generated
    */
-  EReference getForeach_E2();
+  EReference getForeach_Ens();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.comp.wh.wh.Foreach#getCommands <em>Commands</em>}'.
@@ -1937,20 +1937,20 @@ public interface WhPackage extends EPackage
     EClass FOREACH = eINSTANCE.getForeach();
 
     /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOREACH__EXPR = eINSTANCE.getForeach_Expr();
+    EReference FOREACH__COND = eINSTANCE.getForeach_Cond();
 
     /**
-     * The meta object literal for the '<em><b>E2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ens</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOREACH__E2 = eINSTANCE.getForeach_E2();
+    EReference FOREACH__ENS = eINSTANCE.getForeach_Ens();
 
     /**
      * The meta object literal for the '<em><b>Commands</b></em>' containment reference feature.

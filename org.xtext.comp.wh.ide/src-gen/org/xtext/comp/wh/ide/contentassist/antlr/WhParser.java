@@ -94,8 +94,8 @@ public class WhParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIfAccess().getCondAssignment_1(), "rule__If__CondAssignment_1");
 			builder.put(grammarAccess.getIfAccess().getIf_commandsAssignment_3(), "rule__If__If_commandsAssignment_3");
 			builder.put(grammarAccess.getIfAccess().getElse_commandsAssignment_4_1(), "rule__If__Else_commandsAssignment_4_1");
-			builder.put(grammarAccess.getForeachAccess().getExprAssignment_1(), "rule__Foreach__ExprAssignment_1");
-			builder.put(grammarAccess.getForeachAccess().getE2Assignment_3(), "rule__Foreach__E2Assignment_3");
+			builder.put(grammarAccess.getForeachAccess().getCondAssignment_1(), "rule__Foreach__CondAssignment_1");
+			builder.put(grammarAccess.getForeachAccess().getEnsAssignment_3(), "rule__Foreach__EnsAssignment_3");
 			builder.put(grammarAccess.getForeachAccess().getCommandsAssignment_5(), "rule__Foreach__CommandsAssignment_5");
 			builder.put(grammarAccess.getVarsAccess().getVariablesAssignment_0(), "rule__Vars__VariablesAssignment_0");
 			builder.put(grammarAccess.getVarsAccess().getVariablesAssignment_1_1(), "rule__Vars__VariablesAssignment_1_1");

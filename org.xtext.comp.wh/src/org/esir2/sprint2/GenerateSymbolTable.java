@@ -13,6 +13,7 @@ import org.esir2.sprint2.operations.AND;
 import org.esir2.sprint2.operations.CONS;
 import org.esir2.sprint2.operations.EQ;
 import org.esir2.sprint2.operations.FOR;
+import org.esir2.sprint2.operations.FOREACH;
 import org.esir2.sprint2.operations.HD;
 import org.esir2.sprint2.operations.IF;
 import org.esir2.sprint2.operations.NOP;
@@ -188,9 +189,22 @@ public class GenerateSymbolTable {
 		return data;
 	}
 	
-	private ReturnData runThrough(Foreach foreachCmd, FunctionInternal functionInternal) {
-		// TODO FOREACH
-		return null;
+	private ReturnData runThrough(Foreach foreachCmd, FunctionInternal functionInternal) throws CompilaxException {
+		
+		ReturnData dataCond = runThrough(foreachCmd.getCond(), functionInternal);
+		ReturnData dataEns = runThrough(foreachCmd.getEns(), functionInternal);
+		ReturnData dataCommmands = runThrough(foreachCmd.getCommands(), functionInternal);
+		
+		ReturnData data = new ReturnData();
+		FOREACH opForEach = new FOREACH(new Code3Addr("_", dataCond.getLastVar(), dataEns.getLastVar()));
+		
+		opForEach.setEnsCodes(dataEns.getCodes());
+		opForEach.setCondCodes(dataCond.getCodes());
+		opForEach.setBodyCodes(dataCommmands.getCodes());
+		
+		data.addCode(opForEach);
+		
+		return data;
 	}
 	
 	private ReturnData runThrough(For forCmd, FunctionInternal functionInternal) throws CompilaxException {
@@ -261,7 +275,6 @@ public class GenerateSymbolTable {
 		
 		if(exprs.size() == 1) {
 			ReturnData reat = runThrough(exprs.get(0), functionInternal);
-			System.out.println(reat.getCodes());
 			return reat;
 		} 
 		ReturnData ret_left = runThrough(exprs.get(0), functionInternal);
@@ -339,7 +352,8 @@ public class GenerateSymbolTable {
 		} else if(expr_eq.getExpr() != null) {
 			return runThrough(expr_eq.getExpr(), functionInternal);
 		} else if(expr_eq.getSym() != null) {
-			// TODO:  Appel de fonction
+			// TODO: Appel de fonction
+			
 			
 		}
 		throw new CompilaxException("Erreur lors de la compilation EXPR_EQ");

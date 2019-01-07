@@ -623,7 +623,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeach_Expr()
+  public EReference getForeach_Cond()
   {
     return (EReference)foreachEClass.getEStructuralFeatures().get(0);
   }
@@ -633,7 +633,7 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeach_E2()
+  public EReference getForeach_Ens()
   {
     return (EReference)foreachEClass.getEStructuralFeatures().get(1);
   }
@@ -1016,8 +1016,8 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     createEReference(ifEClass, IF__ELSE_COMMANDS);
 
     foreachEClass = createEClass(FOREACH);
-    createEReference(foreachEClass, FOREACH__EXPR);
-    createEReference(foreachEClass, FOREACH__E2);
+    createEReference(foreachEClass, FOREACH__COND);
+    createEReference(foreachEClass, FOREACH__ENS);
     createEReference(foreachEClass, FOREACH__COMMANDS);
 
     varsEClass = createEClass(VARS);
@@ -1138,8 +1138,8 @@ public class WhPackageImpl extends EPackageImpl implements WhPackage
     initEReference(getIf_Else_commands(), this.getCommands(), null, "else_commands", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foreachEClass, Foreach.class, "Foreach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getForeach_Expr(), this.getExpr(), null, "expr", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForeach_E2(), this.getExpr(), null, "e2", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForeach_Cond(), this.getExpr(), null, "cond", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForeach_Ens(), this.getExpr(), null, "ens", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeach_Commands(), this.getCommands(), null, "commands", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varsEClass, Vars.class, "Vars", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
