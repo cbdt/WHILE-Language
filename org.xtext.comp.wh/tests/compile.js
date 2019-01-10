@@ -20,9 +20,8 @@ async function compile(filename) {
 
         whileCmd.on("close", () => {
             fs.readFile(tsFile, (err, data) => {
-                console.log(err);
-                if (err) throw err;
                 let str = data.toString();
+                if (err) throw err;
                 if(!str.startsWith("import")) {
                     signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
                     return;
