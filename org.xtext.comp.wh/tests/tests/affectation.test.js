@@ -39,8 +39,3 @@ test('tl tl cons', async () => {
     let result = await execute("testAffect7.wh", 78);
     expect(result[0]).toEqual([1]);
 });
-
-test('isA', async () => {
-    let result = await execute("testIsA.wh", "(a)");
-    expect(result[0]).toEqual([1]);
-});
