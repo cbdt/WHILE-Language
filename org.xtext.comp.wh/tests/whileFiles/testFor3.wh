@@ -1,0 +1,14 @@
+// Fonction qui renvoie le carré du nombre en entrée
+// Input 5
+// Output 25
+
+function main:
+read A
+%
+	for A do
+		for A do
+			Z := (cons nil Z)
+		od
+	od
+%
+write Z 
