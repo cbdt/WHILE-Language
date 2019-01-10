@@ -1,13 +1,10 @@
-/ Fonction de test de if n°1
-// Input 1 1
-// Output 1
-
 function main:
-read A, B
+read A
 %
-	X:= 0
-	if A =? B
-			X:= 1
+	if A then
+		Z := a
+	else
+		Z := b
 	fi
 %
-write X
+write Z
