@@ -82,7 +82,6 @@ public class FunctionInternal {
 
 	public StringBuilder toTSCode() {
 		StringBuilder str = new StringBuilder();
-		
 		str.append("function " + getName() + "(");
 		for(int counterInput = 0; counterInput < getInput(); counterInput++) {
 			Operation read = this.operations.get(0);

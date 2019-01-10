@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.esir2.sprint2.operations.AFF;
 import org.esir2.sprint2.operations.AND;
+import org.esir2.sprint2.operations.CALL;
 import org.esir2.sprint2.operations.CONS;
 import org.esir2.sprint2.operations.EQ;
 import org.esir2.sprint2.operations.FOR;
@@ -226,13 +227,12 @@ public class GenerateSymbolTable {
 		EList<Expr> exprs = assign.getExprs().getExpr();
 		
 		int nb_vars = vars.size();
-		int nb_exprs = exprs.size();
 		
 		Map<String, String> oldVars = new HashMap<>(); 
 		
-		if(nb_vars != nb_exprs) {
+		/*if(nb_vars != nb_exprs) {
 			throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
-		}
+		}*/
 		
 		ReturnData retAssign = new ReturnData();
 		
@@ -246,7 +246,7 @@ public class GenerateSymbolTable {
 				retAssign.addCode(new AFF(new Code3Addr(tempVar, functionInternal.addVar(var))));
 			}
 		}
-
+/*
 		for(int i = 0; i < nb_vars; i++) {
 			ReturnData ret = runThrough(exprs.get(i), functionInternal);
 			String fromVar;
@@ -259,8 +259,38 @@ public class GenerateSymbolTable {
 				functionInternal.addVar(vars.get(i));
 			}
 			retAssign.getCodes().addAll(ret.getCodes());
+			retAssign.getVars().addAll(ret.getVars());
 			retAssign.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
+		}*/
+		
+		for(Expr expr: exprs) {
+			ReturnData ret = runThrough(expr, functionInternal);
+
+			retAssign.getCodes().addAll(ret.getCodes());
+			for(int i = 0; i < ret.getVars().size(); i++) {
+				if(i >= vars.size()) {
+					throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
+				}
+				String fromVar;
+				if(oldVars.containsKey(ret.getLastVar())) {
+					fromVar = oldVars.get(ret.getVars().get(i));
+				} else {
+					fromVar = ret.getVars().get(i);
+				}
+				if(!functionInternal.containsVar(vars.get(i))) {
+					functionInternal.addVar(vars.get(i));
+				}
+				retAssign.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
+			}
+
+			retAssign.getVars().addAll(ret.getVars());
 		}
+		
+		
+		if(nb_vars != retAssign.getVars().size()) {
+			throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
+		}
+		
 		return retAssign;
 		
 	}	
@@ -353,8 +383,37 @@ public class GenerateSymbolTable {
 			return runThrough(expr_eq.getExpr(), functionInternal);
 		} else if(expr_eq.getSym() != null) {
 			// TODO: Appel de fonction
+			String name = expr_eq.getSym(); 
 			
-			
+			if(symTable.hasFunction(name)) {
+
+				ReturnData data = new ReturnData();
+				FunctionInternal fn = symTable.getFunctionInternal(name);
+				CALL opCall = new CALL(new Code3Addr("_", fn.getName()), functionInternal);
+				// Vérifier le nombre d'argument en entrée
+				int nbInput = fn.getInput();
+				int nbRealInput = expr_eq.getLexpr().getExpr().size();
+				if(nbInput != nbRealInput) {
+					throw new CompilaxException("Nombre d'argument incorrect ("+nbRealInput+" au lieu de "+ nbInput +")");
+				}
+				
+				for(Expr e: expr_eq.getLexpr().getExpr()) {
+					ReturnData res = runThrough(e, functionInternal);
+					data.getCodes().addAll(res.getCodes());
+					opCall.getCallableVars().addAll(res.getVars());
+				}
+				
+				for(int i = 0; i < fn.getOutput(); i++) {
+					String tmp = fn.getTempVar();
+					opCall.getReturnVars().add(tmp);
+				}
+				
+				data.getVars().addAll(opCall.getReturnVars());
+				data.addCode(opCall);
+				return data;
+			} else {
+				// TODO: Lorsque la fonction n'existe pas
+			}
 		}
 		throw new CompilaxException("Erreur lors de la compilation EXPR_EQ");
 	}

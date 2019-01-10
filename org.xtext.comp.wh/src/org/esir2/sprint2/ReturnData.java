@@ -16,6 +16,10 @@ public class ReturnData {
 	public String getLastVar() {
 		return this.lastVars.get(0);
 	}
+	
+	public List<String> getVars() {
+		return this.lastVars;
+	}
 
 	public List<Operation> getCodes() {
 		return codes;
