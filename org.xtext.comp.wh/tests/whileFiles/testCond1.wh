@@ -1,7 +1,3 @@
-/ Fonction de test de condition n°1
-// Input 1 1
-// Output 0
-
 function main:
 read A, B
 %
