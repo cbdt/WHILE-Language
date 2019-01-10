@@ -38,6 +38,9 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
     }
 
     addArgument() {
+        if(this.state.value.trim() === "") {
+            return
+        }
         this.props.addArg(this.state.value);
         this.setState({value: ""})
     }
