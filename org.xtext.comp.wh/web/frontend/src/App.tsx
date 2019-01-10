@@ -136,7 +136,6 @@ write A, B`,
           isCompiling: false,
           filename: response.data.filename,
           canExecute: true,
-          consoleText: "",
         });
       }).catch((e: any) => {
         this.setState({

@@ -1,7 +1,3 @@
-// Fonction qui renvoie le même nombre qu'en entrée
-// Input 12
-// Output 12
-
 function main:
 read A
 %

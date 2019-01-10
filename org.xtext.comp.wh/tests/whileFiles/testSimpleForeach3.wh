@@ -1,7 +1,3 @@
-// Fonction qui ne fait rien
-// Input 51
-// Output nil
-
 function main:
 read A
 % 

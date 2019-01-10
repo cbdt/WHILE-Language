@@ -412,34 +412,7 @@ public class GenerateSymbolTable {
 				data.addCode(opCall);
 				return data;
 			} else {
-				// On créé une liste quand la fonction n'existe pas
-				
-				ReturnData retList = new ReturnData();
-				
-				EList<Expr> exprs = expr_eq.getLexpr().getExpr();
-				Deque<String> tempVars = new ArrayDeque<>();
-				
-				// On calcul toutes les expressions et on stocke les variable intermediaires qu'elles retournent
-				for(Expr e : exprs) {
-					ReturnData ret = runThrough(e, functionInternal);
-					retList.getCodes().addAll(ret.getCodes());
-					tempVars.push(ret.getLastVar());
-				}
-				// On créé les cons
-				boolean isFirst = true;
-				String tempVar = functionInternal.getTempVar();
-				while(tempVars.size() > 0) {
-					if(isFirst) {
-						retList.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), symTable.getSymbol("nil"))));
-						isFirst = false;
-					} else {
-						retList.addCode(new CONS(new Code3Addr(tempVar, tempVars.poll(), tempVar)));
-					}
-				}
-				symTable.addSymbol(name);
-				retList.addCode(new CONS(new Code3Addr(tempVar, symTable.getSymbol(name), tempVar)));
-				retList.addVar(tempVar);
-				return retList;
+				// TODO: Lorsque la fonction n'existe pas
 			}
 		}
 		throw new CompilaxException("Erreur lors de la compilation EXPR_EQ");

@@ -42,10 +42,10 @@ public class Main {
 	}
 	
 	public void launch(String args[]) {
-			//String filename = args[0];
-			//String output = args[1];
-			String filename = "assignTest.wh";
-			String output = "";
+			String filename = args[0];
+			String output = args[1];
+			//String filename = "assignTest.wh";
+			//String output = "";
 			boolean fileHasError = false;
 			
 			ResourceSet set = resourceSetProvider.get();
@@ -71,12 +71,12 @@ public class Main {
 			//System.out.println(generator.toString());
 			//System.out.println(generator.toTSCode());
 			//System.out.println(generator.toString());
-			if(error) {
+			/*if(error) {
 				System.out.println("ERREUR");
 				return;
-			}
-			System.out.println(generator.toTSCode());
-			/*
+			}*/
+			//System.out.println(generator.toTSCode());
+			
 			String basename = output.substring(0, output.length()-3);
 			if(!error) {
 				writeInFile("Code3Adresse/"+basename+".3ADDR", generator.toString());
