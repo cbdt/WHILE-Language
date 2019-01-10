@@ -31,6 +31,12 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
         })
     }
 
+    handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.key == 'Enter') {
+            this.addArgument()
+        }
+    }
+
     addArgument() {
         this.props.addArg(this.state.value);
         this.setState({value: ""})
@@ -50,7 +56,7 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
                     <div className="textArg">{this.props.args.length} arguments : </div>
                     <div className="arguments">
                         {this.props.args.map((value, index) => (
-                            <a onClick={() => this.removeArg(index)}>
+                            <a onClick={() => this.removeArg(index)} key={index}>
                             <div className="arg">
                                 <span className="numero">{index+1}</span>
                                 <span className="text">{value}</span>
@@ -59,7 +65,7 @@ export default class ModalArguments extends React.Component<IModalArgumentsProps
                         ))}
                     </div>
                     <div className="adding">
-                        <input className="argInput"type="text" value={this.state.value} onChange={this.handleInput}/>
+                        <input className="argInput"type="text" value={this.state.value} onChange={this.handleInput} onKeyPress={this.handleKeyPress}/>
                         <button className="addArg" onClick={this.addArgument}>+</button>
                     </div>
                     <button className="executeModal" onClick={this.props.handleExecute}>Executer</button>

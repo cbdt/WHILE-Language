@@ -1,15 +1,6 @@
 function main:
 read A, B
 %
-    A, B := (add A B)
+    A := (add A B)
 %
 write A, B
-
-function add:
-read X, Y
-% 
-	for Y do
-    	X := (cons nil X)
-  	od
-%
-write X, Y

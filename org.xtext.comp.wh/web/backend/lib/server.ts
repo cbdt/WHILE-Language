@@ -33,16 +33,15 @@ app.post("/compile", function(req: express.Request, res: express.Response) {
         let cmd = spawn('java', ["-jar", "WH.jar", filenameWhile, basename + ".ts"]);
         let str: string = ""
         cmd.stderr.on("data", (data) => {
-            str += str.toString();
+            str += data.toString();
         } )
         cmd.stdout.on("data", (data) => {
-            str += str.toString();
+            str += data.toString();
         } )
 
 
 
         cmd.on('close', () => {
-            console.log(str)
             if(str !== "") {
                 res.json({
                     error: str
