@@ -146,7 +146,7 @@ public class SymbolTable {
 		str.append("}\n\n");
 		
 		for(Entry<String, FunctionInternal> function: functions.entrySet()) {
-			str.append(function.getValue().toTSCode());
+			str.append(function.getValue().toTSCode() + "\n\n");
 		}
 		
 		str.append("\n\nmain(process.argv.slice(2));");

@@ -1,0 +1,9 @@
+function main:
+read A
+%
+	foreach E in A
+	do
+		Z := (cons E Z)
+	od
+%
+write Z

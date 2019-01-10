@@ -52,7 +52,7 @@ public class FOR extends Operation {
 		}
 		String tmpVar = functionInternal.getTempVar();
 		
-		str.append("let " + tmpVar + ": BinTree = BinTree.binTreeToNumber("+getCode().getarg2()+");\n");
+		str.append("let " + tmpVar + ": number = BinTree.binTreeToNumber("+getCode().getarg2()+");\n");
 		
 		str.append("    for(let i = 0; i < "+tmpVar+"; i++){\n");
 		

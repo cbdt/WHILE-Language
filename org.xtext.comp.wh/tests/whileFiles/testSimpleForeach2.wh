@@ -1,0 +1,13 @@
+// Fonction pour inverser le peigne
+// Input (list a b c d)
+// Output (cons d (cons c (cons b (cons a nil))))
+
+function main:
+read A
+%
+	for E in A
+	do
+		Z:= (cons E Z)
+	od
+%
+write Z

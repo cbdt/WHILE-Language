@@ -70,24 +70,29 @@ public class Main {
 			boolean error = generator.execute();
 			//System.out.println(generator.toString());
 			//System.out.println(generator.toTSCode());
-			
+			//System.out.println(generator.toString());
+			/*if(error) {
+				System.out.println("ERREUR");
+				return;
+			}*/
 			//System.out.println(generator.toTSCode());
 			
 			String basename = output.substring(0, output.length()-3);
 			if(!error) {
 				writeInFile("Code3Adresse/"+basename+".3ADDR", generator.toString());
+			
+				if(filename.contains("WHILE_TEST")) {
+					String[] dirs = filename.split("/");
+					String lastName = dirs[dirs.length-1];
+					String name = lastName.substring(0, lastName.length()-3);
+					String path = "GEN/CODE3A/" + name + ".txt";
+					System.out.println(path);
+					writeInFile(path, generator.toString());
+					return;
+				} 
+	
+				writeInFile("TS/"+output, generator.toTSCode());
 			}
-			if(filename.contains("WHILE_TEST")) {
-				String[] dirs = filename.split("/");
-				String lastName = dirs[dirs.length-1];
-				String name = lastName.substring(0, lastName.length()-3);
-				String path = "GEN/CODE3A/" + name + ".txt";
-				System.out.println(path);
-				writeInFile(path, generator.toString());
-				return;
-			} 
-
-			writeInFile("TS/"+output, generator.toTSCode());
 		
 			//System.out.println(generator.toTSCode());*/
 	}

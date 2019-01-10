@@ -254,7 +254,7 @@ export default class BinTree {
         return res
     }
 
-    private static isTrue(tree: BinTree): boolean {
+    static isTrue(tree: BinTree): boolean {
         return tree.elem !== "nil";
     }
 
