@@ -958,17 +958,17 @@ ruleForeach returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0());
 				}
-				lv_expr_1_0=ruleExpr
+				lv_cond_1_0=ruleExpr
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForeachRule());
 					}
 					set(
 						$current,
-						"expr",
-						lv_expr_1_0,
+						"cond",
+						lv_cond_1_0,
 						"org.xtext.comp.wh.Wh.Expr");
 					afterParserOrEnumRuleCall();
 				}
@@ -981,17 +981,17 @@ ruleForeach returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0());
 				}
-				lv_e2_3_0=ruleExpr
+				lv_ens_3_0=ruleExpr
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForeachRule());
 					}
 					set(
 						$current,
-						"e2",
-						lv_e2_3_0,
+						"ens",
+						lv_ens_3_0,
 						"org.xtext.comp.wh.Wh.Expr");
 					afterParserOrEnumRuleCall();
 				}

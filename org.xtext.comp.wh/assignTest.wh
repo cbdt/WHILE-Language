@@ -1,8 +1,8 @@
-function main:
-read X, Y
+function testForEach:
+read X
 %
-	for X do
-		Z := (cons nil Z)
-	od
+    foreach E in X do
+        Z := (cons E Z)
+    od
 %
 write Z

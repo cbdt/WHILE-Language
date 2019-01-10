@@ -14,7 +14,7 @@ export default class Loader extends React.Component<ILoaderProps> {
             return null;
         }
         return (
-            <img src="https://media.giphy.com/media/2tNwHov82yCF1uE8Au/giphy.gif" width="300px" alt="" className="santa"/>
+            <img src="http://idata.over-blog.com/4/19/11/95/26/00-gifs-scintillants-animes-divers--4-.gif" width="600px" alt="" className="santa"/>
         )
         return (
             <div className="loader">

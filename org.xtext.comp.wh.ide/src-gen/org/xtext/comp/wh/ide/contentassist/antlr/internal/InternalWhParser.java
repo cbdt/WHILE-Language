@@ -6658,26 +6658,26 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Foreach__Group__1__Impl"
-    // InternalWh.g:1992:1: rule__Foreach__Group__1__Impl : ( ( rule__Foreach__ExprAssignment_1 ) ) ;
+    // InternalWh.g:1992:1: rule__Foreach__Group__1__Impl : ( ( rule__Foreach__CondAssignment_1 ) ) ;
     public final void rule__Foreach__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWh.g:1996:1: ( ( ( rule__Foreach__ExprAssignment_1 ) ) )
-            // InternalWh.g:1997:1: ( ( rule__Foreach__ExprAssignment_1 ) )
+            // InternalWh.g:1996:1: ( ( ( rule__Foreach__CondAssignment_1 ) ) )
+            // InternalWh.g:1997:1: ( ( rule__Foreach__CondAssignment_1 ) )
             {
-            // InternalWh.g:1997:1: ( ( rule__Foreach__ExprAssignment_1 ) )
-            // InternalWh.g:1998:2: ( rule__Foreach__ExprAssignment_1 )
+            // InternalWh.g:1997:1: ( ( rule__Foreach__CondAssignment_1 ) )
+            // InternalWh.g:1998:2: ( rule__Foreach__CondAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForeachAccess().getExprAssignment_1()); 
+               before(grammarAccess.getForeachAccess().getCondAssignment_1()); 
             }
-            // InternalWh.g:1999:2: ( rule__Foreach__ExprAssignment_1 )
-            // InternalWh.g:1999:3: rule__Foreach__ExprAssignment_1
+            // InternalWh.g:1999:2: ( rule__Foreach__CondAssignment_1 )
+            // InternalWh.g:1999:3: rule__Foreach__CondAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Foreach__ExprAssignment_1();
+            rule__Foreach__CondAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6685,7 +6685,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForeachAccess().getExprAssignment_1()); 
+               after(grammarAccess.getForeachAccess().getCondAssignment_1()); 
             }
 
             }
@@ -6826,26 +6826,26 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Foreach__Group__3__Impl"
-    // InternalWh.g:2046:1: rule__Foreach__Group__3__Impl : ( ( rule__Foreach__E2Assignment_3 ) ) ;
+    // InternalWh.g:2046:1: rule__Foreach__Group__3__Impl : ( ( rule__Foreach__EnsAssignment_3 ) ) ;
     public final void rule__Foreach__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWh.g:2050:1: ( ( ( rule__Foreach__E2Assignment_3 ) ) )
-            // InternalWh.g:2051:1: ( ( rule__Foreach__E2Assignment_3 ) )
+            // InternalWh.g:2050:1: ( ( ( rule__Foreach__EnsAssignment_3 ) ) )
+            // InternalWh.g:2051:1: ( ( rule__Foreach__EnsAssignment_3 ) )
             {
-            // InternalWh.g:2051:1: ( ( rule__Foreach__E2Assignment_3 ) )
-            // InternalWh.g:2052:2: ( rule__Foreach__E2Assignment_3 )
+            // InternalWh.g:2051:1: ( ( rule__Foreach__EnsAssignment_3 ) )
+            // InternalWh.g:2052:2: ( rule__Foreach__EnsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForeachAccess().getE2Assignment_3()); 
+               before(grammarAccess.getForeachAccess().getEnsAssignment_3()); 
             }
-            // InternalWh.g:2053:2: ( rule__Foreach__E2Assignment_3 )
-            // InternalWh.g:2053:3: rule__Foreach__E2Assignment_3
+            // InternalWh.g:2053:2: ( rule__Foreach__EnsAssignment_3 )
+            // InternalWh.g:2053:3: rule__Foreach__EnsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Foreach__E2Assignment_3();
+            rule__Foreach__EnsAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6853,7 +6853,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForeachAccess().getE2Assignment_3()); 
+               after(grammarAccess.getForeachAccess().getEnsAssignment_3()); 
             }
 
             }
@@ -12221,9 +12221,9 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__If__Else_commandsAssignment_4_1"
 
 
-    // $ANTLR start "rule__Foreach__ExprAssignment_1"
-    // InternalWh.g:3796:1: rule__Foreach__ExprAssignment_1 : ( ruleExpr ) ;
-    public final void rule__Foreach__ExprAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Foreach__CondAssignment_1"
+    // InternalWh.g:3796:1: rule__Foreach__CondAssignment_1 : ( ruleExpr ) ;
+    public final void rule__Foreach__CondAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12235,7 +12235,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             // InternalWh.g:3802:3: ruleExpr
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0()); 
+               before(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleExpr();
@@ -12243,7 +12243,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0()); 
+               after(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0()); 
             }
 
             }
@@ -12263,12 +12263,12 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Foreach__ExprAssignment_1"
+    // $ANTLR end "rule__Foreach__CondAssignment_1"
 
 
-    // $ANTLR start "rule__Foreach__E2Assignment_3"
-    // InternalWh.g:3811:1: rule__Foreach__E2Assignment_3 : ( ruleExpr ) ;
-    public final void rule__Foreach__E2Assignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Foreach__EnsAssignment_3"
+    // InternalWh.g:3811:1: rule__Foreach__EnsAssignment_3 : ( ruleExpr ) ;
+    public final void rule__Foreach__EnsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12280,7 +12280,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             // InternalWh.g:3817:3: ruleExpr
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0()); 
+               before(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleExpr();
@@ -12288,7 +12288,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0()); 
+               after(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0()); 
             }
 
             }
@@ -12308,7 +12308,7 @@ public class InternalWhParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Foreach__E2Assignment_3"
+    // $ANTLR end "rule__Foreach__EnsAssignment_3"
 
 
     // $ANTLR start "rule__Foreach__CommandsAssignment_5"

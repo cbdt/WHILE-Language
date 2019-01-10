@@ -328,20 +328,20 @@ public class WhSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Foreach returns Foreach
 	 *
 	 * Constraint:
-	 *     (expr=Expr e2=Expr commands=Commands)
+	 *     (cond=Expr ens=Expr commands=Commands)
 	 */
 	protected void sequence_Foreach(ISerializationContext context, Foreach semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__EXPR));
-			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__E2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__E2));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__COND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__COND));
+			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__ENS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__ENS));
 			if (transientValues.isValueTransient(semanticObject, WhPackage.Literals.FOREACH__COMMANDS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WhPackage.Literals.FOREACH__COMMANDS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0(), semanticObject.getExpr());
-		feeder.accept(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0(), semanticObject.getE2());
+		feeder.accept(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0(), semanticObject.getCond());
+		feeder.accept(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0(), semanticObject.getEns());
 		feeder.accept(grammarAccess.getForeachAccess().getCommandsCommandsParserRuleCall_5_0(), semanticObject.getCommands());
 		feeder.finish();
 	}

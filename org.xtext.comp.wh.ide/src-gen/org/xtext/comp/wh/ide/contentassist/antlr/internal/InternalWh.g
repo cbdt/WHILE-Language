@@ -1995,9 +1995,9 @@ rule__Foreach__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getForeachAccess().getExprAssignment_1()); }
-	(rule__Foreach__ExprAssignment_1)
-	{ after(grammarAccess.getForeachAccess().getExprAssignment_1()); }
+	{ before(grammarAccess.getForeachAccess().getCondAssignment_1()); }
+	(rule__Foreach__CondAssignment_1)
+	{ after(grammarAccess.getForeachAccess().getCondAssignment_1()); }
 )
 ;
 finally {
@@ -2049,9 +2049,9 @@ rule__Foreach__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getForeachAccess().getE2Assignment_3()); }
-	(rule__Foreach__E2Assignment_3)
-	{ after(grammarAccess.getForeachAccess().getE2Assignment_3()); }
+	{ before(grammarAccess.getForeachAccess().getEnsAssignment_3()); }
+	(rule__Foreach__EnsAssignment_3)
+	{ after(grammarAccess.getForeachAccess().getEnsAssignment_3()); }
 )
 ;
 finally {
@@ -3793,30 +3793,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Foreach__ExprAssignment_1
+rule__Foreach__CondAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0()); }
+		{ before(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0()); }
 		ruleExpr
-		{ after(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0()); }
+		{ after(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Foreach__E2Assignment_3
+rule__Foreach__EnsAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0()); }
+		{ before(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0()); }
 		ruleExpr
-		{ after(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0()); }
+		{ after(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0()); }
 	)
 ;
 finally {

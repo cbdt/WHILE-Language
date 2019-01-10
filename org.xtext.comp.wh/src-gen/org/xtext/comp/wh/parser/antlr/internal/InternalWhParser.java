@@ -2529,7 +2529,7 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForeach"
-    // InternalWh.g:946:1: ruleForeach returns [EObject current=null] : (otherlv_0= 'foreach' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_e2_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' ) ;
+    // InternalWh.g:946:1: ruleForeach returns [EObject current=null] : (otherlv_0= 'foreach' ( (lv_cond_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_ens_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' ) ;
     public final EObject ruleForeach() throws RecognitionException {
         EObject current = null;
 
@@ -2537,9 +2537,9 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
-        EObject lv_expr_1_0 = null;
+        EObject lv_cond_1_0 = null;
 
-        EObject lv_e2_3_0 = null;
+        EObject lv_ens_3_0 = null;
 
         EObject lv_commands_5_0 = null;
 
@@ -2548,11 +2548,11 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWh.g:952:2: ( (otherlv_0= 'foreach' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_e2_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' ) )
-            // InternalWh.g:953:2: (otherlv_0= 'foreach' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_e2_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' )
+            // InternalWh.g:952:2: ( (otherlv_0= 'foreach' ( (lv_cond_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_ens_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' ) )
+            // InternalWh.g:953:2: (otherlv_0= 'foreach' ( (lv_cond_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_ens_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' )
             {
-            // InternalWh.g:953:2: (otherlv_0= 'foreach' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_e2_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' )
-            // InternalWh.g:954:3: otherlv_0= 'foreach' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_e2_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od'
+            // InternalWh.g:953:2: (otherlv_0= 'foreach' ( (lv_cond_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_ens_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od' )
+            // InternalWh.g:954:3: otherlv_0= 'foreach' ( (lv_cond_1_0= ruleExpr ) ) otherlv_2= 'in' ( (lv_ens_3_0= ruleExpr ) ) otherlv_4= 'do' ( (lv_commands_5_0= ruleCommands ) ) otherlv_6= 'od'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_14); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2560,19 +2560,19 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getForeachAccess().getForeachKeyword_0());
               		
             }
-            // InternalWh.g:958:3: ( (lv_expr_1_0= ruleExpr ) )
-            // InternalWh.g:959:4: (lv_expr_1_0= ruleExpr )
+            // InternalWh.g:958:3: ( (lv_cond_1_0= ruleExpr ) )
+            // InternalWh.g:959:4: (lv_cond_1_0= ruleExpr )
             {
-            // InternalWh.g:959:4: (lv_expr_1_0= ruleExpr )
-            // InternalWh.g:960:5: lv_expr_1_0= ruleExpr
+            // InternalWh.g:959:4: (lv_cond_1_0= ruleExpr )
+            // InternalWh.g:960:5: lv_cond_1_0= ruleExpr
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getForeachAccess().getExprExprParserRuleCall_1_0());
+              					newCompositeNode(grammarAccess.getForeachAccess().getCondExprParserRuleCall_1_0());
               				
             }
             pushFollow(FOLLOW_20);
-            lv_expr_1_0=ruleExpr();
+            lv_cond_1_0=ruleExpr();
 
             state._fsp--;
             if (state.failed) return current;
@@ -2583,8 +2583,8 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
               					}
               					set(
               						current,
-              						"expr",
-              						lv_expr_1_0,
+              						"cond",
+              						lv_cond_1_0,
               						"org.xtext.comp.wh.Wh.Expr");
               					afterParserOrEnumRuleCall();
               				
@@ -2601,19 +2601,19 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getForeachAccess().getInKeyword_2());
               		
             }
-            // InternalWh.g:981:3: ( (lv_e2_3_0= ruleExpr ) )
-            // InternalWh.g:982:4: (lv_e2_3_0= ruleExpr )
+            // InternalWh.g:981:3: ( (lv_ens_3_0= ruleExpr ) )
+            // InternalWh.g:982:4: (lv_ens_3_0= ruleExpr )
             {
-            // InternalWh.g:982:4: (lv_e2_3_0= ruleExpr )
-            // InternalWh.g:983:5: lv_e2_3_0= ruleExpr
+            // InternalWh.g:982:4: (lv_ens_3_0= ruleExpr )
+            // InternalWh.g:983:5: lv_ens_3_0= ruleExpr
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getForeachAccess().getE2ExprParserRuleCall_3_0());
+              					newCompositeNode(grammarAccess.getForeachAccess().getEnsExprParserRuleCall_3_0());
               				
             }
             pushFollow(FOLLOW_15);
-            lv_e2_3_0=ruleExpr();
+            lv_ens_3_0=ruleExpr();
 
             state._fsp--;
             if (state.failed) return current;
@@ -2624,8 +2624,8 @@ public class InternalWhParser extends AbstractInternalAntlrParser {
               					}
               					set(
               						current,
-              						"e2",
-              						lv_e2_3_0,
+              						"ens",
+              						lv_ens_3_0,
               						"org.xtext.comp.wh.Wh.Expr");
               					afterParserOrEnumRuleCall();
               				

@@ -70,10 +70,9 @@ public class Main {
 			boolean error = generator.execute();
 			//System.out.println(generator.toString());
 			//System.out.println(generator.toTSCode());
-			/*
-			System.out.println(generator.toTSCode());
-			return;
-			*/
+			
+			//System.out.println(generator.toTSCode());
+			
 			String basename = output.substring(0, output.length()-3);
 			if(!error) {
 				writeInFile("Code3Adresse/"+basename+".3ADDR", generator.toString());
@@ -90,7 +89,7 @@ public class Main {
 
 			writeInFile("TS/"+output, generator.toTSCode());
 		
-			//System.out.println(generator.toTSCode());
+			//System.out.println(generator.toTSCode());*/
 	}
 	
 	public static void writeInFile(String path, String content) {
