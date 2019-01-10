@@ -20,7 +20,8 @@ async function execute(filename, ...args) {
                 tab[1] = tab[1].replace('[ ', '[')
                 tab[1] = tab[1].replace(' ]', ']')
                 let res = tab[0].trim().substr(1, tab[0].trim().length-2).split(",").map(val => Number(val))
-                resolve([res, tab[1]])
+                let res1 = tab[1].trim().substr(1, tab[1].trim().length-2).split(",")
+                resolve([res, res1])
             } else {
                 resolve([str.trim()])
             }
