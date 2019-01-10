@@ -14,7 +14,8 @@ test('simple foreach', async () => {
 });*/
 
 test('inverse list foreach', async () => {
-    let result = await execute("testSimpleForeach.wh", "(cons a (cons b (cons c (cons d nil))))");
+    let result = await execute("testForeachInverse.wh", "(cons a (cons b (cons c (cons d nil))))");
+    console.log(result[0]);
     expect(result[0]).toEqual(["(cons d (cons c (cons b (cons a nil))))"]);
 });
 
