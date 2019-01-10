@@ -1,0 +1,15 @@
+/ Fonction de test de if n°1
+// Input 1 1
+// Output 1
+
+function main:
+read A, B
+%
+	X:= 1
+	if not A =? B
+		if A =? B
+			X:= 0
+		fi
+	fi
+%
+write X
