@@ -17,6 +17,8 @@ async function execute(filename, ...args) {
         nodeCmd.on("close", () => {
             let tab = str.split("\n")
             if(tab[0].startsWith("[")) {
+                tab[1] = tab[1].replace('[ ', '[')
+                tab[1] = tab[1].replace(' ]', ']')
                 let res = tab[0].trim().substr(1, tab[0].trim().length-2).split(",").map(val => Number(val))
                 resolve([res, tab[1]])
             } else {

@@ -236,9 +236,9 @@ export default class BinTree {
         if (tree.elem !== "") {
             return tree.elem
         }
-        var res: string = "(Cons "
+        var res: string = "(cons "
         res += this.displayTree(tree.left);
-        res += ", "
+        res += " "
         res += this.displayTree(tree.right)
         res += ")"
 

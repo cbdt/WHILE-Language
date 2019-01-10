@@ -17,25 +17,37 @@ async function compile(filename) {
         } 
 
         let whileCmd = spawn('java', ["-jar", "WH.jar", whileFilename, baseFilename+".ts"])
+        let str = ""
+        whileCmd.stderr.on("data", (data) => {
+            str += data.toString()
+        })
+
+        whileCmd.stdout.on("data", (data) => {
+            str += data.toString()
+        })
 
         whileCmd.on("close", () => {
-            fs.readFile(tsFile, (err, data) => {
-                console.log(err);
-                if (err) throw err;
-                let str = data.toString();
-                if(!str.startsWith("import")) {
-                    signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
-                    return;
-                }
-                signale.success(`${whileFilename} compilé ✅`);
-                resolve();
-            })
+            if(str.trim() !== "") {
+                signale.error(`Compilation de ${filename}`, str)
+                resolve()
+            } else {   
+                fs.readFile(tsFile, (err, data) => {
+                    if (err) throw err;
+                    let str = data.toString();
+                    if(!str.startsWith("import")) {
+                        signale.error(`Erreur lors de la compilation de ${whileFilename} ❌`);
+                        return;
+                    }
+                    signale.success(`${whileFilename} compilé ✅`);
+                    resolve();
+                })
+            }
         })
         
     })
 }
 
-function readdirAsync(path) {
+  function readdirAsync(path) {
     return new Promise(function (resolve, reject) {
       fs.readdir(path, function (error, result) {
         if (error) {
@@ -54,7 +66,8 @@ async function readFiles() {
     /*for (let i = 0; i < files.length; i++) {
         await compile(files[i])
     }*/
-    await Promise.all(files.map(async file => { await compile(file) }))
+    
+    files.map(async (file) => { await compile(file) })
 
 }
     
