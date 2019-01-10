@@ -32,6 +32,7 @@ app.post("/compile", function(req: express.Request, res: express.Response) {
         }
         let cmd = spawn('java', ["-jar", "WH.jar", filenameWhile, basename + ".ts"]);
         let str: string = ""
+        
         cmd.stderr.on("data", (data) => {
             str += str.toString();
         } )
