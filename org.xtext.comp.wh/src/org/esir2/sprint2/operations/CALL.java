@@ -32,7 +32,7 @@ public class CALL extends Operation {
 	@Override
 	public String toTSCode() {
 		StringBuilder str = new StringBuilder();
-		str.append("    let [");
+		str.append("[");
 		for (int i = 0; i < returnVars.size(); i++) {
 			str.append(returnVars.get(i));
 			if(i != returnVars.size()-1) {

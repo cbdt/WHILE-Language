@@ -1,15 +1,15 @@
-function add:
-read X, Y
-% 
-	for Y do
-    	X := (cons nil X)
-  	od
+function soustraction:
+read A, B
 %
-write X, Y
+	for B do
+		A := (tl A)
+	od
+%
+write A, B
 
 function main:
 read A, B
 %
-    A, B := (add A B)
+	R, B := (soustraction A B)
 %
-write A, B
+write R, Q
