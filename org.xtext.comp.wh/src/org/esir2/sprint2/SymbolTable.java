@@ -13,6 +13,8 @@ public class SymbolTable {
 	private Map<String, String> symbols;
 	private static int symbolCounter = 0;
 	
+	private FunctionInternal main;
+	
 	public SymbolTable() throws CompilaxException {
 		functions = new HashMap<>();
 		symbols = new HashMap<>();
@@ -22,6 +24,7 @@ public class SymbolTable {
 	public void addFunction(String name, int nbInput, int nbOutput) throws CompilaxException {
 		if(!hasFunction(name)) {
 			functions.put(name, new FunctionInternal("f" + functionCounter, nbInput, nbOutput));
+			main = functions.get(name);
 			functionCounter++;
 		}
 		else {
@@ -98,8 +101,6 @@ public class SymbolTable {
 	}
 	
 	public String toTSCode() {
-		Map.Entry<String,FunctionInternal> entry = functions.entrySet().iterator().next();
-		FunctionInternal functionInternalMain = entry.getValue();
 		
 		StringBuilder str = new StringBuilder();
 		str.append("import BinTree from './BinTree'\n");
@@ -112,16 +113,16 @@ public class SymbolTable {
 		str.append("function main(args: string[]) {\n");
 		
 		
-		str.append("\n"+indent(4) +"let nb_input: number = " + functionInternalMain.getInput() + ";");
+		str.append("\n"+indent(4) +"let nb_input: number = " + main.getInput() + ";");
 		str.append("\n"+indent(4) + "if(args.length != nb_input) {\n"+indent(8)+"console.error(`Le nombre d'argument n'est pas correct (${args.length} au lieu de ${nb_input})`); return;\n"+indent(4)+"}\n");
 		
 
 		str.append("// TODO: Check if arg type is number or string\n");
-		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
+		for(int counterRead = 0; counterRead < main.getInput(); counterRead++) {
 			str.append(indent(4)+"let i"+ counterRead + ": number = Number(args[" + counterRead + "]);\n");
 		}
 		
-		for(int counterRead = 0; counterRead < functionInternalMain.getInput(); counterRead++) {
+		for(int counterRead = 0; counterRead < main.getInput(); counterRead++) {
 			str.append("\n"+indent(4)+"let input"+ counterRead + ": BinTree;");
 			str.append("\n"+indent(4)+"if(isNaN(i"+ + counterRead +")) {\n");
 			str.append(indent(8)+"input"+ counterRead + " = BinTree.stringToBinTree(args[" + counterRead + "]);\n");
@@ -131,10 +132,10 @@ public class SymbolTable {
 		}
 		str.append("\n");
 		
-		str.append(indent(4)+"let outputs: BinTree[] = " + functionInternalMain.getName() + "(");
-		for(int counterInput = 0; counterInput < functionInternalMain.getInput(); counterInput++) {
+		str.append(indent(4)+"let outputs: BinTree[] = " + main.getName() + "(");
+		for(int counterInput = 0; counterInput < main.getInput(); counterInput++) {
 			str.append("input"+counterInput);
-			if(counterInput != functionInternalMain.getInput()-1) {
+			if(counterInput != main.getInput()-1) {
 				 str.append(", ");
 			}
 		}
