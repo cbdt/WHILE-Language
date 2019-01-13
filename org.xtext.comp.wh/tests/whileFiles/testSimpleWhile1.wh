@@ -1,12 +1,8 @@
-// Fonction qui ne fait rien
-// Input 12
-// Output nil
-
 function main:
 read A
 %
 	while A do
-	    nop
+	    A := (tl A)
 	od
 
 %

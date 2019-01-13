@@ -128,7 +128,7 @@ export default class BinTree {
         return res;
     }
 
-    private static binTreeToNumber(tree: BinTree): number {
+    static binTreeToNumber(tree: BinTree): number {
         var counter: number = 0;
         if (tree !== null) {
             if (tree.elem === "") {

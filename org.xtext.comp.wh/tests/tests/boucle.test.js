@@ -54,3 +54,18 @@ test('simple foreach 3', async () => {
     let result = await execute("testSimpleForeach3.wh", 51);
     expect(result[1]).toEqual(["'nil'"]);
 });
+
+test('simple while 1', async () => {
+    let result = await execute("testSimpleWhile1.wh", 5);
+    expect(result[1]).toEqual(["'nil'"]);
+});
+
+test('simple while 2', async () => {
+    let result = await execute("testSimpleWhile2.wh", 5);
+    expect(result[0]).toEqual([5]);
+});
+
+test('simple while 3', async () => {
+    let result = await execute("testSimpleWhile3.wh", 5);
+    expect(result[0]).toEqual([5]);
+});

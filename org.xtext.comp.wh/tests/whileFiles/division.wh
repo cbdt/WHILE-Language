@@ -1,0 +1,83 @@
+function inferieur:
+read A, B
+%
+	C := not (superieurOuEgal A B)
+%
+write C
+
+function superieurOuEgal:
+read A, B
+%
+	C := (cons nil nil);
+	for B do
+		B := (tl B);
+		if B =? A then
+			C := nil
+		fi
+	od
+%
+write C
+
+function superieur:
+read A, B
+%
+	if A =? B then
+		C:= nil
+	else
+		C := (cons nil nil);
+		for B do
+			B := (tl B);
+			if B =? A then
+				C := nil
+			fi
+		od
+	fi
+%
+write C
+
+function addition:
+read A, B
+%
+for B do
+    A := (cons nil A)
+  od
+%
+write A
+
+function multiplication:
+read A, B
+%
+	R := nil;
+	for B do
+      	R := (addition R A)
+	od
+%
+write R
+
+function soustraction:
+read A, B
+%
+	for B do
+		A := (tl A)
+	od
+%
+write A
+
+function division:
+read A, B
+%
+	Q := nil;
+	R := A;
+	while (superieurOuEgal R B) do
+		Q := (cons nil Q);
+		R := (soustraction R B)   
+	od
+%
+write Q, R
+
+function main:
+read A, B
+%
+	Q, R := (division A B)
+%
+write Q, R

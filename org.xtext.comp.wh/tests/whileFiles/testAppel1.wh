@@ -1,0 +1,15 @@
+function add:
+read A, B
+%
+for B do
+    A := (cons nil A)
+  od
+%
+write A
+  
+function main:
+read A, B
+%
+    A := (add A B)
+%
+write A
