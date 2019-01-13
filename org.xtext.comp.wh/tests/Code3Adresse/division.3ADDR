@@ -1,0 +1,131 @@
+Table des symboles :
+nil : s0
+Table des variables :
+A : Var1
+Q : Var3
+B : Var2
+R : Var4
+function division: (input=2, output=2)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< AFF, Var3, s0, _>
+< AFF, Var4, Var1, _>
+< WHILE
+	[< CALL, _, f1, _>]
+
+	[< CONS, TempVar1, s0, Var3>, < AFF, Var3, TempVar1, _>, < CALL, _, f5, _>, < AFF, Var4, TempVar2, _>]
+>
+< WRITE, Var3, _, _>
+< WRITE, Var4, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+C : Var3
+function superieur: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< IF
+	[< EQ, TempVar0, Var1, Var2>]
+
+	[< AFF, Var3, s0, _>]
+
+	[< CONS, TempVar1, s0, s0>, < AFF, Var3, TempVar1, _>, < FOR
+	[]
+
+	[< TL, TempVar2, Var2, _>, < AFF, Var2, TempVar2, _>, < IF
+	[< EQ, TempVar3, Var2, Var1>]
+
+	[< AFF, Var3, s0, _>]
+>]
+>]
+>
+< WRITE, Var3, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+C : Var3
+function inferieur: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< CALL, _, f1, _>
+< NOT, TempVar0, TempVar1, _>
+< AFF, Var3, TempVar0, _>
+< WRITE, Var3, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+C : Var3
+function superieurOuEgal: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< CONS, TempVar0, s0, s0>
+< AFF, Var3, TempVar0, _>
+< FOR
+	[]
+
+	[< TL, TempVar1, Var2, _>, < AFF, Var2, TempVar1, _>, < IF
+	[< EQ, TempVar2, Var2, Var1>]
+
+	[< AFF, Var3, s0, _>]
+>]
+>
+< WRITE, Var3, _, _>
+
+Table des variables :
+A : Var1
+Q : Var3
+B : Var2
+R : Var4
+function main: (input=2, output=2)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< CALL, _, f6, _>
+< AFF, Var3, TempVar0, _>
+< AFF, Var4, TempVar1, _>
+< WRITE, Var3, _, _>
+< WRITE, Var4, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+R : Var3
+function multiplication: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< AFF, Var3, s0, _>
+< FOR
+	[]
+
+	[< CALL, _, f3, _>, < AFF, Var3, TempVar0, _>]
+>
+< WRITE, Var3, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+function soustraction: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< FOR
+	[]
+
+	[< TL, TempVar0, Var1, _>, < AFF, Var1, TempVar0, _>]
+>
+< WRITE, Var1, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+function addition: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< FOR
+	[]
+
+	[< CONS, TempVar0, s0, Var1>, < AFF, Var1, TempVar0, _>]
+>
+< WRITE, Var1, _, _>
+

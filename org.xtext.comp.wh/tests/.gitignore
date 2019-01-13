@@ -13,8 +13,5 @@ pids
 # Dependency directories
 node_modules/
 
-TS/
-Code3Adresse/
-while/
 .DS_Store
 

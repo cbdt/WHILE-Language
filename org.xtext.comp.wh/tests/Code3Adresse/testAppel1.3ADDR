@@ -1,0 +1,25 @@
+Table des symboles :
+nil : s0
+Table des variables :
+A : Var1
+B : Var2
+function add: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< FOR
+	[]
+
+	[< CONS, TempVar0, s0, Var1>, < AFF, Var1, TempVar0, _>]
+>
+< WRITE, Var1, _, _>
+
+Table des variables :
+A : Var1
+B : Var2
+function main: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< CALL, _, f0, _>
+< AFF, Var1, TempVar0, _>
+< WRITE, Var1, _, _>
+

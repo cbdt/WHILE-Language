@@ -1,0 +1,18 @@
+Table des symboles :
+nil : s0
+Table des variables :
+A : Var1
+Z : Var2
+function main: (input=1, output=1)
+< READ, Var1, _, _>
+< FOR
+	[]
+
+	[< FOR
+	[]
+
+	[< CONS, TempVar0, s0, Var2>, < AFF, Var2, TempVar0, _>]
+>]
+>
+< WRITE, Var2, _, _>
+

@@ -1,0 +1,11 @@
+Table des symboles :
+nil : s0
+Table des variables :
+A : Var1
+B : Var2
+function main: (input=2, output=1)
+< READ, Var1, _, _>
+< READ, Var2, _, _>
+< AFF, Var1, Var2, _>
+< WRITE, Var1, _, _>
+
