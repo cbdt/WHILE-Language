@@ -263,22 +263,36 @@ public class GenerateSymbolTable {
 		
 		for(Expr expr: exprs) {
 			ReturnData ret = runThrough(expr, functionInternal);
-
 			retAssign.getCodes().addAll(ret.getCodes());
+			
 			for(int i = 0; i < ret.getVars().size(); i++) {
-				if(i >= vars.size()) {
+				
+				/*if(i >= nb_vars) {
 					throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
-				}
+				}*/
+				
 				String fromVar;
 				if(oldVars.containsKey(ret.getLastVar())) {
 					fromVar = oldVars.get(ret.getVars().get(i));
 				} else {
 					fromVar = ret.getVars().get(i);
 				}
-				if(!functionInternal.containsVar(vars.get(i))) {
+				/*if(!functionInternal.containsVar(vars.get(i))) {
 					functionInternal.addVar(vars.get(i));
+				}*/
+				String v;
+				try {
+					v = vars.get(0);
+					vars.remove(0);
+				} catch (IndexOutOfBoundsException e) {
+					throw new CompilaxException("Il faut le même nombre de variables que d'expressions");
 				}
-				retAssign.addCode(new AFF(new Code3Addr(functionInternal.getVar(vars.get(i)), fromVar)));
+				
+				String ident = functionInternal.addVar(v);
+				
+				retAssign.addCode(new AFF(new Code3Addr(ident, fromVar)));
+
+				//vars.remove(i);
 			}
 
 			retAssign.getVars().addAll(ret.getVars());

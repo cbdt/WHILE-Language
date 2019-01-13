@@ -1,15 +1,6 @@
-function soustraction:
-read A, B
-%
-	for B do
-		A := (tl A)
-	od
-%
-write A, B
-
 function main:
 read A, B
+% 
+    A, B:= B, A
 %
-	R, B := (soustraction A B)
-%
-write R, Q
+write A, B

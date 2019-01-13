@@ -74,8 +74,8 @@ public class Main {
 			/*if(error) {
 				System.out.println("ERREUR");
 				return;
-			}*/
-			//System.out.println(generator.toTSCode());
+			}
+			System.out.println(generator.toTSCode());*/
 			
 			String basename = output.substring(0, output.length()-3);
 			if(!error) {
