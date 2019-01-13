@@ -41,6 +41,6 @@ test('tl tl cons', async () => {
 });
 
 test('isA', async () => {
-    let result = await execute("testIsA.wh", "(a)");
+    let result = await execute("testIsA.wh", "a");
     expect(result[0]).toEqual([1]);
 });
