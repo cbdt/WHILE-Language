@@ -6,11 +6,13 @@ Z : Var2
 function main: (input=1, output=1)
 < READ, Var1, _, _>
 < WHILE
+	condition
 	[]
-
+	body
 	[< WHILE
+	condition
 	[]
-
+	body
 	[< TL, TempVar0, Var1, _>, < AFF, Var1, TempVar0, _>, < CONS, TempVar1, s0, Var2>, < AFF, Var2, TempVar1, _>]
 >]
 >

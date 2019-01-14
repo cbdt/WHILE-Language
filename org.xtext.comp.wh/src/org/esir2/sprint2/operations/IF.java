@@ -53,9 +53,9 @@ public class IF extends Operation {
 	
 	@Override
 	public String toString() {
-		StringBuilder str = new StringBuilder("< IF" + "\n\t" + this.condCodes.toString() + "\n\n\t" + this.bodyCodes.toString());;
+		StringBuilder str = new StringBuilder("< IF" + "\n\tcondition\n\t" + this.condCodes.toString() + "\n\tthen\n\t" + this.bodyCodes.toString());;
 		if(!this.elseCodes.isEmpty()) {
-			str.append("\n\n\t"+this.elseCodes.toString());
+			str.append("\n\telse\n\t"+this.elseCodes.toString());
 		}
 		str.append("\n>");
 		return str.toString();

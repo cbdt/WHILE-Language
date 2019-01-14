@@ -66,12 +66,14 @@ write A
 function division:
 read A, B
 %
-	Q := nil;
-	R := A;
-	while (superieurOuEgal R B) do
-		Q := (cons nil Q);
-		R := (soustraction R B)   
-	od
+  	if not B =? nil then
+      Q := nil;
+      R := A;
+      while (superieurOuEgal R B) do
+          Q := (cons nil Q);
+          R := (soustraction R B)   
+      od
+	fi
 %
 write Q, R
 

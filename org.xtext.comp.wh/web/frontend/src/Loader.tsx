@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import logo from './logo.png'
 interface ILoaderProps {
     active: boolean,
 }
@@ -14,7 +14,7 @@ export default class Loader extends React.Component<ILoaderProps> {
             return null;
         }
         return (
-            <img src="http://idata.over-blog.com/4/19/11/95/26/00-gifs-scintillants-animes-divers--4-.gif" width="600px" alt="" className="santa"/>
+            <img src="https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif" width="600px" alt="" className="santa"/>
         )
         return (
             <div className="loader">

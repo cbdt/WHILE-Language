@@ -28,13 +28,13 @@ body {
 }
 
 .whileEditor {
-  height: 100%;
+  height: 96vh;
   font-size: 14px;
 }
 
 .TSEditor {
   flex: 5;
-  max-height: 580px;
+  max-height: 80vh;
 }
 
 .modal {

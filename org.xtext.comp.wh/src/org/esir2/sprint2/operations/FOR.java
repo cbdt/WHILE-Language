@@ -39,7 +39,7 @@ public class FOR extends Operation {
 	
 	@Override
 	public String toString() {
-		return "< FOR" + "\n\t" + this.condCodes.toString()+ "\n\n\t" + this.bodyCodes.toString() + "\n>";
+		return "< FOR" + "\n\tcondition\n\t" + this.condCodes.toString()+ "\n\tbody\n\t" + this.bodyCodes.toString() + "\n>";
 	}
 	
 

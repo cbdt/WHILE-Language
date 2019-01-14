@@ -7,8 +7,9 @@ Z : Var3
 function main: (input=1, output=1)
 < READ, Var1, _, _>
 < FOREACH
+	condition
 	[]
-
+	body
 	[< CONS, TempVar0, Var2, Var3>, < AFF, Var3, TempVar0, _>]
 >
 < WRITE, Var3, _, _>

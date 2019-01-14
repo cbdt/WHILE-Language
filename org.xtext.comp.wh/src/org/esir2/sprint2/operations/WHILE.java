@@ -27,7 +27,7 @@ public class WHILE extends Operation {
 	
 	@Override
 	public String toString() {
-		return "< WHILE" + "\n\t" + this.condCodes.toString() + "\n\n\t" + this.bodyCodes.toString() + "\n>";
+		return "< WHILE" + "\n\tcondition\n\t" + this.condCodes.toString() + "\n\tbody\n\t" + this.bodyCodes.toString() + "\n>";
 	}
 	
 	@Override

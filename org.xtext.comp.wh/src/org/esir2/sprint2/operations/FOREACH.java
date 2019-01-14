@@ -47,7 +47,7 @@ public class FOREACH extends Operation {
 	
 	@Override
 	public String toString() {
-		return "< FOREACH" + "\n\t" + this.condCodes.toString()+ "\n\n\t" + this.bodyCodes.toString() + "\n>";
+		return "< FOREACH" + "\n\tcondition\n\t" + this.condCodes.toString()+ "\n\tbody\n\t" + this.bodyCodes.toString() + "\n>";
 	}
 	
 

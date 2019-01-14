@@ -6,8 +6,9 @@ Z : Var2
 function main: (input=1, output=1)
 < READ, Var1, _, _>
 < FOR
+	condition
 	[]
-
+	body
 	[< NOP, _, _, _>]
 >
 < WRITE, Var2, _, _>

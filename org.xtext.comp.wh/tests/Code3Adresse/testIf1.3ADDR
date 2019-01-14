@@ -8,10 +8,11 @@ Z : Var2
 function main: (input=1, output=1)
 < READ, Var1, _, _>
 < IF
+	condition
 	[]
-
+	then
 	[< AFF, Var2, s1, _>]
-
+	else
 	[< AFF, Var2, s2, _>]
 >
 < WRITE, Var2, _, _>
